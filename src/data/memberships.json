@@ -1,0 +1,661 @@
+[
+  {
+    "id": "sora-sora_ame",
+    "group_id": "sora-sora",
+    "member_id": "ame",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "Red",
+      "hex": "#e74c3c"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "sora-sora_best",
+    "group_id": "sora-sora",
+    "member_id": "best",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "Yellow",
+      "hex": "#f1c40f"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "sora-sora_jennie",
+    "group_id": "sora-sora",
+    "member_id": "jennie",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "Purple",
+      "hex": "#9b59b6"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "sora-sora_kitty",
+    "group_id": "sora-sora",
+    "member_id": "kitty",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "White",
+      "hex": "#ffffff"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "sora-sora_lilin",
+    "group_id": "sora-sora",
+    "member_id": "lilin",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "Orange",
+      "hex": "#e67e22"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "sora-sora_oum",
+    "group_id": "sora-sora",
+    "member_id": "oum",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "Blue",
+      "hex": "#3498db"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "sora-sora_minmin",
+    "group_id": "sora-sora",
+    "member_id": "minmin",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "Pink",
+      "hex": "#ff69b4"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "sora-sora_pin",
+    "group_id": "sora-sora",
+    "member_id": "pin",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "Green",
+      "hex": "#27ae60"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "yami-yami_eri",
+    "group_id": "yami-yami",
+    "member_id": "eri",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "Pink",
+      "hex": "#ff69b4"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "yami-yami_haru",
+    "group_id": "yami-yami",
+    "member_id": "haru",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "Red",
+      "hex": "#e74c3c"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "yami-yami_jan",
+    "group_id": "yami-yami",
+    "member_id": "jan",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "Orange",
+      "hex": "#e67e22"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "yami-yami_kwang",
+    "group_id": "yami-yami",
+    "member_id": "kwang",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "Blue",
+      "hex": "#3498db"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "yami-yami_nori",
+    "group_id": "yami-yami",
+    "member_id": "nori",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "Black",
+      "hex": "#555555"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "yami-yami_praew",
+    "group_id": "yami-yami",
+    "member_id": "praew",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "Yellow",
+      "hex": "#f1c40f"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "yami-yami_punch",
+    "group_id": "yami-yami",
+    "member_id": "punch",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "Purple",
+      "hex": "#9b59b6"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "yami-yami_tonliw",
+    "group_id": "yami-yami",
+    "member_id": "tonliw",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "Green",
+      "hex": "#27ae60"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "yami-yami_xiu-zhen",
+    "group_id": "yami-yami",
+    "member_id": "xiu-zhen",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "White",
+      "hex": "#ffffff"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "mirai-mirai_alice",
+    "group_id": "mirai-mirai",
+    "member_id": "alice",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "Black",
+      "hex": "#555555"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "mirai-mirai_gracenae",
+    "group_id": "mirai-mirai",
+    "member_id": "gracenae",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "Pink",
+      "hex": "#ff69b4"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "mirai-mirai_kartun",
+    "group_id": "mirai-mirai",
+    "member_id": "kartun",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "Yellow",
+      "hex": "#f1c40f"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "mirai-mirai_kris",
+    "group_id": "mirai-mirai",
+    "member_id": "kris",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "Purple",
+      "hex": "#9b59b6"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "mirai-mirai_mickey",
+    "group_id": "mirai-mirai",
+    "member_id": "mickey",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "Red",
+      "hex": "#e74c3c"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "mirai-mirai_nisa",
+    "group_id": "mirai-mirai",
+    "member_id": "nisa",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "White",
+      "hex": "#ffffff"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "mirai-mirai_pear",
+    "group_id": "mirai-mirai",
+    "member_id": "pear",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "Orange",
+      "hex": "#e67e22"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "mirai-mirai_pixels",
+    "group_id": "mirai-mirai",
+    "member_id": "pixels",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "Green",
+      "hex": "#27ae60"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "mirai-mirai_sai",
+    "group_id": "mirai-mirai",
+    "member_id": "sai",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "Blue",
+      "hex": "#3498db"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "dream-0n_farm",
+    "group_id": "dream-0n",
+    "member_id": "farm",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "Purple",
+      "hex": "#9b59b6"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "dream-0n_jasmine",
+    "group_id": "dream-0n",
+    "member_id": "jasmine",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "White",
+      "hex": "#ffffff"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "dream-0n_jeenin",
+    "group_id": "dream-0n",
+    "member_id": "jeenin",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "Orange",
+      "hex": "#e67e22"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "dream-0n_jk",
+    "group_id": "dream-0n",
+    "member_id": "jk",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "Red",
+      "hex": "#e74c3c"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "dream-0n_mali",
+    "group_id": "dream-0n",
+    "member_id": "mali",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "Blue",
+      "hex": "#3498db"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "dream-0n_moya",
+    "group_id": "dream-0n",
+    "member_id": "moya",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "Pink",
+      "hex": "#ff69b4"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "dream-0n_ploy",
+    "group_id": "dream-0n",
+    "member_id": "ploy",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "Yellow",
+      "hex": "#f1c40f"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "dream-0n_snowy",
+    "group_id": "dream-0n",
+    "member_id": "snowy",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "Green",
+      "hex": "#27ae60"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "nox-0ff_bowie",
+    "group_id": "nox-0ff",
+    "member_id": "bowie",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "Yellow",
+      "hex": "#f1c40f"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "nox-0ff_feb",
+    "group_id": "nox-0ff",
+    "member_id": "feb",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "Blue",
+      "hex": "#3498db"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "nox-0ff_mii",
+    "group_id": "nox-0ff",
+    "member_id": "mii",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "Purple",
+      "hex": "#9b59b6"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "nox-0ff_miyu",
+    "group_id": "nox-0ff",
+    "member_id": "miyu",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "Pink",
+      "hex": "#ff69b4"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "nox-0ff_time",
+    "group_id": "nox-0ff",
+    "member_id": "time",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "Red",
+      "hex": "#e74c3c"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "nox-0ff_yiwha",
+    "group_id": "nox-0ff",
+    "member_id": "yiwha",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "White",
+      "hex": "#ffffff"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "sora-sora_yiwha",
+    "group_id": "sora-sora",
+    "member_id": "yiwha",
+    "status": "graduated",
+    "is_active": false,
+    "role": "member",
+    "color": {
+      "name": "Black",
+      "hex": "#555555"
+    },
+    "joined_date": "2021-11-23",
+    "graduated_date": "2026-01-10",
+    "graduated_reason": "Graduation / Transfer to Nox:0ff"
+  },
+  {
+    "id": "angevil_ice",
+    "group_id": "angevil",
+    "member_id": "ice",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "Red",
+      "hex": "#e74c3c"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "angevil_misaka",
+    "group_id": "angevil",
+    "member_id": "misaka",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "Pink",
+      "hex": "#ff69b4"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "angevil_miu",
+    "group_id": "angevil",
+    "member_id": "miu",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "White",
+      "hex": "#ffffff"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "angevil_nene",
+    "group_id": "angevil",
+    "member_id": "nene",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "Yellow",
+      "hex": "#f1c40f"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "castella_nadear",
+    "group_id": "castella",
+    "member_id": "nadear",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "Red",
+      "hex": "#e74c3c"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "tgg_pim",
+    "group_id": "tgg",
+    "member_id": "pim",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "N/A",
+      "hex": "#7f8c8d"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  }
+]

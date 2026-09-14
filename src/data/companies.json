@@ -1,0 +1,50 @@
+[
+  {
+    "id": "catsolute",
+    "name": "Catsolute",
+    "country": "🇹🇭 TH",
+    "status": "active",
+    "sns": [
+      {
+        "platform": "facebook",
+        "profile_id": "100064875932821",
+        "current_handle": "catsolute",
+        "url": "https://www.facebook.com/catsolute"
+      },
+      {
+        "platform": "x",
+        "profile_id": "1465241088492810240",
+        "current_handle": "Catsolute",
+        "url": "https://x.com/Catsolute"
+      }
+    ]
+  },
+  {
+    "id": "a-lot-of-tone",
+    "name": "A lot of Tone",
+    "country": "🇹🇭 TH",
+    "status": "active",
+    "sns": [
+      {
+        "platform": "facebook",
+        "profile_id": null,
+        "current_handle": "alotoftone",
+        "url": "https://www.facebook.com/alotoftone"
+      }
+    ]
+  },
+  {
+    "id": "ic45",
+    "name": "IC45",
+    "country": "🇹🇭 TH",
+    "status": "active",
+    "sns": [
+      {
+        "platform": "facebook",
+        "profile_id": null,
+        "current_handle": "IC45Entertainment",
+        "url": "https://www.facebook.com/IC45Entertainment"
+      }
+    ]
+  }
+]

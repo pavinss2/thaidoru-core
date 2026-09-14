@@ -1,0 +1,22 @@
+{
+  "name": "thaidoru-core",
+  "version": "1.0.0",
+  "description": "Canonical database and build pipeline for Thai underground idols",
+  "type": "module",
+  "scripts": {
+    "build": "tsx src/scripts/build.ts",
+    "test": "tsx src/scripts/test.ts",
+    "validate": "tsx src/scripts/validate.ts"
+  },
+  "keywords": ["thaidoru", "idol", "database", "stats"],
+  "author": "Pavin",
+  "license": "MIT",
+  "dependencies": {
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.5.4"
+  }
+}

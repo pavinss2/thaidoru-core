@@ -1,0 +1,275 @@
+[
+  {
+    "id": "sora-sora",
+    "company_id": "catsolute",
+    "name": "Sora! Sora!",
+    "status": "active",
+    "country": "🇹🇭 TH",
+    "debut_date": "2021-11-23",
+    "theme_color": {
+      "name": "Blue",
+      "hex": "#3498db"
+    },
+    "music_links": {
+      "spotify": "https://open.spotify.com/artist/2uR3okhIb1DOu8H50OXaF5"
+    },
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "Sorasora_idol",
+        "url": "https://x.com/Sorasora_idol",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2072879671612715008/xOSOebU5_400x400.jpg"
+      },
+      {
+        "platform": "facebook",
+        "profile_id": null,
+        "current_handle": "sorasora.idol",
+        "url": "https://www.facebook.com/sorasora.idol"
+      },
+      {
+        "platform": "instagram",
+        "profile_id": null,
+        "current_handle": "sorasora_idol",
+        "url": "https://www.instagram.com/sorasora_idol"
+      },
+      {
+        "platform": "tiktok",
+        "profile_id": null,
+        "current_handle": "sorasora.idol",
+        "url": "https://www.tiktok.com/@sorasora.idol"
+      }
+    ]
+  },
+  {
+    "id": "yami-yami",
+    "company_id": "catsolute",
+    "name": "Yami Yami",
+    "status": "active",
+    "country": "🇹🇭 TH",
+    "debut_date": "2022-11-19",
+    "theme_color": {
+      "name": "Red",
+      "hex": "#e74c3c"
+    },
+    "music_links": {
+      "spotify": "https://open.spotify.com/artist/2WO7Skkfg5HS441G9MjuUq"
+    },
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "Yamiyami_idol",
+        "url": "https://x.com/Yamiyami_idol",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2072880621702254592/Bqdry8yw_400x400.jpg"
+      },
+      {
+        "platform": "facebook",
+        "profile_id": null,
+        "current_handle": "yamiyami.idol",
+        "url": "https://www.facebook.com/yamiyami.idol"
+      },
+      {
+        "platform": "instagram",
+        "profile_id": null,
+        "current_handle": "yamiyami_idol",
+        "url": "https://www.instagram.com/yamiyami_idol"
+      },
+      {
+        "platform": "tiktok",
+        "profile_id": null,
+        "current_handle": "yamiyami_idol",
+        "url": "https://www.tiktok.com/@yamiyami_idol"
+      }
+    ]
+  },
+  {
+    "id": "mirai-mirai",
+    "company_id": "catsolute",
+    "name": "Mirai Mirai",
+    "status": "active",
+    "country": "🇹🇭 TH",
+    "debut_date": "2024-04-08",
+    "theme_color": {
+      "name": "Yellow",
+      "hex": "#f1c40f"
+    },
+    "music_links": {
+      "spotify": "https://open.spotify.com/artist/51ck4EeLDIgaMF4HbKhvFn"
+    },
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "miraimirai_idol",
+        "url": "https://x.com/miraimirai_idol",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2072880245427027968/kKRgyA-n_400x400.jpg"
+      },
+      {
+        "platform": "facebook",
+        "profile_id": null,
+        "current_handle": "miraimiraiidol",
+        "url": "https://www.facebook.com/miraimiraiidol"
+      },
+      {
+        "platform": "instagram",
+        "profile_id": null,
+        "current_handle": "miraimirai_idol",
+        "url": "https://www.instagram.com/miraimirai_idol"
+      },
+      {
+        "platform": "tiktok",
+        "profile_id": null,
+        "current_handle": "miraimirai_idol",
+        "url": "https://www.tiktok.com/@miraimirai_idol"
+      }
+    ]
+  },
+  {
+    "id": "dream-0n",
+    "company_id": "catsolute",
+    "name": "Dream:0n",
+    "status": "active",
+    "country": "🇹🇭 TH",
+    "debut_date": "2026-04-05",
+    "theme_color": {
+      "name": "Pink",
+      "hex": "#ff69b4"
+    },
+    "music_links": {
+      "spotify": "https://open.spotify.com/artist/2CG94H8Bwi4396EDkHNFJh"
+    },
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "dream0n_idol",
+        "url": "https://x.com/dream0n_idol",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2073871333751222272/Ihs_UtAI_400x400.jpg"
+      },
+      {
+        "platform": "facebook",
+        "profile_id": null,
+        "current_handle": "dream0n.idol",
+        "url": "https://www.facebook.com/dream0n.idol"
+      },
+      {
+        "platform": "instagram",
+        "profile_id": null,
+        "current_handle": "dream0n_idol",
+        "url": "https://www.instagram.com/dream0n_idol"
+      },
+      {
+        "platform": "tiktok",
+        "profile_id": null,
+        "current_handle": "dream0n_idol",
+        "url": "https://www.tiktok.com/@dream0n_idol"
+      }
+    ]
+  },
+  {
+    "id": "nox-0ff",
+    "company_id": "catsolute",
+    "name": "Nox:0ff",
+    "status": "active",
+    "country": "🇹🇭 TH",
+    "debut_date": "2026-06-13",
+    "theme_color": {
+      "name": "Black",
+      "hex": "#555555"
+    },
+    "music_links": {
+      "spotify": "https://open.spotify.com/artist/4bPHeXC3AFRQKm5SZ0tpHM"
+    },
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "nox0ff_idol",
+        "url": "https://x.com/nox0ff_idol",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2073871737041850368/9FxjGsiv_400x400.jpg"
+      },
+      {
+        "platform": "facebook",
+        "profile_id": null,
+        "current_handle": "nox0ff.ldol",
+        "url": "https://www.facebook.com/nox0ff.ldol"
+      },
+      {
+        "platform": "instagram",
+        "profile_id": null,
+        "current_handle": "nox0ff.idol",
+        "url": "https://www.instagram.com/nox0ff.idol"
+      },
+      {
+        "platform": "tiktok",
+        "profile_id": null,
+        "current_handle": "nox0ff_idol",
+        "url": "https://www.tiktok.com/@nox0ff_idol"
+      }
+    ]
+  },
+  {
+    "id": "angevil",
+    "company_id": "a-lot-of-tone",
+    "name": "Angevil",
+    "status": "active",
+    "country": "🇹🇭 TH",
+    "debut_date": null,
+    "theme_color": {
+      "name": "Red",
+      "hex": "#e74c3c"
+    },
+    "music_links": {},
+    "sns": [
+      {
+        "platform": "facebook",
+        "profile_id": null,
+        "current_handle": "angevil.official",
+        "url": "https://www.facebook.com/angevil.official"
+      }
+    ]
+  },
+  {
+    "id": "castella",
+    "company_id": "a-lot-of-tone",
+    "name": "Castella",
+    "status": "active",
+    "country": "🇹🇭 TH",
+    "debut_date": null,
+    "theme_color": {
+      "name": "Yellow",
+      "hex": "#f1c40f"
+    },
+    "music_links": {},
+    "sns": [
+      {
+        "platform": "facebook",
+        "profile_id": null,
+        "current_handle": "castella.official",
+        "url": "https://www.facebook.com/castella.official"
+      }
+    ]
+  },
+  {
+    "id": "tgg",
+    "company_id": "ic45",
+    "name": "TGG",
+    "status": "active",
+    "country": "🇹🇭 TH",
+    "debut_date": null,
+    "theme_color": {
+      "name": "N/A",
+      "hex": "#7f8c8d"
+    },
+    "music_links": {},
+    "sns": [
+      {
+        "platform": "facebook",
+        "profile_id": null,
+        "current_handle": "tgg.idol",
+        "url": "https://www.facebook.com/tgg.idol"
+      }
+    ]
+  }
+]
