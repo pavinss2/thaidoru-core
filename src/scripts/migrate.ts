@@ -358,8 +358,7 @@ memberships.push({
     hex: COLOR_HEX_MAP['Black']
   },
   joined_date: '2021-11-23',
-  graduated_date: '2026-01-10',
-  graduated_reason: 'Graduation / Transfer to Nox:0ff'
+  graduated_date: '2026-01-10'
 });
 
 // Add Angevil Members
