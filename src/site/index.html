@@ -1315,14 +1315,34 @@
 
       function populateGroupDropdown() {
         const select = document.getElementById('group-select');
-        const sortedGroups = [...state.data.groups].sort((a, b) => a.name.localeCompare(b.name));
-        select.innerHTML = '<option value="all">All 17 Groups</option>';
-        for (const g of sortedGroups) {
+        let availableGroups = [...state.data.groups];
+
+        if (state.companyFilter && state.companyFilter !== 'all') {
+          availableGroups = availableGroups.filter(g => g.company_id === state.companyFilter);
+        }
+
+        availableGroups.sort((a, b) => a.name.localeCompare(b.name));
+
+        const compName = companyMap.get(state.companyFilter)?.name;
+        const allLabel = state.companyFilter && state.companyFilter !== 'all'
+          ? `All ${availableGroups.length} Groups (${compName})`
+          : `All ${state.data.groups.length} Groups`;
+
+        select.innerHTML = `<option value="all">${allLabel}</option>`;
+        for (const g of availableGroups) {
           const opt = document.createElement('option');
           opt.value = g.id;
-          opt.textContent = `${g.name} (${companyMap.get(g.company_id)?.name || ''})`;
+          opt.textContent = state.companyFilter === 'all'
+            ? `${g.name} (${companyMap.get(g.company_id)?.name || ''})`
+            : g.name;
           select.appendChild(opt);
         }
+
+        // If current groupFilter is not in availableGroups, reset to 'all'
+        if (state.groupFilter !== 'all' && !availableGroups.some(g => g.id === state.groupFilter)) {
+          state.groupFilter = 'all';
+        }
+        select.value = state.groupFilter;
       }
 
       function bindEvents() {
@@ -1349,12 +1369,16 @@
           render();
         });
 
-        // Company filters
+        // Company filters (cascades to Group filter)
         document.querySelectorAll('#company-filters .pill-btn').forEach(btn => {
           btn.addEventListener('click', () => {
             document.querySelectorAll('#company-filters .pill-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
             state.companyFilter = btn.dataset.company;
+            if (state.companyFilter === 'all') {
+              state.groupFilter = 'all';
+            }
+            populateGroupDropdown();
             render();
           });
         });
@@ -1369,9 +1393,20 @@
           });
         });
 
-        // Group filter
+        // Group filter (cascades back to Company filter if needed)
         document.getElementById('group-select').addEventListener('change', (e) => {
           state.groupFilter = e.target.value;
+          if (state.groupFilter !== 'all') {
+            const g = groupMap.get(state.groupFilter);
+            if (g && g.company_id && state.companyFilter !== g.company_id) {
+              state.companyFilter = g.company_id;
+              document.querySelectorAll('#company-filters .pill-btn').forEach(b => {
+                b.classList.toggle('active', b.dataset.company === g.company_id);
+              });
+              populateGroupDropdown();
+              document.getElementById('group-select').value = state.groupFilter;
+            }
+          }
           render();
         });
 
@@ -1490,46 +1525,32 @@
           if (query) {
             const stage = (m.stage_name || '').toLowerCase();
             const stageTh = (m.stage_name_th || '').toLowerCase();
-            const realTh = (m.real_name?.th || '').toLowerCase();
-            const realEn = (m.real_name?.en || '').toLowerCase();
+            const realEn = [m.real_name?.first_name_en, m.real_name?.last_name_en].filter(Boolean).join(' ').toLowerCase();
+            const realTh = [m.real_name?.first_name_th, m.real_name?.last_name_th].filter(Boolean).join(' ').toLowerCase();
             const handles = m.sns.map(s => s.current_handle.toLowerCase()).join(' ');
 
-            // Match member groups
+            // Match member groups & agencies
             const grpNames = m.memberships.map(ms => {
               const g = groupMap.get(ms.group_id);
-              return g ? g.name.toLowerCase() : '';
-            }).join(' ');
+              const comp = g ? companyMap.get(g.company_id) : null;
+              return `${g ? g.name : ''} ${comp ? comp.name : ''}`;
+            }).join(' ').toLowerCase();
 
             const match = stage.includes(query) || stageTh.includes(query) || realTh.includes(query) || realEn.includes(query) || handles.includes(query) || grpNames.includes(query);
             if (!match) return false;
           }
 
-          // Company filter
-          if (state.companyFilter !== 'all') {
-            const hasComp = m.memberships.some(ms => {
-              const g = groupMap.get(ms.group_id);
-              return g && g.company_id === state.companyFilter;
-            });
-            if (!hasComp) return false;
-          }
+          // Coordinated Company, Group, and Status matching
+          const hasMatchingMembership = m.memberships.some(ms => {
+            const g = groupMap.get(ms.group_id);
+            if (state.companyFilter !== 'all' && g?.company_id !== state.companyFilter) return false;
+            if (state.groupFilter !== 'all' && ms.group_id !== state.groupFilter) return false;
+            if (state.statusFilter === 'active' && !ms.is_active) return false;
+            if (state.statusFilter === 'graduated' && ms.is_active) return false;
+            return true;
+          });
 
-          // Group filter
-          if (state.groupFilter !== 'all') {
-            const hasGrp = m.memberships.some(ms => ms.group_id === state.groupFilter);
-            if (!hasGrp) return false;
-          }
-
-          // Status filter
-          if (state.statusFilter !== 'all') {
-            const hasStatus = m.memberships.some(ms => {
-              if (state.statusFilter === 'active') return ms.is_active;
-              if (state.statusFilter === 'graduated') return !ms.is_active;
-              return true;
-            });
-            if (!hasStatus) return false;
-          }
-
-          return true;
+          return hasMatchingMembership;
         });
 
         // Sorting
@@ -1557,11 +1578,26 @@
         }
 
         container.innerHTML = filtered.map(m => {
-          const activeMs = m.memberships.find(ms => ms.is_active) || m.memberships[0];
-          const colorHex = activeMs?.color?.hex || '#3b82f6';
+          const matchingMs = m.memberships.find(ms => {
+            const g = groupMap.get(ms.group_id);
+            if (state.companyFilter !== 'all' && g?.company_id !== state.companyFilter) return false;
+            if (state.groupFilter !== 'all' && ms.group_id !== state.groupFilter) return false;
+            if (state.statusFilter === 'active' && !ms.is_active) return false;
+            if (state.statusFilter === 'graduated' && ms.is_active) return false;
+            return true;
+          }) || m.memberships.find(ms => ms.is_active) || m.memberships[0];
+
+          const colorHex = matchingMs?.color?.hex || '#3b82f6';
           const avatarSrc = m.avatar_cached_path ? `./${m.avatar_cached_path}` : (m.sns.find(s => s.avatar_url)?.avatar_url || 'assets/avatars/group_sora-sora.webp');
           
           const bdayStr = m.birthday?.day && m.birthday?.month ? `🎂 ${m.birthday.day} ${MONTHS[m.birthday.month - 1]}${m.birthday.year ? ', ' + m.birthday.year : ''}` : '';
+
+          const realEn = [m.real_name?.first_name_en, m.real_name?.last_name_en].filter(Boolean).join(' ');
+          const realTh = [m.real_name?.first_name_th, m.real_name?.last_name_th].filter(Boolean).join(' ');
+          let realDisplay = '';
+          if (realEn && realTh) realDisplay = `${realEn} (${realTh})`;
+          else if (realEn) realDisplay = realEn;
+          else if (realTh) realDisplay = realTh;
 
           const groupBadges = m.memberships.map(ms => {
             const g = groupMap.get(ms.group_id);
@@ -1585,7 +1621,7 @@
             <article class="member-card" onclick="openMemberModal('${m.id}')" style="--accent-color: ${colorHex};">
               <div class="avatar-wrap">
                 <img src="${avatarSrc}" alt="${m.stage_name}" class="member-avatar" loading="lazy">
-                <div class="status-dot ${activeMs?.is_active ? '' : 'graduated'}" title="${activeMs?.is_active ? 'Active' : 'Graduated / Former'}"></div>
+                <div class="status-dot ${matchingMs?.is_active ? '' : 'graduated'}" title="${matchingMs?.is_active ? 'Active' : 'Graduated / Former'}"></div>
               </div>
 
               <div class="member-name-row">
@@ -1593,7 +1629,7 @@
                 ${m.stage_name_th ? `<span class="member-stage-th">${m.stage_name_th}</span>` : ''}
               </div>
 
-              <div class="member-real">${m.real_name?.en || m.real_name?.th || ''}</div>
+              <div class="member-real">${realDisplay}</div>
 
               <div class="member-memberships">
                 ${groupBadges}
@@ -1621,10 +1657,21 @@
             if (!name.includes(query) && !native.includes(query) && !company.includes(query)) return false;
           }
           if (state.companyFilter !== 'all' && g.company_id !== state.companyFilter) return false;
+          if (state.groupFilter !== 'all' && g.id !== state.groupFilter) return false;
           return true;
         });
 
         document.getElementById('results-count').textContent = `Showing ${filtered.length} group${filtered.length === 1 ? '' : 's'}`;
+
+        if (filtered.length === 0) {
+          container.innerHTML = `
+            <div class="empty-state">
+              <div class="empty-icon">🔍</div>
+              <p>No groups found matching your search or active filters.</p>
+            </div>
+          `;
+          return;
+        }
 
         container.innerHTML = filtered.map(g => {
           const comp = companyMap.get(g.company_id);
@@ -1682,8 +1729,31 @@
       // 3. Render Agencies View
       function renderCompanies() {
         const container = document.getElementById('view-companies');
+        const query = state.searchQuery;
 
-        container.innerHTML = state.data.companies.map(c => {
+        const filtered = state.data.companies.filter(c => {
+          if (query) {
+            const name = c.name.toLowerCase();
+            const country = (c.country || '').toLowerCase();
+            if (!name.includes(query) && !country.includes(query)) return false;
+          }
+          if (state.companyFilter !== 'all' && c.id !== state.companyFilter) return false;
+          return true;
+        });
+
+        document.getElementById('results-count').textContent = `Showing ${filtered.length} agenc${filtered.length === 1 ? 'y' : 'ies'}`;
+
+        if (filtered.length === 0) {
+          container.innerHTML = `
+            <div class="empty-state">
+              <div class="empty-icon">🔍</div>
+              <p>No agencies found matching your search or active filters.</p>
+            </div>
+          `;
+          return;
+        }
+
+        container.innerHTML = filtered.map(c => {
           const compGroups = state.data.groups.filter(g => g.company_id === c.id);
           const compMembers = state.data.members.filter(m => m.memberships.some(ms => {
             const g = groupMap.get(ms.group_id);
@@ -1756,10 +1826,19 @@
         document.getElementById('modal-member-avatar').src = avatarSrc;
         document.getElementById('modal-member-title').textContent = m.stage_name;
         
+        const subParts = [];
+        if (m.stage_name_th) subParts.push(m.stage_name_th);
         const realEn = [m.real_name?.first_name_en, m.real_name?.last_name_en].filter(Boolean).join(' ');
         const realTh = [m.real_name?.first_name_th, m.real_name?.last_name_th].filter(Boolean).join(' ');
-        if (realEn || realTh) subParts.push(`${realEn} ${realTh ? '(' + realTh + ')' : ''}`.trim());
-        if (m.birthday?.day && m.birthday?.month) subParts.push(`🎂 ${m.birthday.day} ${MONTHS[m.birthday.month - 1]}${m.birthday.year ? ' ' + m.birthday.year : ''}`);
+        let realDisplay = '';
+        if (realEn && realTh) realDisplay = `${realEn} (${realTh})`;
+        else if (realEn) realDisplay = realEn;
+        else if (realTh) realDisplay = realTh;
+        if (realDisplay) subParts.push(realDisplay);
+
+        if (m.birthday?.day && m.birthday?.month) {
+          subParts.push(`🎂 ${m.birthday.day} ${MONTHS[m.birthday.month - 1]}${m.birthday.year ? ' ' + m.birthday.year : ''}`);
+        }
         document.getElementById('modal-member-sub').textContent = subParts.join(' • ');
 
         // Memberships list
@@ -1801,6 +1880,8 @@
         }).join('');
         document.getElementById('modal-member-socials').innerHTML = socialsHtml || '<span style="color: var(--text-muted); font-size: 0.85rem;">No social channels recorded.</span>';
 
+        // Close group modal if open, open member modal
+        document.getElementById('group-modal').classList.remove('open');
         document.getElementById('member-modal').classList.add('open');
       };
 
@@ -1817,7 +1898,7 @@
         document.getElementById('modal-group-title').textContent = g.name;
 
         const subText = `${g.native_name ? g.native_name + ' • ' : ''}Agency: ${comp?.name || g.company_id} • Debut: ${g.debut_date || 'N/A'}`;
-        document.getElementById('modal-group-sub').textContent = subText;
+        document.getElementById('modal-group-sub').innerHTML = `${subText} &bull; <a href="javascript:void(0)" onclick="filterByGroup('${g.id}')" style="color: #60a5fa; text-decoration: underline; font-weight: 600;">Filter idols by ${g.name} &rarr;</a>`;
 
         // Group members
         const groupMemberships = state.data.memberships.filter(ms => ms.group_id === g.id);
@@ -1883,6 +1964,26 @@
           btn.classList.toggle('active', btn.dataset.company === companyId);
         });
         state.companyFilter = companyId;
+        state.groupFilter = 'all';
+        populateGroupDropdown();
+        render();
+      };
+
+      // Filter by group (e.g. from group modal or card)
+      window.filterByGroup = function (groupId) {
+        const g = groupMap.get(groupId);
+        if (!g) return;
+        closeModal();
+        setTab('members');
+        if (g.company_id) {
+          state.companyFilter = g.company_id;
+          document.querySelectorAll('#company-filters .pill-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.company === g.company_id);
+          });
+        }
+        state.groupFilter = groupId;
+        populateGroupDropdown();
+        document.getElementById('group-select').value = groupId;
         render();
       };
 
