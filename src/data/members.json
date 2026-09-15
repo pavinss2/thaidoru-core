@@ -2269,5 +2269,2065 @@
       }
     ],
     "avatar_cached_path": "assets/avatars/preammy.webp"
+  },
+  {
+    "id": "cinnamon",
+    "stage_name": "Cinnamon",
+    "stage_name_th": "ซินนามอน",
+    "real_name": {
+      "first_name_th": "พัชรนันท์",
+      "last_name_th": "ชีพลือศักดิ์",
+      "first_name_en": "Patcharanan",
+      "last_name_en": "Cheepluasak",
+      "nickname": "Cartoon"
+    },
+    "birthday": {
+      "month": 8,
+      "day": 6,
+      "year": null
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": null,
+        "url": null
+      }
+    ]
+  },
+  {
+    "id": "give",
+    "stage_name": "Give",
+    "stage_name_th": "กิ๊ฟ",
+    "real_name": {
+      "first_name_th": "อธิษา",
+      "last_name_th": "เหลืองวรัญญู",
+      "first_name_en": "Athisa",
+      "last_name_en": "Laungvarunyoo",
+      "nickname": "Give"
+    },
+    "birthday": {
+      "month": 3,
+      "day": 18,
+      "year": 1996
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": null,
+        "url": null
+      }
+    ]
+  },
+  {
+    "id": "kurara",
+    "stage_name": "Kurara",
+    "stage_name_th": "คุราระ",
+    "real_name": {},
+    "birthday": {
+      "month": 10,
+      "day": 1,
+      "year": null
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "bunnyrinnn",
+        "url": "https://x.com/bunnyrinnn"
+      }
+    ]
+  },
+  {
+    "id": "meiji",
+    "stage_name": "Meiji",
+    "stage_name_th": "เมจิ",
+    "real_name": {
+      "first_name_th": "วาดตะวัน",
+      "last_name_th": "รัตนเชตกุล",
+      "first_name_en": "Wadtawan",
+      "last_name_en": "Rattanachetakul",
+      "nickname": "Meiji"
+    },
+    "birthday": {
+      "month": 2,
+      "day": 23,
+      "year": 2003
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": null,
+        "url": null
+      }
+    ]
+  },
+  {
+    "id": "mikimiki",
+    "stage_name": "MikiMiki",
+    "stage_name_th": "มิกิมิกิ",
+    "real_name": {},
+    "birthday": {
+      "month": 8,
+      "day": 3,
+      "year": null
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": null,
+        "url": null
+      }
+    ]
+  },
+  {
+    "id": "rinmine",
+    "stage_name": "Rinmine",
+    "stage_name_th": "รินไมน์",
+    "real_name": {
+      "first_name_th": "รินรดา",
+      "last_name_th": "อินทร์ไธสง",
+      "first_name_en": "Rinrada",
+      "last_name_en": "Inthaisong",
+      "nickname": "Piam"
+    },
+    "birthday": {
+      "month": 6,
+      "day": 4,
+      "year": 2003
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "rinminepr",
+        "url": "https://x.com/rinminepr"
+      }
+    ]
+  },
+  {
+    "id": "ruby",
+    "stage_name": "Ruby",
+    "stage_name_th": "รูบี้",
+    "real_name": {
+      "nickname": "Ruby"
+    },
+    "birthday": {
+      "month": 11,
+      "day": 1,
+      "year": null
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "RubyNnOfficial",
+        "url": "https://x.com/RubyNnOfficial"
+      }
+    ]
+  },
+  {
+    "id": "satchan",
+    "stage_name": "Satchan",
+    "stage_name_th": "ซัทจัง",
+    "real_name": {
+      "first_name_th": "สวิชญา",
+      "last_name_th": "ขจรรุ่งศิลป์",
+      "first_name_en": "Sawitchaya",
+      "last_name_en": "Kajonrungsilp",
+      "nickname": "Satchan"
+    },
+    "birthday": {
+      "month": 12,
+      "day": 13,
+      "year": 2003
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": null,
+        "url": null
+      }
+    ]
+  },
+  {
+    "id": "rinrin",
+    "stage_name": "RinRin",
+    "stage_name_th": "รินริน",
+    "real_name": {
+      "nickname": "RinRin"
+    },
+    "birthday": {
+      "month": 10,
+      "day": 9,
+      "year": null
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "RinRin_QH",
+        "url": "https://x.com/RinRin_QH"
+      }
+    ]
+  },
+  {
+    "id": "mikoto",
+    "stage_name": "Mikoto",
+    "stage_name_th": "มิโคโตะ",
+    "real_name": {
+      "nickname": "In"
+    },
+    "birthday": {
+      "month": 4,
+      "day": 12,
+      "year": null
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "mikoto_denshi",
+        "url": "https://x.com/mikoto_denshi"
+      }
+    ]
+  },
+  {
+    "id": "airi",
+    "stage_name": "Airi",
+    "stage_name_th": "ไอริ",
+    "real_name": {
+      "first_name_th": "สุพิชชา",
+      "last_name_th": "สนธิไทย",
+      "first_name_en": "Supitcha",
+      "last_name_en": "Sonthithai",
+      "nickname": "Airi"
+    },
+    "birthday": {
+      "month": 1,
+      "day": 11,
+      "year": 1997
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "airihatobito",
+        "url": "https://x.com/airihatobito"
+      }
+    ]
+  },
+  {
+    "id": "beam",
+    "stage_name": "Beam",
+    "stage_name_th": "บีม",
+    "real_name": {
+      "first_name_th": "โชติกา",
+      "last_name_th": "สุขรัตน์",
+      "first_name_en": "Chotika",
+      "last_name_en": "Sukrat",
+      "nickname": "Beam"
+    },
+    "birthday": {
+      "month": 10,
+      "day": 10,
+      "year": 1998
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "Beamhatobito",
+        "url": "https://x.com/Beamhatobito"
+      }
+    ]
+  },
+  {
+    "id": "chelsea",
+    "stage_name": "Chelsea",
+    "stage_name_th": "เชลซี",
+    "real_name": {
+      "first_name_th": "เขสรา",
+      "last_name_th": "อธิบดีวงศ์",
+      "first_name_en": "Khesara",
+      "last_name_en": "A-Thibordeewongse",
+      "nickname": "Chelsea"
+    },
+    "birthday": {
+      "month": 9,
+      "day": 23,
+      "year": 2004
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "chelseahatobito",
+        "url": "https://x.com/chelseahatobito"
+      }
+    ]
+  },
+  {
+    "id": "donut",
+    "stage_name": "Donut",
+    "stage_name_th": "โดนัท",
+    "real_name": {
+      "first_name_th": "ณัฐมน",
+      "last_name_th": "วรกิตสิทธิสาธร",
+      "first_name_en": "Natthamon",
+      "last_name_en": "Worakitsitthisathorn",
+      "nickname": "Donut"
+    },
+    "birthday": {
+      "month": 8,
+      "day": 4,
+      "year": 2005
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "donuthatobito",
+        "url": "https://x.com/donuthatobito"
+      }
+    ]
+  },
+  {
+    "id": "elleelle",
+    "stage_name": "Elleelle",
+    "stage_name_th": "แอลแอล",
+    "real_name": {
+      "first_name_th": "ภัคจิรา",
+      "last_name_th": "ศรียาภัย",
+      "first_name_en": "Pakjira",
+      "last_name_en": "Sriyapai",
+      "nickname": "Elleelle"
+    },
+    "birthday": {
+      "month": 4,
+      "day": 12,
+      "year": 2001
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "ellehatobito",
+        "url": "https://x.com/ellehatobito"
+      }
+    ]
+  },
+  {
+    "id": "gorya",
+    "stage_name": "Gorya",
+    "stage_name_th": "กอหญ้า",
+    "real_name": {
+      "first_name_th": "สาธารณสุข",
+      "last_name_th": "ธรรมรังสี",
+      "first_name_en": "Satharonsuk",
+      "last_name_en": "Thamrangsi",
+      "nickname": "Gorya"
+    },
+    "birthday": {
+      "month": 7,
+      "day": 12,
+      "year": 2005
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "goryahatobito",
+        "url": "https://x.com/goryahatobito"
+      }
+    ]
+  },
+  {
+    "id": "kana",
+    "stage_name": "Kana",
+    "stage_name_th": "คะน้า",
+    "real_name": {
+      "first_name_th": "กฤตนภา",
+      "last_name_th": "บุญแรง",
+      "first_name_en": "Kritnapa",
+      "last_name_en": "Boonrang",
+      "nickname": "Kana"
+    },
+    "birthday": {
+      "month": 8,
+      "day": 23,
+      "year": 2003
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "kanahatobito",
+        "url": "https://x.com/kanahatobito"
+      }
+    ]
+  },
+  {
+    "id": "milin",
+    "stage_name": "Milin",
+    "stage_name_th": "มิลิน",
+    "real_name": {
+      "first_name_th": "มนัสนันท์",
+      "last_name_th": "บุสอนันตระกูล",
+      "first_name_en": "Manassanan",
+      "last_name_en": "Busonantrakun",
+      "nickname": "Milin"
+    },
+    "birthday": {
+      "month": 4,
+      "day": 20,
+      "year": 2001
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "milinhatobito",
+        "url": "https://x.com/milinhatobito"
+      }
+    ]
+  },
+  {
+    "id": "mobile",
+    "stage_name": "Mobile",
+    "stage_name_th": "โมบาย",
+    "real_name": {
+      "first_name_th": "วิรัชฎาพร",
+      "last_name_th": "สุบินมารัตนชัย",
+      "first_name_en": "Wiratchadaporn",
+      "last_name_en": "Subinmarattanachai",
+      "nickname": "Mobile"
+    },
+    "birthday": {
+      "month": 8,
+      "day": 22,
+      "year": 2002
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "mobilehatobito",
+        "url": "https://x.com/mobilehatobito"
+      }
+    ]
+  },
+  {
+    "id": "music",
+    "stage_name": "Music",
+    "stage_name_th": "มิวสิค",
+    "real_name": {
+      "first_name_th": "รวิชญา",
+      "last_name_th": "รื่นรมย์",
+      "first_name_en": "Ravichaya",
+      "last_name_en": "Ruenrom",
+      "nickname": "Music"
+    },
+    "birthday": {
+      "month": 10,
+      "day": 25,
+      "year": 1998
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "musichatobito",
+        "url": "https://x.com/musichatobito"
+      }
+    ]
+  },
+  {
+    "id": "nata",
+    "stage_name": "Nata",
+    "stage_name_th": "ณตา",
+    "real_name": {
+      "first_name_th": "ณตา",
+      "last_name_th": "วิเศษจันทร์",
+      "first_name_en": "Nata",
+      "last_name_en": "Wisetchan",
+      "nickname": "Nata"
+    },
+    "birthday": {
+      "month": 9,
+      "day": 16,
+      "year": 2005
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "natahatobito",
+        "url": "https://x.com/natahatobito"
+      }
+    ]
+  },
+  {
+    "id": "punnhyaz",
+    "stage_name": "PunnHyaz",
+    "stage_name_th": "ปั้น",
+    "real_name": {
+      "first_name_th": "นัทธมน",
+      "last_name_th": "ผดุงพัฒโนดม",
+      "first_name_en": "Nattamon",
+      "last_name_en": "Padungpattanodom",
+      "nickname": "Punn"
+    },
+    "birthday": {
+      "month": 1,
+      "day": 6,
+      "year": 1996
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "punnhyahatobito",
+        "url": "https://x.com/punnhyahatobito"
+      }
+    ]
+  },
+  {
+    "id": "summer",
+    "stage_name": "Summer",
+    "stage_name_th": "ซัมเมอร์",
+    "real_name": {
+      "first_name_th": "ณพิชญา",
+      "last_name_th": "สอนคำมี",
+      "first_name_en": "Naphichaya",
+      "last_name_en": "Sornkhammee",
+      "nickname": "Summer"
+    },
+    "birthday": {
+      "month": 10,
+      "day": 20,
+      "year": 2002
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "summerhatobito",
+        "url": "https://x.com/summerhatobito"
+      }
+    ]
+  },
+  {
+    "id": "view",
+    "stage_name": "View",
+    "stage_name_th": "วิว",
+    "real_name": {
+      "first_name_th": "ชนกวนัน",
+      "last_name_th": "พรหมมาลา",
+      "first_name_en": "Chanokwanan",
+      "last_name_en": "Prommala",
+      "nickname": "View"
+    },
+    "birthday": {
+      "month": 1,
+      "day": 8,
+      "year": 2007
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "View_Hatobito",
+        "url": "https://x.com/View_Hatobito"
+      }
+    ]
+  },
+  {
+    "id": "killua",
+    "stage_name": "Killua",
+    "stage_name_th": "คิรัวร์",
+    "real_name": {},
+    "birthday": {
+      "month": 7,
+      "day": 4,
+      "year": null
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "Killua__KOMA",
+        "url": "https://x.com/Killua__KOMA"
+      }
+    ]
+  },
+  {
+    "id": "tengja",
+    "stage_name": "Tengja",
+    "stage_name_th": "เตงจ๋า",
+    "real_name": {
+      "first_name_th": "แสงเกล้า",
+      "last_name_th": "แสงไพศาล",
+      "first_name_en": "Sangklao",
+      "last_name_en": "Trakoolsangpaisarn",
+      "nickname": "Tengja"
+    },
+    "birthday": {
+      "month": 8,
+      "day": 31,
+      "year": 2002
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "Tengja__KOMA",
+        "url": "https://x.com/Tengja__KOMA"
+      }
+    ]
+  },
+  {
+    "id": "pchi",
+    "stage_name": "Pchi",
+    "stage_name_th": "พิชิ",
+    "real_name": {
+      "first_name_th": "ช่อทิพย์",
+      "last_name_th": "เฟื่องฟู",
+      "first_name_en": "Chortip",
+      "last_name_en": "Fuangfoo",
+      "nickname": "Pear"
+    },
+    "birthday": {
+      "month": 8,
+      "day": 27,
+      "year": 1999
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "pchi__KOMA",
+        "url": "https://x.com/pchi__KOMA"
+      }
+    ]
+  },
+  {
+    "id": "jay",
+    "stage_name": "Jay",
+    "stage_name_th": "เจย์",
+    "real_name": {
+      "nickname": "Jay"
+    },
+    "birthday": {
+      "month": 9,
+      "day": 3,
+      "year": null
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "Jay__KOMA",
+        "url": "https://x.com/Jay__KOMA"
+      }
+    ]
+  },
+  {
+    "id": "mayuki",
+    "stage_name": "Mayuki",
+    "stage_name_th": "มายูกิ",
+    "real_name": {},
+    "birthday": {
+      "month": 3,
+      "day": 12,
+      "year": null
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "Mayuki__KOMA",
+        "url": "https://x.com/Mayuki__KOMA"
+      }
+    ]
+  },
+  {
+    "id": "nyan0",
+    "stage_name": "NyaN0",
+    "stage_name_th": "เนี๊ยน",
+    "real_name": {
+      "nickname": "Nae"
+    },
+    "birthday": {
+      "month": 7,
+      "day": 10,
+      "year": null
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "NyaN0__KOMA",
+        "url": "https://x.com/NyaN0__KOMA"
+      }
+    ]
+  },
+  {
+    "id": "chicha",
+    "stage_name": "Chicha",
+    "stage_name_th": "ชิชา",
+    "real_name": {
+      "first_name_th": "ธัญชนก",
+      "last_name_th": "วัชรพงษ์ธร",
+      "first_name_en": "Thanchanok",
+      "last_name_en": "Watcharaphongthorn",
+      "nickname": "Chicha"
+    },
+    "birthday": {
+      "month": 12,
+      "day": 27,
+      "year": 2004
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "ChichaLUMINUS",
+        "url": "https://x.com/ChichaLUMINUS"
+      }
+    ]
+  },
+  {
+    "id": "fahmini",
+    "stage_name": "Fahmini",
+    "stage_name_th": "ฟ้ามินิ",
+    "real_name": {
+      "first_name_th": "ศลิษา",
+      "last_name_th": "ภิรมย์สุข",
+      "first_name_en": "Salisa",
+      "last_name_en": "Piromsook",
+      "nickname": "Fahmini"
+    },
+    "birthday": {
+      "month": 10,
+      "day": 31,
+      "year": 1998
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "FahminiLuminus",
+        "url": "https://x.com/FahminiLuminus"
+      }
+    ]
+  },
+  {
+    "id": "foremost",
+    "stage_name": "Foremost",
+    "stage_name_th": "โฟร์โมสต์",
+    "real_name": {
+      "first_name_th": "ปิยธิดา",
+      "last_name_th": "คารวะพงษ์",
+      "first_name_en": "Piyathida",
+      "last_name_en": "Karawapong",
+      "nickname": "Foremost"
+    },
+    "birthday": {
+      "month": 10,
+      "day": 23,
+      "year": null
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "foremostluminus",
+        "url": "https://x.com/foremostluminus"
+      }
+    ]
+  },
+  {
+    "id": "koi",
+    "stage_name": "Koi",
+    "stage_name_th": "ก้อย",
+    "real_name": {
+      "first_name_th": "กัลยรัตน์",
+      "last_name_th": "อ่อนดีกุล",
+      "first_name_en": "Kanyarat",
+      "last_name_en": "Ondikun",
+      "nickname": "Koi"
+    },
+    "birthday": {
+      "month": 2,
+      "day": 22,
+      "year": 1993
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "KoiLuminus",
+        "url": "https://x.com/KoiLuminus"
+      }
+    ]
+  },
+  {
+    "id": "milk",
+    "stage_name": "Milk",
+    "stage_name_th": "มิลค์",
+    "real_name": {
+      "first_name_th": "ชยานันท์",
+      "last_name_th": "เจ็ดพี่น้องร่วมใจ",
+      "first_name_en": "Chayanan",
+      "last_name_en": "Jedpeenongruamjai",
+      "nickname": "Milk"
+    },
+    "birthday": {
+      "month": 12,
+      "day": 6,
+      "year": 2005
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "MilkLUMINUS",
+        "url": "https://x.com/MilkLUMINUS"
+      }
+    ]
+  },
+  {
+    "id": "minnie",
+    "stage_name": "Minnie",
+    "stage_name_th": "มินนี่",
+    "real_name": {
+      "first_name_th": "ชนกนันท์",
+      "last_name_th": "ปรีดาเจริญ",
+      "first_name_en": "Chanoknan",
+      "last_name_en": "Predajaroen",
+      "nickname": "Minnie"
+    },
+    "birthday": {
+      "month": 3,
+      "day": 3,
+      "year": 2006
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "MinnieLUMINUS",
+        "url": "https://x.com/MinnieLUMINUS"
+      }
+    ]
+  },
+  {
+    "id": "moji",
+    "stage_name": "Moji",
+    "stage_name_th": "โมจิ",
+    "real_name": {
+      "nickname": "Moji"
+    },
+    "birthday": {
+      "month": 8,
+      "day": 27,
+      "year": null
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "MojiLUMINUS",
+        "url": "https://x.com/MojiLUMINUS"
+      }
+    ]
+  },
+  {
+    "id": "smild",
+    "stage_name": "Smild",
+    "stage_name_th": "สมายด์",
+    "real_name": {
+      "first_name_th": "วรางคณา",
+      "last_name_th": "ประทุม",
+      "first_name_en": "Warangkana",
+      "last_name_en": "Prathum",
+      "nickname": "Smild"
+    },
+    "birthday": {
+      "month": 12,
+      "day": 15,
+      "year": 1999
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "SmildLUMINUS",
+        "url": "https://x.com/SmildLUMINUS"
+      }
+    ]
+  },
+  {
+    "id": "eye",
+    "stage_name": "Eye",
+    "stage_name_th": "อาย",
+    "real_name": {
+      "first_name_th": "ฐิติรัตน์",
+      "last_name_th": "ละลี",
+      "first_name_en": "Thitirat",
+      "last_name_en": "Lalee",
+      "nickname": "Eye"
+    },
+    "birthday": {
+      "month": 5,
+      "day": 28,
+      "year": 1999
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "eye_nikko",
+        "url": "https://x.com/eye_nikko"
+      }
+    ]
+  },
+  {
+    "id": "iya",
+    "stage_name": "Iya",
+    "stage_name_th": "ไอญ่า",
+    "real_name": {
+      "first_name_th": "ญาณิศา",
+      "last_name_th": "พันจง",
+      "first_name_en": "Yanisa",
+      "last_name_en": "Panjhong",
+      "nickname": "Iya"
+    },
+    "birthday": {
+      "month": 4,
+      "day": 5,
+      "year": 2001
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "iya_nikko",
+        "url": "https://x.com/iya_nikko"
+      }
+    ]
+  },
+  {
+    "id": "ize",
+    "stage_name": "Ize",
+    "stage_name_th": "ไอซ์",
+    "real_name": {
+      "first_name_th": "สุประวีณ",
+      "last_name_th": "ธัมกิตติคุณ",
+      "first_name_en": "Supraween",
+      "last_name_en": "Thamkittikun",
+      "nickname": "Ize"
+    },
+    "birthday": {
+      "month": 7,
+      "day": 16,
+      "year": 1998
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "ize_nikko",
+        "url": "https://x.com/ize_nikko"
+      }
+    ]
+  },
+  {
+    "id": "maysa",
+    "stage_name": "Maysa",
+    "stage_name_th": "เมษา",
+    "real_name": {
+      "first_name_th": "เบญจรัตน์",
+      "last_name_th": "มาหา",
+      "first_name_en": "Benjarat",
+      "last_name_en": "Maha",
+      "nickname": "Maysa"
+    },
+    "birthday": {
+      "month": 4,
+      "day": 25,
+      "year": null
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "maysa_nikko",
+        "url": "https://x.com/maysa_nikko"
+      }
+    ]
+  },
+  {
+    "id": "mewyu",
+    "stage_name": "Mewyu",
+    "stage_name_th": "มิวยู",
+    "real_name": {
+      "first_name_th": "กวินทรา",
+      "last_name_th": "สิงห์ปลอด",
+      "first_name_en": "Khawinthara",
+      "last_name_en": "Singplod",
+      "nickname": "Mewyu"
+    },
+    "birthday": {
+      "month": 3,
+      "day": 14,
+      "year": 2002
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "mewyu_nikko",
+        "url": "https://x.com/mewyu_nikko"
+      }
+    ]
+  },
+  {
+    "id": "tangkwa",
+    "stage_name": "Tangkwa",
+    "stage_name_th": "แตงกวา",
+    "real_name": {},
+    "birthday": {
+      "month": 2,
+      "day": 20,
+      "year": null
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "tangkwa_nikko",
+        "url": "https://x.com/tangkwa_nikko"
+      }
+    ]
+  },
+  {
+    "id": "zinderella",
+    "stage_name": "Zinderella",
+    "stage_name_th": "ซินเดอเรลล่า",
+    "real_name": {
+      "first_name_th": "ชุติมณฑน์",
+      "last_name_th": "บัวสวรรค์บารมี",
+      "first_name_en": "Chutimond",
+      "last_name_en": "Buasawanbaramee",
+      "nickname": "Zinderella"
+    },
+    "birthday": {
+      "month": 8,
+      "day": 8,
+      "year": null
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "zinderellanikko",
+        "url": "https://x.com/zinderellanikko"
+      }
+    ]
+  },
+  {
+    "id": "minkko",
+    "stage_name": "Minkko",
+    "stage_name_th": "มิ้งค์",
+    "real_name": {
+      "first_name_th": "ณัฏฐนันท์",
+      "last_name_th": "ชัยสิริเตชินทร์",
+      "first_name_en": "Natthanan",
+      "last_name_en": "Chaisiriteechin",
+      "nickname": "Mink"
+    },
+    "birthday": {
+      "month": 4,
+      "day": 24,
+      "year": 1998
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "minknatthanan",
+        "url": "https://x.com/minknatthanan"
+      }
+    ]
+  },
+  {
+    "id": "fah-nikko",
+    "stage_name": "Fah",
+    "stage_name_th": "ฟ้า",
+    "real_name": {
+      "first_name_th": "สุประวีณ",
+      "last_name_th": "ธัมกิตติคุณ",
+      "first_name_en": "Bunyada",
+      "last_name_en": "Wongviriya",
+      "nickname": "Fah"
+    },
+    "birthday": {
+      "month": 7,
+      "day": 26,
+      "year": 2000
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "fahbunyada",
+        "url": "https://x.com/fahbunyada"
+      }
+    ]
+  },
+  {
+    "id": "baitoey",
+    "stage_name": "Baitoey",
+    "stage_name_th": "ใบเตย",
+    "real_name": {
+      "first_name_th": "ใบเตย",
+      "last_name_th": "แก้วนพคุณ",
+      "first_name_en": "Baitoey",
+      "last_name_en": "Kaewnoppakhun",
+      "nickname": "Baifern"
+    },
+    "birthday": {
+      "month": 12,
+      "day": 9,
+      "year": 1994
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "baitoey_isekai",
+        "url": "https://x.com/baitoey_isekai"
+      }
+    ]
+  },
+  {
+    "id": "yuki",
+    "stage_name": "Yuki",
+    "stage_name_th": "ยูกิ",
+    "real_name": {
+      "first_name_en": "Supee",
+      "last_name_en": "Srirattikankul",
+      "nickname": "Yuki"
+    },
+    "birthday": {
+      "month": 12,
+      "day": 24,
+      "year": null
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "Yuki__Seishin",
+        "url": "https://x.com/Yuki__Seishin"
+      }
+    ]
+  },
+  {
+    "id": "cherrie",
+    "stage_name": "Cherrie",
+    "stage_name_th": "เชอรี่",
+    "real_name": {
+      "first_name_th": "จุฑาทิพย์",
+      "last_name_th": "เสียงหวาน",
+      "first_name_en": "Jutatip",
+      "last_name_en": "Siangwan",
+      "nickname": "Cherrie"
+    },
+    "birthday": {
+      "month": 12,
+      "day": 22,
+      "year": 1998
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "Cherrie_Seishin",
+        "url": "https://x.com/Cherrie_Seishin"
+      }
+    ]
+  },
+  {
+    "id": "tintin",
+    "stage_name": "Tintin",
+    "stage_name_th": "ตินติน",
+    "real_name": {
+      "first_name_en": "Tinna",
+      "last_name_en": "Ratanapotisan",
+      "nickname": "Tintin"
+    },
+    "birthday": {
+      "month": 12,
+      "day": 28,
+      "year": null
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "Tintin_Seishin",
+        "url": "https://x.com/Tintin_Seishin"
+      }
+    ]
+  },
+  {
+    "id": "riko",
+    "stage_name": "Riko",
+    "stage_name_th": "ริโกะ",
+    "real_name": {
+      "first_name_th": "ณภัทร",
+      "last_name_th": "ทองศรีจันทร์",
+      "first_name_en": "Napat",
+      "last_name_en": "Tongsrichan",
+      "nickname": "Grace"
+    },
+    "birthday": {
+      "month": 9,
+      "day": 4,
+      "year": 2006
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "Riko_Seishin",
+        "url": "https://x.com/Riko_Seishin"
+      }
+    ]
+  },
+  {
+    "id": "serin",
+    "stage_name": "Serin",
+    "stage_name_th": "เซริน",
+    "real_name": {
+      "first_name_en": "Miriam",
+      "last_name_en": "Kwanchai",
+      "nickname": "Serin"
+    },
+    "birthday": {
+      "month": 8,
+      "day": 8,
+      "year": null
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "Serin_Seishin",
+        "url": "https://x.com/Serin_Seishin"
+      }
+    ]
+  },
+  {
+    "id": "sunny",
+    "stage_name": "Sunny",
+    "stage_name_th": "ซันนี่",
+    "real_name": {
+      "first_name_en": "Thanyarut",
+      "last_name_en": "Pitiphatphakorn",
+      "nickname": "Sunny"
+    },
+    "birthday": {
+      "month": 6,
+      "day": 9,
+      "year": null
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "Sunny_Seishin",
+        "url": "https://x.com/Sunny_Seishin"
+      }
+    ]
+  },
+  {
+    "id": "highway",
+    "stage_name": "Highway",
+    "stage_name_th": "ไฮเวย์",
+    "real_name": {
+      "first_name_th": "ศิรประภา",
+      "last_name_th": "แสงพันตาพานิช",
+      "first_name_en": "Siraprapha",
+      "last_name_en": "Saengpantaphanit",
+      "nickname": "Highway"
+    },
+    "birthday": {
+      "month": 2,
+      "day": 22,
+      "year": 2007
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "Highway_Seishin",
+        "url": "https://x.com/Highway_Seishin"
+      }
+    ]
+  },
+  {
+    "id": "yuchan",
+    "stage_name": "Yu-Chan",
+    "stage_name_th": "ยูจัง",
+    "real_name": {
+      "first_name_th": "ศิรากาญจน์",
+      "last_name_th": "กีรติกรพิสุทธิ์",
+      "first_name_en": "Sirakan",
+      "last_name_en": "Kiratikornpisut",
+      "nickname": "Khem"
+    },
+    "birthday": {
+      "month": 2,
+      "day": 1,
+      "year": 1997
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "yuchan_viinx",
+        "url": "https://x.com/yuchan_viinx"
+      }
+    ]
+  },
+  {
+    "id": "tanoon",
+    "stage_name": "Tanoon",
+    "stage_name_th": "ตะหนุน",
+    "real_name": {
+      "nickname": "Tanoon"
+    },
+    "birthday": {
+      "month": 12,
+      "day": 15,
+      "year": 2004
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "tanoon_viinx",
+        "url": "https://x.com/tanoon_viinx"
+      }
+    ]
+  },
+  {
+    "id": "kamii",
+    "stage_name": "Kamii",
+    "stage_name_th": "คามิ",
+    "real_name": {
+      "nickname": "Kamii"
+    },
+    "birthday": {
+      "month": 11,
+      "day": 17,
+      "year": 2005
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": null,
+        "url": null
+      }
+    ]
+  },
+  {
+    "id": "love",
+    "stage_name": "Love",
+    "stage_name_th": "เลิฟ",
+    "real_name": {
+      "nickname": "Love"
+    },
+    "birthday": {
+      "month": 4,
+      "day": 3,
+      "year": 2004
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "Love_viinx",
+        "url": "https://x.com/Love_viinx"
+      }
+    ]
+  },
+  {
+    "id": "ao",
+    "stage_name": "Ao",
+    "stage_name_th": "อาโอะ",
+    "real_name": {
+      "first_name_th": "ญดา",
+      "last_name_th": "จักรภีร์ศิริสุข",
+      "first_name_en": "Yada",
+      "last_name_en": "Jakapeesirisuk",
+      "nickname": "Pie"
+    },
+    "birthday": {
+      "month": 3,
+      "day": 26,
+      "year": 1999
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "ao_viinx",
+        "url": "https://x.com/ao_viinx"
+      }
+    ]
+  },
+  {
+    "id": "kwankaw",
+    "stage_name": "Kwankaw",
+    "stage_name_th": "ขวัญข้าว",
+    "real_name": {
+      "nickname": "Kwankaw"
+    },
+    "birthday": {
+      "month": 2,
+      "day": 26,
+      "year": 2003
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "Kwankaw_viinx",
+        "url": "https://x.com/Kwankaw_viinx"
+      }
+    ]
+  },
+  {
+    "id": "kaori",
+    "stage_name": "Kaori",
+    "stage_name_th": "คาโอริ",
+    "real_name": {
+      "first_name_th": "ณัฐวรา",
+      "last_name_th": "ฉัตรไชยเดช",
+      "first_name_en": "Nutwara",
+      "last_name_en": "Chatchaiyadej",
+      "nickname": "Tonkaow"
+    },
+    "birthday": {
+      "month": 8,
+      "day": 23,
+      "year": 2006
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "Kaori_viinx",
+        "url": "https://x.com/Kaori_viinx"
+      }
+    ]
+  },
+  {
+    "id": "queen",
+    "stage_name": "Queen",
+    "stage_name_th": "ควีน",
+    "real_name": {
+      "nickname": "Queen"
+    },
+    "birthday": {
+      "month": 1,
+      "day": 11,
+      "year": null
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "Queen_viinx",
+        "url": "https://x.com/Queen_viinx"
+      }
+    ]
+  },
+  {
+    "id": "sai-viinx",
+    "stage_name": "Sai",
+    "stage_name_th": "ทราย",
+    "real_name": {
+      "first_name_th": "กนกพร",
+      "last_name_th": "วิโรจน์จุลศักดิ์",
+      "first_name_en": "Kanokporn",
+      "last_name_en": "Wirotjunlasak",
+      "nickname": "Sai"
+    },
+    "birthday": {
+      "month": 1,
+      "day": 3,
+      "year": 1998
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": null,
+        "url": null
+      }
+    ]
+  },
+  {
+    "id": "bam-viinx",
+    "stage_name": "Bam",
+    "stage_name_th": "แบม",
+    "real_name": {
+      "first_name_th": "พิมพ์มาดา",
+      "last_name_th": "ปิยะกุลวรศักดิ์",
+      "first_name_en": "Pimmada",
+      "last_name_en": "Piyakulworasak",
+      "nickname": "Bam"
+    },
+    "birthday": {
+      "month": 11,
+      "day": 7,
+      "year": 2004
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": null,
+        "url": null
+      }
+    ]
+  },
+  {
+    "id": "tatah",
+    "stage_name": "Tatah",
+    "stage_name_th": "ตาต้า",
+    "real_name": {
+      "first_name_en": "Yada",
+      "last_name_en": "Promsurang",
+      "nickname": "Tatah"
+    },
+    "birthday": {
+      "month": 5,
+      "day": 14,
+      "year": null
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": null,
+        "url": null
+      }
+    ]
+  },
+  {
+    "id": "icewa",
+    "stage_name": "Icewa",
+    "stage_name_th": "ไอซ์วา",
+    "real_name": {
+      "first_name_th": "วาเศรษฐี",
+      "last_name_th": "สุขขาว",
+      "first_name_en": "Wasedtee",
+      "last_name_en": "Sukkhao",
+      "nickname": "Icewa"
+    },
+    "birthday": {
+      "month": 3,
+      "day": 5,
+      "year": 2002
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "Icewastarrynite",
+        "url": "https://x.com/Icewastarrynite"
+      }
+    ]
+  },
+  {
+    "id": "pure",
+    "stage_name": "Pure",
+    "stage_name_th": "เพียว",
+    "real_name": {
+      "first_name_th": "ปภาวรรณ",
+      "last_name_th": "แสงอรุณ",
+      "first_name_en": "Papawan",
+      "last_name_en": "Sangaroon",
+      "nickname": "Pure"
+    },
+    "birthday": {
+      "month": 8,
+      "day": 21,
+      "year": 2001
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "Purestarrynite",
+        "url": "https://x.com/Purestarrynite"
+      }
+    ]
+  },
+  {
+    "id": "beep",
+    "stage_name": "Beep",
+    "stage_name_th": "บี๊บ",
+    "real_name": {
+      "first_name_th": "สิริมณี",
+      "last_name_th": "หวังไพบูลย์",
+      "first_name_en": "Sirimanee",
+      "last_name_en": "Wangpaiboon",
+      "nickname": "Beep"
+    },
+    "birthday": {
+      "month": 12,
+      "day": 1,
+      "year": 2004
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "Beepstarrynite",
+        "url": "https://x.com/Beepstarrynite"
+      }
+    ]
+  },
+  {
+    "id": "pream",
+    "stage_name": "Pream",
+    "stage_name_th": "พรีม",
+    "real_name": {
+      "first_name_th": "ธัญวรัตน์",
+      "last_name_th": "ลิ่มสกุล",
+      "first_name_en": "Tunvarat",
+      "last_name_en": "Limsakul",
+      "nickname": "Pream"
+    },
+    "birthday": {
+      "month": 3,
+      "day": 27,
+      "year": 2005
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "preamstarrynite",
+        "url": "https://x.com/preamstarrynite"
+      }
+    ]
+  },
+  {
+    "id": "sorin",
+    "stage_name": "Sorin",
+    "stage_name_th": "โซริน",
+    "real_name": {
+      "first_name_th": "กมลชนก",
+      "last_name_th": "แสนวัง",
+      "first_name_en": "Kamonchanok",
+      "last_name_en": "Sanwang",
+      "nickname": "Mint"
+    },
+    "birthday": {
+      "month": 8,
+      "day": 29,
+      "year": 2005
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "sorinstarrynite",
+        "url": "https://x.com/sorinstarrynite"
+      }
+    ]
+  },
+  {
+    "id": "mickey-sn",
+    "stage_name": "Mickey",
+    "stage_name_th": "มิคกี้",
+    "real_name": {
+      "first_name_th": "สริตา",
+      "last_name_th": "เจริญนาน",
+      "first_name_en": "Sarita",
+      "last_name_en": "Charoennan",
+      "nickname": "Mickey"
+    },
+    "birthday": {
+      "month": 1,
+      "day": 9,
+      "year": 1999
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "mickey_STRN",
+        "url": "https://x.com/mickey_STRN"
+      }
+    ]
+  },
+  {
+    "id": "porro",
+    "stage_name": "Porro",
+    "stage_name_th": "ปอโร่",
+    "real_name": {
+      "first_name_th": "ชนิศร",
+      "last_name_th": "งามวิไล",
+      "first_name_en": "Chanisorn",
+      "last_name_en": "Ngamwilai",
+      "nickname": "Por"
+    },
+    "birthday": {
+      "month": 9,
+      "day": 25,
+      "year": 2006
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "PorroStarryNite",
+        "url": "https://x.com/PorroStarryNite"
+      }
+    ]
+  },
+  {
+    "id": "amchan",
+    "stage_name": "Amchan",
+    "stage_name_th": "แอมจัง",
+    "real_name": {
+      "first_name_th": "ชลดา",
+      "last_name_th": "ริตุ",
+      "first_name_en": "Chonlada",
+      "last_name_en": "Ritu",
+      "nickname": "Amchan"
+    },
+    "birthday": {
+      "month": 1,
+      "day": 16,
+      "year": null
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "amchan_strn",
+        "url": "https://x.com/amchan_strn"
+      }
+    ]
+  },
+  {
+    "id": "jajah",
+    "stage_name": "Jajah",
+    "stage_name_th": "จ๊ะจ๋า",
+    "real_name": {
+      "first_name_th": "จิรวดี",
+      "last_name_th": "เอกชัย",
+      "first_name_en": "Jirawadee",
+      "last_name_en": "Eakachai",
+      "nickname": "Jajah"
+    },
+    "birthday": {
+      "month": 7,
+      "day": 3,
+      "year": 1997
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "JajahStarryNite",
+        "url": "https://x.com/JajahStarryNite"
+      }
+    ]
+  },
+  {
+    "id": "whanwhan",
+    "stage_name": "WhanWhan",
+    "stage_name_th": "หวานหวาน",
+    "real_name": {
+      "first_name_th": "พิชญา",
+      "last_name_th": "กีรติธาดานิยม",
+      "first_name_en": "Pichaya",
+      "last_name_en": "Geeratithadaniyom",
+      "nickname": "Namwhan"
+    },
+    "birthday": {
+      "month": 2,
+      "day": 1,
+      "year": 2002
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "Whanstarrynite",
+        "url": "https://x.com/Whanstarrynite"
+      }
+    ]
+  },
+  {
+    "id": "praewproud",
+    "stage_name": "Praewproud",
+    "stage_name_th": "แพรวพราว",
+    "real_name": {
+      "first_name_th": "ปทิตตา",
+      "last_name_th": "วัฒนะนุพงษ์",
+      "first_name_en": "Patita",
+      "last_name_en": "Wattananupong",
+      "nickname": "Praewproud"
+    },
+    "birthday": {
+      "month": 4,
+      "day": 17,
+      "year": 2004
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "praewproud_SN",
+        "url": "https://x.com/praewproud_SN"
+      }
+    ]
+  },
+  {
+    "id": "ena",
+    "stage_name": "Ena",
+    "stage_name_th": "เอนะ",
+    "real_name": {
+      "nickname": "Ena"
+    },
+    "birthday": {
+      "month": 10,
+      "day": 22,
+      "year": null
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "ENA_ZYN",
+        "url": "https://x.com/ENA_ZYN"
+      }
+    ]
+  },
+  {
+    "id": "guschan",
+    "stage_name": "Guschan",
+    "stage_name_th": "กัสจัง",
+    "real_name": {
+      "first_name_en": "Benjaporn",
+      "last_name_en": "Pornchokchai",
+      "nickname": "Guschan"
+    },
+    "birthday": {
+      "month": 4,
+      "day": 24,
+      "year": 2002
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "GUSCHAN_ZYN",
+        "url": "https://x.com/GUSCHAN_ZYN"
+      }
+    ]
+  },
+  {
+    "id": "bm",
+    "stage_name": "BM",
+    "stage_name_th": "บีเอ็ม",
+    "real_name": {
+      "first_name_th": "ธันยาพร",
+      "last_name_th": "มโนนิตนันทวัฒน์",
+      "first_name_en": "Tanyaporn",
+      "last_name_en": "Manonitnantawat",
+      "nickname": "BM"
+    },
+    "birthday": {
+      "month": 9,
+      "day": 20,
+      "year": 1998
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "BM_ZYN",
+        "url": "https://x.com/BM_ZYN"
+      }
+    ]
+  },
+  {
+    "id": "ami",
+    "stage_name": "Ami",
+    "stage_name_th": "อามิ",
+    "real_name": {
+      "nickname": "Ami"
+    },
+    "birthday": {
+      "month": 2,
+      "day": 15,
+      "year": 2006
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "AMI_ZYN",
+        "url": "https://x.com/AMI_ZYN"
+      }
+    ]
+  },
+  {
+    "id": "yaya",
+    "stage_name": "Yaya",
+    "stage_name_th": "ญาญ่า",
+    "real_name": {
+      "nickname": "Yaya"
+    },
+    "birthday": {
+      "month": 9,
+      "day": 1,
+      "year": null
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "YAYA_ZYN",
+        "url": "https://x.com/YAYA_ZYN"
+      }
+    ]
+  },
+  {
+    "id": "miwji",
+    "stage_name": "Miwji",
+    "stage_name_th": "มิวจิ",
+    "real_name": {
+      "first_name_th": "ณปภัช",
+      "last_name_th": "คล่องพยาบาล",
+      "first_name_en": "Napapat",
+      "last_name_en": "Klongpayabarn",
+      "nickname": "Miwji"
+    },
+    "birthday": {
+      "month": 3,
+      "day": 6,
+      "year": null
+    },
+    "avatar_cached_path": null,
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "Miwji_ZYN",
+        "url": "https://x.com/Miwji_ZYN"
+      }
+    ]
   }
 ]

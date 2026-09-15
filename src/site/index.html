@@ -1527,7 +1527,7 @@
             const stageTh = (m.stage_name_th || '').toLowerCase();
             const realEn = [m.real_name?.first_name_en, m.real_name?.last_name_en].filter(Boolean).join(' ').toLowerCase();
             const realTh = [m.real_name?.first_name_th, m.real_name?.last_name_th].filter(Boolean).join(' ').toLowerCase();
-            const handles = m.sns.map(s => s.current_handle.toLowerCase()).join(' ');
+            const handles = m.sns.map(s => (s.current_handle || '').toLowerCase()).join(' ');
 
             // Match member groups & agencies
             const grpNames = m.memberships.map(ms => {
@@ -1612,9 +1612,9 @@
             `;
           }).join('');
 
-          const snsIcons = m.sns.map(s => {
+          const snsIcons = m.sns.filter(s => s && s.url).map(s => {
             const iconSvg = ICONS[s.platform] || ICONS.link;
-            return `<a href="${s.url}" target="_blank" rel="noopener noreferrer" class="sns-link" title="${s.platform}: @${s.current_handle}" onclick="event.stopPropagation();">${iconSvg}</a>`;
+            return `<a href="${s.url}" target="_blank" rel="noopener noreferrer" class="sns-link" title="${s.platform}: @${s.current_handle || ''}" onclick="event.stopPropagation();">${iconSvg}</a>`;
           }).join('');
 
           return `
@@ -1870,10 +1870,18 @@
         // Social channels
         const socialsHtml = m.sns.map(s => {
           const icon = ICONS[s.platform] || ICONS.link;
+          if (!s.url) {
+            return `
+              <div class="social-btn" style="opacity: 0.5; cursor: default;">
+                ${icon}
+                <span>${s.platform.toUpperCase()}: (Not available)</span>
+              </div>
+            `;
+          }
           return `
             <a href="${s.url}" target="_blank" rel="noopener noreferrer" class="social-btn">
               ${icon}
-              <span>${s.platform.toUpperCase()}: @${s.current_handle}</span>
+              <span>${s.platform.toUpperCase()}: @${s.current_handle || ''}</span>
               ${s.profile_id ? `<span class="profile-id-chip" title="Immutable UID: ${s.profile_id}">UID ${s.profile_id.slice(-6)}</span>` : ''}
             </a>
           `;
