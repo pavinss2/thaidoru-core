@@ -2196,5 +2196,33 @@
     "status": "active",
     "joined_date": null,
     "graduated_date": null
+  },
+  {
+    "id": "seishin-kakumei_raika",
+    "member_id": "raika",
+    "group_id": "seishin-kakumei",
+    "role": "member",
+    "is_active": false,
+    "color": {
+      "name": "Red",
+      "hex": "#e74c3c"
+    },
+    "status": "graduated",
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "seishin-kakumei_mizuki",
+    "member_id": "mizuki",
+    "group_id": "seishin-kakumei",
+    "role": "member",
+    "is_active": false,
+    "color": {
+      "name": "Blue",
+      "hex": "#2980b9"
+    },
+    "status": "graduated",
+    "joined_date": null,
+    "graduated_date": null
   }
 ]

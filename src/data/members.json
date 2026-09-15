@@ -2474,7 +2474,7 @@
       "day": 9,
       "year": null
     },
-    "avatar_cached_path": null,
+    "avatar_cached_path": "assets/avatars/rinrin.webp",
     "sns": [
       {
         "platform": "x",
@@ -2496,7 +2496,7 @@
       "day": 12,
       "year": null
     },
-    "avatar_cached_path": null,
+    "avatar_cached_path": "assets/avatars/mikoto.webp",
     "sns": [
       {
         "platform": "x",
@@ -3402,7 +3402,7 @@
       "day": 24,
       "year": 1998
     },
-    "avatar_cached_path": null,
+    "avatar_cached_path": "assets/avatars/minkko.webp",
     "sns": [
       {
         "platform": "x",
@@ -3428,7 +3428,7 @@
       "day": 26,
       "year": 2000
     },
-    "avatar_cached_path": null,
+    "avatar_cached_path": "assets/avatars/fah-nikko.webp",
     "sns": [
       {
         "platform": "x",
@@ -3454,7 +3454,7 @@
       "day": 9,
       "year": 1994
     },
-    "avatar_cached_path": null,
+    "avatar_cached_path": "assets/avatars/baitoey.webp",
     "sns": [
       {
         "platform": "x",
@@ -3842,7 +3842,7 @@
       "day": 3,
       "year": 1998
     },
-    "avatar_cached_path": null,
+    "avatar_cached_path": "assets/avatars/sai-viinx.webp",
     "sns": [
       {
         "platform": "x",
@@ -3868,7 +3868,7 @@
       "day": 7,
       "year": 2004
     },
-    "avatar_cached_path": null,
+    "avatar_cached_path": "assets/avatars/bam-viinx.webp",
     "sns": [
       {
         "platform": "x",
@@ -3892,7 +3892,7 @@
       "day": 14,
       "year": null
     },
-    "avatar_cached_path": null,
+    "avatar_cached_path": "assets/avatars/tatah.webp",
     "sns": [
       {
         "platform": "x",
@@ -4152,7 +4152,7 @@
       "day": 1,
       "year": 2002
     },
-    "avatar_cached_path": null,
+    "avatar_cached_path": "assets/avatars/whanwhan.webp",
     "sns": [
       {
         "platform": "x",
@@ -4178,7 +4178,7 @@
       "day": 17,
       "year": 2004
     },
-    "avatar_cached_path": null,
+    "avatar_cached_path": "assets/avatars/praewproud.webp",
     "sns": [
       {
         "platform": "x",
@@ -4329,5 +4329,43 @@
         "url": "https://x.com/Miwji_ZYN"
       }
     ]
+  },
+  {
+    "id": "raika",
+    "stage_name": "Raika",
+    "stage_name_th": "ไรก้า",
+    "real_name": {
+      "first_name_th": null,
+      "last_name_th": null,
+      "first_name_en": "Wiyada",
+      "last_name_en": "Jantida",
+      "nickname": "Beam"
+    },
+    "birthday": {
+      "month": 8,
+      "day": 12,
+      "year": 2007
+    },
+    "avatar_cached_path": "assets/avatars/raika.webp",
+    "sns": []
+  },
+  {
+    "id": "mizuki",
+    "stage_name": "Mizuki",
+    "stage_name_th": "มิสึกิ",
+    "real_name": {
+      "first_name_th": "กมลชนก",
+      "last_name_th": "คงวรรัตน์",
+      "first_name_en": "Kamolchanok",
+      "last_name_en": "Kongworarat",
+      "nickname": "Muayly"
+    },
+    "birthday": {
+      "month": 10,
+      "day": 4,
+      "year": 2005
+    },
+    "avatar_cached_path": "assets/avatars/mizuki.webp",
+    "sns": []
   }
 ]

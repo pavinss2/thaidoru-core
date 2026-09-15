@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ThaiDoru Core — Underground Idol Directory</title>
   <meta name="description" content="Canonical connected directory and API for Thai underground idols across Catsolute, A lot of tone, and IC45.">
-  <link rel="icon" href="assets/avatars/group_sora-sora.webp" type="image/webp">
+  <link rel="icon" href="assets/avatars/default_avatar.webp" type="image/webp">
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -411,6 +411,68 @@
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
       gap: 1.25rem;
+    }
+
+    /* Partition Headers for Active & Graduated Members */
+    .partition-header {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.65rem 1rem;
+      margin-top: 1.25rem;
+      margin-bottom: 0.25rem;
+      background: rgba(30, 41, 59, 0.65);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .partition-header:first-child {
+      margin-top: 0;
+    }
+
+    .partition-title {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .status-dot-inline {
+      width: 9px;
+      height: 9px;
+      border-radius: var(--radius-full);
+      display: inline-block;
+    }
+
+    .status-dot-inline.active {
+      background-color: var(--badge-active-dot);
+      box-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
+    }
+
+    .status-dot-inline.graduated {
+      background-color: var(--badge-grad-dot);
+    }
+
+    .partition-badge {
+      font-size: 0.75rem;
+      padding: 0.15rem 0.6rem;
+      border-radius: var(--radius-full);
+      font-weight: 600;
+    }
+
+    .partition-badge.active {
+      background: rgba(16, 185, 129, 0.15);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.3);
+    }
+
+    .partition-badge.graduated {
+      background: rgba(148, 163, 184, 0.15);
+      color: #94a3b8;
+      border: 1px solid rgba(148, 163, 184, 0.3);
     }
 
     /* Member Card */
@@ -1116,9 +1178,9 @@
         <div class="filter-group" style="margin-left: auto;">
           <span class="filter-label">Sort:</span>
           <select id="sort-select" class="filter-select">
+            <option value="group" selected>Group Name (A-Z)</option>
             <option value="name-asc">Stage Name (A-Z)</option>
             <option value="name-desc">Stage Name (Z-A)</option>
-            <option value="group">Group Name</option>
           </select>
         </div>
       </div>
@@ -1182,6 +1244,29 @@
         <div>
           <div class="detail-section-title">Official Channels</div>
           <div class="social-btn-row" id="modal-group-socials"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Company Detail Modal -->
+  <div class="modal-overlay" id="company-modal" role="dialog" aria-modal="true" aria-labelledby="modal-company-title">
+    <div class="modal-content">
+      <button class="modal-close" id="company-modal-close" aria-label="Close">✕</button>
+      <div class="modal-hero">
+        <img src="" alt="" class="modal-avatar-lg" id="modal-company-avatar" style="border-radius: var(--radius-md);">
+        <h2 class="modal-title" id="modal-company-title"></h2>
+        <div class="modal-subtitle" id="modal-company-sub"></div>
+      </div>
+      <div class="modal-body">
+        <div>
+          <div class="detail-section-title">Groups Managed</div>
+          <div class="roster-grid" id="modal-company-groups-roster"></div>
+        </div>
+
+        <div>
+          <div class="detail-section-title">Official Channels & Links</div>
+          <div class="social-btn-row" id="modal-company-socials"></div>
         </div>
       </div>
     </div>
@@ -1258,7 +1343,7 @@
         companyFilter: 'all',
         statusFilter: 'all',
         groupFilter: 'all',
-        sortBy: 'name-asc'
+        sortBy: 'group'
       };
 
       // SVG Icons helper
@@ -1419,6 +1504,7 @@
         // Modals close buttons
         document.getElementById('member-modal-close').addEventListener('click', closeModal);
         document.getElementById('group-modal-close').addEventListener('click', closeModal);
+        document.getElementById('company-modal-close').addEventListener('click', closeModal);
         document.getElementById('api-modal-close').addEventListener('click', () => {
           document.getElementById('api-modal').classList.remove('open');
         });
@@ -1470,7 +1556,7 @@
         document.getElementById('view-companies').style.display = tab === 'companies' ? 'grid' : 'none';
 
         // Update URL hash if not on deep link
-        if (!location.hash.startsWith('#member/') && !location.hash.startsWith('#group/')) {
+        if (!location.hash.startsWith('#member/') && !location.hash.startsWith('#group/') && !location.hash.startsWith('#company/')) {
           location.hash = tab;
         }
 
@@ -1485,6 +1571,9 @@
         } else if (hash.startsWith('group/')) {
           const id = hash.split('/')[1];
           openGroupModal(id, false);
+        } else if (hash.startsWith('company/')) {
+          const id = hash.split('/')[1];
+          openCompanyModal(id, false);
         } else if (hash === 'groups') {
           setTab('groups');
         } else if (hash === 'companies') {
@@ -1497,7 +1586,8 @@
       function closeModal() {
         document.getElementById('member-modal').classList.remove('open');
         document.getElementById('group-modal').classList.remove('open');
-        if (location.hash.startsWith('#member/') || location.hash.startsWith('#group/')) {
+        document.getElementById('company-modal').classList.remove('open');
+        if (location.hash.startsWith('#member/') || location.hash.startsWith('#group/') || location.hash.startsWith('#company/')) {
           history.replaceState(null, '', '#' + state.activeTab);
         }
       }
@@ -1553,31 +1643,29 @@
           return hasMatchingMembership;
         });
 
-        // Sorting
-        filtered.sort((a, b) => {
-          if (state.sortBy === 'name-asc') return a.stage_name.localeCompare(b.stage_name);
-          if (state.sortBy === 'name-desc') return b.stage_name.localeCompare(a.stage_name);
-          if (state.sortBy === 'group') {
-            const gA = a.memberships[0]?.group_id || '';
-            const gB = b.memberships[0]?.group_id || '';
-            return gA.localeCompare(gB);
+        // Helper to determine primary sort group and active state
+        function getMemberSortInfo(m) {
+          const activeMs = m.memberships.filter(ms => ms.is_active);
+          let grpIds = [];
+          let isActive = false;
+          if (activeMs.length > 0) {
+            grpIds = activeMs.map(ms => ms.group_id);
+            isActive = true;
+          } else {
+            grpIds = m.memberships.map(ms => ms.group_id);
+            isActive = false;
           }
-          return 0;
-        });
-
-        document.getElementById('results-count').textContent = `Showing ${filtered.length} idol${filtered.length === 1 ? '' : 's'}`;
-
-        if (filtered.length === 0) {
-          container.innerHTML = `
-            <div class="empty-state">
-              <div class="empty-icon">🔍</div>
-              <p>No idols found matching your search or active filters.</p>
-            </div>
-          `;
-          return;
+          const grps = grpIds.map(id => groupMap.get(id) || { id, name: id });
+          grps.sort((a, b) => a.name.localeCompare(b.name));
+          const primaryGrp = grps[0] || { id: 'other', name: 'Other' };
+          return {
+            group: primaryGrp,
+            isActive: isActive
+          };
         }
 
-        container.innerHTML = filtered.map(m => {
+        // Helper to render a single member card
+        function renderMemberCard(m) {
           const matchingMs = m.memberships.find(ms => {
             const g = groupMap.get(ms.group_id);
             if (state.companyFilter !== 'all' && g?.company_id !== state.companyFilter) return false;
@@ -1588,7 +1676,7 @@
           }) || m.memberships.find(ms => ms.is_active) || m.memberships[0];
 
           const colorHex = matchingMs?.color?.hex || '#3b82f6';
-          const avatarSrc = m.avatar_cached_path ? `./${m.avatar_cached_path}` : (m.sns.find(s => s.avatar_url)?.avatar_url || 'assets/avatars/group_sora-sora.webp');
+          const avatarSrc = m.avatar_cached_path ? `./${m.avatar_cached_path}` : (m.sns.find(s => s.avatar_url)?.avatar_url || 'assets/avatars/default_avatar.webp');
           
           const bdayStr = m.birthday?.day && m.birthday?.month ? `🎂 ${m.birthday.day} ${MONTHS[m.birthday.month - 1]}${m.birthday.year ? ', ' + m.birthday.year : ''}` : '';
 
@@ -1620,7 +1708,7 @@
           return `
             <article class="member-card" onclick="openMemberModal('${m.id}')" style="--accent-color: ${colorHex};">
               <div class="avatar-wrap">
-                <img src="${avatarSrc}" alt="${m.stage_name}" class="member-avatar" loading="lazy">
+                <img src="${avatarSrc}" alt="${m.stage_name}" class="member-avatar" loading="lazy" onerror="this.onerror=null;this.src='assets/avatars/default_avatar.webp'">
                 <div class="status-dot ${matchingMs?.is_active ? '' : 'graduated'}" title="${matchingMs?.is_active ? 'Active' : 'Graduated / Former'}"></div>
               </div>
 
@@ -1641,7 +1729,124 @@
               </div>
             </article>
           `;
-        }).join('');
+        }
+
+        document.getElementById('results-count').textContent = `Showing ${filtered.length} idol${filtered.length === 1 ? '' : 's'}`;
+
+        if (filtered.length === 0) {
+          container.innerHTML = `
+            <div class="empty-state">
+              <div class="empty-icon">🔍</div>
+              <p>No idols found matching your search or active filters.</p>
+            </div>
+          `;
+          return;
+        }
+
+        let outputHtml = '';
+
+        if (state.sortBy === 'group') {
+          // Group members by their primary group
+          const groupBuckets = new Map();
+          for (const m of filtered) {
+            const info = getMemberSortInfo(m);
+            const grpId = info.group.id;
+            if (!groupBuckets.has(grpId)) {
+              groupBuckets.set(grpId, {
+                group: info.group,
+                active: [],
+                graduated: []
+              });
+            }
+            const bucket = groupBuckets.get(grpId);
+            if (info.isActive) {
+              bucket.active.push(m);
+            } else {
+              bucket.graduated.push(m);
+            }
+          }
+
+          // Sort groups alphabetically by group name
+          const sortedBuckets = Array.from(groupBuckets.values()).sort((a, b) => a.group.name.localeCompare(b.group.name));
+
+          for (const b of sortedBuckets) {
+            // Sort within buckets by stage name
+            b.active.sort((m1, m2) => m1.stage_name.localeCompare(m2.stage_name));
+            b.graduated.sort((m1, m2) => m1.stage_name.localeCompare(m2.stage_name));
+
+            // Partition 1: Active members on top
+            if (b.active.length > 0) {
+              outputHtml += `
+                <div class="partition-header">
+                  <span class="partition-title">
+                    <span class="status-dot-inline active"></span>
+                    <span>${b.group.name} &bull; Active Members</span>
+                  </span>
+                  <span class="partition-badge active">${b.active.length} active</span>
+                </div>
+              `;
+              outputHtml += b.active.map(renderMemberCard).join('');
+            }
+
+            // Partition 2: Graduated members on bottom
+            if (b.graduated.length > 0) {
+              outputHtml += `
+                <div class="partition-header">
+                  <span class="partition-title">
+                    <span class="status-dot-inline graduated"></span>
+                    <span>${b.group.name} &bull; Former / Graduated Members</span>
+                  </span>
+                  <span class="partition-badge graduated">${b.graduated.length} graduated</span>
+                </div>
+              `;
+              outputHtml += b.graduated.map(renderMemberCard).join('');
+            }
+          }
+        } else {
+          // Sort by name (A-Z or Z-A) with Active on top and Graduated on bottom
+          const activeList = [];
+          const gradList = [];
+          for (const m of filtered) {
+            const info = getMemberSortInfo(m);
+            if (info.isActive) activeList.push(m);
+            else gradList.push(m);
+          }
+
+          const sortFn = (m1, m2) => {
+            if (state.sortBy === 'name-desc') return m2.stage_name.localeCompare(m1.stage_name);
+            return m1.stage_name.localeCompare(m2.stage_name);
+          };
+          activeList.sort(sortFn);
+          gradList.sort(sortFn);
+
+          if (activeList.length > 0) {
+            outputHtml += `
+              <div class="partition-header">
+                <span class="partition-title">
+                  <span class="status-dot-inline active"></span>
+                  <span>Active Members</span>
+                </span>
+                <span class="partition-badge active">${activeList.length} active</span>
+              </div>
+            `;
+            outputHtml += activeList.map(renderMemberCard).join('');
+          }
+
+          if (gradList.length > 0) {
+            outputHtml += `
+              <div class="partition-header">
+                <span class="partition-title">
+                  <span class="status-dot-inline graduated"></span>
+                  <span>Former / Graduated Members</span>
+                </span>
+                <span class="partition-badge graduated">${gradList.length} graduated</span>
+              </div>
+            `;
+            outputHtml += gradList.map(renderMemberCard).join('');
+          }
+        }
+
+        container.innerHTML = outputHtml;
       }
 
       // 2. Render Groups View
@@ -1676,15 +1881,15 @@
         container.innerHTML = filtered.map(g => {
           const comp = companyMap.get(g.company_id);
           const themeHex = g.theme_color?.hex || '#3b82f6';
-          const avatarSrc = g.avatar_cached_path ? `./${g.avatar_cached_path}` : 'assets/avatars/group_sora-sora.webp';
+          const avatarSrc = g.avatar_cached_path ? `./${g.avatar_cached_path}` : 'assets/avatars/default_avatar.webp';
           
           // Get group members
           const grpMembers = state.data.members.filter(m => m.memberships.some(ms => ms.group_id === g.id));
           const activeCount = grpMembers.filter(m => m.memberships.some(ms => ms.group_id === g.id && ms.is_active)).length;
 
           const avatarStack = grpMembers.slice(0, 5).map(m => {
-            const mSrc = m.avatar_cached_path ? `./${m.avatar_cached_path}` : 'assets/avatars/group_sora-sora.webp';
-            return `<img src="${mSrc}" alt="${m.stage_name}" class="mini-avatar" title="${m.stage_name}">`;
+            const mSrc = m.avatar_cached_path ? `./${m.avatar_cached_path}` : 'assets/avatars/default_avatar.webp';
+            return `<img src="${mSrc}" alt="${m.stage_name}" class="mini-avatar" title="${m.stage_name}" onerror="this.onerror=null;this.src='assets/avatars/default_avatar.webp'">`;
           }).join('');
 
           const moreCount = grpMembers.length > 5 ? `<div class="roster-more">+${grpMembers.length - 5}</div>` : '';
@@ -1699,10 +1904,9 @@
               <div class="group-accent-bar" style="background-color: ${themeHex};"></div>
               
               <div class="group-header">
-                <img src="${avatarSrc}" alt="${g.name}" class="group-avatar">
+                <img src="${avatarSrc}" alt="${g.name}" class="group-avatar" onerror="this.onerror=null;this.src='assets/avatars/default_avatar.webp'">
                 <div class="group-meta">
                   <h3 class="group-name">${g.name}</h3>
-                  ${g.native_name ? `<div class="group-native">${g.native_name}</div>` : ''}
                   <span class="group-company-badge">${comp?.name || g.company_id}</span>
                 </div>
               </div>
@@ -1760,7 +1964,7 @@
             return g && g.company_id === c.id;
           }));
 
-          const avatarSrc = c.avatar_cached_path ? `./${c.avatar_cached_path}` : 'assets/avatars/company_catsolute.webp';
+          const avatarSrc = c.avatar_cached_path ? `./${c.avatar_cached_path}` : 'assets/avatars/default_avatar.webp';
 
           const groupChips = compGroups.map(g => {
             return `<span class="group-chip" onclick="event.stopPropagation(); openGroupModal('${g.id}')">${g.name}</span>`;
@@ -1782,10 +1986,10 @@
           ` : '';
 
           return `
-            <article class="company-card" onclick="filterByCompany('${c.id}')">
+            <article class="company-card" onclick="openCompanyModal('${c.id}')">
               <div class="company-header">
                 <div style="display: flex; align-items: center; gap: 1rem;">
-                  <img class="company-avatar" src="${avatarSrc}" alt="${c.name}" onerror="this.style.display='none'">
+                  <img class="company-avatar" src="${avatarSrc}" alt="${c.name}" onerror="this.onerror=null;this.src='assets/avatars/default_avatar.webp'">
                   <div>
                     <h2 class="company-title">${c.name}</h2>
                     <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.2rem;">Location: ${c.country} • Status: Active</div>
@@ -1801,7 +2005,7 @@
 
               <div class="group-stats-row" style="margin: 0;">
                 <span>Total Idols: <b style="color: #60a5fa;">${compMembers.length}</b></span>
-                <span>Click to filter catalog ↗</span>
+                <span>Click to view agency profile ↗</span>
               </div>
 
               <div>
@@ -1822,8 +2026,13 @@
 
         if (updateHash) location.hash = `member/${m.id}`;
 
-        const avatarSrc = m.avatar_cached_path ? `./${m.avatar_cached_path}` : 'assets/avatars/group_sora-sora.webp';
-        document.getElementById('modal-member-avatar').src = avatarSrc;
+        const avatarSrc = m.avatar_cached_path ? `./${m.avatar_cached_path}` : 'assets/avatars/default_avatar.webp';
+        const modalAvatar = document.getElementById('modal-member-avatar');
+        modalAvatar.src = avatarSrc;
+        modalAvatar.onerror = function() {
+          this.onerror = null;
+          this.src = 'assets/avatars/default_avatar.webp';
+        };
         document.getElementById('modal-member-title').textContent = m.stage_name;
         
         const subParts = [];
@@ -1888,8 +2097,9 @@
         }).join('');
         document.getElementById('modal-member-socials').innerHTML = socialsHtml || '<span style="color: var(--text-muted); font-size: 0.85rem;">No social channels recorded.</span>';
 
-        // Close group modal if open, open member modal
+        // Close other modals if open, open member modal
         document.getElementById('group-modal').classList.remove('open');
+        document.getElementById('company-modal').classList.remove('open');
         document.getElementById('member-modal').classList.add('open');
       };
 
@@ -1901,11 +2111,16 @@
         if (updateHash) location.hash = `group/${g.id}`;
 
         const comp = companyMap.get(g.company_id);
-        const avatarSrc = g.avatar_cached_path ? `./${g.avatar_cached_path}` : 'assets/avatars/group_sora-sora.webp';
-        document.getElementById('modal-group-avatar').src = avatarSrc;
+        const avatarSrc = g.avatar_cached_path ? `./${g.avatar_cached_path}` : 'assets/avatars/default_avatar.webp';
+        const groupModalAvatar = document.getElementById('modal-group-avatar');
+        groupModalAvatar.src = avatarSrc;
+        groupModalAvatar.onerror = function() {
+          this.onerror = null;
+          this.src = 'assets/avatars/default_avatar.webp';
+        };
         document.getElementById('modal-group-title').textContent = g.name;
 
-        const subText = `${g.native_name ? g.native_name + ' • ' : ''}Agency: ${comp?.name || g.company_id} • Debut: ${g.debut_date || 'N/A'}`;
+        const subText = `Agency: ${comp?.name || g.company_id} • Debut: ${g.debut_date || 'N/A'}`;
         document.getElementById('modal-group-sub').innerHTML = `${subText} &bull; <a href="javascript:void(0)" onclick="filterByGroup('${g.id}')" style="color: #60a5fa; text-decoration: underline; font-weight: 600;">Filter idols by ${g.name} &rarr;</a>`;
 
         // Group members
@@ -1917,10 +2132,10 @@
           return memberships.map(ms => {
             const mem = memberMap.get(ms.member_id);
             if (!mem) return '';
-            const mSrc = mem.avatar_cached_path ? `./${mem.avatar_cached_path}` : 'assets/avatars/group_sora-sora.webp';
+            const mSrc = mem.avatar_cached_path ? `./${mem.avatar_cached_path}` : 'assets/avatars/default_avatar.webp';
             return `
               <div class="roster-card" onclick="openMemberModal('${mem.id}')">
-                <img src="${mSrc}" alt="${mem.stage_name}" class="roster-thumb">
+                <img src="${mSrc}" alt="${mem.stage_name}" class="roster-thumb" onerror="this.onerror=null;this.src='assets/avatars/default_avatar.webp'">
                 <div class="roster-name">${mem.stage_name}</div>
                 <div class="roster-role" style="color: ${ms.color?.hex || 'var(--text-muted)'};">${ms.color?.name || ms.role}</div>
               </div>
@@ -1960,9 +2175,76 @@
 
         document.getElementById('modal-group-socials').innerHTML = linksHtml;
 
-        // Close member modal if open, open group modal
+        // Close other modals if open, open group modal
         document.getElementById('member-modal').classList.remove('open');
+        document.getElementById('company-modal').classList.remove('open');
         document.getElementById('group-modal').classList.add('open');
+      };
+
+      // Open Company Modal (Popup showing company info and managed groups)
+      window.openCompanyModal = function (companyId, updateHash = true) {
+        const c = companyMap.get(companyId);
+        if (!c) return;
+
+        if (updateHash) location.hash = `company/${c.id}`;
+
+        const avatarSrc = c.avatar_cached_path ? `./${c.avatar_cached_path}` : 'assets/avatars/default_avatar.webp';
+        const compModalAvatar = document.getElementById('modal-company-avatar');
+        compModalAvatar.src = avatarSrc;
+        compModalAvatar.onerror = function() {
+          this.onerror = null;
+          this.src = 'assets/avatars/default_avatar.webp';
+        };
+        document.getElementById('modal-company-title').textContent = c.name;
+        document.getElementById('modal-company-sub').textContent = `Location: ${c.country} • Status: Active`;
+
+        // Groups managed by this company
+        const compGroups = state.data.groups.filter(g => g.company_id === c.id);
+        const groupsHtml = compGroups.map(g => {
+          const themeHex = g.theme_color?.hex || '#3b82f6';
+          const gAvatar = g.avatar_cached_path ? `./${g.avatar_cached_path}` : 'assets/avatars/default_avatar.webp';
+          const activeCount = state.data.memberships.filter(ms => ms.group_id === g.id && ms.is_active).length;
+          return `
+            <div class="roster-card" onclick="openGroupModal('${g.id}')" style="cursor: pointer; border-left: 3px solid ${themeHex}; text-align: left; padding: 0.85rem 1rem;">
+              <div style="display: flex; align-items: center; gap: 0.75rem;">
+                <img src="${gAvatar}" alt="${g.name}" class="roster-thumb" style="width: 44px; height: 44px; border-radius: var(--radius-sm);" onerror="this.onerror=null;this.src='assets/avatars/default_avatar.webp'">
+                <div>
+                  <div class="roster-name" style="font-weight: 700; font-size: 0.95rem;">${g.name}</div>
+                  <div class="roster-role" style="font-size: 0.75rem; color: var(--text-muted);">${activeCount} active member${activeCount === 1 ? '' : 's'} &bull; Debut: ${g.debut_date || 'N/A'}</div>
+                </div>
+              </div>
+            </div>
+          `;
+        }).join('');
+
+        document.getElementById('modal-company-groups-roster').innerHTML = groupsHtml || '<p style="color: var(--text-muted); font-size: 0.85rem;">No groups currently registered.</p>';
+
+        // Social channels & website
+        let linksHtml = (c.sns || []).map(s => {
+          const icon = ICONS[s.platform] || ICONS.link;
+          return `
+            <a href="${s.url}" target="_blank" rel="noopener noreferrer" class="social-btn">
+              ${icon}
+              <span>${s.platform.charAt(0).toUpperCase() + s.platform.slice(1)}</span>
+            </a>
+          `;
+        }).join('');
+
+        if (c.website_url) {
+          linksHtml += `
+            <a href="${c.website_url}" target="_blank" rel="noopener noreferrer" class="social-btn">
+              ${ICONS.link}
+              <span>Official Website</span>
+            </a>
+          `;
+        }
+
+        document.getElementById('modal-company-socials').innerHTML = linksHtml || '<span style="color: var(--text-muted); font-size: 0.85rem;">No official channels recorded.</span>';
+
+        // Close other modals if open, open company modal
+        document.getElementById('member-modal').classList.remove('open');
+        document.getElementById('group-modal').classList.remove('open');
+        document.getElementById('company-modal').classList.add('open');
       };
 
       // Filter by agency from agency card

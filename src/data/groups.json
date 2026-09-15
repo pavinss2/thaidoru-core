@@ -40,7 +40,8 @@
         "url": "https://www.tiktok.com/@sorasora.idol"
       }
     ],
-    "avatar_cached_path": "assets/avatars/group_sora-sora.webp"
+    "avatar_cached_path": "assets/avatars/group_sora-sora.webp",
+    "native_name": "ソラソラ"
   },
   {
     "id": "yami-yami",
@@ -83,7 +84,8 @@
         "url": "https://www.tiktok.com/@yamiyami_idol"
       }
     ],
-    "avatar_cached_path": "assets/avatars/group_yami-yami.webp"
+    "avatar_cached_path": "assets/avatars/group_yami-yami.webp",
+    "native_name": "ヤミヤミ"
   },
   {
     "id": "mirai-mirai",
@@ -126,7 +128,8 @@
         "url": "https://www.tiktok.com/@miraimirai_idol"
       }
     ],
-    "avatar_cached_path": "assets/avatars/group_mirai-mirai.webp"
+    "avatar_cached_path": "assets/avatars/group_mirai-mirai.webp",
+    "native_name": "ミライミライ"
   },
   {
     "id": "dream-0n",
@@ -169,7 +172,8 @@
         "url": "https://www.tiktok.com/@dream0n_idol"
       }
     ],
-    "avatar_cached_path": "assets/avatars/group_dream-0n.webp"
+    "avatar_cached_path": "assets/avatars/group_dream-0n.webp",
+    "native_name": "Dream:0n"
   },
   {
     "id": "nox-0ff",
@@ -212,7 +216,8 @@
         "url": "https://www.tiktok.com/@nox0ff_idol"
       }
     ],
-    "avatar_cached_path": "assets/avatars/group_nox-0ff.webp"
+    "avatar_cached_path": "assets/avatars/group_nox-0ff.webp",
+    "native_name": "Nox:0ff"
   },
   {
     "id": "angevil",
@@ -259,7 +264,8 @@
         "url": "https://www.youtube.com/@angevil_idol"
       }
     ],
-    "avatar_cached_path": "assets/avatars/group_angevil.webp"
+    "avatar_cached_path": "assets/avatars/group_angevil.webp",
+    "native_name": "ANGeVIL"
   },
   {
     "id": "castella",
@@ -300,13 +306,14 @@
         "url": "https://www.tiktok.com/@castella.cmj"
       }
     ],
-    "avatar_cached_path": "assets/avatars/group_castella.webp"
+    "avatar_cached_path": "assets/avatars/group_castella.webp",
+    "native_name": "カステラ"
   },
   {
     "id": "tgg",
     "company_id": "ic45",
     "name": "The Glass Girls",
-    "native_name": "เดอะกลาสเกิร์ล",
+    "native_name": "The Glass Girls",
     "status": "active",
     "country": "Thailand",
     "debut_date": "2019-12-05",
@@ -354,7 +361,7 @@
     "id": "hatobito",
     "company_id": "a-lot-of-tone",
     "name": "HatoBito",
-    "native_name": "ฮาโตะบิโตะ",
+    "native_name": "ハートビート",
     "status": "active",
     "country": "Thailand",
     "debut_date": "2020-11-15",
@@ -397,7 +404,7 @@
     "id": "koma",
     "company_id": "a-lot-of-tone",
     "name": "KŌMA",
-    "native_name": "โคมะ",
+    "native_name": "コマ",
     "status": "active",
     "country": "Thailand",
     "debut_date": "2026-03-01",
@@ -438,7 +445,7 @@
     "id": "luminus",
     "company_id": "a-lot-of-tone",
     "name": "LUMIN+US",
-    "native_name": "ลูมินัส",
+    "native_name": "LUMIN+US",
     "status": "active",
     "country": "Thailand",
     "debut_date": "2026-05-03",
@@ -474,7 +481,7 @@
     "id": "seishin-kakumei",
     "company_id": "a-lot-of-tone",
     "name": "Seishin Kakumei",
-    "native_name": "เซย์ชิน กักคุเม",
+    "native_name": "セイシンカクメイ",
     "status": "active",
     "country": "Thailand",
     "debut_date": "2025-12-12",
@@ -523,7 +530,7 @@
     "id": "chocolatiere",
     "company_id": "a-lot-of-tone",
     "name": "Chocolatière",
-    "native_name": "ช็อคโกเลิฟ",
+    "native_name": "チョコラティエ",
     "status": "active",
     "country": "Thailand",
     "debut_date": "2024-05-01",
@@ -565,7 +572,7 @@
     "id": "viinx",
     "company_id": "a-lot-of-tone",
     "name": "VIINX",
-    "native_name": "วีงซ์",
+    "native_name": "VIINX",
     "status": "active",
     "country": "Thailand",
     "debut_date": "2025-05-01",
@@ -601,7 +608,7 @@
     "id": "nikko-nikko",
     "company_id": "ic45",
     "name": "Nikko Nikko",
-    "native_name": "นิッコนิッコ",
+    "native_name": "ニッコニッコ",
     "status": "active",
     "country": "Thailand",
     "debut_date": "2023-06-11",
@@ -642,7 +649,7 @@
     "id": "starry-nite",
     "company_id": "ic45",
     "name": "STARRY☆NITE",
-    "native_name": "สตาร์รี่☆ไนท์",
+    "native_name": "スターリ☆ナイト",
     "status": "active",
     "country": "Thailand",
     "debut_date": "2024-12-06",
@@ -677,7 +684,7 @@
     "id": "zyn",
     "company_id": "ic45",
     "name": "ZYN",
-    "native_name": "ซีเอ็น",
+    "native_name": "Zero Youth Noise",
     "status": "active",
     "country": "Thailand",
     "debut_date": "2026-02-01",
