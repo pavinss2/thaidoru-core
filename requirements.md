@@ -60,7 +60,6 @@ erDiagram
         string stage_name "Ame"
         json real_name "{ th: '', en: '', nickname: '' }"
         json birthday "{ month: 10, day: 9, year: null }"
-        string blood_type "O | A | B | AB"
     }
 
     GROUP_MEMBERSHIP {
@@ -90,7 +89,7 @@ erDiagram
 * `id`: Unique slug (e.g. `catsolute`, `a-lot-of-tone`, `ic45`, `individual`).
 * `name`: Display name.
 * `status`: `active` or `inactive`.
-* `country`: Country identifier (default: `🇹🇭 TH`).
+* `country`: Country identifier (default: `Thailand`).
 * `sns`: Array of company-level official SNS accounts.
 
 #### B. `Group` (`src/schemas/group.ts`)
@@ -98,6 +97,7 @@ erDiagram
 * `company_id`: Foreign key referencing `Company.id` (strictly enforced via referential integrity tests).
 * `name`: Display name (e.g. "Sora! Sora!").
 * `status`: `active`, `disbanded`, `hiatus`, or `pre-debut`.
+* `country`: Country identifier (default: `Thailand`).
 * `debut_date` / `disband_date`: `YYYY-MM-DD` (nullable).
 * `theme_color`: Group brand color (`{ name: string, hex: string }`).
 * `music_links`: Record of streaming URLs (e.g. `spotify`, `apple_music`).
@@ -108,10 +108,8 @@ Represents the human idol entity independent of group affiliations:
 * `stage_name`: Primary stage name.
 * `stage_name_th`: Thai stage name (nullable).
 * `real_name`: Structured object (`first_name_th`, `last_name_th`, `first_name_en`, `last_name_en`, `nickname`).
-* `birthday`: Structured object (`month`: 1–12, `day`: 1–31, `year`: nullable, `raw_text`: string).
+* `birthday`: Structured object (`month`: 1–12, `day`: 1–31, `year`: nullable).
   * *Reasoning*: Most idols publicly share Month and Day but hide birth year. This structure enables birthday notifications and sorting without breaking standard date parsers.
-* `blood_type`: `A`, `B`, `O`, `AB`, or `unknown`.
-* `height_cm`: Integer (nullable).
 * `sns`: Array of personal/idol SNS channels.
 
 #### D. `GroupMembership` (`src/schemas/membership.ts`)
@@ -288,3 +286,5 @@ The endpoint `/v1/export/cheki-tracker.json` directly implements the schema cont
 | **2026-09-14** | Immutable `profile_id` on SNS channels | Usernames/handles mutate on rebrand or transfer. | Guarantees long-term crawler stability across handle changes. |
 | **2026-09-14** | Git-as-Database + Edge CDN API ($0/mo) | Total dataset < 500 KB; dynamic DB is costly and prone to connection exhaustion. | Sub-15ms global response times, zero hosting costs, native Git audit logs. |
 | **2026-09-14** | Removed `graduated_reason` field | Unnecessary metadata for core tracking and Cheki Tracker use cases. | Kept schema clean, focused, and low-maintenance. |
+| **2026-09-15** | Removed `blood_type`, `height_cm`, `raw_text` | Unused personal physical traits and redundant raw text in birthday object. | Streamlined member schema to core essential metadata only. |
+| **2026-09-15** | Standardized `country` to clean text (`Thailand`) | Replace emoji string `🇹🇭 TH` with plain text country names. | Improves cross-platform database compatibility and matching with `dim_country`. |

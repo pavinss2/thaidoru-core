@@ -84,6 +84,20 @@ try {
   }
   assert(allHexValid, 'All membership colors have valid 6-char hex codes');
 
+  // Test 6: Country format (clean text, no emojis)
+  const allCompaniesCleanCountry = companies.every(c => c.country === 'Thailand');
+  assert(allCompaniesCleanCountry, 'All companies have country "Thailand"');
+
+  const allGroupsCleanCountry = groups.every(g => g.country === 'Thailand');
+  assert(allGroupsCleanCountry, 'All groups have country "Thailand"');
+
+  // Test 7: Ensure blood_type, height_cm, and raw_text are removed
+  const rawMembersJson = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'members.json'), 'utf-8'));
+  const hasRemovedFields = rawMembersJson.some((m: any) => 
+    'blood_type' in m || 'height_cm' in m || (m.birthday && 'raw_text' in m.birthday)
+  );
+  assert(!hasRemovedFields, 'No members contain blood_type, height_cm, or birthday.raw_text');
+
 } catch (err) {
   console.error('Test Suite Threw Exception:', err);
   failed++;

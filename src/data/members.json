@@ -6,8 +6,7 @@
     "birthday": {
       "month": 10,
       "day": 9,
-      "year": null,
-      "raw_text": "October 9"
+      "year": null
     },
     "sns": [
       {
@@ -44,8 +43,7 @@
     "birthday": {
       "month": null,
       "day": null,
-      "year": null,
-      "raw_text": null
+      "year": null
     },
     "sns": [
       {
@@ -82,8 +80,7 @@
     "birthday": {
       "month": null,
       "day": null,
-      "year": null,
-      "raw_text": null
+      "year": null
     },
     "sns": [
       {
@@ -120,8 +117,7 @@
     "birthday": {
       "month": 4,
       "day": 11,
-      "year": null,
-      "raw_text": "April 11"
+      "year": null
     },
     "sns": [
       {
@@ -158,8 +154,7 @@
     "birthday": {
       "month": null,
       "day": null,
-      "year": null,
-      "raw_text": null
+      "year": null
     },
     "sns": [
       {
@@ -196,8 +191,7 @@
     "birthday": {
       "month": null,
       "day": null,
-      "year": null,
-      "raw_text": null
+      "year": null
     },
     "sns": [
       {
@@ -234,8 +228,7 @@
     "birthday": {
       "month": null,
       "day": null,
-      "year": null,
-      "raw_text": null
+      "year": null
     },
     "sns": [
       {
@@ -272,8 +265,7 @@
     "birthday": {
       "month": 3,
       "day": 22,
-      "year": null,
-      "raw_text": "March 22"
+      "year": null
     },
     "sns": [
       {
@@ -310,8 +302,7 @@
     "birthday": {
       "month": null,
       "day": null,
-      "year": null,
-      "raw_text": null
+      "year": null
     },
     "sns": [
       {
@@ -348,8 +339,7 @@
     "birthday": {
       "month": 4,
       "day": 9,
-      "year": null,
-      "raw_text": "April 9"
+      "year": null
     },
     "sns": [
       {
@@ -386,8 +376,7 @@
     "birthday": {
       "month": null,
       "day": null,
-      "year": null,
-      "raw_text": null
+      "year": null
     },
     "sns": [
       {
@@ -424,8 +413,7 @@
     "birthday": {
       "month": null,
       "day": null,
-      "year": null,
-      "raw_text": null
+      "year": null
     },
     "sns": [
       {
@@ -462,8 +450,7 @@
     "birthday": {
       "month": null,
       "day": null,
-      "year": null,
-      "raw_text": null
+      "year": null
     },
     "sns": [
       {
@@ -500,8 +487,7 @@
     "birthday": {
       "month": null,
       "day": null,
-      "year": null,
-      "raw_text": null
+      "year": null
     },
     "sns": [
       {
@@ -538,8 +524,7 @@
     "birthday": {
       "month": null,
       "day": null,
-      "year": null,
-      "raw_text": null
+      "year": null
     },
     "sns": [
       {
@@ -576,8 +561,7 @@
     "birthday": {
       "month": null,
       "day": null,
-      "year": null,
-      "raw_text": null
+      "year": null
     },
     "sns": [
       {
@@ -614,8 +598,7 @@
     "birthday": {
       "month": null,
       "day": null,
-      "year": null,
-      "raw_text": null
+      "year": null
     },
     "sns": [
       {
@@ -652,8 +635,7 @@
     "birthday": {
       "month": null,
       "day": null,
-      "year": null,
-      "raw_text": null
+      "year": null
     },
     "sns": [
       {
@@ -690,8 +672,7 @@
     "birthday": {
       "month": 2,
       "day": 8,
-      "year": null,
-      "raw_text": "February 8"
+      "year": null
     },
     "sns": [
       {
@@ -728,8 +709,7 @@
     "birthday": {
       "month": null,
       "day": null,
-      "year": null,
-      "raw_text": null
+      "year": null
     },
     "sns": [
       {
@@ -766,8 +746,7 @@
     "birthday": {
       "month": null,
       "day": null,
-      "year": null,
-      "raw_text": null
+      "year": null
     },
     "sns": [
       {
@@ -804,8 +783,7 @@
     "birthday": {
       "month": null,
       "day": null,
-      "year": null,
-      "raw_text": null
+      "year": null
     },
     "sns": [
       {
@@ -842,8 +820,7 @@
     "birthday": {
       "month": null,
       "day": null,
-      "year": null,
-      "raw_text": null
+      "year": null
     },
     "sns": [
       {
@@ -880,8 +857,7 @@
     "birthday": {
       "month": null,
       "day": null,
-      "year": null,
-      "raw_text": null
+      "year": null
     },
     "sns": [
       {
@@ -918,8 +894,7 @@
     "birthday": {
       "month": null,
       "day": null,
-      "year": null,
-      "raw_text": null
+      "year": null
     },
     "sns": [
       {
@@ -956,8 +931,7 @@
     "birthday": {
       "month": null,
       "day": null,
-      "year": null,
-      "raw_text": null
+      "year": null
     },
     "sns": [
       {
@@ -994,8 +968,7 @@
     "birthday": {
       "month": null,
       "day": null,
-      "year": null,
-      "raw_text": null
+      "year": null
     },
     "sns": [
       {
@@ -1032,8 +1005,7 @@
     "birthday": {
       "month": null,
       "day": null,
-      "year": null,
-      "raw_text": null
+      "year": null
     },
     "sns": [
       {
@@ -1070,8 +1042,7 @@
     "birthday": {
       "month": null,
       "day": null,
-      "year": null,
-      "raw_text": null
+      "year": null
     },
     "sns": [
       {
@@ -1108,8 +1079,7 @@
     "birthday": {
       "month": null,
       "day": null,
-      "year": null,
-      "raw_text": null
+      "year": null
     },
     "sns": [
       {
@@ -1146,8 +1116,7 @@
     "birthday": {
       "month": null,
       "day": null,
-      "year": null,
-      "raw_text": null
+      "year": null
     },
     "sns": [
       {
@@ -1184,8 +1153,7 @@
     "birthday": {
       "month": null,
       "day": null,
-      "year": null,
-      "raw_text": null
+      "year": null
     },
     "sns": [
       {
@@ -1222,8 +1190,7 @@
     "birthday": {
       "month": null,
       "day": null,
-      "year": null,
-      "raw_text": null
+      "year": null
     },
     "sns": [
       {
@@ -1260,8 +1227,7 @@
     "birthday": {
       "month": null,
       "day": null,
-      "year": null,
-      "raw_text": null
+      "year": null
     },
     "sns": [
       {
@@ -1298,8 +1264,7 @@
     "birthday": {
       "month": null,
       "day": null,
-      "year": null,
-      "raw_text": null
+      "year": null
     },
     "sns": [
       {
@@ -1336,8 +1301,7 @@
     "birthday": {
       "month": null,
       "day": null,
-      "year": null,
-      "raw_text": null
+      "year": null
     },
     "sns": [
       {
@@ -1374,8 +1338,7 @@
     "birthday": {
       "month": null,
       "day": null,
-      "year": null,
-      "raw_text": null
+      "year": null
     },
     "sns": [
       {
@@ -1412,8 +1375,7 @@
     "birthday": {
       "month": null,
       "day": null,
-      "year": null,
-      "raw_text": null
+      "year": null
     },
     "sns": [
       {
@@ -1450,8 +1412,7 @@
     "birthday": {
       "month": null,
       "day": null,
-      "year": null,
-      "raw_text": null
+      "year": null
     },
     "sns": [
       {
@@ -1488,8 +1449,7 @@
     "birthday": {
       "month": null,
       "day": null,
-      "year": null,
-      "raw_text": null
+      "year": null
     },
     "sns": [
       {
@@ -1526,8 +1486,7 @@
     "birthday": {
       "month": null,
       "day": null,
-      "year": null,
-      "raw_text": null
+      "year": null
     },
     "sns": [
       {
@@ -1546,8 +1505,7 @@
     "birthday": {
       "month": null,
       "day": null,
-      "year": null,
-      "raw_text": null
+      "year": null
     },
     "sns": [
       {
@@ -1566,8 +1524,7 @@
     "birthday": {
       "month": null,
       "day": null,
-      "year": null,
-      "raw_text": null
+      "year": null
     },
     "sns": [
       {
@@ -1586,8 +1543,7 @@
     "birthday": {
       "month": null,
       "day": null,
-      "year": null,
-      "raw_text": null
+      "year": null
     },
     "sns": [
       {
@@ -1606,8 +1562,7 @@
     "birthday": {
       "month": null,
       "day": null,
-      "year": null,
-      "raw_text": null
+      "year": null
     },
     "sns": [
       {
@@ -1626,8 +1581,7 @@
     "birthday": {
       "month": null,
       "day": null,
-      "year": null,
-      "raw_text": null
+      "year": null
     },
     "sns": [
       {

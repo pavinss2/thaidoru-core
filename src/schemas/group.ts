@@ -15,7 +15,7 @@ export const GroupSchema = z.object({
   name: z.string().min(1),
   native_name: z.string().nullable().optional(),
   status: GroupStatusEnum.default('active'),
-  country: z.string().default('🇹🇭 TH'),
+  country: z.string().default('Thailand'),
   debut_date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).nullable().optional(),
   disband_date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).nullable().optional(),
   theme_color: GroupColorSchema.nullable().optional(),

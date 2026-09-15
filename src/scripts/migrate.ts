@@ -39,7 +39,7 @@ const MONTH_MAP: Record<string, number> = {
 
 function parseBirthday(bdayStr: string | null) {
   if (!bdayStr) {
-    return { month: null, day: null, year: null, raw_text: null };
+    return { month: null, day: null, year: null };
   }
   const parts = bdayStr.trim().split(/\s+/);
   if (parts.length >= 2) {
@@ -48,11 +48,10 @@ function parseBirthday(bdayStr: string | null) {
     return {
       month,
       day,
-      year: null,
-      raw_text: bdayStr
+      year: null
     };
   }
-  return { month: null, day: null, year: null, raw_text: bdayStr };
+  return { month: null, day: null, year: null };
 }
 
 function extractFacebookProfileId(fbStr: string | null): string | null {
@@ -81,7 +80,7 @@ const companies: Company[] = [
   {
     id: 'catsolute',
     name: 'Catsolute',
-    country: '🇹🇭 TH',
+    country: 'Thailand',
     status: 'active',
     sns: [
       {
@@ -101,7 +100,7 @@ const companies: Company[] = [
   {
     id: 'a-lot-of-tone',
     name: 'A lot of Tone',
-    country: '🇹🇭 TH',
+    country: 'Thailand',
     status: 'active',
     sns: [
       {
@@ -115,7 +114,7 @@ const companies: Company[] = [
   {
     id: 'ic45',
     name: 'IC45',
-    country: '🇹🇭 TH',
+    country: 'Thailand',
     status: 'active',
     sns: [
       {
@@ -188,7 +187,7 @@ for (const rg of rawGroups) {
     company_id: 'catsolute',
     name: rg.name,
     status: 'active',
-    country: '🇹🇭 TH',
+    country: 'Thailand',
     debut_date: rg.debut_date || null,
     theme_color: {
       name: colorName,
@@ -205,7 +204,7 @@ groups.push({
   company_id: 'a-lot-of-tone',
   name: 'Angevil',
   status: 'active',
-  country: '🇹🇭 TH',
+  country: 'Thailand',
   debut_date: null,
   theme_color: {
     name: 'Red',
@@ -227,7 +226,7 @@ groups.push({
   company_id: 'a-lot-of-tone',
   name: 'Castella',
   status: 'active',
-  country: '🇹🇭 TH',
+  country: 'Thailand',
   debut_date: null,
   theme_color: {
     name: 'Yellow',
@@ -249,7 +248,7 @@ groups.push({
   company_id: 'ic45',
   name: 'TGG',
   status: 'active',
-  country: '🇹🇭 TH',
+  country: 'Thailand',
   debut_date: null,
   theme_color: {
     name: 'N/A',
@@ -376,7 +375,7 @@ for (const am of angevilMembers) {
       id: mId,
       stage_name: am.name,
       real_name: {},
-      birthday: { month: null, day: null, year: null, raw_text: null },
+      birthday: { month: null, day: null, year: null },
       sns: [
         {
           platform: 'x',
@@ -411,7 +410,7 @@ const nadearMember: Member = {
   id: 'nadear',
   stage_name: 'Nadear',
   real_name: {},
-  birthday: { month: null, day: null, year: null, raw_text: null },
+  birthday: { month: null, day: null, year: null },
   sns: [
     {
       platform: 'x',
@@ -445,7 +444,7 @@ const pimMember: Member = {
   id: 'pim',
   stage_name: 'Pim',
   real_name: {},
-  birthday: { month: null, day: null, year: null, raw_text: null },
+  birthday: { month: null, day: null, year: null },
   sns: [
     {
       platform: 'x',
