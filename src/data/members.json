@@ -1889,12 +1889,19 @@
     "sns": [
       {
         "platform": "x",
+        "profile_id": "1381936735223828480",
+        "current_handle": "FriendCMJ",
+        "url": "https://x.com/FriendCMJ",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2069783213044805633/xc6OIo8x_400x400.jpg"
+      },
+      {
+        "platform": "facebook",
         "profile_id": null,
-        "current_handle": "Friend_CMJ",
-        "url": "https://x.com/Friend_CMJ",
-        "avatar_url": null
+        "current_handle": "friend.cmj",
+        "url": "https://www.facebook.com/friend.cmj"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/friend.webp"
   },
   {
     "id": "puifaii",
@@ -1972,12 +1979,25 @@
     "sns": [
       {
         "platform": "x",
+        "profile_id": "1238017769125232640",
+        "current_handle": "minttgg",
+        "url": "https://x.com/minttgg",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2059976285158514688/0hTFomFH_400x400.jpg"
+      },
+      {
+        "platform": "facebook",
         "profile_id": null,
-        "current_handle": "mint_tgg",
-        "url": "https://x.com/mint_tgg",
-        "avatar_url": null
+        "current_handle": "Minttheglassgirls",
+        "url": "https://www.facebook.com/Minttheglassgirls"
+      },
+      {
+        "platform": "instagram",
+        "profile_id": null,
+        "current_handle": "mint.theglassgirls",
+        "url": "https://www.instagram.com/mint.theglassgirls"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/mint.webp"
   },
   {
     "id": "ni",
@@ -2004,7 +2024,11 @@
     "id": "pam",
     "stage_name": "Pam",
     "stage_name_th": "แพม",
-    "real_name": {},
+    "real_name": {
+      "th": "นลินทิพย์ ปรังประโคน",
+      "en": "Nalinthip Prangprakhon",
+      "nickname": "Pam"
+    },
     "birthday": {
       "month": null,
       "day": null,
@@ -2012,19 +2036,31 @@
     },
     "sns": [
       {
-        "platform": "x",
+        "platform": "facebook",
+        "profile_id": "100084040187343",
+        "current_handle": "pamtheglassgirls",
+        "url": "https://www.facebook.com/pamtheglassgirls",
+        "avatar_url": null
+      },
+      {
+        "platform": "instagram",
         "profile_id": null,
-        "current_handle": "pam_tgg",
-        "url": "https://x.com/pam_tgg",
+        "current_handle": "pam.theglassgirls",
+        "url": "https://www.instagram.com/pam.theglassgirls",
         "avatar_url": null
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/pam.webp"
   },
   {
     "id": "maple",
     "stage_name": "Maple",
     "stage_name_th": "เมเปิ้ล",
-    "real_name": {},
+    "real_name": {
+      "th": "รังสิมา ดลลักขณา",
+      "en": "Rangsima Dollakha",
+      "nickname": "Maple"
+    },
     "birthday": {
       "month": null,
       "day": null,
@@ -2032,19 +2068,31 @@
     },
     "sns": [
       {
-        "platform": "x",
+        "platform": "facebook",
+        "profile_id": "100084370051529",
+        "current_handle": "mapletheglassgirls",
+        "url": "https://www.facebook.com/mapletheglassgirls",
+        "avatar_url": null
+      },
+      {
+        "platform": "instagram",
         "profile_id": null,
-        "current_handle": "maple_tgg",
-        "url": "https://x.com/maple_tgg",
+        "current_handle": "maple.theglassgirls",
+        "url": "https://www.instagram.com/maple.theglassgirls",
         "avatar_url": null
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/maple.webp"
   },
   {
     "id": "front",
     "stage_name": "Front",
     "stage_name_th": "ฟร้อนท์",
-    "real_name": {},
+    "real_name": {
+      "th": "กรกช กาญจนสูตร",
+      "en": "Korakoch Karnasuta",
+      "nickname": "Front"
+    },
     "birthday": {
       "month": null,
       "day": null,
@@ -2052,19 +2100,31 @@
     },
     "sns": [
       {
-        "platform": "x",
+        "platform": "facebook",
+        "profile_id": "100083841446080",
+        "current_handle": "Fronttheglassgirls",
+        "url": "https://www.facebook.com/Fronttheglassgirls",
+        "avatar_url": null
+      },
+      {
+        "platform": "instagram",
         "profile_id": null,
-        "current_handle": "front_tgg",
-        "url": "https://x.com/front_tgg",
+        "current_handle": "front.theglassgirls",
+        "url": "https://www.instagram.com/front.theglassgirls",
         "avatar_url": null
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/front.webp"
   },
   {
     "id": "asia-tgg",
     "stage_name": "Asia",
     "stage_name_th": "เอเชียร์",
-    "real_name": {},
+    "real_name": {
+      "th": "ภัสสุดา อดทน",
+      "en": "Phatsuda Odthon",
+      "nickname": "Asia"
+    },
     "birthday": {
       "month": null,
       "day": null,
@@ -2072,19 +2132,31 @@
     },
     "sns": [
       {
-        "platform": "x",
+        "platform": "facebook",
+        "profile_id": "100084272376025",
+        "current_handle": "Asiatheglassgirls",
+        "url": "https://www.facebook.com/Asiatheglassgirls",
+        "avatar_url": null
+      },
+      {
+        "platform": "instagram",
         "profile_id": null,
-        "current_handle": "asia_tgg",
-        "url": "https://x.com/asia_tgg",
+        "current_handle": "asia.theglassgirls",
+        "url": "https://www.instagram.com/asia.theglassgirls",
         "avatar_url": null
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/asia-tgg.webp"
   },
   {
     "id": "preammy",
     "stage_name": "Preammy",
     "stage_name_th": "พรีมมี่",
-    "real_name": {},
+    "real_name": {
+      "th": "รัญญ์หทัย ศักดิ์แพทย์",
+      "en": "Runhathai Sakpaet",
+      "nickname": "Preammy"
+    },
     "birthday": {
       "month": null,
       "day": null,
@@ -2092,12 +2164,20 @@
     },
     "sns": [
       {
-        "platform": "x",
+        "platform": "facebook",
+        "profile_id": "100070570531375",
+        "current_handle": "preammytheglassgirls",
+        "url": "https://www.facebook.com/preammytheglassgirls",
+        "avatar_url": null
+      },
+      {
+        "platform": "instagram",
         "profile_id": null,
-        "current_handle": "preammy_tgg",
-        "url": "https://x.com/preammy_tgg",
+        "current_handle": "preammy.theglassgirls",
+        "url": "https://www.instagram.com/preammy.theglassgirls",
         "avatar_url": null
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/preammy.webp"
   }
 ]

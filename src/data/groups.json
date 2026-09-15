@@ -349,5 +349,300 @@
       }
     ],
     "avatar_cached_path": "assets/avatars/group_tgg.webp"
+  },
+  {
+    "id": "hatobito",
+    "company_id": "a-lot-of-tone",
+    "name": "HatoBito",
+    "native_name": "ฮาโตะบิโตะ",
+    "status": "active",
+    "country": "Thailand",
+    "debut_date": "2020-11-15",
+    "theme_color": {
+      "name": "Sky Blue",
+      "hex": "#4fc3f7"
+    },
+    "music_links": {
+      "spotify": "https://open.spotify.com/artist/5Lz12o6x9fG0V8L4wW1K8I"
+    },
+    "sns": [
+      {
+        "platform": "facebook",
+        "profile_id": "100063479234897",
+        "current_handle": "hatobito",
+        "url": "https://www.facebook.com/hatobito"
+      },
+      {
+        "platform": "x",
+        "profile_id": "1192395512588013568",
+        "current_handle": "HatoBito_TH",
+        "url": "https://x.com/HatoBito_TH"
+      },
+      {
+        "platform": "instagram",
+        "profile_id": null,
+        "current_handle": "hatobito_official",
+        "url": "https://www.instagram.com/hatobito_official"
+      },
+      {
+        "platform": "tiktok",
+        "profile_id": null,
+        "current_handle": "hatobito_official",
+        "url": "https://www.tiktok.com/@hatobito_official"
+      }
+    ],
+    "avatar_cached_path": "assets/avatars/group_hatobito.webp"
+  },
+  {
+    "id": "koma",
+    "company_id": "a-lot-of-tone",
+    "name": "KŌMA",
+    "native_name": "โคมะ",
+    "status": "active",
+    "country": "Thailand",
+    "debut_date": "2026-03-01",
+    "theme_color": {
+      "name": "Purple",
+      "hex": "#8e44ad"
+    },
+    "music_links": {},
+    "sns": [
+      {
+        "platform": "facebook",
+        "profile_id": "61588150987179",
+        "current_handle": "komaidol",
+        "url": "https://www.facebook.com/komaidol"
+      },
+      {
+        "platform": "x",
+        "profile_id": "2016476529606434816",
+        "current_handle": "koma__info",
+        "url": "https://x.com/koma__info"
+      },
+      {
+        "platform": "instagram",
+        "profile_id": null,
+        "current_handle": "koma__info",
+        "url": "https://www.instagram.com/koma__info"
+      },
+      {
+        "platform": "tiktok",
+        "profile_id": null,
+        "current_handle": "koma__info",
+        "url": "https://www.tiktok.com/@koma__info"
+      }
+    ],
+    "avatar_cached_path": "assets/avatars/group_koma.webp"
+  },
+  {
+    "id": "luminus",
+    "company_id": "a-lot-of-tone",
+    "name": "LUMIN+US",
+    "native_name": "ลูมินัส",
+    "status": "active",
+    "country": "Thailand",
+    "debut_date": "2026-05-03",
+    "theme_color": {
+      "name": "Gold",
+      "hex": "#f39c12"
+    },
+    "music_links": {},
+    "sns": [
+      {
+        "platform": "facebook",
+        "profile_id": "61575741864007",
+        "current_handle": "61575741864007",
+        "url": "https://www.facebook.com/61575741864007"
+      }
+    ],
+    "avatar_cached_path": "assets/avatars/group_luminus.webp"
+  },
+  {
+    "id": "seishin-kakumei",
+    "company_id": "a-lot-of-tone",
+    "name": "Seishin Kakumei",
+    "native_name": "เซย์ชิน กักคุเม",
+    "status": "active",
+    "country": "Thailand",
+    "debut_date": "2025-12-12",
+    "theme_color": {
+      "name": "Dark Cyber",
+      "hex": "#0c0a12"
+    },
+    "music_links": {
+      "website": "https://seishinkakumei.com"
+    },
+    "sns": [
+      {
+        "platform": "facebook",
+        "profile_id": "61551455559316",
+        "current_handle": "SeishinKakumei",
+        "url": "https://www.facebook.com/SeishinKakumei"
+      },
+      {
+        "platform": "x",
+        "profile_id": "1876025691604758528",
+        "current_handle": "Seishin_Kakumei",
+        "url": "https://x.com/Seishin_Kakumei"
+      },
+      {
+        "platform": "instagram",
+        "profile_id": null,
+        "current_handle": "seishinkakumei",
+        "url": "https://www.instagram.com/seishinkakumei"
+      },
+      {
+        "platform": "tiktok",
+        "profile_id": null,
+        "current_handle": "seishinkakumei",
+        "url": "https://www.tiktok.com/@seishinkakumei"
+      },
+      {
+        "platform": "youtube",
+        "profile_id": null,
+        "current_handle": "SeishinKakumei",
+        "url": "https://www.youtube.com/@SeishinKakumei"
+      }
+    ],
+    "avatar_cached_path": "assets/avatars/group_seishin-kakumei.webp"
+  },
+  {
+    "id": "chocolatiere",
+    "company_id": "a-lot-of-tone",
+    "name": "Chocolatière",
+    "native_name": "ช็อคโกเลิฟ",
+    "status": "active",
+    "country": "Thailand",
+    "debut_date": "2024-05-01",
+    "theme_color": {
+      "name": "Chocolate Pink",
+      "hex": "#e056fd"
+    },
+    "music_links": {},
+    "sns": [
+      {
+        "platform": "facebook",
+        "profile_id": "61555753719509",
+        "current_handle": "chocolatiere.cmj",
+        "url": "https://www.facebook.com/chocolatiere.cmj"
+      }
+    ],
+    "avatar_cached_path": "assets/avatars/group_chocolatiere.webp"
+  },
+  {
+    "id": "viinx",
+    "company_id": "a-lot-of-tone",
+    "name": "VIINX",
+    "native_name": "วีงซ์",
+    "status": "active",
+    "country": "Thailand",
+    "debut_date": "2025-05-01",
+    "theme_color": {
+      "name": "Fairy Pink",
+      "hex": "#ff7979"
+    },
+    "music_links": {},
+    "sns": [
+      {
+        "platform": "facebook",
+        "profile_id": "61571416090840",
+        "current_handle": "viinxthailand",
+        "url": "https://www.facebook.com/viinxthailand"
+      }
+    ],
+    "avatar_cached_path": "assets/avatars/group_viinx.webp"
+  },
+  {
+    "id": "nikko-nikko",
+    "company_id": "ic45",
+    "name": "Nikko Nikko",
+    "native_name": "นิッコนิッコ",
+    "status": "active",
+    "country": "Thailand",
+    "debut_date": "2023-06-11",
+    "theme_color": {
+      "name": "Sunshine Yellow",
+      "hex": "#ffbe76"
+    },
+    "music_links": {},
+    "sns": [
+      {
+        "platform": "facebook",
+        "profile_id": "100083118837144",
+        "current_handle": "nikkonikkoth",
+        "url": "https://www.facebook.com/nikkonikkoth"
+      },
+      {
+        "platform": "x",
+        "profile_id": "1613276323623088130",
+        "current_handle": "NikkoNikkoTH",
+        "url": "https://x.com/NikkoNikkoTH"
+      },
+      {
+        "platform": "instagram",
+        "profile_id": null,
+        "current_handle": "nikkonikko.official",
+        "url": "https://www.instagram.com/nikkonikko.official"
+      },
+      {
+        "platform": "tiktok",
+        "profile_id": null,
+        "current_handle": "nikkonikko.official",
+        "url": "https://www.tiktok.com/@nikkonikko.official"
+      }
+    ],
+    "avatar_cached_path": "assets/avatars/group_nikko-nikko.webp"
+  },
+  {
+    "id": "starry-nite",
+    "company_id": "ic45",
+    "name": "STARRY☆NITE",
+    "native_name": "สตาร์รี่☆ไนท์",
+    "status": "active",
+    "country": "Thailand",
+    "debut_date": "2024-12-06",
+    "theme_color": {
+      "name": "Starry Violet",
+      "hex": "#686de0"
+    },
+    "music_links": {},
+    "sns": [
+      {
+        "platform": "facebook",
+        "profile_id": "61566943650725",
+        "current_handle": "StarryNiteTH",
+        "url": "https://www.facebook.com/StarryNiteTH"
+      },
+      {
+        "platform": "x",
+        "profile_id": "1843726394343469058",
+        "current_handle": "StarryNiteTH",
+        "url": "https://x.com/StarryNiteTH"
+      }
+    ],
+    "avatar_cached_path": "assets/avatars/group_starry-nite.webp"
+  },
+  {
+    "id": "zyn",
+    "company_id": "ic45",
+    "name": "ZYN",
+    "native_name": "ซีเอ็น",
+    "status": "active",
+    "country": "Thailand",
+    "debut_date": "2026-02-01",
+    "theme_color": {
+      "name": "Rock Crimson",
+      "hex": "#eb4d4b"
+    },
+    "music_links": {},
+    "sns": [
+      {
+        "platform": "facebook",
+        "profile_id": "100049512283975",
+        "current_handle": "ZYNofficial",
+        "url": "https://www.facebook.com/ZYNofficial"
+      }
+    ],
+    "avatar_cached_path": "assets/avatars/group_zyn.webp"
   }
 ]
