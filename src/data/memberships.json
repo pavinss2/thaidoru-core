@@ -45,15 +45,15 @@
     "id": "sora-sora_kitty",
     "group_id": "sora-sora",
     "member_id": "kitty",
-    "status": "active",
-    "is_active": true,
+    "status": "graduated",
+    "is_active": false,
     "role": "member",
     "color": {
       "name": "White",
       "hex": "#ffffff"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": "2026-09-05"
   },
   {
     "id": "sora-sora_lilin",
@@ -843,8 +843,8 @@
     "id": "tgg_pim",
     "group_id": "tgg",
     "member_id": "pim",
-    "status": "active",
-    "is_active": true,
+    "status": "graduated",
+    "is_active": false,
     "role": "member",
     "color": {
       "name": "N/A",
