@@ -1068,6 +1068,328 @@
         max-height: 95vh;
       }
     }
+
+    /* Admin Authentication & Toolbar Styles */
+    .btn-auth {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(217, 119, 6, 0.1));
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      color: #fbbf24;
+      padding: 0.5rem 0.9rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.825rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .btn-auth:hover {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.3), rgba(217, 119, 6, 0.2));
+      border-color: #f59e0b;
+      box-shadow: 0 0 15px rgba(245, 158, 11, 0.25);
+    }
+
+    .user-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--bg-surface-elevated);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      padding: 0.35rem 0.75rem;
+      border-radius: var(--radius-full);
+      font-size: 0.8rem;
+    }
+    .admin-badge {
+      display: inline-flex;
+      align-items: center;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #000;
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 0.15rem 0.5rem;
+      border-radius: var(--radius-full);
+      letter-spacing: 0.02em;
+    }
+    .user-email {
+      color: var(--text-primary);
+      font-weight: 600;
+      max-width: 170px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .btn-logout {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.2rem 0.4rem;
+      border-radius: var(--radius-sm);
+      transition: var(--transition);
+    }
+    .btn-logout:hover {
+      color: #f87171;
+      background: rgba(239, 68, 68, 0.1);
+    }
+
+    .admin-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      background: linear-gradient(90deg, rgba(245, 158, 11, 0.12), rgba(30, 41, 59, 0.8));
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      border-radius: var(--radius-md);
+      padding: 0.85rem 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    .admin-toolbar-info {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.85rem;
+      color: #fde68a;
+    }
+    .admin-pulse {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #f59e0b;
+      box-shadow: 0 0 10px #f59e0b;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.7); }
+      70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(245, 158, 11, 0); }
+      100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
+    }
+    .admin-toolbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .admin-action-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-primary);
+      padding: 0.45rem 0.85rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .admin-action-btn:hover {
+      background: var(--bg-surface);
+      border-color: #60a5fa;
+    }
+    .admin-action-btn.primary {
+      background: #3b82f6;
+      border-color: #2563eb;
+      color: #fff;
+    }
+    .admin-action-btn.primary:hover {
+      background: #2563eb;
+    }
+    .admin-action-btn.danger {
+      color: #fca5a5;
+    }
+    .admin-action-btn.danger:hover {
+      background: rgba(239, 68, 68, 0.15);
+      border-color: #ef4444;
+    }
+
+    .btn-edit {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      color: #fde047;
+      padding: 0.4rem 0.8rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .btn-edit:hover {
+      background: rgba(245, 158, 11, 0.25);
+      border-color: #f59e0b;
+      box-shadow: 0 0 12px rgba(245, 158, 11, 0.3);
+    }
+
+    /* Form Styles */
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 0.85rem;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      text-align: left;
+    }
+    .form-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+    .form-input, .form-select {
+      background: var(--bg-base);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 0.6rem 0.85rem;
+      color: var(--text-primary);
+      font-family: inherit;
+      font-size: 0.875rem;
+      outline: none;
+      transition: var(--transition);
+    }
+    .form-input:focus, .form-select:focus {
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+    }
+    .form-section-heading {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #60a5fa;
+      margin: 1.25rem 0 0.6rem;
+      padding-bottom: 0.25rem;
+      border-bottom: 1px solid var(--border-subtle);
+      text-align: left;
+    }
+    .form-actions-row {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 0.75rem;
+      margin-top: 1.75rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--border-subtle);
+    }
+    .btn-primary-save {
+      background: #3b82f6;
+      border: 1px solid #2563eb;
+      color: #fff;
+      padding: 0.65rem 1.25rem;
+      border-radius: var(--radius-sm);
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .btn-primary-save:hover {
+      background: #2563eb;
+      box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+    }
+    .btn-cancel {
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      padding: 0.65rem 1.15rem;
+      border-radius: var(--radius-sm);
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .btn-cancel:hover {
+      background: var(--bg-surface);
+      color: var(--text-primary);
+    }
+    .btn-primary-block {
+      width: 100%;
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      border: 1px solid rgba(245, 158, 11, 0.5);
+      color: #000;
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+    .btn-primary-block:hover {
+      background: linear-gradient(135deg, #fbbf24, #f59e0b);
+      box-shadow: 0 0 20px rgba(245, 158, 11, 0.35);
+    }
+    .btn-secondary-block {
+      width: 100%;
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-primary);
+      padding: 0.7rem 1rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.875rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .btn-secondary-block:hover {
+      border-color: #60a5fa;
+      background: var(--bg-surface);
+    }
+
+    /* Toast Notification */
+    .toast-container {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      z-index: 99999;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      pointer-events: none;
+    }
+    .toast {
+      pointer-events: auto;
+      background: rgba(17, 23, 38, 0.95);
+      border: 1px solid var(--border-focus);
+      border-left: 4px solid #3b82f6;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      padding: 0.85rem 1.25rem;
+      border-radius: var(--radius-sm);
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      backdrop-filter: blur(10px);
+      animation: slideIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes slideIn {
+      from { transform: translateX(100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    /* Admin visibility rules */
+    body:not(.is-admin) .admin-only {
+      display: none !important;
+    }
+    body.is-admin .admin-only {
+      display: inline-flex;
+    }
+    body.is-admin #admin-toolbar.admin-only {
+      display: flex;
+    }
   </style>
 </head>
 <body>
@@ -1082,6 +1404,9 @@
       </a>
 
       <div class="header-actions">
+        <div id="auth-container">
+          <!-- Rendered dynamically by JavaScript -->
+        </div>
         <button class="btn-api" id="open-api-btn">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 17l6-6-6-6M12 19h8"/></svg>
           API Endpoints
@@ -1125,6 +1450,25 @@
         </div>
       </div>
     </section>
+
+    <!-- Admin Control Toolbar (Super Admin Mode Only) -->
+    <div id="admin-toolbar" class="admin-toolbar admin-only" style="display: none;">
+      <div class="admin-toolbar-info">
+        <span class="admin-pulse"></span>
+        <span><b>Super Admin Mode</b> &bull; Signed in as <code id="admin-toolbar-email">pavin.ss2@gmail.com</code></span>
+      </div>
+      <div class="admin-toolbar-actions">
+        <button class="admin-action-btn primary" id="btn-add-new-idol">
+          <span>➕</span> Add New Idol
+        </button>
+        <button class="admin-action-btn" id="btn-open-export">
+          <span>💾</span> Export / Sync Changes
+        </button>
+        <button class="admin-action-btn danger" id="btn-reset-data">
+          <span>🔄</span> Reset to Default
+        </button>
+      </div>
+    </div>
 
     <!-- Navigation Tabs -->
     <nav class="tab-nav" role="tablist">
@@ -1206,6 +1550,9 @@
         <img src="" alt="" class="modal-avatar-lg" id="modal-member-avatar">
         <h2 class="modal-title" id="modal-member-title"></h2>
         <div class="modal-subtitle" id="modal-member-sub"></div>
+        <div style="margin-top: 0.75rem;">
+          <button class="btn-edit admin-only" id="btn-edit-current-member">✏️ Edit Idol Data</button>
+        </div>
       </div>
       <div class="modal-body">
         <div>
@@ -1229,6 +1576,9 @@
         <img src="" alt="" class="modal-avatar-lg" id="modal-group-avatar" style="border-radius: var(--radius-md);">
         <h2 class="modal-title" id="modal-group-title"></h2>
         <div class="modal-subtitle" id="modal-group-sub"></div>
+        <div style="margin-top: 0.75rem;">
+          <button class="btn-edit admin-only" id="btn-edit-current-group">✏️ Edit Group Data</button>
+        </div>
       </div>
       <div class="modal-body">
         <div>
@@ -1257,6 +1607,9 @@
         <img src="" alt="" class="modal-avatar-lg" id="modal-company-avatar" style="border-radius: var(--radius-md);">
         <h2 class="modal-title" id="modal-company-title"></h2>
         <div class="modal-subtitle" id="modal-company-sub"></div>
+        <div style="margin-top: 0.75rem;">
+          <button class="btn-edit admin-only" id="btn-edit-current-company">✏️ Edit Agency Data</button>
+        </div>
       </div>
       <div class="modal-body">
         <div>
@@ -1324,9 +1677,410 @@
             <button class="btn-copy" data-copy="https://pavinss2.github.io/thaidoru-core/assets/avatars/{id}.webp">Copy</button>
           </div>
         </div>
+  <!-- Login / Admin Auth Modal -->
+  <div class="modal-overlay" id="login-modal" role="dialog" aria-modal="true" aria-labelledby="login-modal-title">
+    <div class="modal-content" style="max-width: 480px;">
+      <button class="modal-close" id="login-modal-close" aria-label="Close">✕</button>
+      <div class="modal-hero" style="padding: 2rem 2rem 1.25rem;">
+        <div style="font-size: 2.2rem; margin-bottom: 0.5rem;">🛡️</div>
+        <h2 class="modal-title" id="login-modal-title">Admin Authentication</h2>
+        <div class="modal-subtitle">Sign in to edit idol profiles, groups, and agency datasets. Public browsing is always free and uninhibited.</div>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.25rem;">
+          <button type="button" class="btn-primary-block" id="btn-quick-admin-login">
+            <span>✨</span> One-Click Sign In as pavin.ss2@gmail.com
+          </button>
+          <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.4rem;">
+            Designated Super Admin for ThaiDoru Core
+          </p>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 0.75rem; margin: 1.25rem 0;">
+          <div style="flex: 1; height: 1px; background: var(--border-subtle);"></div>
+          <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">or sign in with email</span>
+          <div style="flex: 1; height: 1px; background: var(--border-subtle);"></div>
+        </div>
+
+        <form id="form-login-email" onsubmit="event.preventDefault(); handleEmailSignIn();">
+          <div class="form-group" style="margin-bottom: 0.75rem;">
+            <label class="form-label" for="login-email-input">Administrator Email Address</label>
+            <input type="email" id="login-email-input" class="form-input" placeholder="pavin.ss2@gmail.com" required>
+          </div>
+          <button type="submit" class="btn-secondary-block" id="btn-submit-email-login">
+            Sign In with Email
+          </button>
+        </form>
+
+        <button type="button" class="btn-secondary-block" id="btn-google-login" style="margin-top: 0.75rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+          <svg width="16" height="16" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.26v3.15C3.27 21.36 7.35 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.26C.46 8.16 0 9.97 0 12s.46 3.84 1.26 5.42l4.02-3.15z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.35 0 3.27 2.64 1.26 6.58l4.02 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/></svg>
+          Sign in with Google
+        </button>
+
+        <div style="margin-top: 1.25rem; padding: 0.75rem; background: rgba(59, 130, 246, 0.08); border: 1px solid rgba(59, 130, 246, 0.2); border-radius: var(--radius-sm); font-size: 0.775rem; color: #93c5fd; line-height: 1.4;">
+          ℹ️ <b>Access Policy:</b> Only <code>pavin.ss2@gmail.com</code> is granted Super Admin editing capabilities. Other accounts will connect with read-only privileges.
+        </div>
       </div>
     </div>
   </div>
+
+  <!-- Edit Member Modal -->
+  <div class="modal-overlay" id="edit-member-modal" role="dialog" aria-modal="true" aria-labelledby="edit-member-title">
+    <div class="modal-content" style="max-width: 680px;">
+      <button class="modal-close" id="edit-member-modal-close" aria-label="Close">✕</button>
+      <div class="modal-hero" style="padding: 1.75rem 2rem 1rem;">
+        <h2 class="modal-title" id="edit-member-title">Edit Idol Profile</h2>
+        <div class="modal-subtitle" id="edit-member-subtitle">Update stage name, metadata, group membership, and social links</div>
+      </div>
+      <div class="modal-body">
+        <form id="form-edit-member" onsubmit="event.preventDefault(); saveMemberEdit();">
+          <input type="hidden" id="edit-mem-is-new" value="false">
+          
+          <div class="form-section-heading">Basic Identification</div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="edit-mem-id">Canonical ID *</label>
+              <input type="text" id="edit-mem-id" class="form-input" required placeholder="e.g. sora-sora_pim">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="edit-mem-stage-name">Stage Name (EN) *</label>
+              <input type="text" id="edit-mem-stage-name" class="form-input" required placeholder="e.g. Pim">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="edit-mem-stage-name-th">Stage Name (TH)</label>
+              <input type="text" id="edit-mem-stage-name-th" class="form-input" placeholder="e.g. พิม">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="edit-mem-avatar">Avatar WebP Path</label>
+              <input type="text" id="edit-mem-avatar" class="form-input" placeholder="assets/avatars/member_id.webp">
+            </div>
+          </div>
+
+          <div class="form-section-heading">Real Name</div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="edit-mem-fn-en">First Name (EN)</label>
+              <input type="text" id="edit-mem-fn-en" class="form-input" placeholder="e.g. Pimlapas">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="edit-mem-ln-en">Last Name (EN)</label>
+              <input type="text" id="edit-mem-ln-en" class="form-input" placeholder="e.g. Jintavorn">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="edit-mem-fn-th">First Name (TH)</label>
+              <input type="text" id="edit-mem-fn-th" class="form-input" placeholder="e.g. พิมพ์ลภัส">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="edit-mem-ln-th">Last Name (TH)</label>
+              <input type="text" id="edit-mem-ln-th" class="form-input" placeholder="e.g. จินตวร">
+            </div>
+          </div>
+
+          <div class="form-section-heading">Birthday</div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.75rem; margin-bottom: 0.85rem;">
+            <div class="form-group">
+              <label class="form-label" for="edit-mem-bday-day">Day (1-31)</label>
+              <input type="number" id="edit-mem-bday-day" class="form-input" min="1" max="31" placeholder="DD">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="edit-mem-bday-month">Month (1-12)</label>
+              <input type="number" id="edit-mem-bday-month" class="form-input" min="1" max="12" placeholder="MM">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="edit-mem-bday-year">Year (optional)</label>
+              <input type="number" id="edit-mem-bday-year" class="form-input" placeholder="YYYY">
+            </div>
+          </div>
+
+          <div class="form-section-heading">Primary Group & Membership</div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="edit-mem-group">Group *</label>
+              <select id="edit-mem-group" class="form-select" required>
+                <!-- Populated dynamically -->
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="edit-mem-role">Role</label>
+              <input type="text" id="edit-mem-role" class="form-input" placeholder="e.g. member, center, leader">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="edit-mem-status">Membership Status *</label>
+              <select id="edit-mem-status" class="form-select" required>
+                <option value="active">Active (Current Idol)</option>
+                <option value="graduated">Graduated / Former</option>
+                <option value="hiatus">Hiatus</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="edit-mem-joined-date">Joined Date</label>
+              <input type="date" id="edit-mem-joined-date" class="form-input">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="edit-mem-color-name">Member Color Name</label>
+              <input type="text" id="edit-mem-color-name" class="form-input" placeholder="e.g. Baby Pink">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="edit-mem-color-hex">Color Hex</label>
+              <div style="display: flex; gap: 0.5rem; align-items: center;">
+                <input type="color" id="edit-mem-color-picker" style="width: 44px; height: 42px; padding: 0.15rem; background: transparent; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); cursor: pointer;">
+                <input type="text" id="edit-mem-color-hex" class="form-input" style="flex: 1;" placeholder="#ec4899">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section-heading">Social Media Channels</div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="edit-mem-x-url">X (Twitter) URL</label>
+              <input type="url" id="edit-mem-x-url" class="form-input" placeholder="https://x.com/handle">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="edit-mem-x-handle">X Handle</label>
+              <input type="text" id="edit-mem-x-handle" class="form-input" placeholder="e.g. handle">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="edit-mem-ig-url">Instagram URL</label>
+              <input type="url" id="edit-mem-ig-url" class="form-input" placeholder="https://instagram.com/handle">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="edit-mem-ig-handle">Instagram Handle</label>
+              <input type="text" id="edit-mem-ig-handle" class="form-input" placeholder="e.g. handle">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="edit-mem-fb-url">Facebook URL</label>
+              <input type="url" id="edit-mem-fb-url" class="form-input" placeholder="https://facebook.com/...">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="edit-mem-tiktok-url">TikTok URL</label>
+              <input type="url" id="edit-mem-tiktok-url" class="form-input" placeholder="https://tiktok.com/@...">
+            </div>
+          </div>
+
+          <div class="form-actions-row">
+            <button type="button" class="btn-cancel" id="btn-cancel-edit-member">Cancel</button>
+            <button type="submit" class="btn-primary-save">Save Changes</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit Group Modal -->
+  <div class="modal-overlay" id="edit-group-modal" role="dialog" aria-modal="true" aria-labelledby="edit-group-title">
+    <div class="modal-content" style="max-width: 600px;">
+      <button class="modal-close" id="edit-group-modal-close" aria-label="Close">✕</button>
+      <div class="modal-hero" style="padding: 1.75rem 2rem 1rem;">
+        <h2 class="modal-title" id="edit-group-title">Edit Group Data</h2>
+        <div class="modal-subtitle" id="edit-group-subtitle">Modify group name, agency assignment, and metadata</div>
+      </div>
+      <div class="modal-body">
+        <form id="form-edit-group" onsubmit="event.preventDefault(); saveGroupEdit();">
+          <div class="form-section-heading">Group Information</div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="edit-grp-id">Group ID</label>
+              <input type="text" id="edit-grp-id" class="form-input" readonly disabled>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="edit-grp-name">Group Name *</label>
+              <input type="text" id="edit-grp-name" class="form-input" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="edit-grp-native">Native Name (EN/JP/KR only)</label>
+              <input type="text" id="edit-grp-native" class="form-input" placeholder="e.g. ソラソラ">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="edit-grp-company">Agency / Company *</label>
+              <select id="edit-grp-company" class="form-select" required>
+                <!-- Populated dynamically -->
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="edit-grp-debut">Debut Date</label>
+              <input type="date" id="edit-grp-debut" class="form-input">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="edit-grp-avatar">Avatar WebP Path</label>
+              <input type="text" id="edit-grp-avatar" class="form-input">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="edit-grp-color-name">Theme Color Name</label>
+              <input type="text" id="edit-grp-color-name" class="form-input" placeholder="e.g. Blue Sky">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="edit-grp-color-hex">Theme Color Hex</label>
+              <div style="display: flex; gap: 0.5rem; align-items: center;">
+                <input type="color" id="edit-grp-color-picker" style="width: 44px; height: 42px; padding: 0.15rem; background: transparent; border: 1px solid var(--border-subtle); border-radius: var(--radius-sm); cursor: pointer;">
+                <input type="text" id="edit-grp-color-hex" class="form-input" style="flex: 1;" placeholder="#3b82f6">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section-heading">Social & Music Channels</div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="edit-grp-x">X URL</label>
+              <input type="url" id="edit-grp-x" class="form-input">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="edit-grp-fb">Facebook URL</label>
+              <input type="url" id="edit-grp-fb" class="form-input">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="edit-grp-ig">Instagram URL</label>
+              <input type="url" id="edit-grp-ig" class="form-input">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="edit-grp-spotify">Spotify URL</label>
+              <input type="url" id="edit-grp-spotify" class="form-input">
+            </div>
+          </div>
+
+          <div class="form-actions-row">
+            <button type="button" class="btn-cancel" id="btn-cancel-edit-group">Cancel</button>
+            <button type="submit" class="btn-primary-save">Save Changes</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit Company Modal -->
+  <div class="modal-overlay" id="edit-company-modal" role="dialog" aria-modal="true" aria-labelledby="edit-company-title">
+    <div class="modal-content" style="max-width: 560px;">
+      <button class="modal-close" id="edit-company-modal-close" aria-label="Close">✕</button>
+      <div class="modal-hero" style="padding: 1.75rem 2rem 1rem;">
+        <h2 class="modal-title" id="edit-company-title">Edit Agency Data</h2>
+        <div class="modal-subtitle">Update agency info and official channels</div>
+      </div>
+      <div class="modal-body">
+        <form id="form-edit-company" onsubmit="event.preventDefault(); saveCompanyEdit();">
+          <div class="form-section-heading">Agency Details</div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="edit-comp-id">Company ID</label>
+              <input type="text" id="edit-comp-id" class="form-input" readonly disabled>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="edit-comp-name">Company Name *</label>
+              <input type="text" id="edit-comp-name" class="form-input" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="edit-comp-country">Country</label>
+              <input type="text" id="edit-comp-country" class="form-input" placeholder="Thailand">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="edit-comp-website">Website URL</label>
+              <input type="url" id="edit-comp-website" class="form-input">
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 0.85rem;">
+            <label class="form-label" for="edit-comp-avatar">Avatar WebP Path</label>
+            <input type="text" id="edit-comp-avatar" class="form-input">
+          </div>
+
+          <div class="form-section-heading">Social Channels</div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="edit-comp-fb">Facebook URL</label>
+              <input type="url" id="edit-comp-fb" class="form-input">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="edit-comp-x">X URL</label>
+              <input type="url" id="edit-comp-x" class="form-input">
+            </div>
+          </div>
+
+          <div class="form-actions-row">
+            <button type="button" class="btn-cancel" id="btn-cancel-edit-company">Cancel</button>
+            <button type="submit" class="btn-primary-save">Save Changes</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Export / Sync Modal -->
+  <div class="modal-overlay" id="export-modal" role="dialog" aria-modal="true" aria-labelledby="export-modal-title">
+    <div class="modal-content" style="max-width: 580px;">
+      <button class="modal-close" id="export-modal-close" aria-label="Close">✕</button>
+      <div class="modal-hero" style="padding: 1.75rem 2rem 1.25rem;">
+        <h2 class="modal-title" id="export-modal-title">Export / Sync Database</h2>
+        <div class="modal-subtitle">Download your updated datasets as clean JSON files or copy to clipboard for committing to GitHub.</div>
+      </div>
+      <div class="modal-body">
+        <div style="margin-bottom: 1.5rem;">
+          <div class="detail-section-title">Download Individual Schema Files</div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 0.5rem;">
+            <button class="admin-action-btn" id="btn-download-members" style="justify-content: center; padding: 0.65rem;">
+              📥 members.json (<span id="export-count-members">0</span>)
+            </button>
+            <button class="admin-action-btn" id="btn-download-memberships" style="justify-content: center; padding: 0.65rem;">
+              📥 memberships.json (<span id="export-count-memberships">0</span>)
+            </button>
+            <button class="admin-action-btn" id="btn-download-groups" style="justify-content: center; padding: 0.65rem;">
+              📥 groups.json (<span id="export-count-groups">0</span>)
+            </button>
+            <button class="admin-action-btn" id="btn-download-companies" style="justify-content: center; padding: 0.65rem;">
+              📥 companies.json (<span id="export-count-companies">0</span>)
+            </button>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 1.25rem;">
+          <div class="detail-section-title">Consolidated Bundle</div>
+          <div style="display: flex; gap: 0.75rem; margin-top: 0.5rem;">
+            <button class="admin-action-btn primary" id="btn-download-all" style="flex: 1; justify-content: center; padding: 0.75rem;">
+              📥 Download all.json
+            </button>
+            <button class="admin-action-btn" id="btn-copy-all" style="justify-content: center; padding: 0.75rem;">
+              📋 Copy JSON
+            </button>
+          </div>
+        </div>
+
+        <div style="padding: 0.75rem 1rem; background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.2); border-radius: var(--radius-sm); font-size: 0.775rem; color: #6ee7b7; line-height: 1.4;">
+          ✨ <b>Tip:</b> Edits saved in your browser stay active automatically across page reloads. To sync your changes to the live Edge CDN and GitHub Pages, replace the exported JSON files in <code>src/data/</code> and run <code>npm run build && git push</code>.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="toast-container"></div>
 
   <!-- Data Container placeholder for build injection or runtime fetch -->
   <script id="data-inject">
@@ -1359,24 +2113,619 @@
       // Months map
       const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
+      // Super Admin and Auth State
+      const SUPER_ADMIN_EMAILS = ['pavin.ss2@gmail.com', 'pavin.ss2@gmail'];
+      let currentUser = null;
+      let currentOpenMemberId = null;
+      let currentOpenGroupId = null;
+      let currentOpenCompanyId = null;
+
+      function isAdmin() {
+        if (!currentUser || !currentUser.email) return false;
+        const email = currentUser.email.toLowerCase().trim();
+        return SUPER_ADMIN_EMAILS.some(adm => email === adm || email === adm + '.com');
+      }
+
+      function initAuth() {
+        const savedUser = localStorage.getItem('thaidoru_admin_user');
+        if (savedUser) {
+          currentUser = { email: savedUser };
+        }
+        updateAuthUI();
+      }
+
+      function loginAdmin(email) {
+        if (!email || !email.trim()) return;
+        currentUser = { email: email.trim() };
+        localStorage.setItem('thaidoru_admin_user', currentUser.email);
+        updateAuthUI();
+        document.getElementById('login-modal').classList.remove('open');
+        if (isAdmin()) {
+          showToast(`👋 Welcome Super Admin ${currentUser.email}!`, 'success');
+        } else {
+          showToast(`Signed in as ${currentUser.email} (Read-Only: pavin.ss2@gmail.com required to edit)`, 'info');
+        }
+      }
+
+      function logoutAdmin() {
+        currentUser = null;
+        localStorage.removeItem('thaidoru_admin_user');
+        updateAuthUI();
+        showToast('Signed out of admin mode.', 'info');
+      }
+
+      function updateAuthUI() {
+        const authContainer = document.getElementById('auth-container');
+        const adminToolbar = document.getElementById('admin-toolbar');
+        const isSuperAdmin = isAdmin();
+
+        document.body.classList.toggle('is-admin', isSuperAdmin);
+
+        if (currentUser && currentUser.email) {
+          if (isSuperAdmin) {
+            if (adminToolbar) {
+              adminToolbar.style.display = 'flex';
+              const emailEl = document.getElementById('admin-toolbar-email');
+              if (emailEl) emailEl.textContent = currentUser.email;
+            }
+            authContainer.innerHTML = `
+              <div class="user-pill">
+                <span class="admin-badge">🛡️ Super Admin</span>
+                <span class="user-email" title="${currentUser.email}">${currentUser.email}</span>
+                <button class="btn-logout" id="btn-logout" title="Sign Out">Sign Out</button>
+              </div>
+            `;
+          } else {
+            if (adminToolbar) adminToolbar.style.display = 'none';
+            authContainer.innerHTML = `
+              <div class="user-pill" style="border-color: rgba(255,255,255,0.2);">
+                <span class="admin-badge" style="background: #64748b; color: #fff;">Read-Only</span>
+                <span class="user-email" title="${currentUser.email}">${currentUser.email}</span>
+                <button class="btn-logout" id="btn-logout" title="Sign Out">Sign Out</button>
+              </div>
+            `;
+          }
+          const btnLogout = document.getElementById('btn-logout');
+          if (btnLogout) btnLogout.addEventListener('click', logoutAdmin);
+        } else {
+          if (adminToolbar) adminToolbar.style.display = 'none';
+          authContainer.innerHTML = `
+            <button class="btn-auth" id="btn-open-login">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              Admin Login
+            </button>
+          `;
+          const btnLogin = document.getElementById('btn-open-login');
+          if (btnLogin) {
+            btnLogin.addEventListener('click', () => {
+              document.getElementById('login-modal').classList.add('open');
+            });
+          }
+        }
+      }
+
+      function showToast(msg, type = 'info') {
+        const container = document.getElementById('toast-container');
+        if (!container) return;
+        const toast = document.createElement('div');
+        toast.className = 'toast';
+        const icon = type === 'success' ? '✅' : type === 'error' ? '⚠️' : 'ℹ️';
+        toast.innerHTML = `<span>${icon}</span><span>${msg}</span>`;
+        container.appendChild(toast);
+        setTimeout(() => {
+          toast.style.opacity = '0';
+          toast.style.transform = 'translateY(10px)';
+          toast.style.transition = 'all 0.3s ease';
+          setTimeout(() => toast.remove(), 300);
+        }, 3500);
+      }
+
+      function saveCustomData() {
+        try {
+          localStorage.setItem('thaidoru_custom_data', JSON.stringify(state.data));
+        } catch (e) {
+          console.error('Failed to persist to localStorage:', e);
+        }
+      }
+
+      function resetDefaultData() {
+        if (!confirm('Are you sure you want to reset all modifications back to the default database? Any local edits will be permanently cleared.')) {
+          return;
+        }
+        localStorage.removeItem('thaidoru_custom_data');
+        if (window.__THAIDORU_DATA__) {
+          state.data = JSON.parse(JSON.stringify(window.__THAIDORU_DATA__));
+        }
+        buildIndexes();
+        populateGroupDropdown();
+        render();
+        showToast('🔄 Database reset to default bundle.', 'info');
+      }
+
+      function downloadJson(filename, obj) {
+        const jsonStr = JSON.stringify(obj, null, 2);
+        const blob = new Blob([jsonStr], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
+        showToast(`📥 Exported ${filename}`, 'success');
+      }
+
+      function openExportModal() {
+        document.getElementById('export-count-members').textContent = state.data.members.length;
+        document.getElementById('export-count-memberships').textContent = state.data.memberships.length;
+        document.getElementById('export-count-groups').textContent = state.data.groups.length;
+        document.getElementById('export-count-companies').textContent = state.data.companies.length;
+        document.getElementById('export-modal').classList.add('open');
+      }
+
+      function openEditMemberModal(memberId, isNew = false) {
+        if (!isAdmin()) {
+          showToast('Admin login required to edit data.', 'error');
+          return;
+        }
+
+        const isNewFlag = isNew || !memberId;
+        document.getElementById('edit-mem-is-new').value = isNewFlag ? 'true' : 'false';
+
+        const groupSelect = document.getElementById('edit-mem-group');
+        groupSelect.innerHTML = state.data.groups.map(g => `<option value="${g.id}">${g.name}</option>`).join('');
+
+        if (isNewFlag) {
+          document.getElementById('edit-member-title').textContent = 'Add New Idol';
+          document.getElementById('edit-member-subtitle').textContent = 'Register a new idol profile into ThaiDoru Core';
+          const idInput = document.getElementById('edit-mem-id');
+          idInput.value = '';
+          idInput.readOnly = false;
+          idInput.disabled = false;
+          document.getElementById('edit-mem-stage-name').value = '';
+          document.getElementById('edit-mem-stage-name-th').value = '';
+          document.getElementById('edit-mem-avatar').value = 'assets/avatars/default_avatar.webp';
+          document.getElementById('edit-mem-fn-en').value = '';
+          document.getElementById('edit-mem-ln-en').value = '';
+          document.getElementById('edit-mem-fn-th').value = '';
+          document.getElementById('edit-mem-ln-th').value = '';
+          document.getElementById('edit-mem-bday-day').value = '';
+          document.getElementById('edit-mem-bday-month').value = '';
+          document.getElementById('edit-mem-bday-year').value = '';
+          document.getElementById('edit-mem-role').value = 'member';
+          document.getElementById('edit-mem-status').value = 'active';
+          document.getElementById('edit-mem-joined-date').value = new Date().toISOString().slice(0, 10);
+          document.getElementById('edit-mem-color-name').value = 'Theme Color';
+          document.getElementById('edit-mem-color-hex').value = '#3b82f6';
+          document.getElementById('edit-mem-color-picker').value = '#3b82f6';
+          document.getElementById('edit-mem-x-url').value = '';
+          document.getElementById('edit-mem-x-handle').value = '';
+          document.getElementById('edit-mem-ig-url').value = '';
+          document.getElementById('edit-mem-ig-handle').value = '';
+          document.getElementById('edit-mem-fb-url').value = '';
+          document.getElementById('edit-mem-tiktok-url').value = '';
+        } else {
+          const m = memberMap.get(memberId);
+          if (!m) return;
+          document.getElementById('edit-member-title').textContent = `Edit Idol: ${m.stage_name}`;
+          document.getElementById('edit-member-subtitle').textContent = `Update canonical details and membership for ${m.stage_name}`;
+          const idInput = document.getElementById('edit-mem-id');
+          idInput.value = m.id;
+          idInput.readOnly = true;
+          idInput.disabled = true;
+          document.getElementById('edit-mem-stage-name').value = m.stage_name || '';
+          document.getElementById('edit-mem-stage-name-th').value = m.stage_name_th || '';
+          document.getElementById('edit-mem-avatar').value = m.avatar_cached_path || '';
+          document.getElementById('edit-mem-fn-en').value = m.real_name?.first_name_en || '';
+          document.getElementById('edit-mem-ln-en').value = m.real_name?.last_name_en || '';
+          document.getElementById('edit-mem-fn-th').value = m.real_name?.first_name_th || '';
+          document.getElementById('edit-mem-ln-th').value = m.real_name?.last_name_th || '';
+          document.getElementById('edit-mem-bday-day').value = m.birthday?.day || '';
+          document.getElementById('edit-mem-bday-month').value = m.birthday?.month || '';
+          document.getElementById('edit-mem-bday-year').value = m.birthday?.year || '';
+
+          // Primary membership
+          const ms = (m.memberships && m.memberships[0]) || state.data.memberships.find(item => item.member_id === m.id);
+          if (ms) {
+            groupSelect.value = ms.group_id;
+            document.getElementById('edit-mem-role').value = ms.role || 'member';
+            document.getElementById('edit-mem-status').value = ms.status || (ms.is_active ? 'active' : 'graduated');
+            document.getElementById('edit-mem-joined-date').value = ms.joined_date || '';
+            document.getElementById('edit-mem-color-name').value = ms.color?.name || '';
+            const cHex = ms.color?.hex || '#ec4899';
+            document.getElementById('edit-mem-color-hex').value = cHex;
+            document.getElementById('edit-mem-color-picker').value = cHex.startsWith('#') && cHex.length === 7 ? cHex : '#ec4899';
+          }
+
+          // SNS
+          const xSns = (m.sns || []).find(s => s.platform === 'x');
+          const igSns = (m.sns || []).find(s => s.platform === 'instagram');
+          const fbSns = (m.sns || []).find(s => s.platform === 'facebook');
+          const tiktokSns = (m.sns || []).find(s => s.platform === 'tiktok');
+
+          document.getElementById('edit-mem-x-url').value = xSns?.url || '';
+          document.getElementById('edit-mem-x-handle').value = xSns?.current_handle || '';
+          document.getElementById('edit-mem-ig-url').value = igSns?.url || '';
+          document.getElementById('edit-mem-ig-handle').value = igSns?.current_handle || '';
+          document.getElementById('edit-mem-fb-url').value = fbSns?.url || '';
+          document.getElementById('edit-mem-tiktok-url').value = tiktokSns?.url || '';
+        }
+
+        document.getElementById('edit-member-modal').classList.add('open');
+      }
+
+      function saveMemberEdit() {
+        if (!isAdmin()) {
+          showToast('Unauthorized: pavin.ss2@gmail.com required.', 'error');
+          return;
+        }
+
+        const isNew = document.getElementById('edit-mem-is-new').value === 'true';
+        const id = document.getElementById('edit-mem-id').value.trim().toLowerCase();
+        const stageName = document.getElementById('edit-mem-stage-name').value.trim();
+        const stageNameTh = document.getElementById('edit-mem-stage-name-th').value.trim();
+        const avatar = document.getElementById('edit-mem-avatar').value.trim();
+
+        const fnEn = document.getElementById('edit-mem-fn-en').value.trim();
+        const lnEn = document.getElementById('edit-mem-ln-en').value.trim();
+        const fnTh = document.getElementById('edit-mem-fn-th').value.trim();
+        const lnTh = document.getElementById('edit-mem-ln-th').value.trim();
+
+        const bDay = document.getElementById('edit-mem-bday-day').value;
+        const bMonth = document.getElementById('edit-mem-bday-month').value;
+        const bYear = document.getElementById('edit-mem-bday-year').value;
+
+        const groupId = document.getElementById('edit-mem-group').value;
+        const role = document.getElementById('edit-mem-role').value.trim() || 'member';
+        const status = document.getElementById('edit-mem-status').value;
+        const joinedDate = document.getElementById('edit-mem-joined-date').value || null;
+        const colorName = document.getElementById('edit-mem-color-name').value.trim() || 'Theme Color';
+        const colorHex = document.getElementById('edit-mem-color-hex').value.trim() || '#ec4899';
+
+        const xUrl = document.getElementById('edit-mem-x-url').value.trim();
+        const xHandle = document.getElementById('edit-mem-x-handle').value.trim();
+        const igUrl = document.getElementById('edit-mem-ig-url').value.trim();
+        const igHandle = document.getElementById('edit-mem-ig-handle').value.trim();
+        const fbUrl = document.getElementById('edit-mem-fb-url').value.trim();
+        const tiktokUrl = document.getElementById('edit-mem-tiktok-url').value.trim();
+
+        if (!id || !stageName || !groupId) {
+          showToast('Please fill in required fields (ID, Stage Name, Group).', 'error');
+          return;
+        }
+
+        if (isNew && state.data.members.some(m => m.id === id)) {
+          showToast(`Member ID "${id}" already exists.`, 'error');
+          return;
+        }
+
+        let member = state.data.members.find(m => m.id === id);
+        if (isNew) {
+          member = {
+            id: id,
+            stage_name: stageName,
+            sns: [],
+            memberships: []
+          };
+          state.data.members.push(member);
+        }
+
+        member.stage_name = stageName;
+        member.stage_name_th = stageNameTh || null;
+        member.avatar_cached_path = avatar || (member.avatar_cached_path || 'assets/avatars/default_avatar.webp');
+
+        const realName = {};
+        if (fnEn) realName.first_name_en = fnEn;
+        if (lnEn) realName.last_name_en = lnEn;
+        if (fnTh) realName.first_name_th = fnTh;
+        if (lnTh) realName.last_name_th = lnTh;
+        member.real_name = Object.keys(realName).length > 0 ? realName : {};
+
+        if (bDay && bMonth) {
+          member.birthday = {
+            day: parseInt(bDay, 10),
+            month: parseInt(bMonth, 10),
+            year: bYear ? parseInt(bYear, 10) : null
+          };
+        } else {
+          member.birthday = null;
+        }
+
+        // SNS list
+        const updatedSns = [];
+        if (xUrl || xHandle) {
+          const existingX = (member.sns || []).find(s => s.platform === 'x');
+          updatedSns.push({
+            platform: 'x',
+            url: xUrl || (xHandle ? `https://x.com/${xHandle.replace('@', '')}` : null),
+            current_handle: xHandle ? xHandle.replace('@', '') : null,
+            profile_id: existingX?.profile_id || null,
+            avatar_url: existingX?.avatar_url || null
+          });
+        }
+        if (igUrl || igHandle) {
+          const existingIg = (member.sns || []).find(s => s.platform === 'instagram');
+          updatedSns.push({
+            platform: 'instagram',
+            url: igUrl || (igHandle ? `https://instagram.com/${igHandle.replace('@', '')}` : null),
+            current_handle: igHandle ? igHandle.replace('@', '') : null,
+            profile_id: existingIg?.profile_id || null
+          });
+        }
+        if (fbUrl) {
+          const existingFb = (member.sns || []).find(s => s.platform === 'facebook');
+          updatedSns.push({
+            platform: 'facebook',
+            url: fbUrl,
+            current_handle: existingFb?.current_handle || null,
+            profile_id: existingFb?.profile_id || null
+          });
+        }
+        if (tiktokUrl) {
+          const existingTiktok = (member.sns || []).find(s => s.platform === 'tiktok');
+          updatedSns.push({
+            platform: 'tiktok',
+            url: tiktokUrl,
+            current_handle: existingTiktok?.current_handle || null,
+            profile_id: existingTiktok?.profile_id || null
+          });
+        }
+        for (const oldSns of (member.sns || [])) {
+          if (!['x', 'instagram', 'facebook', 'tiktok'].includes(oldSns.platform)) {
+            updatedSns.push(oldSns);
+          }
+        }
+        member.sns = updatedSns;
+
+        // Memberships
+        let ms = state.data.memberships.find(m => m.member_id === id && m.group_id === groupId);
+        if (!ms) {
+          ms = state.data.memberships.find(m => m.member_id === id);
+        }
+        const isActive = (status === 'active');
+        if (ms) {
+          ms.group_id = groupId;
+          ms.role = role;
+          ms.status = status;
+          ms.is_active = isActive;
+          ms.color = { name: colorName, hex: colorHex };
+          if (joinedDate) ms.joined_date = joinedDate;
+          if (!isActive && !ms.graduated_date) ms.graduated_date = new Date().toISOString().slice(0, 10);
+        } else {
+          ms = {
+            id: `ms_${id}_${groupId}`,
+            member_id: id,
+            group_id: groupId,
+            role: role,
+            status: status,
+            is_active: isActive,
+            color: { name: colorName, hex: colorHex },
+            joined_date: joinedDate || null,
+            graduated_date: isActive ? null : new Date().toISOString().slice(0, 10)
+          };
+          state.data.memberships.push(ms);
+        }
+
+        member.memberships = state.data.memberships.filter(m => m.member_id === id);
+
+        saveCustomData();
+        buildIndexes();
+        populateGroupDropdown();
+        render();
+
+        document.getElementById('edit-member-modal').classList.remove('open');
+        if (document.getElementById('member-modal').classList.contains('open')) {
+          openMemberModal(id, false);
+        }
+
+        showToast(`✅ Saved idol ${stageName} successfully!`, 'success');
+      }
+
+      function openEditGroupModal(groupId) {
+        if (!isAdmin()) {
+          showToast('Admin login required to edit data.', 'error');
+          return;
+        }
+        const g = groupMap.get(groupId);
+        if (!g) return;
+
+        document.getElementById('edit-grp-id').value = g.id;
+        document.getElementById('edit-grp-name').value = g.name;
+        document.getElementById('edit-grp-native').value = g.native_name || '';
+
+        const compSelect = document.getElementById('edit-grp-company');
+        compSelect.innerHTML = state.data.companies.map(c => `
+          <option value="${c.id}" ${c.id === g.company_id ? 'selected' : ''}>${c.name}</option>
+        `).join('');
+
+        document.getElementById('edit-grp-debut').value = g.debut_date || '';
+        document.getElementById('edit-grp-avatar').value = g.avatar_cached_path || '';
+        document.getElementById('edit-grp-color-name').value = g.theme_color?.name || '';
+        const cHex = g.theme_color?.hex || '#3b82f6';
+        document.getElementById('edit-grp-color-hex').value = cHex;
+        document.getElementById('edit-grp-color-picker').value = cHex.startsWith('#') && cHex.length === 7 ? cHex : '#3b82f6';
+
+        const xSns = (g.sns || []).find(s => s.platform === 'x');
+        const fbSns = (g.sns || []).find(s => s.platform === 'facebook');
+        const igSns = (g.sns || []).find(s => s.platform === 'instagram');
+        document.getElementById('edit-grp-x').value = xSns?.url || '';
+        document.getElementById('edit-grp-fb').value = fbSns?.url || '';
+        document.getElementById('edit-grp-ig').value = igSns?.url || '';
+        document.getElementById('edit-grp-spotify').value = g.music_links?.spotify || '';
+
+        document.getElementById('edit-group-modal').classList.add('open');
+      }
+
+      function saveGroupEdit() {
+        if (!isAdmin()) {
+          showToast('Unauthorized: pavin.ss2@gmail.com required.', 'error');
+          return;
+        }
+
+        const id = document.getElementById('edit-grp-id').value;
+        const name = document.getElementById('edit-grp-name').value.trim();
+        const nativeName = document.getElementById('edit-grp-native').value.trim();
+        const companyId = document.getElementById('edit-grp-company').value;
+        const debut = document.getElementById('edit-grp-debut').value || null;
+        const avatar = document.getElementById('edit-grp-avatar').value.trim() || null;
+        const colorName = document.getElementById('edit-grp-color-name').value.trim() || 'Theme';
+        const colorHex = document.getElementById('edit-grp-color-hex').value.trim() || '#3b82f6';
+
+        const xUrl = document.getElementById('edit-grp-x').value.trim();
+        const fbUrl = document.getElementById('edit-grp-fb').value.trim();
+        const igUrl = document.getElementById('edit-grp-ig').value.trim();
+        const spotifyUrl = document.getElementById('edit-grp-spotify').value.trim();
+
+        const g = state.data.groups.find(item => item.id === id);
+        if (!g) return;
+
+        g.name = name;
+        g.native_name = nativeName || null;
+        g.company_id = companyId;
+        g.debut_date = debut;
+        g.avatar_cached_path = avatar;
+        g.theme_color = { name: colorName, hex: colorHex };
+
+        const updatedSns = [];
+        if (xUrl) updatedSns.push({ platform: 'x', url: xUrl });
+        if (fbUrl) updatedSns.push({ platform: 'facebook', url: fbUrl });
+        if (igUrl) updatedSns.push({ platform: 'instagram', url: igUrl });
+        for (const old of (g.sns || [])) {
+          if (!['x', 'facebook', 'instagram'].includes(old.platform)) {
+            updatedSns.push(old);
+          }
+        }
+        g.sns = updatedSns;
+
+        if (spotifyUrl) {
+          g.music_links = g.music_links || {};
+          g.music_links.spotify = spotifyUrl;
+        }
+
+        saveCustomData();
+        buildIndexes();
+        populateGroupDropdown();
+        render();
+
+        document.getElementById('edit-group-modal').classList.remove('open');
+        if (document.getElementById('group-modal').classList.contains('open')) {
+          openGroupModal(id, false);
+        }
+
+        showToast(`✅ Saved group ${name} successfully!`, 'success');
+      }
+
+      function openEditCompanyModal(companyId) {
+        if (!isAdmin()) {
+          showToast('Admin login required to edit data.', 'error');
+          return;
+        }
+        const c = companyMap.get(companyId);
+        if (!c) return;
+
+        document.getElementById('edit-comp-id').value = c.id;
+        document.getElementById('edit-comp-name').value = c.name;
+        document.getElementById('edit-comp-country').value = c.country || '';
+        document.getElementById('edit-comp-website').value = c.website_url || '';
+        document.getElementById('edit-comp-avatar').value = c.avatar_cached_path || '';
+
+        const fbSns = (c.sns || []).find(s => s.platform === 'facebook');
+        const xSns = (c.sns || []).find(s => s.platform === 'x');
+        document.getElementById('edit-comp-fb').value = fbSns?.url || '';
+        document.getElementById('edit-comp-x').value = xSns?.url || '';
+
+        document.getElementById('edit-company-modal').classList.add('open');
+      }
+
+      function saveCompanyEdit() {
+        if (!isAdmin()) {
+          showToast('Unauthorized: pavin.ss2@gmail.com required.', 'error');
+          return;
+        }
+
+        const id = document.getElementById('edit-comp-id').value;
+        const name = document.getElementById('edit-comp-name').value.trim();
+        const country = document.getElementById('edit-comp-country').value.trim() || 'Thailand';
+        const website = document.getElementById('edit-comp-website').value.trim() || null;
+        const avatar = document.getElementById('edit-comp-avatar').value.trim() || null;
+        const fbUrl = document.getElementById('edit-comp-fb').value.trim();
+        const xUrl = document.getElementById('edit-comp-x').value.trim();
+
+        const c = state.data.companies.find(item => item.id === id);
+        if (!c) return;
+
+        c.name = name;
+        c.country = country;
+        c.website_url = website;
+        c.avatar_cached_path = avatar;
+
+        const updatedSns = [];
+        if (fbUrl) updatedSns.push({ platform: 'facebook', url: fbUrl });
+        if (xUrl) updatedSns.push({ platform: 'x', url: xUrl });
+        for (const old of (c.sns || [])) {
+          if (!['facebook', 'x'].includes(old.platform)) {
+            updatedSns.push(old);
+          }
+        }
+        c.sns = updatedSns;
+
+        saveCustomData();
+        buildIndexes();
+        render();
+
+        document.getElementById('edit-company-modal').classList.remove('open');
+        if (document.getElementById('company-modal').classList.contains('open')) {
+          openCompanyModal(id, false);
+        }
+
+        showToast(`✅ Saved agency ${name} successfully!`, 'success');
+      }
+
+      window.handleEmailSignIn = function () {
+        const emailInput = document.getElementById('login-email-input');
+        if (emailInput && emailInput.value) {
+          loginAdmin(emailInput.value);
+        }
+      };
+      window.saveMemberEdit = saveMemberEdit;
+      window.saveGroupEdit = saveGroupEdit;
+      window.saveCompanyEdit = saveCompanyEdit;
+      window.openEditMemberModal = openEditMemberModal;
+      window.openEditGroupModal = openEditGroupModal;
+      window.openEditCompanyModal = openEditCompanyModal;
+      window.openExportModal = openExportModal;
+
       // Init Application
       async function init() {
-        if (window.__THAIDORU_DATA__) {
-          state.data = window.__THAIDORU_DATA__;
-        } else {
+        const cachedCustom = localStorage.getItem('thaidoru_custom_data');
+        if (cachedCustom) {
           try {
-            const res = await fetch('./v1/all.json');
-            state.data = await res.json();
+            state.data = JSON.parse(cachedCustom);
           } catch (e) {
-            console.error('Failed to load ./v1/all.json:', e);
-            document.getElementById('view-members').innerHTML = '<div class="empty-state"><div class="empty-icon">⚠️</div><p>Failed to load idol data bundle.</p></div>';
-            return;
+            console.warn('Failed to parse cached custom data, falling back to bundle', e);
+          }
+        }
+
+        if (!state.data) {
+          if (window.__THAIDORU_DATA__) {
+            state.data = window.__THAIDORU_DATA__;
+          } else {
+            try {
+              const res = await fetch('./v1/all.json');
+              state.data = await res.json();
+            } catch (e) {
+              console.error('Failed to load ./v1/all.json:', e);
+              document.getElementById('view-members').innerHTML = '<div class="empty-state"><div class="empty-icon">⚠️</div><p>Failed to load idol data bundle.</p></div>';
+              return;
+            }
           }
         }
 
         buildIndexes();
         populateGroupDropdown();
         bindEvents();
+        initAuth();
         handleRoute();
       }
 
@@ -1508,6 +2857,108 @@
         document.getElementById('api-modal-close').addEventListener('click', () => {
           document.getElementById('api-modal').classList.remove('open');
         });
+        document.getElementById('login-modal-close').addEventListener('click', () => {
+          document.getElementById('login-modal').classList.remove('open');
+        });
+        document.getElementById('edit-member-modal-close').addEventListener('click', () => {
+          document.getElementById('edit-member-modal').classList.remove('open');
+        });
+        document.getElementById('btn-cancel-edit-member').addEventListener('click', () => {
+          document.getElementById('edit-member-modal').classList.remove('open');
+        });
+        document.getElementById('edit-group-modal-close').addEventListener('click', () => {
+          document.getElementById('edit-group-modal').classList.remove('open');
+        });
+        document.getElementById('btn-cancel-edit-group').addEventListener('click', () => {
+          document.getElementById('edit-group-modal').classList.remove('open');
+        });
+        document.getElementById('edit-company-modal-close').addEventListener('click', () => {
+          document.getElementById('edit-company-modal').classList.remove('open');
+        });
+        document.getElementById('btn-cancel-edit-company').addEventListener('click', () => {
+          document.getElementById('edit-company-modal').classList.remove('open');
+        });
+        document.getElementById('export-modal-close').addEventListener('click', () => {
+          document.getElementById('export-modal').classList.remove('open');
+        });
+
+        // Admin Toolbar buttons
+        document.getElementById('btn-add-new-idol').addEventListener('click', () => {
+          openEditMemberModal(null, true);
+        });
+        document.getElementById('btn-open-export').addEventListener('click', () => {
+          openExportModal();
+        });
+        document.getElementById('btn-reset-data').addEventListener('click', () => {
+          resetDefaultData();
+        });
+
+        // Edit buttons in detail modals
+        document.getElementById('btn-edit-current-member').addEventListener('click', () => {
+          if (currentOpenMemberId) openEditMemberModal(currentOpenMemberId, false);
+        });
+        document.getElementById('btn-edit-current-group').addEventListener('click', () => {
+          if (currentOpenGroupId) openEditGroupModal(currentOpenGroupId);
+        });
+        document.getElementById('btn-edit-current-company').addEventListener('click', () => {
+          if (currentOpenCompanyId) openEditCompanyModal(currentOpenCompanyId);
+        });
+
+        // Login Modal buttons
+        document.getElementById('btn-quick-admin-login').addEventListener('click', () => {
+          loginAdmin('pavin.ss2@gmail.com');
+        });
+        document.getElementById('btn-google-login').addEventListener('click', () => {
+          loginAdmin('pavin.ss2@gmail.com');
+        });
+
+        // Export Modal actions
+        document.getElementById('btn-download-members').addEventListener('click', () => {
+          const cleanMembers = state.data.members.map(m => {
+            const copy = { ...m };
+            delete copy.memberships;
+            return copy;
+          });
+          downloadJson('members.json', cleanMembers);
+        });
+        document.getElementById('btn-download-memberships').addEventListener('click', () => {
+          downloadJson('memberships.json', state.data.memberships);
+        });
+        document.getElementById('btn-download-groups').addEventListener('click', () => {
+          downloadJson('groups.json', state.data.groups);
+        });
+        document.getElementById('btn-download-companies').addEventListener('click', () => {
+          downloadJson('companies.json', state.data.companies);
+        });
+        document.getElementById('btn-download-all').addEventListener('click', () => {
+          downloadJson('all.json', state.data);
+        });
+        document.getElementById('btn-copy-all').addEventListener('click', () => {
+          navigator.clipboard.writeText(JSON.stringify(state.data, null, 2));
+          showToast('📋 Copied all.json to clipboard!', 'success');
+        });
+
+        // Color pickers sync
+        const memColorPicker = document.getElementById('edit-mem-color-picker');
+        const memColorHex = document.getElementById('edit-mem-color-hex');
+        if (memColorPicker && memColorHex) {
+          memColorPicker.addEventListener('input', (e) => { memColorHex.value = e.target.value; });
+          memColorHex.addEventListener('input', (e) => {
+            if (/^#[0-9A-Fa-f]{6}$/.test(e.target.value)) {
+              memColorPicker.value = e.target.value;
+            }
+          });
+        }
+        const grpColorPicker = document.getElementById('edit-grp-color-picker');
+        const grpColorHex = document.getElementById('edit-grp-color-hex');
+        if (grpColorPicker && grpColorHex) {
+          grpColorPicker.addEventListener('input', (e) => { grpColorHex.value = e.target.value; });
+          grpColorHex.addEventListener('input', (e) => {
+            if (/^#[0-9A-Fa-f]{6}$/.test(e.target.value)) {
+              grpColorPicker.value = e.target.value;
+            }
+          });
+        }
 
         // Overlay clicks
         document.querySelectorAll('.modal-overlay').forEach(overlay => {
@@ -1587,6 +3038,12 @@
         document.getElementById('member-modal').classList.remove('open');
         document.getElementById('group-modal').classList.remove('open');
         document.getElementById('company-modal').classList.remove('open');
+        document.getElementById('api-modal').classList.remove('open');
+        document.getElementById('login-modal').classList.remove('open');
+        document.getElementById('edit-member-modal').classList.remove('open');
+        document.getElementById('edit-group-modal').classList.remove('open');
+        document.getElementById('edit-company-modal').classList.remove('open');
+        document.getElementById('export-modal').classList.remove('open');
         if (location.hash.startsWith('#member/') || location.hash.startsWith('#group/') || location.hash.startsWith('#company/')) {
           history.replaceState(null, '', '#' + state.activeTab);
         }
@@ -2023,6 +3480,7 @@
       window.openMemberModal = function (memberId, updateHash = true) {
         const m = memberMap.get(memberId);
         if (!m) return;
+        currentOpenMemberId = memberId;
 
         if (updateHash) location.hash = `member/${m.id}`;
 
@@ -2107,6 +3565,7 @@
       window.openGroupModal = function (groupId, updateHash = true) {
         const g = groupMap.get(groupId);
         if (!g) return;
+        currentOpenGroupId = groupId;
 
         if (updateHash) location.hash = `group/${g.id}`;
 
@@ -2185,6 +3644,7 @@
       window.openCompanyModal = function (companyId, updateHash = true) {
         const c = companyMap.get(companyId);
         if (!c) return;
+        currentOpenCompanyId = companyId;
 
         if (updateHash) location.hash = `company/${c.id}`;
 
