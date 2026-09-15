@@ -10,6 +10,7 @@ export const CompanySchema = z.object({
   country: z.string().default('Thailand'),
   status: CompanyStatusEnum.default('active'),
   website_url: z.string().url().nullable().optional(),
+  avatar_cached_path: z.string().nullable().optional(),
   sns: z.array(SNSChannelSchema).default([]),
   description: z.string().nullable().optional()
 });

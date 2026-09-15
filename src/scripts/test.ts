@@ -111,6 +111,24 @@ try {
   const allGroupFilesExist = groups.every(g => g.avatar_cached_path && fs.existsSync(path.join(ROOT_DIR, g.avatar_cached_path)));
   assert(allGroupFilesExist, 'All group WebP avatar files physically exist on disk');
 
+  // Test 9: Company avatar cache completeness
+  const allCompaniesHaveAvatar = companies.every(c => Boolean(c.avatar_cached_path));
+  assert(allCompaniesHaveAvatar, `All ${companies.length} companies have avatar_cached_path populated`);
+
+  const allCompanyFilesExist = companies.every(c => c.avatar_cached_path && fs.existsSync(path.join(ROOT_DIR, c.avatar_cached_path)));
+  assert(allCompanyFilesExist, 'All company WebP avatar files physically exist on disk');
+
+  // Test 10: Member birthday completeness
+  const allMembersHaveBirthday = members.every(m => m.birthday && typeof m.birthday.month === 'number' && typeof m.birthday.day === 'number');
+  assert(allMembersHaveBirthday, `All ${members.length} members have complete month and day birthdays`);
+
+  // Test 11: Group SNS coverage (X and Instagram for all 17 groups)
+  const allGroupsHaveXAndIG = groups.every(g => {
+    const platforms = g.sns.map(s => s.platform);
+    return platforms.includes('x') && platforms.includes('instagram');
+  });
+  assert(allGroupsHaveXAndIG, `All ${groups.length} groups have both X and Instagram SNS channels`);
+
 } catch (err) {
   console.error('Test Suite Threw Exception:', err);
   failed++;

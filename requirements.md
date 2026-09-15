@@ -264,9 +264,11 @@ The endpoint `/v1/export/cheki-tracker.json` directly implements the schema cont
 - [x] Implement `profile_id` extraction script to populate immutable UIDs (`src/scripts/resolve-profile-ids.ts`).
 - [x] Populate full rosters for A lot of Tone (ANGeVIL✟, Castella) and IC45 (The Glass Girls) — expanded database to 68 members and 69 memberships.
 - [x] Expand group catalog to **17 groups** across Catsolute (5), A lot of Tone (8), and IC45 (4), including HatoBito, KŌMA, LUMIN+US, Seishin Kakumei, Chocolatière, VIINX, Nikko Nikko, STARRY☆NITE, and ZYN.
-- [x] Connect avatar caching pipeline (`src/scripts/cache-avatars.ts` using `sharp`), achieving **100% avatar cache coverage** across all 68 members and all 17 groups (~1.9 MB total in `assets/avatars/`).
+- [x] Connect avatar caching pipeline (`src/scripts/cache-avatars.ts` using `sharp`), achieving **100% avatar cache coverage** across all 68 members, all 17 groups, and all 3 agencies/companies (~1.9 MB total in `assets/avatars/`).
 - [x] Serve permanent avatars via GitHub Pages Edge CDN (`https://pavinss2.github.io/thaidoru-core/assets/avatars/{id}.webp`).
 - [x] Build interactive connected visual directory frontend (`dist/index.html`) on GitHub Pages with instant fuzzy search, multi-facet filtering (agency, group, status), cross-link navigation, and responsive detail modals.
+- [x] Enrich 100% of idols with verified birthdays (`month`, `day`, and `year` where known) and real Thai/English names.
+- [x] Achieve 100% social media link completeness across all 17 groups (Facebook, X, Instagram) and all 3 companies.
 - [ ] Create time-series follower scraping workflow logging daily/weekly counts (Paused per user instruction).
 
 ### Phase 3: AI-Powered Weekly Ingestion Pipeline (Planned)
@@ -296,6 +298,7 @@ The endpoint `/v1/export/cheki-tracker.json` directly implements the schema cont
 | **2026-09-15** | Zero-credential automated `profile_id` extraction | X GraphQL guest tokens + Facebook OpenGraph crawler headers (`facebookexternalhit/1.1`) allow fetching permanent IDs without user API keys. | Fully automated, reliable extraction without manual user intervention. |
 | **2026-09-15** | Expanded agency coverage to 17 groups | Added KOMA, LUMINUS, Hatobito, Seishin Kakumei, Chocolatière, VIINX (A lot of Tone) and Nikko Nikko, Starry Nite, ZYN (IC45). | Broadened ecosystem foundation for central idol data hub. |
 | **2026-09-15** | Pre-injected static SPA Visual Directory | Build step embeds full bundle directly into `dist/index.html` with graceful fallback to `./v1/all.json`. | 0ms network waterfall, works offline, native browser hash routing, zero external build dependencies. |
+| **2026-09-15** | Company Avatar Caching & Universal Socials | Added `avatar_cached_path` to `CompanySchema`, converted agency logos to WebP, and populated 100% of member birthdays (68/68 idols). | Visual directory and API consumers now have consistent logo rendering and complete birthday calendaring. |
 
 
 

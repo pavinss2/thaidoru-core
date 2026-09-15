@@ -4,6 +4,8 @@
     "name": "Catsolute",
     "country": "Thailand",
     "status": "active",
+    "website_url": "https://catsolute-official.com",
+    "avatar_cached_path": "assets/avatars/company_catsolute.webp",
     "sns": [
       {
         "platform": "facebook",
@@ -16,6 +18,12 @@
         "profile_id": "1465241088492810240",
         "current_handle": "Catsolute",
         "url": "https://x.com/Catsolute"
+      },
+      {
+        "platform": "instagram",
+        "profile_id": null,
+        "current_handle": "catsolute",
+        "url": "https://www.instagram.com/catsolute"
       }
     ]
   },
@@ -24,12 +32,20 @@
     "name": "A lot of Tone",
     "country": "Thailand",
     "status": "active",
+    "website_url": "https://alotoftone.com",
+    "avatar_cached_path": "assets/avatars/company_a-lot-of-tone.webp",
     "sns": [
       {
         "platform": "facebook",
-        "profile_id": null,
-        "current_handle": "alotoftone",
-        "url": "https://www.facebook.com/alotoftone"
+        "profile_id": "61556411197615",
+        "current_handle": "A-Lot-Of-Tone-61556411197615",
+        "url": "https://www.facebook.com/p/A-Lot-Of-Tone-61556411197615/"
+      },
+      {
+        "platform": "x",
+        "profile_id": "1759494774959337472",
+        "current_handle": "A_Lot_Of_Tone",
+        "url": "https://x.com/A_Lot_Of_Tone"
       }
     ]
   },
@@ -38,12 +54,25 @@
     "name": "IC45",
     "country": "Thailand",
     "status": "active",
+    "avatar_cached_path": "assets/avatars/company_ic45.webp",
     "sns": [
       {
         "platform": "facebook",
         "profile_id": "100089297684387",
         "current_handle": "IC45Entertainment",
         "url": "https://www.facebook.com/IC45Entertainment"
+      },
+      {
+        "platform": "x",
+        "profile_id": "1613273691986759680",
+        "current_handle": "IC45ent",
+        "url": "https://x.com/IC45ent"
+      },
+      {
+        "platform": "instagram",
+        "profile_id": null,
+        "current_handle": "ic45entertainment",
+        "url": "https://www.instagram.com/ic45entertainment"
       }
     ]
   }

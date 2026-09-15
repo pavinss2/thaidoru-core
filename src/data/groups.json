@@ -453,6 +453,19 @@
         "profile_id": "61575741864007",
         "current_handle": "61575741864007",
         "url": "https://www.facebook.com/61575741864007"
+      },
+      {
+        "platform": "x",
+        "profile_id": "2037069041135988736",
+        "current_handle": "LUMINUSIDOL",
+        "url": "https://x.com/LUMINUSIDOL",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2041477846582136832/S8nUEcgE_400x400.jpg"
+      },
+      {
+        "platform": "instagram",
+        "profile_id": null,
+        "current_handle": "luminusidol",
+        "url": "https://www.instagram.com/luminusidol/"
       }
     ],
     "avatar_cached_path": "assets/avatars/group_luminus.webp"
@@ -525,6 +538,25 @@
         "profile_id": "61555753719509",
         "current_handle": "chocolatiere.cmj",
         "url": "https://www.facebook.com/chocolatiere.cmj"
+      },
+      {
+        "platform": "x",
+        "profile_id": "1752427290548744192",
+        "current_handle": "ChocolatiereCmj",
+        "url": "https://x.com/ChocolatiereCmj",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2037441825259278336/SxE7KBxY_400x400.jpg"
+      },
+      {
+        "platform": "instagram",
+        "profile_id": null,
+        "current_handle": "chocolatiere.cmj",
+        "url": "https://www.instagram.com/chocolatiere.cmj/"
+      },
+      {
+        "platform": "tiktok",
+        "profile_id": null,
+        "current_handle": "chocolatiere.cmj",
+        "url": "https://www.tiktok.com/@chocolatiere.cmj"
       }
     ],
     "avatar_cached_path": "assets/avatars/group_chocolatiere.webp"
@@ -548,6 +580,19 @@
         "profile_id": "61571416090840",
         "current_handle": "viinxthailand",
         "url": "https://www.facebook.com/viinxthailand"
+      },
+      {
+        "platform": "x",
+        "profile_id": "1876212707168575488",
+        "current_handle": "VIINX_Thailand",
+        "url": "https://x.com/VIINX_Thailand",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2071609695123767297/q3iK-wh4_400x400.jpg"
+      },
+      {
+        "platform": "instagram",
+        "profile_id": null,
+        "current_handle": "viinx_thailand",
+        "url": "https://www.instagram.com/viinx_thailand/"
       }
     ],
     "avatar_cached_path": "assets/avatars/group_viinx.webp"
@@ -618,6 +663,12 @@
         "profile_id": "1843726394343469058",
         "current_handle": "StarryNiteTH",
         "url": "https://x.com/StarryNiteTH"
+      },
+      {
+        "platform": "instagram",
+        "profile_id": null,
+        "current_handle": "starrynite.official",
+        "url": "https://www.instagram.com/starrynite.official/"
       }
     ],
     "avatar_cached_path": "assets/avatars/group_starry-nite.webp"
@@ -641,6 +692,19 @@
         "profile_id": "100049512283975",
         "current_handle": "ZYNofficial",
         "url": "https://www.facebook.com/ZYNofficial"
+      },
+      {
+        "platform": "x",
+        "profile_id": "2054098460379684865",
+        "current_handle": "ZYNofficialth",
+        "url": "https://x.com/ZYNofficialth",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2054098767373275136/eK9fmNbg_400x400.jpg"
+      },
+      {
+        "platform": "instagram",
+        "profile_id": null,
+        "current_handle": "zyn.idol",
+        "url": "https://www.instagram.com/zyn.idol/"
       }
     ],
     "avatar_cached_path": "assets/avatars/group_zyn.webp"

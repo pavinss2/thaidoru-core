@@ -709,6 +709,16 @@
       font-weight: 800;
     }
 
+    .company-avatar {
+      width: 54px;
+      height: 54px;
+      border-radius: var(--radius-sm);
+      object-fit: cover;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      flex-shrink: 0;
+    }
+
     .company-groups-list {
       display: flex;
       flex-wrap: wrap;
@@ -1551,7 +1561,7 @@
           const colorHex = activeMs?.color?.hex || '#3b82f6';
           const avatarSrc = m.avatar_cached_path ? `./${m.avatar_cached_path}` : (m.sns.find(s => s.avatar_url)?.avatar_url || 'assets/avatars/group_sora-sora.webp');
           
-          const bdayStr = m.birthday?.day && m.birthday?.month ? `🎂 ${m.birthday.day} ${MONTHS[m.birthday.month - 1]}` : '';
+          const bdayStr = m.birthday?.day && m.birthday?.month ? `🎂 ${m.birthday.day} ${MONTHS[m.birthday.month - 1]}${m.birthday.year ? ', ' + m.birthday.year : ''}` : '';
 
           const groupBadges = m.memberships.map(ms => {
             const g = groupMap.get(ms.group_id);
@@ -1680,18 +1690,43 @@
             return g && g.company_id === c.id;
           }));
 
+          const avatarSrc = c.avatar_cached_path ? `./${c.avatar_cached_path}` : 'assets/avatars/company_catsolute.webp';
+
           const groupChips = compGroups.map(g => {
             return `<span class="group-chip" onclick="event.stopPropagation(); openGroupModal('${g.id}')">${g.name}</span>`;
           }).join('');
 
+          const snsIcons = (c.sns || []).map(s => {
+            const iconSvg = ICONS[s.platform] || ICONS.link;
+            return `
+              <a href="${s.url}" target="_blank" rel="noopener noreferrer" class="sns-icon" title="${s.platform}: @${s.current_handle}" onclick="event.stopPropagation();">
+                ${iconSvg}
+              </a>
+            `;
+          }).join('');
+
+          const websiteIcon = c.website_url ? `
+            <a href="${c.website_url}" target="_blank" rel="noopener noreferrer" class="sns-icon" title="Official Website" onclick="event.stopPropagation();">
+              ${ICONS.link}
+            </a>
+          ` : '';
+
           return `
             <article class="company-card" onclick="filterByCompany('${c.id}')">
               <div class="company-header">
-                <div>
-                  <h2 class="company-title">${c.name}</h2>
-                  <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.2rem;">Location: ${c.country} • Status: Active</div>
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                  <img class="company-avatar" src="${avatarSrc}" alt="${c.name}" onerror="this.style.display='none'">
+                  <div>
+                    <h2 class="company-title">${c.name}</h2>
+                    <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.2rem;">Location: ${c.country} • Status: Active</div>
+                  </div>
                 </div>
                 <span class="brand-badge" style="font-size: 0.8rem;">${compGroups.length} Groups</span>
+              </div>
+
+              <div class="card-sns" style="margin-top: 0.25rem;">
+                ${snsIcons}
+                ${websiteIcon}
               </div>
 
               <div class="group-stats-row" style="margin: 0;">
@@ -1721,10 +1756,10 @@
         document.getElementById('modal-member-avatar').src = avatarSrc;
         document.getElementById('modal-member-title').textContent = m.stage_name;
         
-        const subParts = [];
-        if (m.stage_name_th) subParts.push(m.stage_name_th);
-        if (m.real_name?.en || m.real_name?.th) subParts.push(`${m.real_name.en || ''} ${m.real_name.th ? '(' + m.real_name.th + ')' : ''}`);
-        if (m.birthday?.day && m.birthday?.month) subParts.push(`🎂 ${m.birthday.day} ${MONTHS[m.birthday.month - 1]}`);
+        const realEn = [m.real_name?.first_name_en, m.real_name?.last_name_en].filter(Boolean).join(' ');
+        const realTh = [m.real_name?.first_name_th, m.real_name?.last_name_th].filter(Boolean).join(' ');
+        if (realEn || realTh) subParts.push(`${realEn} ${realTh ? '(' + realTh + ')' : ''}`.trim());
+        if (m.birthday?.day && m.birthday?.month) subParts.push(`🎂 ${m.birthday.day} ${MONTHS[m.birthday.month - 1]}${m.birthday.year ? ' ' + m.birthday.year : ''}`);
         document.getElementById('modal-member-sub').textContent = subParts.join(' • ');
 
         // Memberships list

@@ -45,10 +45,36 @@ async function main() {
 
   const members = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'members.json'), 'utf-8'));
   const groups = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'groups.json'), 'utf-8'));
+  const companies = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'companies.json'), 'utf-8'));
 
   let cachedCount = 0;
   let skippedCount = 0;
   let failedCount = 0;
+
+  // 1. Process Company Avatars
+  console.log(`Processing avatars for ${companies.length} companies...`);
+  for (const c of companies) {
+    const outputPath = path.join(ASSETS_DIR, `company_${c.id}.webp`);
+    const relPath = `assets/avatars/company_${c.id}.webp`;
+
+    if (fs.existsSync(outputPath)) {
+      c.avatar_cached_path = relPath;
+      skippedCount++;
+      continue;
+    }
+
+    const avatarUrl = c.sns.find((s: any) => s.avatar_url)?.avatar_url;
+    if (avatarUrl) {
+      console.log(`  [Company: ${c.name}] Downloading & converting to WebP...`);
+      const success = await downloadAndOptimizeImage(avatarUrl, outputPath);
+      if (success) {
+        c.avatar_cached_path = relPath;
+        cachedCount++;
+      } else {
+        failedCount++;
+      }
+    }
+  }
 
   // 1. Process Group Avatars
   console.log(`Processing avatars for ${groups.length} groups...`);
@@ -115,6 +141,7 @@ async function main() {
 
   fs.writeFileSync(path.join(DATA_DIR, 'members.json'), JSON.stringify(members, null, 2));
   fs.writeFileSync(path.join(DATA_DIR, 'groups.json'), JSON.stringify(groups, null, 2));
+  fs.writeFileSync(path.join(DATA_DIR, 'companies.json'), JSON.stringify(companies, null, 2));
 
   console.log('\n--- Avatar Caching Pipeline Finished ---');
   console.log(`  Newly cached: ${cachedCount}`);
