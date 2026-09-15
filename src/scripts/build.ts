@@ -56,14 +56,18 @@ for (const m of memberships) {
 }
 
 // 4. Create Output Directories and Copy Assets
+const DIST_DIR = path.join(ROOT_DIR, 'dist');
 fs.mkdirSync(EXPORT_DIR, { recursive: true });
 
 const SRC_ASSETS_DIR = path.join(ROOT_DIR, 'assets/avatars');
-const DIST_ASSETS_DIR = path.join(DIST_V1_DIR, 'assets/avatars');
+const DIST_ASSETS_ROOT = path.join(DIST_DIR, 'assets/avatars');
+const DIST_ASSETS_V1 = path.join(DIST_V1_DIR, 'assets/avatars');
 if (fs.existsSync(SRC_ASSETS_DIR)) {
-  console.log(' Copying cached avatar assets to dist/v1/assets/avatars...');
-  fs.mkdirSync(DIST_ASSETS_DIR, { recursive: true });
-  fs.cpSync(SRC_ASSETS_DIR, DIST_ASSETS_DIR, { recursive: true });
+  console.log(' Copying cached avatar assets to dist/assets/avatars and dist/v1/assets/avatars...');
+  fs.mkdirSync(DIST_ASSETS_ROOT, { recursive: true });
+  fs.mkdirSync(DIST_ASSETS_V1, { recursive: true });
+  fs.cpSync(SRC_ASSETS_DIR, DIST_ASSETS_ROOT, { recursive: true });
+  fs.cpSync(SRC_ASSETS_DIR, DIST_ASSETS_V1, { recursive: true });
 }
 
 // 5. Write Normalized JSONs to dist/v1
@@ -116,7 +120,12 @@ const allBundle = {
     total_memberships: memberships.length
   },
   companies,
-  groups: denormalizedGroups
+  groups: denormalizedGroups,
+  members: members.map(m => ({
+    ...m,
+    memberships: memberships.filter(ms => ms.member_id === m.id)
+  })),
+  memberships
 };
 fs.writeFileSync(path.join(DIST_V1_DIR, 'all.json'), JSON.stringify(allBundle, null, 2));
 
@@ -180,11 +189,24 @@ const chekiTrackerExport = {
 };
 fs.writeFileSync(path.join(EXPORT_DIR, 'cheki-tracker.json'), JSON.stringify(chekiTrackerExport, null, 2));
 
+// 8. Compile Web Directory (dist/index.html)
+const SITE_SRC = path.join(ROOT_DIR, 'src/site/index.html');
+const SITE_DIST = path.join(DIST_DIR, 'index.html');
+if (fs.existsSync(SITE_SRC)) {
+  console.log(' Compiling Web Directory to dist/index.html...');
+  let html = fs.readFileSync(SITE_SRC, 'utf-8');
+  const bundleJson = JSON.stringify(allBundle);
+  html = html.replace('/* __INJECT_DATA__ */', `window.__THAIDORU_DATA__ = ${bundleJson};`);
+  fs.writeFileSync(SITE_DIST, html, 'utf-8');
+}
+
 console.log(' Build completed successfully!');
-console.log(` Output artifacts in: ${DIST_V1_DIR}`);
-console.log(`   - companies.json (${companies.length} records)`);
-console.log(`   - groups.json (${groups.length} records)`);
-console.log(`   - members.json (${members.length} records)`);
-console.log(`   - memberships.json (${memberships.length} records)`);
-console.log(`   - all.json (Consolidated bundle)`);
-console.log(`   - export/cheki-tracker.json (${dimMembers.length} Cheki Tracker records)`);
+console.log(` Output artifacts in: ${DIST_DIR}`);
+console.log(`   - index.html (Interactive Connected Directory)`);
+console.log(`   - v1/companies.json (${companies.length} records)`);
+console.log(`   - v1/groups.json (${groups.length} records)`);
+console.log(`   - v1/members.json (${members.length} records)`);
+console.log(`   - v1/memberships.json (${memberships.length} records)`);
+console.log(`   - v1/all.json (Consolidated bundle)`);
+console.log(`   - v1/export/cheki-tracker.json (${dimMembers.length} Cheki Tracker records)`);
+

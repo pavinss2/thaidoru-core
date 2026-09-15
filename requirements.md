@@ -266,6 +266,7 @@ The endpoint `/v1/export/cheki-tracker.json` directly implements the schema cont
 - [x] Expand group catalog to **17 groups** across Catsolute (5), A lot of Tone (8), and IC45 (4), including HatoBito, KŌMA, LUMIN+US, Seishin Kakumei, Chocolatière, VIINX, Nikko Nikko, STARRY☆NITE, and ZYN.
 - [x] Connect avatar caching pipeline (`src/scripts/cache-avatars.ts` using `sharp`), achieving **100% avatar cache coverage** across all 68 members and all 17 groups (~1.9 MB total in `assets/avatars/`).
 - [x] Serve permanent avatars via GitHub Pages Edge CDN (`https://pavinss2.github.io/thaidoru-core/assets/avatars/{id}.webp`).
+- [x] Build interactive connected visual directory frontend (`dist/index.html`) on GitHub Pages with instant fuzzy search, multi-facet filtering (agency, group, status), cross-link navigation, and responsive detail modals.
 - [ ] Create time-series follower scraping workflow logging daily/weekly counts (Paused per user instruction).
 
 ### Phase 3: AI-Powered Weekly Ingestion Pipeline (Planned)
@@ -294,5 +295,7 @@ The endpoint `/v1/export/cheki-tracker.json` directly implements the schema cont
 | **2026-09-15** | Direct Git-stored WebP Avatars via GitHub Pages CDN | Optimized 400x400 WebP avatars take only ~1.9 MB total for all 68 members and 17 groups. Completely avoids external Cloudflare R2 bucket setup and costs. | $0 cost, zero token expiry (`?oe=...`), 100% reliable permanent asset URLs for Cheki Tracker. |
 | **2026-09-15** | Zero-credential automated `profile_id` extraction | X GraphQL guest tokens + Facebook OpenGraph crawler headers (`facebookexternalhit/1.1`) allow fetching permanent IDs without user API keys. | Fully automated, reliable extraction without manual user intervention. |
 | **2026-09-15** | Expanded agency coverage to 17 groups | Added KOMA, LUMINUS, Hatobito, Seishin Kakumei, Chocolatière, VIINX (A lot of Tone) and Nikko Nikko, Starry Nite, ZYN (IC45). | Broadened ecosystem foundation for central idol data hub. |
+| **2026-09-15** | Pre-injected static SPA Visual Directory | Build step embeds full bundle directly into `dist/index.html` with graceful fallback to `./v1/all.json`. | 0ms network waterfall, works offline, native browser hash routing, zero external build dependencies. |
+
 
 

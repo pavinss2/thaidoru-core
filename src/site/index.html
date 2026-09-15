@@ -1,0 +1,1859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ThaiDoru Core — Underground Idol Directory</title>
+  <meta name="description" content="Canonical connected directory and API for Thai underground idols across Catsolute, A lot of tone, and IC45.">
+  <link rel="icon" href="assets/avatars/group_sora-sora.webp" type="image/webp">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Sans+Thai:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-base: #090d16;
+      --bg-surface: #111726;
+      --bg-surface-elevated: #1a2236;
+      --bg-glass: rgba(17, 23, 38, 0.85);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-focus: #3b82f6;
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --accent-blue: #3b82f6;
+      --accent-pink: #ec4899;
+      --accent-purple: #a855f7;
+      --accent-emerald: #10b981;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+      --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.35);
+      --shadow-glow: 0 0 25px rgba(59, 130, 246, 0.15);
+      --transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', 'Noto Sans Thai', sans-serif;
+      background-color: var(--bg-base);
+      color: var(--text-primary);
+      line-height: 1.5;
+      min-height: 100vh;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 15% 15%, rgba(59, 130, 246, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 25%, rgba(236, 72, 153, 0.08) 0%, transparent 45%),
+        radial-gradient(circle at 50% 85%, rgba(168, 85, 247, 0.06) 0%, transparent 50%);
+      background-attachment: fixed;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+      border: none;
+      background: none;
+      cursor: pointer;
+    }
+
+    /* Top Navigation Header */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background: var(--bg-glass);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .header-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 0.85rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 800;
+      font-size: 1.25rem;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-logo {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-sm);
+      background: linear-gradient(135deg, #3b82f6, #ec4899);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      box-shadow: 0 0 15px rgba(59, 130, 246, 0.4);
+    }
+
+    .brand-badge {
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 0.15rem 0.5rem;
+      border-radius: var(--radius-full);
+      background: rgba(59, 130, 246, 0.15);
+      color: #60a5fa;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .btn-api {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.45rem 0.9rem;
+      border-radius: var(--radius-sm);
+      background: var(--bg-surface-elevated);
+      color: var(--text-primary);
+      border: 1px solid var(--border-subtle);
+      transition: var(--transition);
+    }
+
+    .btn-api:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .btn-github {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      padding: 0.45rem 0.9rem;
+      border-radius: var(--radius-sm);
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-secondary);
+      border: 1px solid var(--border-subtle);
+      transition: var(--transition);
+    }
+
+    .btn-github:hover {
+      color: var(--text-primary);
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    /* Hero Banner */
+    .hero {
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .hero-title-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .hero-title {
+      font-size: 2.25rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      background: linear-gradient(135deg, #ffffff 40%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-subtitle {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      max-width: 680px;
+    }
+
+    .stats-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .stat-pill {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      padding: 0.5rem 1rem;
+      border-radius: var(--radius-md);
+      font-size: 0.85rem;
+    }
+
+    .stat-num {
+      font-weight: 800;
+      font-size: 1.15rem;
+      color: #60a5fa;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Nav Tabs */
+    .tab-nav {
+      display: flex;
+      gap: 0.5rem;
+      border-bottom: 1px solid var(--border-subtle);
+      margin-bottom: 1.75rem;
+    }
+
+    .tab-btn {
+      padding: 0.75rem 1.25rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .tab-btn:hover {
+      color: var(--text-primary);
+    }
+
+    .tab-btn.active {
+      color: #60a5fa;
+      border-bottom-color: #3b82f6;
+    }
+
+    .tab-count {
+      font-size: 0.75rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: var(--radius-full);
+      background: var(--bg-surface-elevated);
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .tab-btn.active .tab-count {
+      background: rgba(59, 130, 246, 0.2);
+      color: #93c5fd;
+    }
+
+    /* Search & Filter Bar */
+    .controls-panel {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      box-shadow: var(--shadow-card);
+    }
+
+    .search-row {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .search-wrap {
+      position: relative;
+      flex: 1;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    .search-input {
+      width: 100%;
+      background: var(--bg-base);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 0.75rem 1rem 0.75rem 2.75rem;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      font-family: inherit;
+      transition: var(--transition);
+    }
+
+    .search-input:focus {
+      outline: none;
+      border-color: var(--border-focus);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+    }
+
+    .search-clear {
+      position: absolute;
+      right: 0.85rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      display: none;
+      padding: 0.2rem;
+    }
+
+    .filter-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .filter-group {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-right: 0.25rem;
+    }
+
+    .pill-btn {
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.35rem 0.75rem;
+      border-radius: var(--radius-full);
+      background: var(--bg-surface-elevated);
+      color: var(--text-secondary);
+      border: 1px solid var(--border-subtle);
+      transition: var(--transition);
+    }
+
+    .pill-btn:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--text-primary);
+    }
+
+    .pill-btn.active {
+      background: #3b82f6;
+      color: #ffffff;
+      border-color: #3b82f6;
+      box-shadow: 0 0 12px rgba(59, 130, 246, 0.4);
+    }
+
+    .filter-select {
+      background: var(--bg-base);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      padding: 0.4rem 0.8rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      font-family: inherit;
+    }
+
+    .filter-select:focus {
+      outline: none;
+      border-color: var(--border-focus);
+    }
+
+    /* Results Header */
+    .results-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    /* Grid Layouts */
+    .grid-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    /* Member Card */
+    .member-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: var(--shadow-card);
+    }
+
+    .member-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5), var(--shadow-glow);
+    }
+
+    .avatar-wrap {
+      position: relative;
+      width: 120px;
+      height: 120px;
+      margin-bottom: 1rem;
+    }
+
+    .member-avatar {
+      width: 100%;
+      height: 100%;
+      border-radius: var(--radius-full);
+      object-fit: cover;
+      background: var(--bg-surface-elevated);
+      border: 3px solid rgba(255, 255, 255, 0.1);
+      transition: var(--transition);
+    }
+
+    .member-card:hover .member-avatar {
+      border-color: #60a5fa;
+    }
+
+    .status-dot {
+      position: absolute;
+      bottom: 4px;
+      right: 4px;
+      width: 18px;
+      height: 18px;
+      border-radius: var(--radius-full);
+      background: #10b981;
+      border: 3px solid var(--bg-surface);
+    }
+
+    .status-dot.graduated {
+      background: #64748b;
+    }
+
+    .member-name-row {
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .member-stage {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .member-stage-th {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+
+    .member-real {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+      min-height: 1.2em;
+    }
+
+    .member-memberships {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.35rem;
+      margin-bottom: 0.85rem;
+      width: 100%;
+    }
+
+    .group-chip {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.2rem 0.55rem;
+      border-radius: var(--radius-full);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-surface-elevated);
+      transition: var(--transition);
+    }
+
+    .group-chip:hover {
+      border-color: #60a5fa;
+    }
+
+    .color-swatch {
+      width: 8px;
+      height: 8px;
+      border-radius: var(--radius-full);
+      display: inline-block;
+    }
+
+    .member-footer {
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding-top: 0.75rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .member-bday {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .sns-icons {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .sns-link {
+      color: var(--text-muted);
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+    }
+
+    .sns-link:hover {
+      color: #60a5fa;
+    }
+
+    /* Group Card */
+    .group-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+    }
+
+    .group-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+    }
+
+    .group-accent-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+    }
+
+    .group-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .group-avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: var(--radius-md);
+      object-fit: cover;
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .group-meta {
+      flex: 1;
+    }
+
+    .group-name {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.2;
+    }
+
+    .group-native {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+
+    .group-company-badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.15rem 0.5rem;
+      border-radius: var(--radius-full);
+      background: rgba(255, 255, 255, 0.07);
+      color: var(--text-secondary);
+      margin-top: 0.35rem;
+    }
+
+    .group-stats-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .roster-avatars {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .mini-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: var(--radius-full);
+      border: 2px solid var(--bg-surface);
+      margin-left: -8px;
+      object-fit: cover;
+      background: var(--bg-surface-elevated);
+    }
+
+    .mini-avatar:first-child {
+      margin-left: 0;
+    }
+
+    .roster-more {
+      width: 32px;
+      height: 32px;
+      border-radius: var(--radius-full);
+      background: var(--bg-surface-elevated);
+      border: 2px solid var(--bg-surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      margin-left: -8px;
+    }
+
+    /* Company Card */
+    .company-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1.75rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .company-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .company-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .company-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+    }
+
+    .company-groups-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    /* Modals / Drawers */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+
+    .modal-overlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-content {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      width: 100%;
+      max-width: 680px;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.75);
+      transform: translateY(20px) scale(0.97);
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .modal-overlay.open .modal-content {
+      transform: translateY(0) scale(1);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 1.25rem;
+      right: 1.25rem;
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-full);
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      z-index: 10;
+      transition: var(--transition);
+    }
+
+    .modal-close:hover {
+      background: rgba(255, 255, 255, 0.2);
+      color: #fff;
+    }
+
+    .modal-hero {
+      padding: 2.5rem 2rem 1.5rem;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, transparent 100%);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .modal-avatar-lg {
+      width: 160px;
+      height: 160px;
+      border-radius: var(--radius-full);
+      object-fit: cover;
+      margin: 0 auto 1.25rem;
+      border: 4px solid var(--bg-surface-elevated);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+    }
+
+    .modal-title {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .modal-subtitle {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      margin-top: 0.25rem;
+    }
+
+    .modal-body {
+      padding: 1.75rem 2rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .detail-section-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+    }
+
+    .membership-history-card {
+      background: var(--bg-base);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 1rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-bottom: 0.6rem;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .membership-history-card:hover {
+      border-color: #3b82f6;
+      background: var(--bg-surface-elevated);
+    }
+
+    .history-group-info {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .history-color-circle {
+      width: 16px;
+      height: 16px;
+      border-radius: var(--radius-full);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .social-btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--bg-base);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 0.5rem 0.85rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .social-btn:hover {
+      background: var(--bg-surface-elevated);
+      border-color: rgba(255, 255, 255, 0.2);
+      color: #60a5fa;
+    }
+
+    .profile-id-chip {
+      font-size: 0.7rem;
+      font-family: 'JetBrains Mono', monospace;
+      color: var(--text-muted);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0.1rem 0.4rem;
+      border-radius: 4px;
+    }
+
+    /* Roster Member Mini Grid */
+    .roster-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 0.85rem;
+    }
+
+    .roster-card {
+      background: var(--bg-base);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 0.85rem 0.5rem;
+      text-align: center;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .roster-card:hover {
+      border-color: #3b82f6;
+      transform: translateY(-2px);
+    }
+
+    .roster-thumb {
+      width: 54px;
+      height: 54px;
+      border-radius: var(--radius-full);
+      object-fit: cover;
+      margin: 0 auto 0.5rem;
+      border: 2px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .roster-name {
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .roster-role {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+
+    /* API Docs Drawer */
+    .code-box {
+      background: #040711;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 0.85rem 1rem;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      color: #93c5fd;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      overflow-x: auto;
+      margin-bottom: 0.75rem;
+    }
+
+    .btn-copy {
+      padding: 0.25rem 0.6rem;
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: 4px;
+      color: var(--text-secondary);
+      font-size: 0.75rem;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .btn-copy:hover {
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    /* Empty state */
+    .empty-state {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 4rem 1rem;
+      color: var(--text-muted);
+    }
+
+    .empty-icon {
+      font-size: 2.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header-inner {
+        padding: 0.75rem 1rem;
+      }
+      .hero-title {
+        font-size: 1.75rem;
+      }
+      .grid-cards {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 0.85rem;
+      }
+      .avatar-wrap {
+        width: 84px;
+        height: 84px;
+      }
+      .member-stage {
+        font-size: 1.05rem;
+      }
+      .modal-content {
+        max-height: 95vh;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="#members" class="brand">
+        <div class="brand-logo">✨</div>
+        <span>ThaiDoru Core</span>
+        <span class="brand-badge">Directory</span>
+      </a>
+
+      <div class="header-actions">
+        <button class="btn-api" id="open-api-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 17l6-6-6-6M12 19h8"/></svg>
+          API Endpoints
+        </button>
+        <a href="https://github.com/pavinss2/thaidoru-core" target="_blank" rel="noopener noreferrer" class="btn-github">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="container">
+    
+    <!-- Hero Banner -->
+    <section class="hero">
+      <div class="hero-title-wrap">
+        <div>
+          <h1 class="hero-title">Thai Underground Idol Directory</h1>
+          <p class="hero-subtitle">The canonical, schema-validated database and high-performance Edge CDN for Catsolute, A lot of tone, and IC45.</p>
+        </div>
+      </div>
+
+      <div class="stats-bar">
+        <div class="stat-pill">
+          <span class="stat-num" id="stat-members">68</span>
+          <span>Idols</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-num" id="stat-groups">17</span>
+          <span>Groups</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-num" id="stat-companies">3</span>
+          <span>Agencies</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-num">100%</span>
+          <span>WebP Cached Avatars</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Navigation Tabs -->
+    <nav class="tab-nav" role="tablist">
+      <button class="tab-btn active" data-tab="members" id="tab-members-btn">
+        <span>Idols & Members</span>
+        <span class="tab-count" id="count-tab-members">68</span>
+      </button>
+      <button class="tab-btn" data-tab="groups" id="tab-groups-btn">
+        <span>Groups</span>
+        <span class="tab-count" id="count-tab-groups">17</span>
+      </button>
+      <button class="tab-btn" data-tab="companies" id="tab-companies-btn">
+        <span>Agencies</span>
+        <span class="tab-count" id="count-tab-companies">3</span>
+      </button>
+    </nav>
+
+    <!-- Search & Filter Controls -->
+    <section class="controls-panel" id="controls-panel">
+      <div class="search-row">
+        <div class="search-wrap">
+          <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          <input type="text" id="search-input" class="search-input" placeholder="Search by idol name (EN/TH), real name, group, agency, or social handle...">
+          <button class="search-clear" id="search-clear" aria-label="Clear search">✕</button>
+        </div>
+      </div>
+
+      <div class="filter-row">
+        <div class="filter-group" id="company-filters">
+          <span class="filter-label">Agency:</span>
+          <button class="pill-btn active" data-company="all">All</button>
+          <button class="pill-btn" data-company="catsolute">Catsolute</button>
+          <button class="pill-btn" data-company="a-lot-of-tone">A lot of tone</button>
+          <button class="pill-btn" data-company="ic45">IC45</button>
+        </div>
+
+        <div class="filter-group" id="status-filters">
+          <span class="filter-label">Status:</span>
+          <button class="pill-btn active" data-status="all">All</button>
+          <button class="pill-btn" data-status="active">Active</button>
+          <button class="pill-btn" data-status="graduated">Former / Graduated</button>
+        </div>
+
+        <div class="filter-group">
+          <span class="filter-label">Group:</span>
+          <select id="group-select" class="filter-select">
+            <option value="all">All 17 Groups</option>
+          </select>
+        </div>
+
+        <div class="filter-group" style="margin-left: auto;">
+          <span class="filter-label">Sort:</span>
+          <select id="sort-select" class="filter-select">
+            <option value="name-asc">Stage Name (A-Z)</option>
+            <option value="name-desc">Stage Name (Z-A)</option>
+            <option value="group">Group Name</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results Info Bar -->
+    <div class="results-info">
+      <span id="results-count">Showing 68 idols</span>
+    </div>
+
+    <!-- Active Tab Views -->
+    <div id="view-members" class="grid-cards"></div>
+    <div id="view-groups" class="grid-cards" style="display: none;"></div>
+    <div id="view-companies" class="grid-cards" style="display: none;"></div>
+
+  </main>
+
+  <!-- Member Detail Modal -->
+  <div class="modal-overlay" id="member-modal" role="dialog" aria-modal="true" aria-labelledby="member-modal-title">
+    <div class="modal-content">
+      <button class="modal-close" id="member-modal-close" aria-label="Close">✕</button>
+      <div class="modal-hero">
+        <img src="" alt="" class="modal-avatar-lg" id="modal-member-avatar">
+        <h2 class="modal-title" id="modal-member-title"></h2>
+        <div class="modal-subtitle" id="modal-member-sub"></div>
+      </div>
+      <div class="modal-body">
+        <div>
+          <div class="detail-section-title">Group Memberships & Timeline</div>
+          <div id="modal-member-memberships"></div>
+        </div>
+
+        <div>
+          <div class="detail-section-title">Official Social Channels (Permanent UIDs)</div>
+          <div class="social-btn-row" id="modal-member-socials"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Group Detail Modal -->
+  <div class="modal-overlay" id="group-modal" role="dialog" aria-modal="true" aria-labelledby="group-modal-title">
+    <div class="modal-content">
+      <button class="modal-close" id="group-modal-close" aria-label="Close">✕</button>
+      <div class="modal-hero">
+        <img src="" alt="" class="modal-avatar-lg" id="modal-group-avatar" style="border-radius: var(--radius-md);">
+        <h2 class="modal-title" id="modal-group-title"></h2>
+        <div class="modal-subtitle" id="modal-group-sub"></div>
+      </div>
+      <div class="modal-body">
+        <div>
+          <div class="detail-section-title">Active Members</div>
+          <div class="roster-grid" id="modal-group-active-roster"></div>
+        </div>
+
+        <div id="modal-group-graduated-section" style="display: none;">
+          <div class="detail-section-title">Former / Graduated Members</div>
+          <div class="roster-grid" id="modal-group-grad-roster"></div>
+        </div>
+
+        <div>
+          <div class="detail-section-title">Official Channels</div>
+          <div class="social-btn-row" id="modal-group-socials"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- API Endpoints Drawer Modal -->
+  <div class="modal-overlay" id="api-modal" role="dialog" aria-modal="true" aria-labelledby="api-modal-title">
+    <div class="modal-content">
+      <button class="modal-close" id="api-modal-close" aria-label="Close">✕</button>
+      <div class="modal-hero" style="padding: 2rem 2rem 1.25rem;">
+        <h2 class="modal-title" id="api-modal-title">REST API Endpoints</h2>
+        <div class="modal-subtitle">Direct, zero-cost, schema-validated JSON endpoints served globally via Edge CDN.</div>
+      </div>
+      <div class="modal-body">
+        <div>
+          <div class="detail-section-title">Consolidated Full Bundle (All Entities)</div>
+          <div class="code-box">
+            <span>GET /v1/all.json</span>
+            <button class="btn-copy" data-copy="https://pavinss2.github.io/thaidoru-core/v1/all.json">Copy URL</button>
+          </div>
+        </div>
+
+        <div>
+          <div class="detail-section-title">Cheki Tracker Back Office Adapter</div>
+          <div class="code-box">
+            <span>GET /v1/export/cheki-tracker.json</span>
+            <button class="btn-copy" data-copy="https://pavinss2.github.io/thaidoru-core/v1/export/cheki-tracker.json">Copy URL</button>
+          </div>
+        </div>
+
+        <div>
+          <div class="detail-section-title">Normalized Endpoints</div>
+          <div class="code-box">
+            <span>GET /v1/members.json</span>
+            <button class="btn-copy" data-copy="https://pavinss2.github.io/thaidoru-core/v1/members.json">Copy</button>
+          </div>
+          <div class="code-box">
+            <span>GET /v1/groups.json</span>
+            <button class="btn-copy" data-copy="https://pavinss2.github.io/thaidoru-core/v1/groups.json">Copy</button>
+          </div>
+          <div class="code-box">
+            <span>GET /v1/companies.json</span>
+            <button class="btn-copy" data-copy="https://pavinss2.github.io/thaidoru-core/v1/companies.json">Copy</button>
+          </div>
+          <div class="code-box">
+            <span>GET /v1/memberships.json</span>
+            <button class="btn-copy" data-copy="https://pavinss2.github.io/thaidoru-core/v1/memberships.json">Copy</button>
+          </div>
+        </div>
+
+        <div>
+          <div class="detail-section-title">Avatar Asset URL Format</div>
+          <div class="code-box">
+            <span>https://pavinss2.github.io/thaidoru-core/assets/avatars/{id}.webp</span>
+            <button class="btn-copy" data-copy="https://pavinss2.github.io/thaidoru-core/assets/avatars/{id}.webp">Copy</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Data Container placeholder for build injection or runtime fetch -->
+  <script id="data-inject">
+    /* __INJECT_DATA__ */
+  </script>
+
+  <!-- Application Logic -->
+  <script>
+    (function () {
+      let state = {
+        data: null,
+        activeTab: 'members', // 'members' | 'groups' | 'companies'
+        searchQuery: '',
+        companyFilter: 'all',
+        statusFilter: 'all',
+        groupFilter: 'all',
+        sortBy: 'name-asc'
+      };
+
+      // SVG Icons helper
+      const ICONS = {
+        x: '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>',
+        facebook: '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>',
+        instagram: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>',
+        tiktok: '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64c.29 0 .58.04.86.11V9.4a6.33 6.33 0 0 0-5.07 1.48A6.34 6.34 0 0 0 9.27 22a6.34 6.34 0 0 0 6.33-6.33V8.89a8.28 8.28 0 0 0 3.99 1.15V6.69z"/></svg>',
+        youtube: '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>',
+        link: '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>'
+      };
+
+      // Months map
+      const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+      // Init Application
+      async function init() {
+        if (window.__THAIDORU_DATA__) {
+          state.data = window.__THAIDORU_DATA__;
+        } else {
+          try {
+            const res = await fetch('./v1/all.json');
+            state.data = await res.json();
+          } catch (e) {
+            console.error('Failed to load ./v1/all.json:', e);
+            document.getElementById('view-members').innerHTML = '<div class="empty-state"><div class="empty-icon">⚠️</div><p>Failed to load idol data bundle.</p></div>';
+            return;
+          }
+        }
+
+        buildIndexes();
+        populateGroupDropdown();
+        bindEvents();
+        handleRoute();
+      }
+
+      // Maps for O(1) lookups
+      let companyMap = new Map();
+      let groupMap = new Map();
+      let memberMap = new Map();
+
+      function buildIndexes() {
+        companyMap = new Map(state.data.companies.map(c => [c.id, c]));
+        groupMap = new Map(state.data.groups.map(g => [g.id, g]));
+        memberMap = new Map(state.data.members.map(m => [m.id, m]));
+
+        document.getElementById('stat-members').textContent = state.data.members.length;
+        document.getElementById('stat-groups').textContent = state.data.groups.length;
+        document.getElementById('stat-companies').textContent = state.data.companies.length;
+        document.getElementById('count-tab-members').textContent = state.data.members.length;
+        document.getElementById('count-tab-groups').textContent = state.data.groups.length;
+        document.getElementById('count-tab-companies').textContent = state.data.companies.length;
+      }
+
+      function populateGroupDropdown() {
+        const select = document.getElementById('group-select');
+        const sortedGroups = [...state.data.groups].sort((a, b) => a.name.localeCompare(b.name));
+        select.innerHTML = '<option value="all">All 17 Groups</option>';
+        for (const g of sortedGroups) {
+          const opt = document.createElement('option');
+          opt.value = g.id;
+          opt.textContent = `${g.name} (${companyMap.get(g.company_id)?.name || ''})`;
+          select.appendChild(opt);
+        }
+      }
+
+      function bindEvents() {
+        // Tab switching
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const tab = btn.dataset.tab;
+            setTab(tab);
+          });
+        });
+
+        // Search input
+        const searchInput = document.getElementById('search-input');
+        const searchClear = document.getElementById('search-clear');
+        searchInput.addEventListener('input', (e) => {
+          state.searchQuery = e.target.value.trim().toLowerCase();
+          searchClear.style.display = state.searchQuery ? 'block' : 'none';
+          render();
+        });
+        searchClear.addEventListener('click', () => {
+          searchInput.value = '';
+          state.searchQuery = '';
+          searchClear.style.display = 'none';
+          render();
+        });
+
+        // Company filters
+        document.querySelectorAll('#company-filters .pill-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            document.querySelectorAll('#company-filters .pill-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            state.companyFilter = btn.dataset.company;
+            render();
+          });
+        });
+
+        // Status filters
+        document.querySelectorAll('#status-filters .pill-btn').forEach(btn => {
+          btn.addEventListener('click', () => {
+            document.querySelectorAll('#status-filters .pill-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            state.statusFilter = btn.dataset.status;
+            render();
+          });
+        });
+
+        // Group filter
+        document.getElementById('group-select').addEventListener('change', (e) => {
+          state.groupFilter = e.target.value;
+          render();
+        });
+
+        // Sort select
+        document.getElementById('sort-select').addEventListener('change', (e) => {
+          state.sortBy = e.target.value;
+          render();
+        });
+
+        // Modals close buttons
+        document.getElementById('member-modal-close').addEventListener('click', closeModal);
+        document.getElementById('group-modal-close').addEventListener('click', closeModal);
+        document.getElementById('api-modal-close').addEventListener('click', () => {
+          document.getElementById('api-modal').classList.remove('open');
+        });
+
+        // Overlay clicks
+        document.querySelectorAll('.modal-overlay').forEach(overlay => {
+          overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) {
+              closeModal();
+              overlay.classList.remove('open');
+            }
+          });
+        });
+
+        // Open API Modal
+        document.getElementById('open-api-btn').addEventListener('click', () => {
+          document.getElementById('api-modal').classList.add('open');
+        });
+
+        // Copy buttons
+        document.querySelectorAll('.btn-copy').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const text = btn.dataset.copy;
+            navigator.clipboard.writeText(text);
+            const original = btn.textContent;
+            btn.textContent = 'Copied!';
+            setTimeout(() => btn.textContent = original, 1800);
+          });
+        });
+
+        // ESC key to close modal
+        window.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') {
+            closeModal();
+            document.getElementById('api-modal').classList.remove('open');
+          }
+        });
+
+        // URL hash routing
+        window.addEventListener('hashchange', handleRoute);
+      }
+
+      function setTab(tab) {
+        state.activeTab = tab;
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.toggle('active', b.dataset.tab === tab));
+        
+        document.getElementById('view-members').style.display = tab === 'members' ? 'grid' : 'none';
+        document.getElementById('view-groups').style.display = tab === 'groups' ? 'grid' : 'none';
+        document.getElementById('view-companies').style.display = tab === 'companies' ? 'grid' : 'none';
+
+        // Update URL hash if not on deep link
+        if (!location.hash.startsWith('#member/') && !location.hash.startsWith('#group/')) {
+          location.hash = tab;
+        }
+
+        render();
+      }
+
+      function handleRoute() {
+        const hash = location.hash.replace(/^#/, '');
+        if (hash.startsWith('member/')) {
+          const id = hash.split('/')[1];
+          openMemberModal(id, false);
+        } else if (hash.startsWith('group/')) {
+          const id = hash.split('/')[1];
+          openGroupModal(id, false);
+        } else if (hash === 'groups') {
+          setTab('groups');
+        } else if (hash === 'companies') {
+          setTab('companies');
+        } else {
+          setTab('members');
+        }
+      }
+
+      function closeModal() {
+        document.getElementById('member-modal').classList.remove('open');
+        document.getElementById('group-modal').classList.remove('open');
+        if (location.hash.startsWith('#member/') || location.hash.startsWith('#group/')) {
+          history.replaceState(null, '', '#' + state.activeTab);
+        }
+      }
+
+      function render() {
+        if (!state.data) return;
+
+        if (state.activeTab === 'members') {
+          renderMembers();
+        } else if (state.activeTab === 'groups') {
+          renderGroups();
+        } else if (state.activeTab === 'companies') {
+          renderCompanies();
+        }
+      }
+
+      // 1. Render Idols / Members View
+      function renderMembers() {
+        const container = document.getElementById('view-members');
+        const query = state.searchQuery;
+
+        // Filter memberships for each member
+        let filtered = state.data.members.filter(m => {
+          // Search query matching
+          if (query) {
+            const stage = (m.stage_name || '').toLowerCase();
+            const stageTh = (m.stage_name_th || '').toLowerCase();
+            const realTh = (m.real_name?.th || '').toLowerCase();
+            const realEn = (m.real_name?.en || '').toLowerCase();
+            const handles = m.sns.map(s => s.current_handle.toLowerCase()).join(' ');
+
+            // Match member groups
+            const grpNames = m.memberships.map(ms => {
+              const g = groupMap.get(ms.group_id);
+              return g ? g.name.toLowerCase() : '';
+            }).join(' ');
+
+            const match = stage.includes(query) || stageTh.includes(query) || realTh.includes(query) || realEn.includes(query) || handles.includes(query) || grpNames.includes(query);
+            if (!match) return false;
+          }
+
+          // Company filter
+          if (state.companyFilter !== 'all') {
+            const hasComp = m.memberships.some(ms => {
+              const g = groupMap.get(ms.group_id);
+              return g && g.company_id === state.companyFilter;
+            });
+            if (!hasComp) return false;
+          }
+
+          // Group filter
+          if (state.groupFilter !== 'all') {
+            const hasGrp = m.memberships.some(ms => ms.group_id === state.groupFilter);
+            if (!hasGrp) return false;
+          }
+
+          // Status filter
+          if (state.statusFilter !== 'all') {
+            const hasStatus = m.memberships.some(ms => {
+              if (state.statusFilter === 'active') return ms.is_active;
+              if (state.statusFilter === 'graduated') return !ms.is_active;
+              return true;
+            });
+            if (!hasStatus) return false;
+          }
+
+          return true;
+        });
+
+        // Sorting
+        filtered.sort((a, b) => {
+          if (state.sortBy === 'name-asc') return a.stage_name.localeCompare(b.stage_name);
+          if (state.sortBy === 'name-desc') return b.stage_name.localeCompare(a.stage_name);
+          if (state.sortBy === 'group') {
+            const gA = a.memberships[0]?.group_id || '';
+            const gB = b.memberships[0]?.group_id || '';
+            return gA.localeCompare(gB);
+          }
+          return 0;
+        });
+
+        document.getElementById('results-count').textContent = `Showing ${filtered.length} idol${filtered.length === 1 ? '' : 's'}`;
+
+        if (filtered.length === 0) {
+          container.innerHTML = `
+            <div class="empty-state">
+              <div class="empty-icon">🔍</div>
+              <p>No idols found matching your search or active filters.</p>
+            </div>
+          `;
+          return;
+        }
+
+        container.innerHTML = filtered.map(m => {
+          const activeMs = m.memberships.find(ms => ms.is_active) || m.memberships[0];
+          const colorHex = activeMs?.color?.hex || '#3b82f6';
+          const avatarSrc = m.avatar_cached_path ? `./${m.avatar_cached_path}` : (m.sns.find(s => s.avatar_url)?.avatar_url || 'assets/avatars/group_sora-sora.webp');
+          
+          const bdayStr = m.birthday?.day && m.birthday?.month ? `🎂 ${m.birthday.day} ${MONTHS[m.birthday.month - 1]}` : '';
+
+          const groupBadges = m.memberships.map(ms => {
+            const g = groupMap.get(ms.group_id);
+            const gName = g ? g.name : ms.group_id;
+            const cHex = ms.color?.hex || '#94a3b8';
+            return `
+              <span class="group-chip" title="${ms.status} in ${gName}" style="border-color: ${ms.is_active ? cHex + '55' : 'rgba(255,255,255,0.08)'}">
+                <span class="color-swatch" style="background-color: ${cHex};"></span>
+                <span>${gName}</span>
+                ${!ms.is_active ? '<span style="color: var(--text-muted); font-size: 0.65rem;">(Grad)</span>' : ''}
+              </span>
+            `;
+          }).join('');
+
+          const snsIcons = m.sns.map(s => {
+            const iconSvg = ICONS[s.platform] || ICONS.link;
+            return `<a href="${s.url}" target="_blank" rel="noopener noreferrer" class="sns-link" title="${s.platform}: @${s.current_handle}" onclick="event.stopPropagation();">${iconSvg}</a>`;
+          }).join('');
+
+          return `
+            <article class="member-card" onclick="openMemberModal('${m.id}')" style="--accent-color: ${colorHex};">
+              <div class="avatar-wrap">
+                <img src="${avatarSrc}" alt="${m.stage_name}" class="member-avatar" loading="lazy">
+                <div class="status-dot ${activeMs?.is_active ? '' : 'graduated'}" title="${activeMs?.is_active ? 'Active' : 'Graduated / Former'}"></div>
+              </div>
+
+              <div class="member-name-row">
+                <h3 class="member-stage">${m.stage_name}</h3>
+                ${m.stage_name_th ? `<span class="member-stage-th">${m.stage_name_th}</span>` : ''}
+              </div>
+
+              <div class="member-real">${m.real_name?.en || m.real_name?.th || ''}</div>
+
+              <div class="member-memberships">
+                ${groupBadges}
+              </div>
+
+              <div class="member-footer">
+                <div class="member-bday">${bdayStr}</div>
+                <div class="sns-icons">${snsIcons}</div>
+              </div>
+            </article>
+          `;
+        }).join('');
+      }
+
+      // 2. Render Groups View
+      function renderGroups() {
+        const container = document.getElementById('view-groups');
+        const query = state.searchQuery;
+
+        let filtered = state.data.groups.filter(g => {
+          if (query) {
+            const name = g.name.toLowerCase();
+            const native = (g.native_name || '').toLowerCase();
+            const company = (companyMap.get(g.company_id)?.name || '').toLowerCase();
+            if (!name.includes(query) && !native.includes(query) && !company.includes(query)) return false;
+          }
+          if (state.companyFilter !== 'all' && g.company_id !== state.companyFilter) return false;
+          return true;
+        });
+
+        document.getElementById('results-count').textContent = `Showing ${filtered.length} group${filtered.length === 1 ? '' : 's'}`;
+
+        container.innerHTML = filtered.map(g => {
+          const comp = companyMap.get(g.company_id);
+          const themeHex = g.theme_color?.hex || '#3b82f6';
+          const avatarSrc = g.avatar_cached_path ? `./${g.avatar_cached_path}` : 'assets/avatars/group_sora-sora.webp';
+          
+          // Get group members
+          const grpMembers = state.data.members.filter(m => m.memberships.some(ms => ms.group_id === g.id));
+          const activeCount = grpMembers.filter(m => m.memberships.some(ms => ms.group_id === g.id && ms.is_active)).length;
+
+          const avatarStack = grpMembers.slice(0, 5).map(m => {
+            const mSrc = m.avatar_cached_path ? `./${m.avatar_cached_path}` : 'assets/avatars/group_sora-sora.webp';
+            return `<img src="${mSrc}" alt="${m.stage_name}" class="mini-avatar" title="${m.stage_name}">`;
+          }).join('');
+
+          const moreCount = grpMembers.length > 5 ? `<div class="roster-more">+${grpMembers.length - 5}</div>` : '';
+
+          const snsIcons = g.sns.map(s => {
+            const iconSvg = ICONS[s.platform] || ICONS.link;
+            return `<a href="${s.url}" target="_blank" rel="noopener noreferrer" class="sns-link" title="${s.platform}" onclick="event.stopPropagation();">${iconSvg}</a>`;
+          }).join('');
+
+          return `
+            <article class="group-card" onclick="openGroupModal('${g.id}')">
+              <div class="group-accent-bar" style="background-color: ${themeHex};"></div>
+              
+              <div class="group-header">
+                <img src="${avatarSrc}" alt="${g.name}" class="group-avatar">
+                <div class="group-meta">
+                  <h3 class="group-name">${g.name}</h3>
+                  ${g.native_name ? `<div class="group-native">${g.native_name}</div>` : ''}
+                  <span class="group-company-badge">${comp?.name || g.company_id}</span>
+                </div>
+              </div>
+
+              <div class="group-stats-row">
+                <span>Debut: <b>${g.debut_date || 'N/A'}</b></span>
+                <span><b>${activeCount}</b> active idol${activeCount === 1 ? '' : 's'}</span>
+              </div>
+
+              <div class="roster-avatars">
+                ${avatarStack}
+                ${moreCount}
+              </div>
+
+              <div class="member-footer">
+                <span style="font-size: 0.75rem; color: var(--text-muted);">Theme: <b style="color: ${themeHex};">${g.theme_color?.name || 'N/A'}</b></span>
+                <div class="sns-icons">${snsIcons}</div>
+              </div>
+            </article>
+          `;
+        }).join('');
+      }
+
+      // 3. Render Agencies View
+      function renderCompanies() {
+        const container = document.getElementById('view-companies');
+
+        container.innerHTML = state.data.companies.map(c => {
+          const compGroups = state.data.groups.filter(g => g.company_id === c.id);
+          const compMembers = state.data.members.filter(m => m.memberships.some(ms => {
+            const g = groupMap.get(ms.group_id);
+            return g && g.company_id === c.id;
+          }));
+
+          const groupChips = compGroups.map(g => {
+            return `<span class="group-chip" onclick="event.stopPropagation(); openGroupModal('${g.id}')">${g.name}</span>`;
+          }).join('');
+
+          return `
+            <article class="company-card" onclick="filterByCompany('${c.id}')">
+              <div class="company-header">
+                <div>
+                  <h2 class="company-title">${c.name}</h2>
+                  <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.2rem;">Location: ${c.country} • Status: Active</div>
+                </div>
+                <span class="brand-badge" style="font-size: 0.8rem;">${compGroups.length} Groups</span>
+              </div>
+
+              <div class="group-stats-row" style="margin: 0;">
+                <span>Total Idols: <b style="color: #60a5fa;">${compMembers.length}</b></span>
+                <span>Click to filter catalog ↗</span>
+              </div>
+
+              <div>
+                <div class="detail-section-title">Groups Managed</div>
+                <div class="company-groups-list">
+                  ${groupChips}
+                </div>
+              </div>
+            </article>
+          `;
+        }).join('');
+      }
+
+      // Open Member Modal
+      window.openMemberModal = function (memberId, updateHash = true) {
+        const m = memberMap.get(memberId);
+        if (!m) return;
+
+        if (updateHash) location.hash = `member/${m.id}`;
+
+        const avatarSrc = m.avatar_cached_path ? `./${m.avatar_cached_path}` : 'assets/avatars/group_sora-sora.webp';
+        document.getElementById('modal-member-avatar').src = avatarSrc;
+        document.getElementById('modal-member-title').textContent = m.stage_name;
+        
+        const subParts = [];
+        if (m.stage_name_th) subParts.push(m.stage_name_th);
+        if (m.real_name?.en || m.real_name?.th) subParts.push(`${m.real_name.en || ''} ${m.real_name.th ? '(' + m.real_name.th + ')' : ''}`);
+        if (m.birthday?.day && m.birthday?.month) subParts.push(`🎂 ${m.birthday.day} ${MONTHS[m.birthday.month - 1]}`);
+        document.getElementById('modal-member-sub').textContent = subParts.join(' • ');
+
+        // Memberships list
+        const membershipsHtml = m.memberships.map(ms => {
+          const g = groupMap.get(ms.group_id);
+          const cHex = ms.color?.hex || '#94a3b8';
+          return `
+            <div class="membership-history-card" onclick="openGroupModal('${ms.group_id}')">
+              <div class="history-group-info">
+                <div class="history-color-circle" style="background-color: ${cHex};"></div>
+                <div>
+                  <div style="font-weight: 700; font-size: 1rem; color: var(--text-primary);">${g ? g.name : ms.group_id}</div>
+                  <div style="font-size: 0.8rem; color: var(--text-muted);">
+                    Role: <b style="color: var(--text-secondary);">${ms.role || 'member'}</b> • Color: <span style="color: ${cHex};">${ms.color?.name || 'N/A'}</span>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <span class="group-chip" style="border-color: ${ms.is_active ? '#10b981' : '#64748b'}; color: ${ms.is_active ? '#10b981' : '#94a3b8'};">
+                  ${ms.is_active ? '● Active' : 'Graduated'}
+                </span>
+              </div>
+            </div>
+          `;
+        }).join('');
+        document.getElementById('modal-member-memberships').innerHTML = membershipsHtml;
+
+        // Social channels
+        const socialsHtml = m.sns.map(s => {
+          const icon = ICONS[s.platform] || ICONS.link;
+          return `
+            <a href="${s.url}" target="_blank" rel="noopener noreferrer" class="social-btn">
+              ${icon}
+              <span>${s.platform.toUpperCase()}: @${s.current_handle}</span>
+              ${s.profile_id ? `<span class="profile-id-chip" title="Immutable UID: ${s.profile_id}">UID ${s.profile_id.slice(-6)}</span>` : ''}
+            </a>
+          `;
+        }).join('');
+        document.getElementById('modal-member-socials').innerHTML = socialsHtml || '<span style="color: var(--text-muted); font-size: 0.85rem;">No social channels recorded.</span>';
+
+        document.getElementById('member-modal').classList.add('open');
+      };
+
+      // Open Group Modal
+      window.openGroupModal = function (groupId, updateHash = true) {
+        const g = groupMap.get(groupId);
+        if (!g) return;
+
+        if (updateHash) location.hash = `group/${g.id}`;
+
+        const comp = companyMap.get(g.company_id);
+        const avatarSrc = g.avatar_cached_path ? `./${g.avatar_cached_path}` : 'assets/avatars/group_sora-sora.webp';
+        document.getElementById('modal-group-avatar').src = avatarSrc;
+        document.getElementById('modal-group-title').textContent = g.name;
+
+        const subText = `${g.native_name ? g.native_name + ' • ' : ''}Agency: ${comp?.name || g.company_id} • Debut: ${g.debut_date || 'N/A'}`;
+        document.getElementById('modal-group-sub').textContent = subText;
+
+        // Group members
+        const groupMemberships = state.data.memberships.filter(ms => ms.group_id === g.id);
+        const activeMemberships = groupMemberships.filter(ms => ms.is_active);
+        const gradMemberships = groupMemberships.filter(ms => !ms.is_active);
+
+        function renderRosterCards(memberships) {
+          return memberships.map(ms => {
+            const mem = memberMap.get(ms.member_id);
+            if (!mem) return '';
+            const mSrc = mem.avatar_cached_path ? `./${mem.avatar_cached_path}` : 'assets/avatars/group_sora-sora.webp';
+            return `
+              <div class="roster-card" onclick="openMemberModal('${mem.id}')">
+                <img src="${mSrc}" alt="${mem.stage_name}" class="roster-thumb">
+                <div class="roster-name">${mem.stage_name}</div>
+                <div class="roster-role" style="color: ${ms.color?.hex || 'var(--text-muted)'};">${ms.color?.name || ms.role}</div>
+              </div>
+            `;
+          }).join('');
+        }
+
+        document.getElementById('modal-group-active-roster').innerHTML = renderRosterCards(activeMemberships) || '<p style="color: var(--text-muted); font-size: 0.85rem;">No active members found.</p>';
+
+        const gradSection = document.getElementById('modal-group-graduated-section');
+        if (gradMemberships.length > 0) {
+          gradSection.style.display = 'block';
+          document.getElementById('modal-group-grad-roster').innerHTML = renderRosterCards(gradMemberships);
+        } else {
+          gradSection.style.display = 'none';
+        }
+
+        // Socials & Music Links
+        let linksHtml = g.sns.map(s => {
+          const icon = ICONS[s.platform] || ICONS.link;
+          return `
+            <a href="${s.url}" target="_blank" rel="noopener noreferrer" class="social-btn">
+              ${icon}
+              <span>${s.platform.toUpperCase()}</span>
+            </a>
+          `;
+        }).join('');
+
+        if (g.music_links?.spotify) {
+          linksHtml += `
+            <a href="${g.music_links.spotify}" target="_blank" rel="noopener noreferrer" class="social-btn">
+              ${ICONS.link}
+              <span>Spotify Artist</span>
+            </a>
+          `;
+        }
+
+        document.getElementById('modal-group-socials').innerHTML = linksHtml;
+
+        // Close member modal if open, open group modal
+        document.getElementById('member-modal').classList.remove('open');
+        document.getElementById('group-modal').classList.add('open');
+      };
+
+      // Filter by agency from agency card
+      window.filterByCompany = function (companyId) {
+        setTab('members');
+        document.querySelectorAll('#company-filters .pill-btn').forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.company === companyId);
+        });
+        state.companyFilter = companyId;
+        render();
+      };
+
+      // Start the application
+      init();
+    })();
+  </script>
+</body>
+</html>
