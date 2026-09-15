@@ -28,6 +28,9 @@ const COLOR_HEX_MAP: Record<string, string> = {
   'Pink': '#ff69b4',
   'Green': '#27ae60',
   'Black': '#555555',
+  'SkyBlue': '#87ceeb',
+  'Navy': '#000080',
+  'Cream': '#fdeadb',
   'N/A': '#7f8c8d'
 };
 
@@ -71,7 +74,7 @@ function cleanHandle(handle: string | null): string {
 function slugify(text: string): string {
   return text
     .toLowerCase()
-    .replace(/[!:._\s]+/g, '-')
+    .replace(/[!:._\s✟]+/g, '-')
     .replace(/^-+|-+$/g, '');
 }
 
@@ -202,10 +205,10 @@ for (const rg of rawGroups) {
 groups.push({
   id: 'angevil',
   company_id: 'a-lot-of-tone',
-  name: 'Angevil',
+  name: 'ANGeVIL✟',
   status: 'active',
   country: 'Thailand',
-  debut_date: null,
+  debut_date: '2024-07-12',
   theme_color: {
     name: 'Red',
     hex: '#e74c3c'
@@ -214,9 +217,33 @@ groups.push({
   sns: [
     {
       platform: 'facebook',
-      profile_id: null,
+      profile_id: '348301511700002',
       current_handle: 'angevil.official',
-      url: 'https://www.facebook.com/angevil.official'
+      url: 'https://www.facebook.com/348301511700002'
+    },
+    {
+      platform: 'x',
+      profile_id: null,
+      current_handle: 'angevil_idol',
+      url: 'https://x.com/angevil_idol'
+    },
+    {
+      platform: 'instagram',
+      profile_id: null,
+      current_handle: 'angevil_idol',
+      url: 'https://www.instagram.com/angevil_idol/'
+    },
+    {
+      platform: 'tiktok',
+      profile_id: null,
+      current_handle: 'angevilofficial',
+      url: 'https://www.tiktok.com/@angevilofficial'
+    },
+    {
+      platform: 'youtube',
+      profile_id: null,
+      current_handle: 'angevil_idol',
+      url: 'https://www.youtube.com/@angevil_idol'
     }
   ]
 });
@@ -227,7 +254,7 @@ groups.push({
   name: 'Castella',
   status: 'active',
   country: 'Thailand',
-  debut_date: null,
+  debut_date: '2021-07-16',
   theme_color: {
     name: 'Yellow',
     hex: '#f1c40f'
@@ -237,8 +264,26 @@ groups.push({
     {
       platform: 'facebook',
       profile_id: null,
+      current_handle: 'Castella.idol',
+      url: 'https://www.facebook.com/Castella.idol'
+    },
+    {
+      platform: 'x',
+      profile_id: null,
+      current_handle: 'Castella_CMJ',
+      url: 'https://x.com/Castella_CMJ'
+    },
+    {
+      platform: 'instagram',
+      profile_id: null,
       current_handle: 'castella.official',
-      url: 'https://www.facebook.com/castella.official'
+      url: 'https://www.instagram.com/castella.official'
+    },
+    {
+      platform: 'tiktok',
+      profile_id: null,
+      current_handle: 'castella.cmj',
+      url: 'https://www.tiktok.com/@castella.cmj'
     }
   ]
 });
@@ -246,10 +291,11 @@ groups.push({
 groups.push({
   id: 'tgg',
   company_id: 'ic45',
-  name: 'TGG',
+  name: 'The Glass Girls',
+  native_name: 'เดอะกลาสเกิร์ล',
   status: 'active',
   country: 'Thailand',
-  debut_date: null,
+  debut_date: '2019-12-05',
   theme_color: {
     name: 'N/A',
     hex: '#7f8c8d'
@@ -259,8 +305,32 @@ groups.push({
     {
       platform: 'facebook',
       profile_id: null,
-      current_handle: 'tgg.idol',
-      url: 'https://www.facebook.com/tgg.idol'
+      current_handle: 'Theglassgirlsband',
+      url: 'https://www.facebook.com/Theglassgirlsband'
+    },
+    {
+      platform: 'x',
+      profile_id: null,
+      current_handle: 'TheglassgirlsTH',
+      url: 'https://x.com/TheglassgirlsTH'
+    },
+    {
+      platform: 'instagram',
+      profile_id: null,
+      current_handle: 'theglassgirls.official',
+      url: 'https://www.instagram.com/theglassgirls.official'
+    },
+    {
+      platform: 'tiktok',
+      profile_id: null,
+      current_handle: 'theglassgirlsofficial',
+      url: 'https://www.tiktok.com/@theglassgirlsofficial'
+    },
+    {
+      platform: 'youtube',
+      profile_id: null,
+      current_handle: 'TheGlassGirlsOfficial',
+      url: 'https://www.youtube.com/@TheGlassGirlsOfficial'
     }
   ]
 });
@@ -344,7 +414,6 @@ for (const rm of rawMembers) {
 }
 
 // Handle Yiwha historical membership in Sora! Sora!
-// Yiwha graduated from Sora Sora on 2026-01-10 with Black color, then joined Nox:0ff with White color!
 memberships.push({
   id: 'sora-sora_yiwha',
   group_id: 'sora-sora',
@@ -360,127 +429,100 @@ memberships.push({
   graduated_date: '2026-01-10'
 });
 
-// Add Angevil Members
-const angevilMembers = [
-  { name: 'Ice', color: 'Red', x_profile: 'icezu_angevil', avatar: 'https://pbs.twimg.com/profile_images/2067238795553210369/Ddy6LTXL_400x400.jpg' },
-  { name: 'Misaka', color: 'Pink', x_profile: 'misakx_da_re', avatar: 'https://pbs.twimg.com/profile_images/2064349938235191296/ljkLSIW9_400x400.jpg' },
-  { name: 'Miu', color: 'White', x_profile: 'MiuLUMINUS', avatar: 'https://pbs.twimg.com/profile_images/2090412968307757056/4RwTyfIm_400x400.jpg' },
-  { name: 'Nene', color: 'Yellow', x_profile: 'NeneLUMINUS', avatar: 'https://pbs.twimg.com/profile_images/2090415283659997184/yKUvlNHt_400x400.jpg' }
-];
-
-for (const am of angevilMembers) {
-  const mId = slugify(am.name);
-  if (!memberMap.has(mId)) {
+// Helper to add a member and membership
+function registerMember(
+  id: string,
+  stageName: string,
+  stageNameTh: string | null,
+  xHandle: string,
+  avatarUrl: string | null,
+  groupId: string,
+  colorName: string,
+  colorHex: string,
+  status: 'active' | 'graduated' | 'hiatus' = 'active',
+  role: 'member' | 'leader' | 'sub-leader' = 'member',
+  gradDate: string | null = null
+) {
+  if (!memberMap.has(id)) {
     const newMember: Member = {
-      id: mId,
-      stage_name: am.name,
+      id,
+      stage_name: stageName,
+      stage_name_th: stageNameTh,
       real_name: {},
       birthday: { month: null, day: null, year: null },
       sns: [
         {
           platform: 'x',
           profile_id: null,
-          current_handle: am.x_profile,
-          url: `https://x.com/${am.x_profile}`,
-          avatar_url: am.avatar
+          current_handle: xHandle,
+          url: `https://x.com/${xHandle}`,
+          avatar_url: avatarUrl
         }
       ]
     };
-    memberMap.set(mId, newMember);
+    memberMap.set(id, newMember);
     members.push(newMember);
   }
+
   memberships.push({
-    id: `angevil_${mId}`,
-    group_id: 'angevil',
-    member_id: mId,
-    status: 'active',
-    is_active: true,
-    role: 'member',
+    id: `${groupId}_${id}`,
+    group_id: groupId,
+    member_id: id,
+    status,
+    is_active: status === 'active',
+    role,
     color: {
-      name: am.color,
-      hex: COLOR_HEX_MAP[am.color] || '#7f8c8d'
+      name: colorName,
+      hex: colorHex
     },
     joined_date: null,
-    graduated_date: null
+    graduated_date: gradDate
   });
 }
 
-// Add Castella Member (Nadear)
-const nadearMember: Member = {
-  id: 'nadear',
-  stage_name: 'Nadear',
-  real_name: {},
-  birthday: { month: null, day: null, year: null },
-  sns: [
-    {
-      platform: 'x',
-      profile_id: null,
-      current_handle: 'Nadear_CMJ',
-      url: 'https://x.com/Nadear_CMJ',
-      avatar_url: 'https://pbs.twimg.com/profile_images/2069787143346458624/WklSxpAH_400x400.jpg'
-    }
-  ]
-};
-memberMap.set('nadear', nadearMember);
-members.push(nadearMember);
+// 5. Add ANGeVIL Members
+registerMember('icezu', 'Icezu', 'ไอซ์สึ', 'icezu_angevil', 'https://pbs.twimg.com/profile_images/2067238795553210369/Ddy6LTXL_400x400.jpg', 'angevil', 'Red', '#e74c3c');
+registerMember('momo', 'Momo', 'โมโม่', 'Momo_Angevil', null, 'angevil', 'SkyBlue', '#87ceeb');
+registerMember('hani', 'Hani', 'ฮานิ', 'Hani_Angevil', null, 'angevil', 'Purple', '#9b59b6');
+registerMember('yogurt', 'Yogurt', 'โยเกิร์ต', 'Yogurt_Angevil', null, 'angevil', 'Pink', '#ff69b4');
+registerMember('claire', 'Claire', 'แคลร์', 'Claire_Angevil', null, 'angevil', 'Orange', '#e67e22');
+registerMember('bew', 'Bew', 'บิว', 'Bew_Angevil', null, 'angevil', 'Yellow', '#f1c40f');
+registerMember('bebam', 'Bebam', 'บีแบม', 'Bebam_Angevil', null, 'angevil', 'Black', '#555555');
+// Former ANGeVIL
+registerMember('misaka', 'Misaka', 'มิซากะ', 'misakx_da_re', 'https://pbs.twimg.com/profile_images/2064349938235191296/ljkLSIW9_400x400.jpg', 'angevil', 'Pink', '#ff69b4', 'graduated', 'member', '2026-04-01');
+registerMember('miu', 'Miu', 'มิอุ', 'MiuLUMINUS', 'https://pbs.twimg.com/profile_images/2090412968307757056/4RwTyfIm_400x400.jpg', 'angevil', 'White', '#ffffff', 'graduated', 'member', '2026-04-01');
+registerMember('nene', 'Nene', 'เนเน่', 'NeneLUMINUS', 'https://pbs.twimg.com/profile_images/2090415283659997184/yKUvlNHt_400x400.jpg', 'angevil', 'Yellow', '#f1c40f', 'graduated', 'member', '2026-04-01');
 
-memberships.push({
-  id: 'castella_nadear',
-  group_id: 'castella',
-  member_id: 'nadear',
-  status: 'active',
-  is_active: true,
-  role: 'member',
-  color: {
-    name: 'Red',
-    hex: COLOR_HEX_MAP['Red']
-  },
-  joined_date: null,
-  graduated_date: null
-});
+// 6. Add Castella Members
+registerMember('nadear', 'Nadear', 'นาเดีย', 'Nadear_CMJ', 'https://pbs.twimg.com/profile_images/2069787143346458624/WklSxpAH_400x400.jpg', 'castella', 'Red', '#ee0142');
+registerMember('vasa', 'Vasa', 'วสา', 'Vasa_CMJ', null, 'castella', 'Yellow', '#f8e8ac');
+registerMember('praeploy', 'Praeploy', 'แพรพลอย', 'Praeploy_CMJ', null, 'castella', 'Black', '#555555');
+registerMember('airin', 'Airin', 'ไอริน', 'Airin_CMJ', null, 'castella', 'Blue', '#b6d5ee');
+registerMember('asia-castella', 'Asia', 'เอเซีย', 'Asia_CMJ', null, 'castella', 'Pink', '#f3cdd6');
+registerMember('khongkwan', 'Khongkwan', 'ของขวัญ', 'Khongkwan_CMJ', null, 'castella', 'Orange', '#fca26d');
+registerMember('charmew', 'Charmew', 'ชาร์มิว', 'Charmew_CMJ', null, 'castella', 'White', '#ffffff');
+registerMember('friend', 'Friend', 'เฟรนด์', 'Friend_CMJ', null, 'castella', 'Purple', '#dcdaf2');
+registerMember('puifaii', 'Puifaii', 'ปุยฝ้าย', 'Puifaii_CMJ', null, 'castella', 'Navy', '#000080');
 
-// Add TGG Member (Pim)
-const pimMember: Member = {
-  id: 'pim',
-  stage_name: 'Pim',
-  real_name: {},
-  birthday: { month: null, day: null, year: null },
-  sns: [
-    {
-      platform: 'x',
-      profile_id: null,
-      current_handle: 'pimgalet',
-      url: 'https://x.com/pimgalet',
-      avatar_url: 'https://pbs.twimg.com/profile_images/2072657220052090881/KO0B-fbi_400x400.jpg'
-    }
-  ]
-};
-memberMap.set('pim', pimMember);
-members.push(pimMember);
+// 7. Add The Glass Girls (TGG) Members
+registerMember('pim', 'Pim', 'พิม', 'pimgalet', 'https://pbs.twimg.com/profile_images/2072657220052090881/KO0B-fbi_400x400.jpg', 'tgg', 'N/A', '#7f8c8d');
+registerMember('kaimook', 'Kaimook', 'ไข่มุก', 'kaimooktgg', null, 'tgg', 'N/A', '#7f8c8d', 'active', 'leader');
+registerMember('mint', 'Mint', 'มิ้นต์', 'mint_tgg', null, 'tgg', 'N/A', '#7f8c8d', 'active', 'leader');
+registerMember('ni', 'Ni', 'นิ', 'ni_tgg', null, 'tgg', 'N/A', '#7f8c8d');
+registerMember('pam', 'Pam', 'แพม', 'pam_tgg', null, 'tgg', 'N/A', '#7f8c8d');
+registerMember('maple', 'Maple', 'เมเปิ้ล', 'maple_tgg', null, 'tgg', 'N/A', '#7f8c8d');
+registerMember('front', 'Front', 'ฟร้อนท์', 'front_tgg', null, 'tgg', 'N/A', '#7f8c8d');
+registerMember('asia-tgg', 'Asia', 'เอเชียร์', 'asia_tgg', null, 'tgg', 'N/A', '#7f8c8d');
+registerMember('preammy', 'Preammy', 'พรีมมี่', 'preammy_tgg', null, 'tgg', 'N/A', '#7f8c8d');
 
-memberships.push({
-  id: 'tgg_pim',
-  group_id: 'tgg',
-  member_id: 'pim',
-  status: 'active',
-  is_active: true,
-  role: 'member',
-  color: {
-    name: 'N/A',
-    hex: COLOR_HEX_MAP['N/A']
-  },
-  joined_date: null,
-  graduated_date: null
-});
-
-// 5. Validate All Data Against Zod Schemas
+// 8. Validate All Data Against Zod Schemas
 console.log('Validating parsed data against Zod schemas...');
 const validCompanies = CompaniesSchema.parse(companies);
 const validGroups = GroupsSchema.parse(groups);
 const validMembers = MembersSchema.parse(members);
 const validMemberships = GroupMembershipsSchema.parse(memberships);
 
-// 6. Check Referential Integrity
+// 9. Check Referential Integrity
 console.log('Checking referential integrity...');
 const companyIds = new Set(validCompanies.map(c => c.id));
 const groupIds = new Set(validGroups.map(g => g.id));
@@ -501,7 +543,7 @@ for (const m of validMemberships) {
   }
 }
 
-// 7. Write to src/data/
+// 10. Write to src/data/
 fs.mkdirSync(DATA_DIR, { recursive: true });
 fs.writeFileSync(path.join(DATA_DIR, 'companies.json'), JSON.stringify(validCompanies, null, 2));
 fs.writeFileSync(path.join(DATA_DIR, 'groups.json'), JSON.stringify(validGroups, null, 2));

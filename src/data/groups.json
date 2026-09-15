@@ -16,14 +16,14 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "1455407581376045057",
         "current_handle": "Sorasora_idol",
         "url": "https://x.com/Sorasora_idol",
         "avatar_url": "https://pbs.twimg.com/profile_images/2072879671612715008/xOSOebU5_400x400.jpg"
       },
       {
         "platform": "facebook",
-        "profile_id": null,
+        "profile_id": "100076168872084",
         "current_handle": "sorasora.idol",
         "url": "https://www.facebook.com/sorasora.idol"
       },
@@ -39,7 +39,8 @@
         "current_handle": "sorasora.idol",
         "url": "https://www.tiktok.com/@sorasora.idol"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/group_sora-sora.webp"
   },
   {
     "id": "yami-yami",
@@ -58,14 +59,14 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "1584514055254917121",
         "current_handle": "Yamiyami_idol",
         "url": "https://x.com/Yamiyami_idol",
         "avatar_url": "https://pbs.twimg.com/profile_images/2072880621702254592/Bqdry8yw_400x400.jpg"
       },
       {
         "platform": "facebook",
-        "profile_id": null,
+        "profile_id": "100086753846591",
         "current_handle": "yamiyami.idol",
         "url": "https://www.facebook.com/yamiyami.idol"
       },
@@ -81,7 +82,8 @@
         "current_handle": "yamiyami_idol",
         "url": "https://www.tiktok.com/@yamiyami_idol"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/group_yami-yami.webp"
   },
   {
     "id": "mirai-mirai",
@@ -100,14 +102,14 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "1738851760490586112",
         "current_handle": "miraimirai_idol",
         "url": "https://x.com/miraimirai_idol",
         "avatar_url": "https://pbs.twimg.com/profile_images/2072880245427027968/kKRgyA-n_400x400.jpg"
       },
       {
         "platform": "facebook",
-        "profile_id": null,
+        "profile_id": "61554581382495",
         "current_handle": "miraimiraiidol",
         "url": "https://www.facebook.com/miraimiraiidol"
       },
@@ -123,7 +125,8 @@
         "current_handle": "miraimirai_idol",
         "url": "https://www.tiktok.com/@miraimirai_idol"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/group_mirai-mirai.webp"
   },
   {
     "id": "dream-0n",
@@ -142,14 +145,14 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "2016437588761120768",
         "current_handle": "dream0n_idol",
         "url": "https://x.com/dream0n_idol",
         "avatar_url": "https://pbs.twimg.com/profile_images/2073871333751222272/Ihs_UtAI_400x400.jpg"
       },
       {
         "platform": "facebook",
-        "profile_id": null,
+        "profile_id": "61586030663492",
         "current_handle": "dream0n.idol",
         "url": "https://www.facebook.com/dream0n.idol"
       },
@@ -165,7 +168,8 @@
         "current_handle": "dream0n_idol",
         "url": "https://www.tiktok.com/@dream0n_idol"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/group_dream-0n.webp"
   },
   {
     "id": "nox-0ff",
@@ -184,14 +188,14 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "2049174253229264896",
         "current_handle": "nox0ff_idol",
         "url": "https://x.com/nox0ff_idol",
         "avatar_url": "https://pbs.twimg.com/profile_images/2073871737041850368/9FxjGsiv_400x400.jpg"
       },
       {
         "platform": "facebook",
-        "profile_id": null,
+        "profile_id": "61586097470078",
         "current_handle": "nox0ff.ldol",
         "url": "https://www.facebook.com/nox0ff.ldol"
       },
@@ -207,15 +211,16 @@
         "current_handle": "nox0ff_idol",
         "url": "https://www.tiktok.com/@nox0ff_idol"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/group_nox-0ff.webp"
   },
   {
     "id": "angevil",
     "company_id": "a-lot-of-tone",
-    "name": "Angevil",
+    "name": "ANGeVIL✟",
     "status": "active",
     "country": "Thailand",
-    "debut_date": null,
+    "debut_date": "2024-07-12",
     "theme_color": {
       "name": "Red",
       "hex": "#e74c3c"
@@ -224,11 +229,37 @@
     "sns": [
       {
         "platform": "facebook",
-        "profile_id": null,
+        "profile_id": "348301511700002",
         "current_handle": "angevil.official",
-        "url": "https://www.facebook.com/angevil.official"
+        "url": "https://www.facebook.com/348301511700002"
+      },
+      {
+        "platform": "x",
+        "profile_id": "1805080019557122048",
+        "current_handle": "angevil_idol",
+        "url": "https://x.com/angevil_idol",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2070433267954954240/Olgp-EDU_400x400.jpg"
+      },
+      {
+        "platform": "instagram",
+        "profile_id": null,
+        "current_handle": "angevil_idol",
+        "url": "https://www.instagram.com/angevil_idol/"
+      },
+      {
+        "platform": "tiktok",
+        "profile_id": null,
+        "current_handle": "angevilofficial",
+        "url": "https://www.tiktok.com/@angevilofficial"
+      },
+      {
+        "platform": "youtube",
+        "profile_id": null,
+        "current_handle": "angevil_idol",
+        "url": "https://www.youtube.com/@angevil_idol"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/group_angevil.webp"
   },
   {
     "id": "castella",
@@ -236,7 +267,7 @@
     "name": "Castella",
     "status": "active",
     "country": "Thailand",
-    "debut_date": null,
+    "debut_date": "2021-07-16",
     "theme_color": {
       "name": "Yellow",
       "hex": "#f1c40f"
@@ -245,19 +276,40 @@
     "sns": [
       {
         "platform": "facebook",
+        "profile_id": "100069244277404",
+        "current_handle": "Castella.idol",
+        "url": "https://www.facebook.com/Castella.idol"
+      },
+      {
+        "platform": "x",
+        "profile_id": "1475481993685004294",
+        "current_handle": "Castella_CMJ",
+        "url": "https://x.com/Castella_CMJ",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2089341937035976704/f6a-4r9c_400x400.jpg"
+      },
+      {
+        "platform": "instagram",
         "profile_id": null,
         "current_handle": "castella.official",
-        "url": "https://www.facebook.com/castella.official"
+        "url": "https://www.instagram.com/castella.official"
+      },
+      {
+        "platform": "tiktok",
+        "profile_id": null,
+        "current_handle": "castella.cmj",
+        "url": "https://www.tiktok.com/@castella.cmj"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/group_castella.webp"
   },
   {
     "id": "tgg",
     "company_id": "ic45",
-    "name": "TGG",
+    "name": "The Glass Girls",
+    "native_name": "เดอะกลาสเกิร์ล",
     "status": "active",
     "country": "Thailand",
-    "debut_date": null,
+    "debut_date": "2019-12-05",
     "theme_color": {
       "name": "N/A",
       "hex": "#7f8c8d"
@@ -266,10 +318,36 @@
     "sns": [
       {
         "platform": "facebook",
+        "profile_id": "100052956190286",
+        "current_handle": "Theglassgirlsband",
+        "url": "https://www.facebook.com/Theglassgirlsband"
+      },
+      {
+        "platform": "x",
+        "profile_id": "1241389475881598987",
+        "current_handle": "TheglassgirlsTH",
+        "url": "https://x.com/TheglassgirlsTH",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2055272891147849728/-S307YKh_400x400.jpg"
+      },
+      {
+        "platform": "instagram",
         "profile_id": null,
-        "current_handle": "tgg.idol",
-        "url": "https://www.facebook.com/tgg.idol"
+        "current_handle": "theglassgirls.official",
+        "url": "https://www.instagram.com/theglassgirls.official"
+      },
+      {
+        "platform": "tiktok",
+        "profile_id": null,
+        "current_handle": "theglassgirlsofficial",
+        "url": "https://www.tiktok.com/@theglassgirlsofficial"
+      },
+      {
+        "platform": "youtube",
+        "profile_id": null,
+        "current_handle": "TheGlassGirlsOfficial",
+        "url": "https://www.youtube.com/@TheGlassGirlsOfficial"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/group_tgg.webp"
   }
 ]

@@ -6,12 +6,21 @@
   "scripts": {
     "build": "tsx src/scripts/build.ts",
     "test": "tsx src/scripts/test.ts",
-    "validate": "tsx src/scripts/validate.ts"
+    "validate": "tsx src/scripts/test.ts",
+    "resolve:profiles": "tsx src/scripts/resolve-profile-ids.ts",
+    "cache:avatars": "tsx src/scripts/cache-avatars.ts"
   },
-  "keywords": ["thaidoru", "idol", "database", "stats"],
+  "keywords": [
+    "thaidoru",
+    "idol",
+    "database",
+    "stats"
+  ],
   "author": "Pavin",
   "license": "MIT",
   "dependencies": {
+    "@types/sharp": "^0.31.1",
+    "sharp": "^0.35.4",
     "zod": "^3.23.8"
   },
   "devDependencies": {

@@ -260,10 +260,12 @@ The endpoint `/v1/export/cheki-tracker.json` directly implements the schema cont
 - [x] Configure GitHub Actions CI/CD workflow (`.github/workflows/deploy.yml`).
 - [x] Refine membership fields (removed `graduated_reason`).
 
-### Phase 2: Follower Scraper & Asset Pipeline (Planned)
-- [ ] Implement `profile_id` extraction script to populate immutable UIDs for all remaining channels.
-- [ ] Connect avatar caching script (downloads avatars, converts to WebP, stores in Cloudflare R2 / Git asset directory).
-- [ ] Create time-series follower scraping workflow logging daily/weekly counts to Parquet / SQLite.
+### Phase 2: Follower Scraper & Asset Pipeline (In Progress)
+- [x] Implement `profile_id` extraction script to populate immutable UIDs (`src/scripts/resolve-profile-ids.ts`).
+- [x] Populate full rosters for A lot of Tone (ANGeVIL✟, Castella) and IC45 (The Glass Girls) — expanded database to 68 members and 69 memberships.
+- [x] Connect avatar caching pipeline (`src/scripts/cache-avatars.ts` using `sharp`), converting all 69 avatars to 400x400 WebP assets stored in `assets/avatars/` (~1.7 MB total).
+- [x] Serve permanent avatars via GitHub Pages Edge CDN (`https://pavinss2.github.io/thaidoru-core/assets/avatars/{id}.webp`).
+- [ ] Create time-series follower scraping workflow logging daily/weekly counts (Paused per user instruction).
 
 ### Phase 3: AI-Powered Weekly Ingestion Pipeline (Planned)
 - [ ] Build weekly feed crawler for official agency Facebook & X pages.
@@ -288,3 +290,6 @@ The endpoint `/v1/export/cheki-tracker.json` directly implements the schema cont
 | **2026-09-14** | Removed `graduated_reason` field | Unnecessary metadata for core tracking and Cheki Tracker use cases. | Kept schema clean, focused, and low-maintenance. |
 | **2026-09-15** | Removed `blood_type`, `height_cm`, `raw_text` | Unused personal physical traits and redundant raw text in birthday object. | Streamlined member schema to core essential metadata only. |
 | **2026-09-15** | Standardized `country` to clean text (`Thailand`) | Replace emoji string `🇹🇭 TH` with plain text country names. | Improves cross-platform database compatibility and matching with `dim_country`. |
+| **2026-09-15** | Direct Git-stored WebP Avatars via GitHub Pages CDN | 69 400x400 WebP avatars take only 1.7 MB total. Completely avoids external Cloudflare R2 bucket setup and costs. | $0 cost, zero token expiry (`?oe=...`), 100% reliable permanent asset URLs for Cheki Tracker. |
+| **2026-09-15** | Zero-credential automated `profile_id` extraction | X GraphQL guest tokens + Facebook OpenGraph crawler headers (`facebookexternalhit/1.1`) allow fetching permanent IDs without user API keys. | Fully automated, reliable extraction without manual user intervention. |
+

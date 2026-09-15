@@ -55,8 +55,16 @@ for (const m of memberships) {
   }
 }
 
-// 4. Create Output Directories
+// 4. Create Output Directories and Copy Assets
 fs.mkdirSync(EXPORT_DIR, { recursive: true });
+
+const SRC_ASSETS_DIR = path.join(ROOT_DIR, 'assets/avatars');
+const DIST_ASSETS_DIR = path.join(DIST_V1_DIR, 'assets/avatars');
+if (fs.existsSync(SRC_ASSETS_DIR)) {
+  console.log(' Copying cached avatar assets to dist/v1/assets/avatars...');
+  fs.mkdirSync(DIST_ASSETS_DIR, { recursive: true });
+  fs.cpSync(SRC_ASSETS_DIR, DIST_ASSETS_DIR, { recursive: true });
+}
 
 // 5. Write Normalized JSONs to dist/v1
 console.log(' Generating normalized endpoints...');
@@ -67,11 +75,17 @@ fs.writeFileSync(path.join(DIST_V1_DIR, 'memberships.json'), JSON.stringify(memb
 
 // 6. Build Denormalized "all.json" Bundle
 console.log(' Generating combined "all.json" bundle...');
+const cdnBase = process.env.CDN_BASE_URL || 'https://pavinss2.github.io/thaidoru-core';
+
 const denormalizedGroups = groups.map(g => {
   const comp = companyMap.get(g.company_id);
   const grpMemberships = memberships.filter(ms => ms.group_id === g.id);
   const activeMembers = grpMemberships.map(ms => {
     const mem = memberMap.get(ms.member_id)!;
+    const cachedUrl = mem.avatar_cached_path ? `${cdnBase}/${mem.avatar_cached_path}` : null;
+    const xSns = mem.sns.find(s => s.platform === 'x');
+    const fallbackUrl = xSns?.avatar_url || mem.sns.find(s => s.avatar_url)?.avatar_url || null;
+
     return {
       membership_id: ms.id,
       member_id: mem.id,
@@ -81,6 +95,7 @@ const denormalizedGroups = groups.map(g => {
       role: ms.role,
       color: ms.color,
       birthday: mem.birthday,
+      avatar_url: cachedUrl || fallbackUrl,
       sns: mem.sns
     };
   });
@@ -124,9 +139,11 @@ const dimMembers = memberships.map(ms => {
   const comp = companyMap.get(grp.company_id);
   const mem = memberMap.get(ms.member_id)!;
 
-  // Find best avatar url (X or first available)
+  // Prefer permanently cached WebP avatar on CDN, fallback to scraped URL
+  const cachedUrl = mem.avatar_cached_path ? `${cdnBase}/${mem.avatar_cached_path}` : '';
   const xSns = mem.sns.find(s => s.platform === 'x');
-  const avatarUrl = xSns?.avatar_url || mem.sns.find(s => s.avatar_url)?.avatar_url || '';
+  const fallbackUrl = xSns?.avatar_url || mem.sns.find(s => s.avatar_url)?.avatar_url || '';
+  const avatarUrl = cachedUrl || fallbackUrl;
   const xProfileUrl = xSns?.url || '';
 
   return {
@@ -147,7 +164,9 @@ const dimMembers = memberships.map(ms => {
       canonical_membership_id: ms.id,
       color_hex: ms.color.hex,
       role: ms.role,
-      status: ms.status
+      status: ms.status,
+      cached_avatar_url: cachedUrl || null,
+      original_avatar_url: fallbackUrl || null
     }
   };
 });

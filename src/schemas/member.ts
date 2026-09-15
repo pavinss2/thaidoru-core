@@ -21,6 +21,7 @@ export const MemberSchema = z.object({
   stage_name_th: z.string().nullable().optional(),
   real_name: MemberRealNameSchema.default({}),
   birthday: MemberBirthdaySchema.default({}),
+  avatar_cached_path: z.string().nullable().optional(),
   sns: z.array(SNSChannelSchema).default([])
 });
 export type Member = z.infer<typeof MemberSchema>;

@@ -574,9 +574,9 @@
     "graduated_date": "2026-01-10"
   },
   {
-    "id": "angevil_ice",
+    "id": "angevil_icezu",
     "group_id": "angevil",
-    "member_id": "ice",
+    "member_id": "icezu",
     "status": "active",
     "is_active": true,
     "role": "member",
@@ -588,9 +588,37 @@
     "graduated_date": null
   },
   {
-    "id": "angevil_misaka",
+    "id": "angevil_momo",
     "group_id": "angevil",
-    "member_id": "misaka",
+    "member_id": "momo",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "SkyBlue",
+      "hex": "#87ceeb"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "angevil_hani",
+    "group_id": "angevil",
+    "member_id": "hani",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "Purple",
+      "hex": "#9b59b6"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "angevil_yogurt",
+    "group_id": "angevil",
+    "member_id": "yogurt",
     "status": "active",
     "is_active": true,
     "role": "member",
@@ -602,23 +630,23 @@
     "graduated_date": null
   },
   {
-    "id": "angevil_miu",
+    "id": "angevil_claire",
     "group_id": "angevil",
-    "member_id": "miu",
+    "member_id": "claire",
     "status": "active",
     "is_active": true,
     "role": "member",
     "color": {
-      "name": "White",
-      "hex": "#ffffff"
+      "name": "Orange",
+      "hex": "#e67e22"
     },
     "joined_date": null,
     "graduated_date": null
   },
   {
-    "id": "angevil_nene",
+    "id": "angevil_bew",
     "group_id": "angevil",
-    "member_id": "nene",
+    "member_id": "bew",
     "status": "active",
     "is_active": true,
     "role": "member",
@@ -630,6 +658,62 @@
     "graduated_date": null
   },
   {
+    "id": "angevil_bebam",
+    "group_id": "angevil",
+    "member_id": "bebam",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "Black",
+      "hex": "#555555"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "angevil_misaka",
+    "group_id": "angevil",
+    "member_id": "misaka",
+    "status": "graduated",
+    "is_active": false,
+    "role": "member",
+    "color": {
+      "name": "Pink",
+      "hex": "#ff69b4"
+    },
+    "joined_date": null,
+    "graduated_date": "2026-04-01"
+  },
+  {
+    "id": "angevil_miu",
+    "group_id": "angevil",
+    "member_id": "miu",
+    "status": "graduated",
+    "is_active": false,
+    "role": "member",
+    "color": {
+      "name": "White",
+      "hex": "#ffffff"
+    },
+    "joined_date": null,
+    "graduated_date": "2026-04-01"
+  },
+  {
+    "id": "angevil_nene",
+    "group_id": "angevil",
+    "member_id": "nene",
+    "status": "graduated",
+    "is_active": false,
+    "role": "member",
+    "color": {
+      "name": "Yellow",
+      "hex": "#f1c40f"
+    },
+    "joined_date": null,
+    "graduated_date": "2026-04-01"
+  },
+  {
     "id": "castella_nadear",
     "group_id": "castella",
     "member_id": "nadear",
@@ -638,7 +722,119 @@
     "role": "member",
     "color": {
       "name": "Red",
-      "hex": "#e74c3c"
+      "hex": "#ee0142"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "castella_vasa",
+    "group_id": "castella",
+    "member_id": "vasa",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "Yellow",
+      "hex": "#f8e8ac"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "castella_praeploy",
+    "group_id": "castella",
+    "member_id": "praeploy",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "Black",
+      "hex": "#555555"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "castella_airin",
+    "group_id": "castella",
+    "member_id": "airin",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "Blue",
+      "hex": "#b6d5ee"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "castella_asia-castella",
+    "group_id": "castella",
+    "member_id": "asia-castella",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "Pink",
+      "hex": "#f3cdd6"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "castella_khongkwan",
+    "group_id": "castella",
+    "member_id": "khongkwan",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "Orange",
+      "hex": "#fca26d"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "castella_charmew",
+    "group_id": "castella",
+    "member_id": "charmew",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "White",
+      "hex": "#ffffff"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "castella_friend",
+    "group_id": "castella",
+    "member_id": "friend",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "Purple",
+      "hex": "#dcdaf2"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "castella_puifaii",
+    "group_id": "castella",
+    "member_id": "puifaii",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "Navy",
+      "hex": "#000080"
     },
     "joined_date": null,
     "graduated_date": null
@@ -647,6 +843,118 @@
     "id": "tgg_pim",
     "group_id": "tgg",
     "member_id": "pim",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "N/A",
+      "hex": "#7f8c8d"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "tgg_kaimook",
+    "group_id": "tgg",
+    "member_id": "kaimook",
+    "status": "active",
+    "is_active": true,
+    "role": "leader",
+    "color": {
+      "name": "N/A",
+      "hex": "#7f8c8d"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "tgg_mint",
+    "group_id": "tgg",
+    "member_id": "mint",
+    "status": "active",
+    "is_active": true,
+    "role": "leader",
+    "color": {
+      "name": "N/A",
+      "hex": "#7f8c8d"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "tgg_ni",
+    "group_id": "tgg",
+    "member_id": "ni",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "N/A",
+      "hex": "#7f8c8d"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "tgg_pam",
+    "group_id": "tgg",
+    "member_id": "pam",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "N/A",
+      "hex": "#7f8c8d"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "tgg_maple",
+    "group_id": "tgg",
+    "member_id": "maple",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "N/A",
+      "hex": "#7f8c8d"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "tgg_front",
+    "group_id": "tgg",
+    "member_id": "front",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "N/A",
+      "hex": "#7f8c8d"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "tgg_asia-tgg",
+    "group_id": "tgg",
+    "member_id": "asia-tgg",
+    "status": "active",
+    "is_active": true,
+    "role": "member",
+    "color": {
+      "name": "N/A",
+      "hex": "#7f8c8d"
+    },
+    "joined_date": null,
+    "graduated_date": null
+  },
+  {
+    "id": "tgg_preammy",
+    "group_id": "tgg",
+    "member_id": "preammy",
     "status": "active",
     "is_active": true,
     "role": "member",

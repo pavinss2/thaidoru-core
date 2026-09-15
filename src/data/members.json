@@ -11,7 +11,7 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "1750839601881878528",
         "current_handle": "ame_sorasora",
         "url": "https://x.com/ame_sorasora",
         "avatar_url": "https://pbs.twimg.com/profile_images/2070380454537220097/vsSIZT6N_400x400.jpg"
@@ -34,7 +34,8 @@
         "current_handle": "ameaun",
         "url": "https://www.tiktok.com/@ameaun"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/ame.webp"
   },
   {
     "id": "best",
@@ -48,14 +49,14 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "1424723556051558406",
         "current_handle": "Best_SoraSora",
         "url": "https://x.com/Best_SoraSora",
         "avatar_url": "https://pbs.twimg.com/profile_images/2070401124860096512/s0m4JJbH_400x400.jpg"
       },
       {
         "platform": "facebook",
-        "profile_id": null,
+        "profile_id": "100076053694537",
         "current_handle": "Best.sorasora",
         "url": "https://www.facebook.com/Best.sorasora"
       },
@@ -71,7 +72,8 @@
         "current_handle": "bestbrabbit",
         "url": "https://www.tiktok.com/@bestbrabbit"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/best.webp"
   },
   {
     "id": "jennie",
@@ -85,7 +87,7 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "1750839417236021248",
         "current_handle": "Jennie_sorasora",
         "url": "https://x.com/Jennie_sorasora",
         "avatar_url": "https://pbs.twimg.com/profile_images/2070380055658946560/sEAaEP8q_400x400.jpg"
@@ -108,7 +110,8 @@
         "current_handle": "majelmajai",
         "url": "https://www.tiktok.com/@majelmajai"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/jennie.webp"
   },
   {
     "id": "kitty",
@@ -122,14 +125,14 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "1549422658462175232",
         "current_handle": "Kitty_SoraSora",
         "url": "https://x.com/Kitty_SoraSora",
         "avatar_url": "https://pbs.twimg.com/profile_images/2070387106242056192/urj9Fozt_400x400.jpg"
       },
       {
         "platform": "facebook",
-        "profile_id": null,
+        "profile_id": "100083748794776",
         "current_handle": "Kitty.sorasora",
         "url": "https://www.facebook.com/Kitty.sorasora"
       },
@@ -145,7 +148,8 @@
         "current_handle": "kitty.sorasora",
         "url": "https://www.tiktok.com/@kitty.sorasora"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/kitty.webp"
   },
   {
     "id": "lilin",
@@ -159,7 +163,7 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "2030987814846988288",
         "current_handle": "Lilin_SoraSora",
         "url": "https://x.com/Lilin_SoraSora",
         "avatar_url": "https://pbs.twimg.com/profile_images/2070379573624406016/iUqMHEdd_400x400.jpg"
@@ -182,7 +186,8 @@
         "current_handle": "lilin.sorasora",
         "url": "https://www.tiktok.com/@lilin.sorasora"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/lilin.webp"
   },
   {
     "id": "oum",
@@ -196,7 +201,7 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "2030992556138610688",
         "current_handle": "Oum_SoraSora",
         "url": "https://x.com/Oum_SoraSora",
         "avatar_url": "https://pbs.twimg.com/profile_images/2070382242178924544/FmUFZIIl_400x400.jpg"
@@ -219,7 +224,8 @@
         "current_handle": "oum.sorasora",
         "url": "https://www.tiktok.com/@oum.sorasora"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/oum.webp"
   },
   {
     "id": "minmin",
@@ -233,14 +239,14 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "1460845919738339331",
         "current_handle": "Minmin_SoraSora",
         "url": "https://x.com/Minmin_SoraSora",
         "avatar_url": "https://pbs.twimg.com/profile_images/2070380721211121664/bDtN_mIw_400x400.jpg"
       },
       {
         "platform": "facebook",
-        "profile_id": null,
+        "profile_id": "100076185734730",
         "current_handle": "Minmin.SoraSora",
         "url": "https://www.facebook.com/Minmin.SoraSora"
       },
@@ -256,7 +262,8 @@
         "current_handle": "minmin.meow",
         "url": "https://www.tiktok.com/@minmin.meow"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/minmin.webp"
   },
   {
     "id": "pin",
@@ -270,14 +277,14 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "1460584437956046853",
         "current_handle": "Pin_SoraSora",
         "url": "https://x.com/Pin_SoraSora",
         "avatar_url": "https://pbs.twimg.com/profile_images/2070380984714002432/TCwDcTNl_400x400.jpg"
       },
       {
         "platform": "facebook",
-        "profile_id": null,
+        "profile_id": "100076383817892",
         "current_handle": "Pin.sorasora",
         "url": "https://www.facebook.com/Pin.sorasora"
       },
@@ -293,7 +300,8 @@
         "current_handle": "pinsorangai",
         "url": "https://www.tiktok.com/@pinsorangai"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/pin.webp"
   },
   {
     "id": "eri",
@@ -307,7 +315,7 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "1585613217795305473",
         "current_handle": "eri_yamiyami",
         "url": "https://x.com/eri_yamiyami",
         "avatar_url": "https://pbs.twimg.com/profile_images/2087896683032305664/QEsB7Fzu_400x400.jpg"
@@ -330,7 +338,8 @@
         "current_handle": "eri__341",
         "url": "https://www.tiktok.com/@eri__341"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/eri.webp"
   },
   {
     "id": "haru",
@@ -344,7 +353,7 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "1866461927377108992",
         "current_handle": "haru_ymym",
         "url": "https://x.com/haru_ymym",
         "avatar_url": "https://pbs.twimg.com/profile_images/2087893317061373952/VC1pusRC_400x400.jpg"
@@ -367,7 +376,8 @@
         "current_handle": "haru.yamiyami",
         "url": "https://www.tiktok.com/@haru.yamiyami"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/haru.webp"
   },
   {
     "id": "jan",
@@ -381,7 +391,7 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "1866473491601711104",
         "current_handle": "janyamiyami",
         "url": "https://x.com/janyamiyami",
         "avatar_url": "https://pbs.twimg.com/profile_images/2087911011944947713/ej934WiG_400x400.jpg"
@@ -404,7 +414,8 @@
         "current_handle": "janrosez",
         "url": "https://www.tiktok.com/@janrosez"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/jan.webp"
   },
   {
     "id": "kwang",
@@ -418,7 +429,7 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "1585611442497409024",
         "current_handle": "kwang_yamiyami",
         "url": "https://x.com/kwang_yamiyami",
         "avatar_url": "https://pbs.twimg.com/profile_images/2087888955043946496/LPN9BfgR_400x400.jpg"
@@ -441,7 +452,8 @@
         "current_handle": "kwang_kii",
         "url": "https://www.tiktok.com/@kwang_kii"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/kwang.webp"
   },
   {
     "id": "nori",
@@ -455,7 +467,7 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "1439047318955720710",
         "current_handle": "nori_yamiyami",
         "url": "https://x.com/nori_yamiyami",
         "avatar_url": "https://pbs.twimg.com/profile_images/2087895644359053312/N_PGRqQZ_400x400.jpg"
@@ -478,7 +490,8 @@
         "current_handle": "mikunori11",
         "url": "https://www.tiktok.com/@mikunori11"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/nori.webp"
   },
   {
     "id": "praew",
@@ -492,7 +505,7 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "1585613081270718466",
         "current_handle": "praew_yamiyami",
         "url": "https://x.com/praew_yamiyami",
         "avatar_url": "https://pbs.twimg.com/profile_images/2087889389905215488/7Wy5AzEa_400x400.jpg"
@@ -515,7 +528,8 @@
         "current_handle": "praewpiyopii",
         "url": "https://www.tiktok.com/@praewpiyopii"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/praew.webp"
   },
   {
     "id": "punch",
@@ -529,7 +543,7 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "1585615859313438720",
         "current_handle": "punch_yamiyami",
         "url": "https://x.com/punch_yamiyami",
         "avatar_url": "https://pbs.twimg.com/profile_images/2087956136876216320/ll5Mf_Q8_400x400.jpg"
@@ -552,7 +566,8 @@
         "current_handle": "pxxxxxxxxh",
         "url": "https://www.tiktok.com/@pxxxxxxxxh"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/punch.webp"
   },
   {
     "id": "tonliw",
@@ -566,7 +581,7 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "1866462964901122049",
         "current_handle": "tonliw_yamiyami",
         "url": "https://x.com/tonliw_yamiyami",
         "avatar_url": "https://pbs.twimg.com/profile_images/2087887257831432192/uGn3CXa__400x400.jpg"
@@ -589,7 +604,8 @@
         "current_handle": "t0nliwkung",
         "url": "https://www.tiktok.com/@t0nliwkung"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/tonliw.webp"
   },
   {
     "id": "xiu-zhen",
@@ -603,7 +619,7 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "1650692901943525378",
         "current_handle": "xiuzhen_yami",
         "url": "https://x.com/xiuzhen_yami",
         "avatar_url": "https://pbs.twimg.com/profile_images/2087904924424429569/APUclvpQ_400x400.jpg"
@@ -626,7 +642,8 @@
         "current_handle": "0zhen_nehz.0",
         "url": "https://www.tiktok.com/@0zhen_nehz.0"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/xiu-zhen.webp"
   },
   {
     "id": "alice",
@@ -640,7 +657,7 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "1752425701813428224",
         "current_handle": "alicemiraimirai",
         "url": "https://x.com/alicemiraimirai",
         "avatar_url": "https://pbs.twimg.com/profile_images/2070379757766873088/6TIUnVJl_400x400.jpg"
@@ -663,7 +680,8 @@
         "current_handle": "alice.miraimirai",
         "url": "https://www.tiktok.com/@alice.miraimirai"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/alice.webp"
   },
   {
     "id": "gracenae",
@@ -677,7 +695,7 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "1753018642546184192",
         "current_handle": "Gracenae_mirai",
         "url": "https://x.com/Gracenae_mirai",
         "avatar_url": "https://pbs.twimg.com/profile_images/2070379567597101056/Tr-TuxgA_400x400.jpg"
@@ -700,7 +718,8 @@
         "current_handle": "gracenae.miraimirai",
         "url": "https://www.tiktok.com/@gracenae.miraimirai"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/gracenae.webp"
   },
   {
     "id": "kartun",
@@ -714,7 +733,7 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "1753015031929896960",
         "current_handle": "kartun_mirai",
         "url": "https://x.com/kartun_mirai",
         "avatar_url": "https://pbs.twimg.com/profile_images/2070380314929815552/CEXTBsRq_400x400.jpg"
@@ -737,7 +756,8 @@
         "current_handle": "kartun.miraimirai",
         "url": "https://www.tiktok.com/@kartun.miraimirai"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/kartun.webp"
   },
   {
     "id": "kris",
@@ -751,7 +771,7 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "1753030993689354240",
         "current_handle": "Kris_miraimirai",
         "url": "https://x.com/Kris_miraimirai",
         "avatar_url": "https://pbs.twimg.com/profile_images/2070379569904013312/lR5oCzQe_400x400.jpg"
@@ -774,7 +794,8 @@
         "current_handle": "kris_miraimirai",
         "url": "https://www.tiktok.com/@kris_miraimirai"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/kris.webp"
   },
   {
     "id": "mickey",
@@ -788,7 +809,7 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "1753028996407902208",
         "current_handle": "mickey_mrmr",
         "url": "https://x.com/mickey_mrmr",
         "avatar_url": "https://pbs.twimg.com/profile_images/2070383153957789696/Z-UQgxgr_400x400.jpg"
@@ -811,7 +832,8 @@
         "current_handle": "praewpiyopii",
         "url": "https://www.tiktok.com/@praewpiyopii"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/mickey.webp"
   },
   {
     "id": "nisa",
@@ -825,7 +847,7 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "1752989946712121344",
         "current_handle": "Nisa_miraimirai",
         "url": "https://x.com/Nisa_miraimirai",
         "avatar_url": "https://pbs.twimg.com/profile_images/2070391236733865984/SPscDjWS_400x400.jpg"
@@ -848,7 +870,8 @@
         "current_handle": "nisa.miraimirai",
         "url": "https://www.tiktok.com/@nisa.miraimirai"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/nisa.webp"
   },
   {
     "id": "pear",
@@ -862,7 +885,7 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "1753016108230332416",
         "current_handle": "Pear_miraimirai",
         "url": "https://x.com/Pear_miraimirai",
         "avatar_url": "https://pbs.twimg.com/profile_images/2070379183411531776/L0vZaltb_400x400.jpg"
@@ -885,7 +908,8 @@
         "current_handle": "pear.miraimirai",
         "url": "https://www.tiktok.com/@pear.miraimirai"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/pear.webp"
   },
   {
     "id": "pixels",
@@ -899,7 +923,7 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "1753013886935265280",
         "current_handle": "pixels_mirai",
         "url": "https://x.com/pixels_mirai",
         "avatar_url": "https://pbs.twimg.com/profile_images/2070380226207784960/iFCzN2ZB_400x400.jpg"
@@ -922,7 +946,8 @@
         "current_handle": "pixels.miraimirai",
         "url": "https://www.tiktok.com/@pixels.miraimirai"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/pixels.webp"
   },
   {
     "id": "sai",
@@ -936,7 +961,7 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "1753016598691246080",
         "current_handle": "Sai_miraimirai",
         "url": "https://x.com/Sai_miraimirai",
         "avatar_url": "https://pbs.twimg.com/profile_images/2070383112828354560/wWAO5LmC_400x400.jpg"
@@ -959,7 +984,8 @@
         "current_handle": "sai.mrmr",
         "url": "https://www.tiktok.com/@sai.mrmr"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/sai.webp"
   },
   {
     "id": "farm",
@@ -973,14 +999,14 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "2016914643789500422",
         "current_handle": "farm_dream0n",
         "url": "https://x.com/farm_dream0n",
         "avatar_url": "https://pbs.twimg.com/profile_images/2039326938578427904/-mYQR-TS_400x400.jpg"
       },
       {
         "platform": "facebook",
-        "profile_id": null,
+        "profile_id": "61587080348617",
         "current_handle": "farm.dream0n",
         "url": "https://www.facebook.com/farm.dream0n"
       },
@@ -996,7 +1022,8 @@
         "current_handle": "farm.dream0n",
         "url": "https://www.tiktok.com/@farm.dream0n"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/farm.webp"
   },
   {
     "id": "jasmine",
@@ -1010,14 +1037,14 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "2016905753240760320",
         "current_handle": "jasmine_dream0n",
         "url": "https://x.com/jasmine_dream0n",
         "avatar_url": "https://pbs.twimg.com/profile_images/2039327210889510912/bmUBanrU_400x400.jpg"
       },
       {
         "platform": "facebook",
-        "profile_id": null,
+        "profile_id": "61587082478756",
         "current_handle": "jasmine.dream0n",
         "url": "https://www.facebook.com/jasmine.dream0n"
       },
@@ -1033,7 +1060,8 @@
         "current_handle": "jasmine.dream0n",
         "url": "https://www.tiktok.com/@jasmine.dream0n"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/jasmine.webp"
   },
   {
     "id": "jeenin",
@@ -1047,14 +1075,14 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "2016915495023484928",
         "current_handle": "jeenin_dream0n",
         "url": "https://x.com/jeenin_dream0n",
         "avatar_url": "https://pbs.twimg.com/profile_images/2039326934359019520/YqfBG5pq_400x400.jpg"
       },
       {
         "platform": "facebook",
-        "profile_id": null,
+        "profile_id": "61587400613144",
         "current_handle": "jeenin.dream0n",
         "url": "https://www.facebook.com/jeenin.dream0n"
       },
@@ -1070,7 +1098,8 @@
         "current_handle": "jeenin.dream0n",
         "url": "https://www.tiktok.com/@jeenin.dream0n"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/jeenin.webp"
   },
   {
     "id": "jk",
@@ -1084,14 +1113,14 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "2016913506784989185",
         "current_handle": "jk_dream0n",
         "url": "https://x.com/jk_dream0n",
         "avatar_url": "https://pbs.twimg.com/profile_images/2039326940558213120/-xmtdDDi_400x400.jpg"
       },
       {
         "platform": "facebook",
-        "profile_id": null,
+        "profile_id": "61587270419872",
         "current_handle": "jk.dream0n",
         "url": "https://www.facebook.com/jk.dream0n"
       },
@@ -1107,7 +1136,8 @@
         "current_handle": "jkdream0n",
         "url": "https://www.tiktok.com/@jkdream0n"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/jk.webp"
   },
   {
     "id": "mali",
@@ -1121,14 +1151,14 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "2016902366050787328",
         "current_handle": "mali_dream0n",
         "url": "https://x.com/mali_dream0n",
         "avatar_url": "https://pbs.twimg.com/profile_images/2039327167113564160/WNfv2V9c_400x400.jpg"
       },
       {
         "platform": "facebook",
-        "profile_id": null,
+        "profile_id": "61586889857626",
         "current_handle": "mali.dream0n",
         "url": "https://www.facebook.com/mali.dream0n"
       },
@@ -1144,7 +1174,8 @@
         "current_handle": "mali.dream0n",
         "url": "https://www.tiktok.com/@mali.dream0n"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/mali.webp"
   },
   {
     "id": "moya",
@@ -1158,14 +1189,14 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "2016898063013728256",
         "current_handle": "moya_dream0n",
         "url": "https://x.com/moya_dream0n",
         "avatar_url": "https://pbs.twimg.com/profile_images/2039326851605417984/2PrVqJdk_400x400.jpg"
       },
       {
         "platform": "facebook",
-        "profile_id": null,
+        "profile_id": "61586908337386",
         "current_handle": "moya.dream0n",
         "url": "https://www.facebook.com/moya.dream0n"
       },
@@ -1181,7 +1212,8 @@
         "current_handle": "moya_dream0n",
         "url": "https://www.tiktok.com/@moya_dream0n"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/moya.webp"
   },
   {
     "id": "ploy",
@@ -1195,14 +1227,14 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "2016893150762323973",
         "current_handle": "ploy_dream0n",
         "url": "https://x.com/ploy_dream0n",
         "avatar_url": "https://pbs.twimg.com/profile_images/2039326941749350400/qSpfi0To_400x400.jpg"
       },
       {
         "platform": "facebook",
-        "profile_id": null,
+        "profile_id": "61587325107196",
         "current_handle": "ploy.dream0n",
         "url": "https://www.facebook.com/ploy.dream0n"
       },
@@ -1218,7 +1250,8 @@
         "current_handle": "ploy.dream0n",
         "url": "https://www.tiktok.com/@ploy.dream0n"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/ploy.webp"
   },
   {
     "id": "snowy",
@@ -1232,14 +1265,14 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "2016894235753271299",
         "current_handle": "snowy_dream0n",
         "url": "https://x.com/snowy_dream0n",
         "avatar_url": "https://pbs.twimg.com/profile_images/2039326939526397952/Y3j7GgcN_400x400.jpg"
       },
       {
         "platform": "facebook",
-        "profile_id": null,
+        "profile_id": "61586983903708",
         "current_handle": "snowy.dream0n",
         "url": "https://www.facebook.com/snowy.dream0n"
       },
@@ -1255,7 +1288,8 @@
         "current_handle": "snowy.dream0n",
         "url": "https://www.tiktok.com/@snowy.dream0n"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/snowy.webp"
   },
   {
     "id": "bowie",
@@ -1269,7 +1303,7 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "2051317024400588800",
         "current_handle": "bowie_nox0ff",
         "url": "https://x.com/bowie_nox0ff",
         "avatar_url": "https://pbs.twimg.com/profile_images/2064335023151714304/6G9cHuen_400x400.jpg"
@@ -1292,7 +1326,8 @@
         "current_handle": "bowie_nox0ff",
         "url": "https://www.tiktok.com/@bowie_nox0ff"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/bowie.webp"
   },
   {
     "id": "feb",
@@ -1306,7 +1341,7 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "2051229012530524161",
         "current_handle": "feb_nox0ff",
         "url": "https://x.com/feb_nox0ff",
         "avatar_url": "https://pbs.twimg.com/profile_images/2064331847455399936/EslcjRae_400x400.jpg"
@@ -1329,7 +1364,8 @@
         "current_handle": "feb.nox0ff",
         "url": "https://www.tiktok.com/@feb.nox0ff"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/feb.webp"
   },
   {
     "id": "mii",
@@ -1343,7 +1379,7 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "2051267059221417984",
         "current_handle": "mii_nox0ff",
         "url": "https://x.com/mii_nox0ff",
         "avatar_url": "https://pbs.twimg.com/profile_images/2064333991176765440/5VXpykO2_400x400.jpg"
@@ -1366,7 +1402,8 @@
         "current_handle": "mii_nox0ff",
         "url": "https://www.tiktok.com/@mii_nox0ff"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/mii.webp"
   },
   {
     "id": "miyu",
@@ -1380,7 +1417,7 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "2051298052280135680",
         "current_handle": "miyu_nox0ff",
         "url": "https://x.com/miyu_nox0ff",
         "avatar_url": "https://pbs.twimg.com/profile_images/2064334748923936768/0w-Ax994_400x400.jpg"
@@ -1403,7 +1440,8 @@
         "current_handle": "miyu_nox0ff",
         "url": "https://www.tiktok.com/@miyu_nox0ff"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/miyu.webp"
   },
   {
     "id": "time",
@@ -1417,7 +1455,7 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "2051219770494820352",
         "current_handle": "time_nox0ff",
         "url": "https://x.com/time_nox0ff",
         "avatar_url": "https://pbs.twimg.com/profile_images/2064334190167072768/u-tu6jS9_400x400.jpg"
@@ -1440,7 +1478,8 @@
         "current_handle": "time.nox0ff",
         "url": "https://www.tiktok.com/@time.nox0ff"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/time.webp"
   },
   {
     "id": "yiwha",
@@ -1454,7 +1493,7 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "1750838969624100864",
         "current_handle": "yiwha_nox0ff",
         "url": "https://x.com/yiwha_nox0ff",
         "avatar_url": "https://pbs.twimg.com/profile_images/2064332598273548289/igts58sl_400x400.jpg"
@@ -1477,11 +1516,13 @@
         "current_handle": "yiwhazaabzaa",
         "url": "https://www.tiktok.com/@yiwhazaabzaa"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/yiwha.webp"
   },
   {
-    "id": "ice",
-    "stage_name": "Ice",
+    "id": "icezu",
+    "stage_name": "Icezu",
+    "stage_name_th": "ไอซ์สึ",
     "real_name": {},
     "birthday": {
       "month": null,
@@ -1491,16 +1532,144 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "1068512350720782336",
         "current_handle": "icezu_angevil",
         "url": "https://x.com/icezu_angevil",
         "avatar_url": "https://pbs.twimg.com/profile_images/2067238795553210369/Ddy6LTXL_400x400.jpg"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/icezu.webp"
+  },
+  {
+    "id": "momo",
+    "stage_name": "Momo",
+    "stage_name_th": "โมโม่",
+    "real_name": {},
+    "birthday": {
+      "month": null,
+      "day": null,
+      "year": null
+    },
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": "1663433844182384640",
+        "current_handle": "Momo_Angevil",
+        "url": "https://x.com/Momo_Angevil",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2067235416659685376/QIlvOhP1_400x400.jpg"
+      }
+    ],
+    "avatar_cached_path": "assets/avatars/momo.webp"
+  },
+  {
+    "id": "hani",
+    "stage_name": "Hani",
+    "stage_name_th": "ฮานิ",
+    "real_name": {},
+    "birthday": {
+      "month": null,
+      "day": null,
+      "year": null
+    },
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": "1805924651140608000",
+        "current_handle": "Hani_Angevil",
+        "url": "https://x.com/Hani_Angevil",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2067232034402295808/RqwzitJM_400x400.jpg"
+      }
+    ],
+    "avatar_cached_path": "assets/avatars/hani.webp"
+  },
+  {
+    "id": "yogurt",
+    "stage_name": "Yogurt",
+    "stage_name_th": "โยเกิร์ต",
+    "real_name": {},
+    "birthday": {
+      "month": null,
+      "day": null,
+      "year": null
+    },
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": "1987343782845816832",
+        "current_handle": "Yogurt_Angevil",
+        "url": "https://x.com/Yogurt_Angevil",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2067246534614478848/r0QC6XJ-_400x400.jpg"
+      }
+    ],
+    "avatar_cached_path": "assets/avatars/yogurt.webp"
+  },
+  {
+    "id": "claire",
+    "stage_name": "Claire",
+    "stage_name_th": "แคลร์",
+    "real_name": {},
+    "birthday": {
+      "month": null,
+      "day": null,
+      "year": null
+    },
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": "1870425191492493312",
+        "current_handle": "Claire_Angevil",
+        "url": "https://x.com/Claire_Angevil",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2067243193436147712/Q_TJFh3R_400x400.jpg"
+      }
+    ],
+    "avatar_cached_path": "assets/avatars/claire.webp"
+  },
+  {
+    "id": "bew",
+    "stage_name": "Bew",
+    "stage_name_th": "บิว",
+    "real_name": {},
+    "birthday": {
+      "month": null,
+      "day": null,
+      "year": null
+    },
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": "1928789942530195456",
+        "current_handle": "Bew_Angevil",
+        "url": "https://x.com/Bew_Angevil",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2067249818649735168/h9F5JLlO_400x400.jpg"
+      }
+    ],
+    "avatar_cached_path": "assets/avatars/bew.webp"
+  },
+  {
+    "id": "bebam",
+    "stage_name": "Bebam",
+    "stage_name_th": "บีแบม",
+    "real_name": {},
+    "birthday": {
+      "month": null,
+      "day": null,
+      "year": null
+    },
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": "1770704118140817408",
+        "current_handle": "Bebam_Angevil",
+        "url": "https://x.com/Bebam_Angevil",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2067253860222312448/GUga09iJ_400x400.jpg"
+      }
+    ],
+    "avatar_cached_path": "assets/avatars/bebam.webp"
   },
   {
     "id": "misaka",
     "stage_name": "Misaka",
+    "stage_name_th": "มิซากะ",
     "real_name": {},
     "birthday": {
       "month": null,
@@ -1510,16 +1679,18 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "1145221015451996160",
         "current_handle": "misakx_da_re",
         "url": "https://x.com/misakx_da_re",
         "avatar_url": "https://pbs.twimg.com/profile_images/2064349938235191296/ljkLSIW9_400x400.jpg"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/misaka.webp"
   },
   {
     "id": "miu",
     "stage_name": "Miu",
+    "stage_name_th": "มิอุ",
     "real_name": {},
     "birthday": {
       "month": null,
@@ -1529,16 +1700,18 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "1663537673058009088",
         "current_handle": "MiuLUMINUS",
         "url": "https://x.com/MiuLUMINUS",
         "avatar_url": "https://pbs.twimg.com/profile_images/2090412968307757056/4RwTyfIm_400x400.jpg"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/miu.webp"
   },
   {
     "id": "nene",
     "stage_name": "Nene",
+    "stage_name_th": "เนเน่",
     "real_name": {},
     "birthday": {
       "month": null,
@@ -1548,16 +1721,18 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "1805941730845577216",
         "current_handle": "NeneLUMINUS",
         "url": "https://x.com/NeneLUMINUS",
         "avatar_url": "https://pbs.twimg.com/profile_images/2090415283659997184/yKUvlNHt_400x400.jpg"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/nene.webp"
   },
   {
     "id": "nadear",
     "stage_name": "Nadear",
+    "stage_name_th": "นาเดีย",
     "real_name": {},
     "birthday": {
       "month": null,
@@ -1567,16 +1742,144 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": null,
+        "profile_id": "1381933242727600129",
         "current_handle": "Nadear_CMJ",
         "url": "https://x.com/Nadear_CMJ",
         "avatar_url": "https://pbs.twimg.com/profile_images/2069787143346458624/WklSxpAH_400x400.jpg"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/nadear.webp"
   },
   {
-    "id": "pim",
-    "stage_name": "Pim",
+    "id": "vasa",
+    "stage_name": "Vasa",
+    "stage_name_th": "วสา",
+    "real_name": {},
+    "birthday": {
+      "month": null,
+      "day": null,
+      "year": null
+    },
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": "1381937390156017669",
+        "current_handle": "Vasa_CMJ",
+        "url": "https://x.com/Vasa_CMJ",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2069788985556074496/1tvLjT-V_400x400.jpg"
+      }
+    ],
+    "avatar_cached_path": "assets/avatars/vasa.webp"
+  },
+  {
+    "id": "praeploy",
+    "stage_name": "Praeploy",
+    "stage_name_th": "แพรพลอย",
+    "real_name": {},
+    "birthday": {
+      "month": null,
+      "day": null,
+      "year": null
+    },
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": "1381625475622002689",
+        "current_handle": "Praeploy_CMJ",
+        "url": "https://x.com/Praeploy_CMJ",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2069784555020812288/G7UjK89r_400x400.jpg"
+      }
+    ],
+    "avatar_cached_path": "assets/avatars/praeploy.webp"
+  },
+  {
+    "id": "airin",
+    "stage_name": "Airin",
+    "stage_name_th": "ไอริน",
+    "real_name": {},
+    "birthday": {
+      "month": null,
+      "day": null,
+      "year": null
+    },
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": "1879477661577404416",
+        "current_handle": "Airin_CMJ",
+        "url": "https://x.com/Airin_CMJ",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2069784975784677376/RnbSaEIw_400x400.jpg"
+      }
+    ],
+    "avatar_cached_path": "assets/avatars/airin.webp"
+  },
+  {
+    "id": "asia-castella",
+    "stage_name": "Asia",
+    "stage_name_th": "เอเซีย",
+    "real_name": {},
+    "birthday": {
+      "month": null,
+      "day": null,
+      "year": null
+    },
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": "1879480498315259904",
+        "current_handle": "Asia_CMJ",
+        "url": "https://x.com/Asia_CMJ",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2069784512309915649/5BcB3mhc_400x400.jpg"
+      }
+    ],
+    "avatar_cached_path": "assets/avatars/asia-castella.webp"
+  },
+  {
+    "id": "khongkwan",
+    "stage_name": "Khongkwan",
+    "stage_name_th": "ของขวัญ",
+    "real_name": {},
+    "birthday": {
+      "month": null,
+      "day": null,
+      "year": null
+    },
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": "2027261705546612737",
+        "current_handle": "Khongkwan_CMJ",
+        "url": "https://x.com/Khongkwan_CMJ",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2069865356437700608/Nudt4bDM_400x400.jpg"
+      }
+    ],
+    "avatar_cached_path": "assets/avatars/khongkwan.webp"
+  },
+  {
+    "id": "charmew",
+    "stage_name": "Charmew",
+    "stage_name_th": "ชาร์มิว",
+    "real_name": {},
+    "birthday": {
+      "month": null,
+      "day": null,
+      "year": null
+    },
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": "2027260787769966592",
+        "current_handle": "Charmew_CMJ",
+        "url": "https://x.com/Charmew_CMJ",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2069783124297347072/figGSjvX_400x400.jpg"
+      }
+    ],
+    "avatar_cached_path": "assets/avatars/charmew.webp"
+  },
+  {
+    "id": "friend",
+    "stage_name": "Friend",
+    "stage_name_th": "เฟรนด์",
     "real_name": {},
     "birthday": {
       "month": null,
@@ -1587,9 +1890,213 @@
       {
         "platform": "x",
         "profile_id": null,
+        "current_handle": "Friend_CMJ",
+        "url": "https://x.com/Friend_CMJ",
+        "avatar_url": null
+      }
+    ]
+  },
+  {
+    "id": "puifaii",
+    "stage_name": "Puifaii",
+    "stage_name_th": "ปุยฝ้าย",
+    "real_name": {},
+    "birthday": {
+      "month": null,
+      "day": null,
+      "year": null
+    },
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": "1535821161086742528",
+        "current_handle": "Puifaii_CMJ",
+        "url": "https://x.com/Puifaii_CMJ",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2092632680504664064/Wjh2IE0a_400x400.jpg"
+      }
+    ],
+    "avatar_cached_path": "assets/avatars/puifaii.webp"
+  },
+  {
+    "id": "pim",
+    "stage_name": "Pim",
+    "stage_name_th": "พิม",
+    "real_name": {},
+    "birthday": {
+      "month": null,
+      "day": null,
+      "year": null
+    },
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": "1217672092121878531",
         "current_handle": "pimgalet",
         "url": "https://x.com/pimgalet",
         "avatar_url": "https://pbs.twimg.com/profile_images/2072657220052090881/KO0B-fbi_400x400.jpg"
+      }
+    ],
+    "avatar_cached_path": "assets/avatars/pim.webp"
+  },
+  {
+    "id": "kaimook",
+    "stage_name": "Kaimook",
+    "stage_name_th": "ไข่มุก",
+    "real_name": {},
+    "birthday": {
+      "month": null,
+      "day": null,
+      "year": null
+    },
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": "1360242650373259268",
+        "current_handle": "kaimooktgg",
+        "url": "https://x.com/kaimooktgg",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2059978040244113408/YazrFKYL_400x400.jpg"
+      }
+    ],
+    "avatar_cached_path": "assets/avatars/kaimook.webp"
+  },
+  {
+    "id": "mint",
+    "stage_name": "Mint",
+    "stage_name_th": "มิ้นต์",
+    "real_name": {},
+    "birthday": {
+      "month": null,
+      "day": null,
+      "year": null
+    },
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "mint_tgg",
+        "url": "https://x.com/mint_tgg",
+        "avatar_url": null
+      }
+    ]
+  },
+  {
+    "id": "ni",
+    "stage_name": "Ni",
+    "stage_name_th": "นิ",
+    "real_name": {},
+    "birthday": {
+      "month": null,
+      "day": null,
+      "year": null
+    },
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": "1152996498671489024",
+        "current_handle": "ni_tgg",
+        "url": "https://x.com/ni_tgg",
+        "avatar_url": "https://pbs.twimg.com/profile_images/1544226580246904833/-_phuPEj_400x400.jpg"
+      }
+    ],
+    "avatar_cached_path": "assets/avatars/ni.webp"
+  },
+  {
+    "id": "pam",
+    "stage_name": "Pam",
+    "stage_name_th": "แพม",
+    "real_name": {},
+    "birthday": {
+      "month": null,
+      "day": null,
+      "year": null
+    },
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "pam_tgg",
+        "url": "https://x.com/pam_tgg",
+        "avatar_url": null
+      }
+    ]
+  },
+  {
+    "id": "maple",
+    "stage_name": "Maple",
+    "stage_name_th": "เมเปิ้ล",
+    "real_name": {},
+    "birthday": {
+      "month": null,
+      "day": null,
+      "year": null
+    },
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "maple_tgg",
+        "url": "https://x.com/maple_tgg",
+        "avatar_url": null
+      }
+    ]
+  },
+  {
+    "id": "front",
+    "stage_name": "Front",
+    "stage_name_th": "ฟร้อนท์",
+    "real_name": {},
+    "birthday": {
+      "month": null,
+      "day": null,
+      "year": null
+    },
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "front_tgg",
+        "url": "https://x.com/front_tgg",
+        "avatar_url": null
+      }
+    ]
+  },
+  {
+    "id": "asia-tgg",
+    "stage_name": "Asia",
+    "stage_name_th": "เอเชียร์",
+    "real_name": {},
+    "birthday": {
+      "month": null,
+      "day": null,
+      "year": null
+    },
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "asia_tgg",
+        "url": "https://x.com/asia_tgg",
+        "avatar_url": null
+      }
+    ]
+  },
+  {
+    "id": "preammy",
+    "stage_name": "Preammy",
+    "stage_name_th": "พรีมมี่",
+    "real_name": {},
+    "birthday": {
+      "month": null,
+      "day": null,
+      "year": null
+    },
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": "preammy_tgg",
+        "url": "https://x.com/preammy_tgg",
+        "avatar_url": null
       }
     ]
   }

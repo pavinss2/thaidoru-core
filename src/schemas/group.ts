@@ -20,6 +20,7 @@ export const GroupSchema = z.object({
   disband_date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).nullable().optional(),
   theme_color: GroupColorSchema.nullable().optional(),
   music_links: z.record(z.string().url()).default({}),
+  avatar_cached_path: z.string().nullable().optional(),
   sns: z.array(SNSChannelSchema).default([])
 });
 export type Group = z.infer<typeof GroupSchema>;
