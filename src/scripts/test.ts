@@ -84,6 +84,13 @@ try {
   }
   assert(allHexValid, 'All membership colors have valid 6-char hex codes');
 
+  // Test 5b: end_date consistency (end_date is canonical; graduated_date is a legacy alias)
+  const endDateConsistent = memberships.every(ms =>
+    (ms.is_active ? !ms.end_date : true) &&
+    (ms.graduated_date ? ms.end_date === ms.graduated_date : true)
+  );
+  assert(endDateConsistent, 'Active memberships have no end_date; end_date matches graduated_date when set');
+
   // Test 6: Country format (clean text, no emojis)
   const allCompaniesCleanCountry = companies.every(c => c.country === 'Thailand');
   assert(allCompaniesCleanCountry, 'All companies have country "Thailand"');

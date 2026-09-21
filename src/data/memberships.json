@@ -11,7 +11,8 @@
       "hex": "#e74c3c"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "sora-sora_best",
@@ -25,7 +26,8 @@
       "hex": "#f1c40f"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "sora-sora_jennie",
@@ -39,7 +41,8 @@
       "hex": "#9b59b6"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "sora-sora_kitty",
@@ -53,7 +56,8 @@
       "hex": "#ffffff"
     },
     "joined_date": null,
-    "graduated_date": "2026-09-05"
+    "graduated_date": "2026-09-05",
+    "end_date": "2026-09-05"
   },
   {
     "id": "sora-sora_lilin",
@@ -67,7 +71,8 @@
       "hex": "#e67e22"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "sora-sora_oum",
@@ -81,7 +86,8 @@
       "hex": "#3498db"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "sora-sora_minmin",
@@ -95,7 +101,8 @@
       "hex": "#ff69b4"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "sora-sora_pin",
@@ -109,7 +116,8 @@
       "hex": "#27ae60"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "yami-yami_eri",
@@ -123,7 +131,8 @@
       "hex": "#ff69b4"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "yami-yami_haru",
@@ -137,7 +146,8 @@
       "hex": "#e74c3c"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "yami-yami_jan",
@@ -151,7 +161,8 @@
       "hex": "#e67e22"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "yami-yami_kwang",
@@ -165,7 +176,8 @@
       "hex": "#3498db"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "yami-yami_nori",
@@ -179,7 +191,8 @@
       "hex": "#555555"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "yami-yami_praew",
@@ -193,7 +206,8 @@
       "hex": "#f1c40f"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "yami-yami_punch",
@@ -207,7 +221,8 @@
       "hex": "#9b59b6"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "yami-yami_tonliw",
@@ -221,7 +236,8 @@
       "hex": "#27ae60"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "yami-yami_xiu-zhen",
@@ -235,7 +251,8 @@
       "hex": "#ffffff"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "mirai-mirai_alice",
@@ -249,7 +266,8 @@
       "hex": "#555555"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "mirai-mirai_gracenae",
@@ -263,7 +281,8 @@
       "hex": "#ff69b4"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "mirai-mirai_kartun",
@@ -277,7 +296,8 @@
       "hex": "#f1c40f"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "mirai-mirai_kris",
@@ -291,7 +311,8 @@
       "hex": "#9b59b6"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "mirai-mirai_mickey",
@@ -305,7 +326,8 @@
       "hex": "#e74c3c"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "mirai-mirai_nisa",
@@ -319,7 +341,8 @@
       "hex": "#ffffff"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "mirai-mirai_pear",
@@ -333,7 +356,8 @@
       "hex": "#e67e22"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "mirai-mirai_pixels",
@@ -347,7 +371,8 @@
       "hex": "#27ae60"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "mirai-mirai_sai",
@@ -361,7 +386,8 @@
       "hex": "#3498db"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "dream-0n_farm",
@@ -375,7 +401,8 @@
       "hex": "#9b59b6"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "dream-0n_jasmine",
@@ -389,7 +416,8 @@
       "hex": "#ffffff"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "dream-0n_jeenin",
@@ -403,7 +431,8 @@
       "hex": "#e67e22"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "dream-0n_jk",
@@ -417,7 +446,8 @@
       "hex": "#e74c3c"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "dream-0n_mali",
@@ -431,7 +461,8 @@
       "hex": "#3498db"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "dream-0n_moya",
@@ -445,7 +476,8 @@
       "hex": "#ff69b4"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "dream-0n_ploy",
@@ -459,7 +491,8 @@
       "hex": "#f1c40f"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "dream-0n_snowy",
@@ -473,7 +506,8 @@
       "hex": "#27ae60"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "nox-0ff_bowie",
@@ -487,7 +521,8 @@
       "hex": "#f1c40f"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "nox-0ff_feb",
@@ -501,7 +536,8 @@
       "hex": "#3498db"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "nox-0ff_mii",
@@ -515,7 +551,8 @@
       "hex": "#9b59b6"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "nox-0ff_miyu",
@@ -529,7 +566,8 @@
       "hex": "#ff69b4"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "nox-0ff_time",
@@ -543,7 +581,8 @@
       "hex": "#e74c3c"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "nox-0ff_yiwha",
@@ -557,7 +596,8 @@
       "hex": "#ffffff"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "sora-sora_yiwha",
@@ -571,7 +611,8 @@
       "hex": "#555555"
     },
     "joined_date": "2021-11-23",
-    "graduated_date": "2026-01-10"
+    "graduated_date": "2026-01-10",
+    "end_date": "2026-01-10"
   },
   {
     "id": "angevil_icezu",
@@ -585,7 +626,8 @@
       "hex": "#e74c3c"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "angevil_momo",
@@ -599,7 +641,8 @@
       "hex": "#87ceeb"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "angevil_hani",
@@ -613,7 +656,8 @@
       "hex": "#9b59b6"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "angevil_yogurt",
@@ -627,7 +671,8 @@
       "hex": "#ff69b4"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "angevil_claire",
@@ -641,7 +686,8 @@
       "hex": "#e67e22"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "angevil_bew",
@@ -655,7 +701,8 @@
       "hex": "#f1c40f"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "angevil_bebam",
@@ -669,7 +716,8 @@
       "hex": "#555555"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "angevil_misaka",
@@ -683,7 +731,8 @@
       "hex": "#ff69b4"
     },
     "joined_date": null,
-    "graduated_date": "2026-04-01"
+    "graduated_date": "2026-04-01",
+    "end_date": "2026-04-01"
   },
   {
     "id": "angevil_miu",
@@ -697,7 +746,8 @@
       "hex": "#ffffff"
     },
     "joined_date": null,
-    "graduated_date": "2026-04-01"
+    "graduated_date": "2026-04-01",
+    "end_date": "2026-04-01"
   },
   {
     "id": "angevil_nene",
@@ -711,7 +761,8 @@
       "hex": "#f1c40f"
     },
     "joined_date": null,
-    "graduated_date": "2026-04-01"
+    "graduated_date": "2026-04-01",
+    "end_date": "2026-04-01"
   },
   {
     "id": "castella_nadear",
@@ -725,7 +776,8 @@
       "hex": "#ee0142"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "castella_vasa",
@@ -739,7 +791,8 @@
       "hex": "#f8e8ac"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "castella_praeploy",
@@ -753,7 +806,8 @@
       "hex": "#555555"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "castella_airin",
@@ -767,7 +821,8 @@
       "hex": "#b6d5ee"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "castella_asia-castella",
@@ -781,7 +836,8 @@
       "hex": "#f3cdd6"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "castella_khongkwan",
@@ -795,7 +851,8 @@
       "hex": "#fca26d"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "castella_charmew",
@@ -809,7 +866,8 @@
       "hex": "#ffffff"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "castella_friend",
@@ -823,7 +881,8 @@
       "hex": "#dcdaf2"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "castella_puifaii",
@@ -837,7 +896,8 @@
       "hex": "#000080"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "tgg_pim",
@@ -851,7 +911,8 @@
       "hex": "#7f8c8d"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "tgg_kaimook",
@@ -865,7 +926,8 @@
       "hex": "#7f8c8d"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "tgg_mint",
@@ -879,7 +941,8 @@
       "hex": "#7f8c8d"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "tgg_ni",
@@ -893,7 +956,8 @@
       "hex": "#7f8c8d"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "tgg_pam",
@@ -907,7 +971,8 @@
       "hex": "#7f8c8d"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "tgg_maple",
@@ -921,7 +986,8 @@
       "hex": "#7f8c8d"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "tgg_front",
@@ -935,7 +1001,8 @@
       "hex": "#7f8c8d"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "tgg_asia-tgg",
@@ -949,7 +1016,8 @@
       "hex": "#7f8c8d"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "tgg_preammy",
@@ -963,7 +1031,8 @@
       "hex": "#7f8c8d"
     },
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "chocolatiere_cinnamon",
@@ -977,7 +1046,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "chocolatiere_give",
@@ -991,7 +1061,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "chocolatiere_kurara",
@@ -1005,7 +1076,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "chocolatiere_meiji",
@@ -1019,7 +1091,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "chocolatiere_mikimiki",
@@ -1033,7 +1106,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "chocolatiere_rinmine",
@@ -1047,7 +1121,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "chocolatiere_ruby",
@@ -1061,7 +1136,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "chocolatiere_satchan",
@@ -1075,7 +1151,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "chocolatiere_rinrin",
@@ -1089,7 +1166,8 @@
     },
     "status": "graduated",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "chocolatiere_mikoto",
@@ -1103,7 +1181,8 @@
     },
     "status": "graduated",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "hatobito_airi",
@@ -1117,7 +1196,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "hatobito_beam",
@@ -1131,7 +1211,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "hatobito_chelsea",
@@ -1145,7 +1226,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "hatobito_donut",
@@ -1159,7 +1241,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "hatobito_elleelle",
@@ -1173,7 +1256,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "hatobito_gorya",
@@ -1187,7 +1271,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "hatobito_kana",
@@ -1201,7 +1286,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "hatobito_milin",
@@ -1215,7 +1301,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "hatobito_mobile",
@@ -1229,7 +1316,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "hatobito_music",
@@ -1243,7 +1331,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "hatobito_nata",
@@ -1257,7 +1346,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "hatobito_punnhyaz",
@@ -1271,7 +1361,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "hatobito_summer",
@@ -1285,7 +1376,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "hatobito_view",
@@ -1299,7 +1391,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "koma_killua",
@@ -1313,7 +1406,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "koma_tengja",
@@ -1327,7 +1421,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "koma_pchi",
@@ -1341,7 +1436,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "koma_jay",
@@ -1355,7 +1451,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "koma_mayuki",
@@ -1369,7 +1466,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "koma_nyan0",
@@ -1383,7 +1481,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "luminus_chicha",
@@ -1397,7 +1496,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "luminus_fahmini",
@@ -1411,7 +1511,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "luminus_foremost",
@@ -1425,7 +1526,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "luminus_koi",
@@ -1439,7 +1541,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "luminus_milk",
@@ -1453,7 +1556,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "luminus_minnie",
@@ -1467,7 +1571,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "luminus_moji",
@@ -1481,7 +1586,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "luminus_smild",
@@ -1495,7 +1601,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "hatobito_smild",
@@ -1509,7 +1616,8 @@
     },
     "status": "graduated",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "luminus_miu",
@@ -1523,7 +1631,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "luminus_nene",
@@ -1537,7 +1646,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "nikko-nikko_eye",
@@ -1551,7 +1661,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "nikko-nikko_iya",
@@ -1565,7 +1676,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "nikko-nikko_ize",
@@ -1579,7 +1691,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "nikko-nikko_maysa",
@@ -1593,7 +1706,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "nikko-nikko_mewyu",
@@ -1607,7 +1721,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "nikko-nikko_tangkwa",
@@ -1621,7 +1736,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "nikko-nikko_zinderella",
@@ -1635,7 +1751,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "nikko-nikko_minkko",
@@ -1649,7 +1766,8 @@
     },
     "status": "graduated",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "nikko-nikko_fah-nikko",
@@ -1663,7 +1781,8 @@
     },
     "status": "graduated",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "nikko-nikko_baitoey",
@@ -1677,7 +1796,8 @@
     },
     "status": "graduated",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "seishin-kakumei_yuki",
@@ -1691,7 +1811,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "seishin-kakumei_cherrie",
@@ -1705,7 +1826,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "seishin-kakumei_tintin",
@@ -1719,7 +1841,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "seishin-kakumei_riko",
@@ -1733,7 +1856,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "seishin-kakumei_serin",
@@ -1747,7 +1871,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "seishin-kakumei_sunny",
@@ -1761,7 +1886,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "seishin-kakumei_highway",
@@ -1775,7 +1901,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "viinx_yuchan",
@@ -1789,7 +1916,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "viinx_tanoon",
@@ -1803,7 +1931,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "viinx_kamii",
@@ -1817,7 +1946,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "viinx_love",
@@ -1831,7 +1961,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "viinx_ao",
@@ -1845,7 +1976,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "viinx_kwankaw",
@@ -1859,7 +1991,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "viinx_kaori",
@@ -1873,7 +2006,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "viinx_queen",
@@ -1887,7 +2021,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "viinx_sai-viinx",
@@ -1901,7 +2036,8 @@
     },
     "status": "graduated",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "viinx_bam-viinx",
@@ -1915,7 +2051,8 @@
     },
     "status": "graduated",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "viinx_tatah",
@@ -1929,7 +2066,8 @@
     },
     "status": "graduated",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "viinx_bew",
@@ -1943,7 +2081,8 @@
     },
     "status": "graduated",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "viinx_claire",
@@ -1957,7 +2096,8 @@
     },
     "status": "graduated",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "starry-nite_icewa",
@@ -1971,7 +2111,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "starry-nite_pure",
@@ -1985,7 +2126,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "starry-nite_beep",
@@ -1999,7 +2141,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "starry-nite_pream",
@@ -2013,7 +2156,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "starry-nite_sorin",
@@ -2027,7 +2171,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "starry-nite_mickey-sn",
@@ -2041,7 +2186,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "starry-nite_porro",
@@ -2055,7 +2201,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "starry-nite_amchan",
@@ -2069,7 +2216,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "starry-nite_jajah",
@@ -2083,7 +2231,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "starry-nite_whanwhan",
@@ -2097,7 +2246,8 @@
     },
     "status": "graduated",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "starry-nite_praewproud",
@@ -2111,7 +2261,8 @@
     },
     "status": "graduated",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "zyn_ena",
@@ -2125,7 +2276,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "zyn_guschan",
@@ -2139,7 +2291,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "zyn_bm",
@@ -2153,7 +2306,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "zyn_ami",
@@ -2167,7 +2321,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "zyn_yaya",
@@ -2181,7 +2336,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "zyn_miwji",
@@ -2195,7 +2351,8 @@
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "seishin-kakumei_raika",
@@ -2209,7 +2366,8 @@
     },
     "status": "graduated",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   },
   {
     "id": "seishin-kakumei_mizuki",
@@ -2223,6 +2381,7 @@
     },
     "status": "graduated",
     "joined_date": null,
-    "graduated_date": null
+    "graduated_date": null,
+    "end_date": null
   }
 ]

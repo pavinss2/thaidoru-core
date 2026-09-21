@@ -20,6 +20,8 @@ export const GroupMembershipSchema = z.object({
   role: MemberRoleEnum.default('member'),
   color: MemberColorSchema,
   joined_date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).nullable().optional(),
-  graduated_date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).nullable().optional()
+  graduated_date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).nullable().optional(),
+  // end_date is the canonical membership end; graduated_date is a legacy alias kept for backward compatibility.
+  end_date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).nullable().optional()
 });
 export type GroupMembership = z.infer<typeof GroupMembershipSchema>;

@@ -2593,7 +2593,8 @@
           ms.is_active = isActive;
           ms.color = { name: colorName, hex: colorHex };
           if (joinedDate) ms.joined_date = joinedDate;
-          if (!isActive && !ms.graduated_date) ms.graduated_date = new Date().toISOString().slice(0, 10);
+          if (!isActive && !ms.end_date) ms.end_date = ms.graduated_date || new Date().toISOString().slice(0, 10);
+          if (!isActive && !ms.graduated_date) ms.graduated_date = ms.end_date;
         } else {
           ms = {
             id: `ms_${id}_${groupId}`,
@@ -2604,7 +2605,8 @@
             is_active: isActive,
             color: { name: colorName, hex: colorHex },
             joined_date: joinedDate || null,
-            graduated_date: isActive ? null : new Date().toISOString().slice(0, 10)
+            graduated_date: isActive ? null : new Date().toISOString().slice(0, 10),
+            end_date: isActive ? null : new Date().toISOString().slice(0, 10)
           };
           state.data.memberships.push(ms);
         }

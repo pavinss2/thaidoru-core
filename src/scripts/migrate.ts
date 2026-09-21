@@ -409,7 +409,8 @@ for (const rm of rawMembers) {
       hex: colorHex
     },
     joined_date: null,
-    graduated_date: null
+    graduated_date: null,
+    end_date: null
   });
 }
 
@@ -426,7 +427,8 @@ memberships.push({
     hex: COLOR_HEX_MAP['Black']
   },
   joined_date: '2021-11-23',
-  graduated_date: '2026-01-10'
+  graduated_date: '2026-01-10',
+  end_date: '2026-01-10'
 });
 
 // Helper to add a member and membership
@@ -476,7 +478,8 @@ function registerMember(
       hex: colorHex
     },
     joined_date: null,
-    graduated_date: gradDate
+    graduated_date: gradDate,
+    end_date: gradDate
   });
 }
 
