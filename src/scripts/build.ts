@@ -139,7 +139,9 @@ const dimGroups = groups.map(g => {
     group: g.name,
     company: comp ? comp.name : 'Individual',
     country: g.country,
-    is_active: g.status === 'active'
+    is_active: g.status === 'active',
+    // Canonical id for clean relational linking / matching in Cheki Tracker
+    thaidoru_group_id: g.id
   };
 });
 
@@ -166,6 +168,9 @@ const dimMembers = memberships.map(ms => {
     end_date: ms.graduated_date || (ms.is_active ? '9999-12-31' : '2026-01-10'),
     is_active: ms.is_active,
     x_profile: xProfileUrl,
+    // Canonical ids for clean relational linking / matching in Cheki Tracker
+    thaidoru_member_id: mem.id,
+    thaidoru_group_id: grp.id,
     // Foreign keys for clean relational linking in Cheki Tracker
     _metadata: {
       canonical_member_id: mem.id,
