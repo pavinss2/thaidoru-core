@@ -4,14 +4,12 @@
     "group_id": "sora-sora",
     "member_id": "ame",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "Red",
       "hex": "#e74c3c"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -19,14 +17,12 @@
     "group_id": "sora-sora",
     "member_id": "best",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "Yellow",
       "hex": "#f1c40f"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -34,14 +30,12 @@
     "group_id": "sora-sora",
     "member_id": "jennie",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "Purple",
       "hex": "#9b59b6"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -49,14 +43,12 @@
     "group_id": "sora-sora",
     "member_id": "kitty",
     "status": "graduated",
-    "is_active": false,
     "role": "member",
     "color": {
       "name": "White",
       "hex": "#ffffff"
     },
     "joined_date": null,
-    "graduated_date": "2026-09-05",
     "end_date": "2026-09-05"
   },
   {
@@ -64,14 +56,12 @@
     "group_id": "sora-sora",
     "member_id": "lilin",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "Orange",
       "hex": "#e67e22"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -79,14 +69,12 @@
     "group_id": "sora-sora",
     "member_id": "oum",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "Blue",
       "hex": "#3498db"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -94,14 +82,12 @@
     "group_id": "sora-sora",
     "member_id": "minmin",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "Pink",
       "hex": "#ff69b4"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -109,14 +95,12 @@
     "group_id": "sora-sora",
     "member_id": "pin",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "Green",
       "hex": "#27ae60"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -124,14 +108,12 @@
     "group_id": "yami-yami",
     "member_id": "eri",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "Pink",
       "hex": "#ff69b4"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -139,14 +121,12 @@
     "group_id": "yami-yami",
     "member_id": "haru",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "Red",
       "hex": "#e74c3c"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -154,14 +134,12 @@
     "group_id": "yami-yami",
     "member_id": "jan",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "Orange",
       "hex": "#e67e22"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -169,14 +147,12 @@
     "group_id": "yami-yami",
     "member_id": "kwang",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "Blue",
       "hex": "#3498db"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -184,14 +160,12 @@
     "group_id": "yami-yami",
     "member_id": "nori",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "Black",
       "hex": "#555555"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -199,14 +173,12 @@
     "group_id": "yami-yami",
     "member_id": "praew",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "Yellow",
       "hex": "#f1c40f"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -214,14 +186,12 @@
     "group_id": "yami-yami",
     "member_id": "punch",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "Purple",
       "hex": "#9b59b6"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -229,14 +199,12 @@
     "group_id": "yami-yami",
     "member_id": "tonliw",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "Green",
       "hex": "#27ae60"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -244,14 +212,12 @@
     "group_id": "yami-yami",
     "member_id": "xiu-zhen",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "White",
       "hex": "#ffffff"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -259,14 +225,12 @@
     "group_id": "mirai-mirai",
     "member_id": "alice",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "Black",
       "hex": "#555555"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -274,14 +238,12 @@
     "group_id": "mirai-mirai",
     "member_id": "gracenae",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "Pink",
       "hex": "#ff69b4"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -289,14 +251,12 @@
     "group_id": "mirai-mirai",
     "member_id": "kartun",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "Yellow",
       "hex": "#f1c40f"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -304,31 +264,25 @@
     "group_id": "mirai-mirai",
     "member_id": "kris",
     "status": "graduated",
-    "is_active": false,
     "role": "member",
     "color": {
       "name": "Purple",
       "hex": "#9b59b6"
     },
     "joined_date": null,
-    "graduated_date": "2026-09-23",
     "end_date": "2026-09-23"
-
-    
   },
   {
     "id": "mirai-mirai_mickey",
     "group_id": "mirai-mirai",
     "member_id": "mickey",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "Red",
       "hex": "#e74c3c"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -336,14 +290,12 @@
     "group_id": "mirai-mirai",
     "member_id": "nisa",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "White",
       "hex": "#ffffff"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -351,14 +303,12 @@
     "group_id": "mirai-mirai",
     "member_id": "pear",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "Orange",
       "hex": "#e67e22"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -366,14 +316,12 @@
     "group_id": "mirai-mirai",
     "member_id": "pixels",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "Green",
       "hex": "#27ae60"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -381,14 +329,12 @@
     "group_id": "mirai-mirai",
     "member_id": "sai",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "Blue",
       "hex": "#3498db"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -396,14 +342,12 @@
     "group_id": "dream-0n",
     "member_id": "farm",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "Purple",
       "hex": "#9b59b6"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -411,14 +355,12 @@
     "group_id": "dream-0n",
     "member_id": "jasmine",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "White",
       "hex": "#ffffff"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -426,14 +368,12 @@
     "group_id": "dream-0n",
     "member_id": "jeenin",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "Orange",
       "hex": "#e67e22"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -441,14 +381,12 @@
     "group_id": "dream-0n",
     "member_id": "jk",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "Red",
       "hex": "#e74c3c"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -456,14 +394,12 @@
     "group_id": "dream-0n",
     "member_id": "mali",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "Blue",
       "hex": "#3498db"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -471,14 +407,12 @@
     "group_id": "dream-0n",
     "member_id": "moya",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "Pink",
       "hex": "#ff69b4"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -486,14 +420,12 @@
     "group_id": "dream-0n",
     "member_id": "ploy",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "Yellow",
       "hex": "#f1c40f"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -501,14 +433,12 @@
     "group_id": "dream-0n",
     "member_id": "snowy",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "Green",
       "hex": "#27ae60"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -516,14 +446,12 @@
     "group_id": "nox-0ff",
     "member_id": "bowie",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "Yellow",
       "hex": "#f1c40f"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -531,14 +459,12 @@
     "group_id": "nox-0ff",
     "member_id": "feb",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "Blue",
       "hex": "#3498db"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -546,14 +472,12 @@
     "group_id": "nox-0ff",
     "member_id": "mii",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "Purple",
       "hex": "#9b59b6"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -561,14 +485,12 @@
     "group_id": "nox-0ff",
     "member_id": "miyu",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "Pink",
       "hex": "#ff69b4"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -576,14 +498,12 @@
     "group_id": "nox-0ff",
     "member_id": "time",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "Red",
       "hex": "#e74c3c"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -591,14 +511,12 @@
     "group_id": "nox-0ff",
     "member_id": "yiwha",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "White",
       "hex": "#ffffff"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -606,14 +524,12 @@
     "group_id": "sora-sora",
     "member_id": "yiwha",
     "status": "graduated",
-    "is_active": false,
     "role": "member",
     "color": {
       "name": "Black",
       "hex": "#555555"
     },
     "joined_date": "2021-11-23",
-    "graduated_date": "2026-01-10",
     "end_date": "2026-01-10"
   },
   {
@@ -621,14 +537,12 @@
     "group_id": "angevil",
     "member_id": "icezu",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "Red",
       "hex": "#e74c3c"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -636,14 +550,12 @@
     "group_id": "angevil",
     "member_id": "momo",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "SkyBlue",
       "hex": "#87ceeb"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -651,14 +563,12 @@
     "group_id": "angevil",
     "member_id": "hani",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "Purple",
       "hex": "#9b59b6"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -666,14 +576,12 @@
     "group_id": "angevil",
     "member_id": "yogurt",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "Pink",
       "hex": "#ff69b4"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -681,14 +589,12 @@
     "group_id": "angevil",
     "member_id": "claire",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "Orange",
       "hex": "#e67e22"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -696,14 +602,12 @@
     "group_id": "angevil",
     "member_id": "bew",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "Yellow",
       "hex": "#f1c40f"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -711,14 +615,12 @@
     "group_id": "angevil",
     "member_id": "bebam",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "Black",
       "hex": "#555555"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -726,14 +628,12 @@
     "group_id": "angevil",
     "member_id": "misaka",
     "status": "graduated",
-    "is_active": false,
     "role": "member",
     "color": {
       "name": "Pink",
       "hex": "#ff69b4"
     },
     "joined_date": null,
-    "graduated_date": "2026-04-01",
     "end_date": "2026-04-01"
   },
   {
@@ -741,14 +641,12 @@
     "group_id": "angevil",
     "member_id": "miu",
     "status": "graduated",
-    "is_active": false,
     "role": "member",
     "color": {
       "name": "White",
       "hex": "#ffffff"
     },
     "joined_date": null,
-    "graduated_date": "2026-04-01",
     "end_date": "2026-04-01"
   },
   {
@@ -756,14 +654,12 @@
     "group_id": "angevil",
     "member_id": "nene",
     "status": "graduated",
-    "is_active": false,
     "role": "member",
     "color": {
       "name": "Yellow",
       "hex": "#f1c40f"
     },
     "joined_date": null,
-    "graduated_date": "2026-04-01",
     "end_date": "2026-04-01"
   },
   {
@@ -771,14 +667,12 @@
     "group_id": "castella",
     "member_id": "nadear",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "Red",
       "hex": "#ee0142"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -786,14 +680,12 @@
     "group_id": "castella",
     "member_id": "vasa",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "Yellow",
       "hex": "#f8e8ac"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -801,14 +693,12 @@
     "group_id": "castella",
     "member_id": "praeploy",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "Black",
       "hex": "#555555"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -816,14 +706,12 @@
     "group_id": "castella",
     "member_id": "airin",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "Blue",
       "hex": "#b6d5ee"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -831,14 +719,12 @@
     "group_id": "castella",
     "member_id": "asia-castella",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "Pink",
       "hex": "#f3cdd6"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -846,14 +732,12 @@
     "group_id": "castella",
     "member_id": "khongkwan",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "Orange",
       "hex": "#fca26d"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -861,14 +745,12 @@
     "group_id": "castella",
     "member_id": "charmew",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "White",
       "hex": "#ffffff"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -876,14 +758,12 @@
     "group_id": "castella",
     "member_id": "friend",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "Purple",
       "hex": "#dcdaf2"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -891,14 +771,12 @@
     "group_id": "castella",
     "member_id": "puifaii",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "Navy",
       "hex": "#000080"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -906,14 +784,12 @@
     "group_id": "tgg",
     "member_id": "pim",
     "status": "graduated",
-    "is_active": false,
     "role": "member",
     "color": {
       "name": "N/A",
       "hex": "#7f8c8d"
     },
     "joined_date": null,
-    "graduated_date": "2026-06-30",
     "end_date": "2026-06-30"
   },
   {
@@ -921,14 +797,12 @@
     "group_id": "tgg",
     "member_id": "kaimook",
     "status": "active",
-    "is_active": true,
     "role": "leader",
     "color": {
       "name": "N/A",
       "hex": "#7f8c8d"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -936,14 +810,12 @@
     "group_id": "tgg",
     "member_id": "mint",
     "status": "active",
-    "is_active": true,
     "role": "leader",
     "color": {
       "name": "N/A",
       "hex": "#7f8c8d"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -951,14 +823,12 @@
     "group_id": "tgg",
     "member_id": "ni",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "N/A",
       "hex": "#7f8c8d"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -966,14 +836,12 @@
     "group_id": "tgg",
     "member_id": "pam",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "N/A",
       "hex": "#7f8c8d"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -981,14 +849,12 @@
     "group_id": "tgg",
     "member_id": "maple",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "N/A",
       "hex": "#7f8c8d"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -996,14 +862,12 @@
     "group_id": "tgg",
     "member_id": "front",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "N/A",
       "hex": "#7f8c8d"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1011,14 +875,12 @@
     "group_id": "tgg",
     "member_id": "asia-tgg",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "N/A",
       "hex": "#7f8c8d"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1026,14 +888,12 @@
     "group_id": "tgg",
     "member_id": "preammy",
     "status": "active",
-    "is_active": true,
     "role": "member",
     "color": {
       "name": "N/A",
       "hex": "#7f8c8d"
     },
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1041,14 +901,12 @@
     "member_id": "cinnamon",
     "group_id": "chocolatiere",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Blue",
       "hex": "#415bc5"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1056,14 +914,12 @@
     "member_id": "give",
     "group_id": "chocolatiere",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Pink",
       "hex": "#f3cad7"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1071,14 +927,12 @@
     "member_id": "kurara",
     "group_id": "chocolatiere",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Sky Blue",
       "hex": "#a0d5f9"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1086,14 +940,12 @@
     "member_id": "meiji",
     "group_id": "chocolatiere",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Yellow",
       "hex": "#ffff00"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1101,14 +953,12 @@
     "member_id": "mikimiki",
     "group_id": "chocolatiere",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Salmon Pink",
       "hex": "#f49697"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1116,14 +966,12 @@
     "member_id": "rinmine",
     "group_id": "chocolatiere",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Black",
       "hex": "#000000"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1131,14 +979,12 @@
     "member_id": "ruby",
     "group_id": "chocolatiere",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Red",
       "hex": "#d04f5a"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1146,14 +992,12 @@
     "member_id": "satchan",
     "group_id": "chocolatiere",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "White",
       "hex": "#ffffff"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1161,14 +1005,12 @@
     "member_id": "rinrin",
     "group_id": "chocolatiere",
     "role": "member",
-    "is_active": false,
     "color": {
       "name": "Graduated",
       "hex": "#7f8c8d"
     },
     "status": "graduated",
     "joined_date": null,
-    "graduated_date": "2025-02-23",
     "end_date": "2025-02-23"
   },
   {
@@ -1176,14 +1018,12 @@
     "member_id": "mikoto",
     "group_id": "chocolatiere",
     "role": "member",
-    "is_active": false,
     "color": {
       "name": "Graduated",
       "hex": "#7f8c8d"
     },
     "status": "graduated",
     "joined_date": null,
-    "graduated_date": "2025-12-27",
     "end_date": "2025-12-27"
   },
   {
@@ -1191,14 +1031,12 @@
     "member_id": "airi",
     "group_id": "hatobito",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Blue",
       "hex": "#2980b9"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1206,14 +1044,12 @@
     "member_id": "beam",
     "group_id": "hatobito",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Orange",
       "hex": "#e67e22"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1221,14 +1057,12 @@
     "member_id": "chelsea",
     "group_id": "hatobito",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Green",
       "hex": "#27ae60"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1236,14 +1070,12 @@
     "member_id": "donut",
     "group_id": "hatobito",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Pink",
       "hex": "#e91e63"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1251,14 +1083,12 @@
     "member_id": "elleelle",
     "group_id": "hatobito",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Purple",
       "hex": "#8e44ad"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1266,14 +1096,12 @@
     "member_id": "gorya",
     "group_id": "hatobito",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Light Blue",
       "hex": "#3498db"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1281,14 +1109,12 @@
     "member_id": "kana",
     "group_id": "hatobito",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Mint",
       "hex": "#1abc9c"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1296,14 +1122,12 @@
     "member_id": "milin",
     "group_id": "hatobito",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Yellow",
       "hex": "#f39c12"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1311,14 +1135,12 @@
     "member_id": "mobile",
     "group_id": "hatobito",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Coral",
       "hex": "#e74c3c"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1326,14 +1148,12 @@
     "member_id": "music",
     "group_id": "hatobito",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Emerald",
       "hex": "#2ecc71"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1341,14 +1161,12 @@
     "member_id": "nata",
     "group_id": "hatobito",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Teal",
       "hex": "#16a085"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1356,14 +1174,12 @@
     "member_id": "punnhyaz",
     "group_id": "hatobito",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Red",
       "hex": "#c0392b"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1371,14 +1187,12 @@
     "member_id": "summer",
     "group_id": "hatobito",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Rose",
       "hex": "#d81b60"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1386,14 +1200,12 @@
     "member_id": "view",
     "group_id": "hatobito",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Sky Blue",
       "hex": "#00b4d8"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1401,14 +1213,12 @@
     "member_id": "killua",
     "group_id": "koma",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "White",
       "hex": "#ffffff"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1416,14 +1226,12 @@
     "member_id": "tengja",
     "group_id": "koma",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Pink",
       "hex": "#eec5ca"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1431,14 +1239,12 @@
     "member_id": "pchi",
     "group_id": "koma",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Purple",
       "hex": "#8e79d8"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1446,14 +1252,12 @@
     "member_id": "jay",
     "group_id": "koma",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Blue",
       "hex": "#40ace4"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1461,14 +1265,12 @@
     "member_id": "mayuki",
     "group_id": "koma",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Red",
       "hex": "#ff0000"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1476,14 +1278,12 @@
     "member_id": "nyan0",
     "group_id": "koma",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Green",
       "hex": "#2c7f3a"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1491,14 +1291,12 @@
     "member_id": "chicha",
     "group_id": "luminus",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Blue",
       "hex": "#2980b9"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1506,14 +1304,12 @@
     "member_id": "fahmini",
     "group_id": "luminus",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Sky Blue",
       "hex": "#3498db"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1521,14 +1317,12 @@
     "member_id": "foremost",
     "group_id": "luminus",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Orange",
       "hex": "#e67e22"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1536,14 +1330,12 @@
     "member_id": "koi",
     "group_id": "luminus",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Red",
       "hex": "#e74c3c"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1551,14 +1343,12 @@
     "member_id": "milk",
     "group_id": "luminus",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Yellow",
       "hex": "#f1c40f"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1566,14 +1356,12 @@
     "member_id": "minnie",
     "group_id": "luminus",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Pink",
       "hex": "#e91e63"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1581,14 +1369,12 @@
     "member_id": "moji",
     "group_id": "luminus",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Light Green",
       "hex": "#2ecc71"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1596,14 +1382,12 @@
     "member_id": "smild",
     "group_id": "luminus",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Pink",
       "hex": "#ff69b4"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1611,14 +1395,12 @@
     "member_id": "smild",
     "group_id": "hatobito",
     "role": "member",
-    "is_active": false,
     "color": {
       "name": "Graduated",
       "hex": "#7f8c8d"
     },
     "status": "graduated",
     "joined_date": null,
-    "graduated_date": "2026-04-21",
     "end_date": "2026-04-21"
   },
   {
@@ -1626,14 +1408,12 @@
     "member_id": "miu",
     "group_id": "luminus",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Purple",
       "hex": "#9b59b6"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1641,14 +1421,12 @@
     "member_id": "nene",
     "group_id": "luminus",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "White",
       "hex": "#ecf0f1"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1656,14 +1434,12 @@
     "member_id": "eye",
     "group_id": "nikko-nikko",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Yellow",
       "hex": "#f1c40f"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1671,14 +1447,12 @@
     "member_id": "iya",
     "group_id": "nikko-nikko",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Blue",
       "hex": "#3498db"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1686,14 +1460,12 @@
     "member_id": "ize",
     "group_id": "nikko-nikko",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Sky Blue",
       "hex": "#2980b9"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1701,14 +1473,12 @@
     "member_id": "maysa",
     "group_id": "nikko-nikko",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Red",
       "hex": "#e74c3c"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1716,14 +1486,12 @@
     "member_id": "mewyu",
     "group_id": "nikko-nikko",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Pink",
       "hex": "#e91e63"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1731,14 +1499,12 @@
     "member_id": "tangkwa",
     "group_id": "nikko-nikko",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Blue",
       "hex": "#00b4d8"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1746,14 +1512,12 @@
     "member_id": "zinderella",
     "group_id": "nikko-nikko",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Pink",
       "hex": "#ff69b4"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1761,14 +1525,12 @@
     "member_id": "minkko",
     "group_id": "nikko-nikko",
     "role": "member",
-    "is_active": false,
     "color": {
       "name": "Pink",
       "hex": "#7f8c8d"
     },
     "status": "graduated",
     "joined_date": null,
-    "graduated_date": "2025-01-12",
     "end_date": "2025-01-12"
   },
   {
@@ -1776,14 +1538,12 @@
     "member_id": "fah-nikko",
     "group_id": "nikko-nikko",
     "role": "member",
-    "is_active": false,
     "color": {
       "name": "Purple",
       "hex": "#7f8c8d"
     },
     "status": "graduated",
     "joined_date": null,
-    "graduated_date": "2026-07-31",
     "end_date": "2026-07-31"
   },
   {
@@ -1791,14 +1551,12 @@
     "member_id": "baitoey",
     "group_id": "nikko-nikko",
     "role": "member",
-    "is_active": false,
     "color": {
       "name": "Mint Green",
       "hex": "#7f8c8d"
     },
     "status": "graduated",
     "joined_date": null,
-    "graduated_date": "2025-01-12",
     "end_date": "2025-01-12"
   },
   {
@@ -1806,14 +1564,12 @@
     "member_id": "yuki",
     "group_id": "seishin-kakumei",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Orange",
       "hex": "#f47216"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1821,14 +1577,12 @@
     "member_id": "cherrie",
     "group_id": "seishin-kakumei",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Yellow",
       "hex": "#ffc400"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1836,14 +1590,12 @@
     "member_id": "tintin",
     "group_id": "seishin-kakumei",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Green",
       "hex": "#3baa57"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1851,14 +1603,12 @@
     "member_id": "riko",
     "group_id": "seishin-kakumei",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Purple",
       "hex": "#8a3fd1"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1866,14 +1616,12 @@
     "member_id": "serin",
     "group_id": "seishin-kakumei",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Pink",
       "hex": "#ffa3d4"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1881,14 +1629,12 @@
     "member_id": "sunny",
     "group_id": "seishin-kakumei",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Black",
       "hex": "#1a1a1a"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1896,14 +1642,12 @@
     "member_id": "highway",
     "group_id": "seishin-kakumei",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "White",
       "hex": "#ffffff"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1911,14 +1655,12 @@
     "member_id": "yuchan",
     "group_id": "viinx",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Red",
       "hex": "#ff667a"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1926,14 +1668,12 @@
     "member_id": "tanoon",
     "group_id": "viinx",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Orange",
       "hex": "#feae4b"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1941,14 +1681,12 @@
     "member_id": "kamii",
     "group_id": "viinx",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Yellow",
       "hex": "#ffdb83"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1956,14 +1694,12 @@
     "member_id": "love",
     "group_id": "viinx",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Green",
       "hex": "#93e4c4"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1971,14 +1707,12 @@
     "member_id": "ao",
     "group_id": "viinx",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Light Blue",
       "hex": "#56c7ff"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -1986,14 +1720,12 @@
     "member_id": "kwankaw",
     "group_id": "viinx",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Dark Blue",
       "hex": "#2670e9"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -2001,14 +1733,12 @@
     "member_id": "kaori",
     "group_id": "viinx",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Pink",
       "hex": "#fdc1db"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -2016,14 +1746,12 @@
     "member_id": "queen",
     "group_id": "viinx",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Purple",
       "hex": "#cea3fa"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -2031,14 +1759,12 @@
     "member_id": "sai-viinx",
     "group_id": "viinx",
     "role": "member",
-    "is_active": false,
     "color": {
       "name": "Purple",
       "hex": "#800080"
     },
     "status": "graduated",
     "joined_date": null,
-    "graduated_date": "2026-05-09",
     "end_date": "2026-05-09"
   },
   {
@@ -2046,14 +1772,12 @@
     "member_id": "bam-viinx",
     "group_id": "viinx",
     "role": "member",
-    "is_active": false,
     "color": {
       "name": "White",
       "hex": "#ffffff"
     },
     "status": "graduated",
     "joined_date": null,
-    "graduated_date": "2026-05-09",
     "end_date": "2026-05-09"
   },
   {
@@ -2061,14 +1785,12 @@
     "member_id": "tatah",
     "group_id": "viinx",
     "role": "member",
-    "is_active": false,
     "color": {
       "name": "Yellow",
       "hex": "#ffff00"
     },
     "status": "graduated",
     "joined_date": null,
-    "graduated_date": "2026-05-09",
     "end_date": "2026-05-09"
   },
   {
@@ -2076,14 +1798,12 @@
     "member_id": "bew",
     "group_id": "viinx",
     "role": "member",
-    "is_active": false,
     "color": {
       "name": "Red",
       "hex": "#ff0000"
     },
     "status": "graduated",
     "joined_date": null,
-    "graduated_date": "2026-05-09",
     "end_date": "2026-05-09"
   },
   {
@@ -2091,14 +1811,12 @@
     "member_id": "claire",
     "group_id": "viinx",
     "role": "member",
-    "is_active": false,
     "color": {
       "name": "Orange",
       "hex": "#ffa500"
     },
     "status": "graduated",
     "joined_date": null,
-    "graduated_date": "2026-05-09",
     "end_date": "2026-05-09"
   },
   {
@@ -2106,14 +1824,12 @@
     "member_id": "icewa",
     "group_id": "starry-nite",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Black",
       "hex": "#1a1a1a"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -2121,14 +1837,12 @@
     "member_id": "pure",
     "group_id": "starry-nite",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Pink",
       "hex": "#ff69b4"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -2136,14 +1850,12 @@
     "member_id": "beep",
     "group_id": "starry-nite",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Purple",
       "hex": "#8e44ad"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -2151,14 +1863,12 @@
     "member_id": "pream",
     "group_id": "starry-nite",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Navy",
       "hex": "#1f3a93"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -2166,14 +1876,12 @@
     "member_id": "sorin",
     "group_id": "starry-nite",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Mint",
       "hex": "#16a085"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -2181,14 +1889,12 @@
     "member_id": "mickey-sn",
     "group_id": "starry-nite",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Yellow",
       "hex": "#f1c40f"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -2196,14 +1902,12 @@
     "member_id": "porro",
     "group_id": "starry-nite",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Pink",
       "hex": "#f48fb1"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -2211,14 +1915,12 @@
     "member_id": "amchan",
     "group_id": "starry-nite",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Pink",
       "hex": "#ff80ab"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -2226,14 +1928,12 @@
     "member_id": "jajah",
     "group_id": "starry-nite",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Peach Pink",
       "hex": "#ff7043"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -2241,14 +1941,12 @@
     "member_id": "whanwhan",
     "group_id": "starry-nite",
     "role": "member",
-    "is_active": false,
     "color": {
       "name": "Mint",
       "hex": "#7f8c8d"
     },
     "status": "graduated",
     "joined_date": null,
-    "graduated_date": "2026-03-01",
     "end_date": "2026-03-01"
   },
   {
@@ -2256,14 +1954,12 @@
     "member_id": "praewproud",
     "group_id": "starry-nite",
     "role": "member",
-    "is_active": false,
     "color": {
       "name": "Purple",
       "hex": "#7f8c8d"
     },
     "status": "graduated",
     "joined_date": null,
-    "graduated_date": "2026-03-01",
     "end_date": "2026-03-01"
   },
   {
@@ -2271,14 +1967,12 @@
     "member_id": "ena",
     "group_id": "zyn",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Blue",
       "hex": "#1455fb"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -2286,14 +1980,12 @@
     "member_id": "guschan",
     "group_id": "zyn",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Yellow",
       "hex": "#ffea00"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -2301,14 +1993,12 @@
     "member_id": "bm",
     "group_id": "zyn",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Green",
       "hex": "#148e57"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -2316,14 +2006,12 @@
     "member_id": "ami",
     "group_id": "zyn",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Red",
       "hex": "#ff0000"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -2331,14 +2019,12 @@
     "member_id": "yaya",
     "group_id": "zyn",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Purple",
       "hex": "#c8aaf0"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -2346,14 +2032,12 @@
     "member_id": "miwji",
     "group_id": "zyn",
     "role": "member",
-    "is_active": true,
     "color": {
       "name": "Orange",
       "hex": "#ff5f15"
     },
     "status": "active",
     "joined_date": null,
-    "graduated_date": null,
     "end_date": null
   },
   {
@@ -2361,14 +2045,12 @@
     "member_id": "raika",
     "group_id": "seishin-kakumei",
     "role": "member",
-    "is_active": false,
     "color": {
       "name": "Red",
       "hex": "#e74c3c"
     },
     "status": "graduated",
     "joined_date": null,
-    "graduated_date": "2026-03-21",
     "end_date": "2026-03-21"
   },
   {
@@ -2376,14 +2058,12 @@
     "member_id": "mizuki",
     "group_id": "seishin-kakumei",
     "role": "member",
-    "is_active": false,
     "color": {
       "name": "Blue",
       "hex": "#2980b9"
     },
     "status": "graduated",
     "joined_date": null,
-    "graduated_date": "2026-05-03",
     "end_date": "2026-05-03"
   }
 ]

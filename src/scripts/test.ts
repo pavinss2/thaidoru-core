@@ -73,8 +73,8 @@ try {
   assert(yiwhaMemberships.length === 2, `Yiwha has 2 group memberships (found: ${yiwhaMemberships.length})`);
   const soraYiwha = yiwhaMemberships.find(ms => ms.group_id === 'sora-sora');
   const noxYiwha = yiwhaMemberships.find(ms => ms.group_id === 'nox-0ff');
-  assert(soraYiwha?.color.name === 'Black' && soraYiwha?.is_active === false, 'Yiwha in Sora Sora is Black and Graduated');
-  assert(noxYiwha?.color.name === 'White' && noxYiwha?.is_active === true, 'Yiwha in Nox:0ff is White and Active');
+  assert(soraYiwha?.color.name === 'Black' && soraYiwha?.status === 'graduated', 'Yiwha in Sora Sora is Black and Graduated');
+  assert(noxYiwha?.color.name === 'White' && noxYiwha?.status === 'active', 'Yiwha in Nox:0ff is White and Active');
 
   // Test 5: Hex Colors
   const hexRegex = /^#[0-9a-fA-F]{6}$/;
@@ -84,12 +84,13 @@ try {
   }
   assert(allHexValid, 'All membership colors have valid 6-char hex codes');
 
-  // Test 5b: end_date consistency (end_date is canonical; graduated_date is a legacy alias)
-  const endDateConsistent = memberships.every(ms =>
-    (ms.is_active ? !ms.end_date : true) &&
-    (ms.graduated_date ? ms.end_date === ms.graduated_date : true)
-  );
-  assert(endDateConsistent, 'Active memberships have no end_date; end_date matches graduated_date when set');
+  // Test 5b: status + end_date are the only membership state (is_active and
+  // graduated_date were duplicates and were removed)
+  const activeHaveNoEndDate = memberships.every(ms => ms.status === 'active' ? !ms.end_date : true);
+  assert(activeHaveNoEndDate, 'Active memberships have no end_date');
+  const rawMemberships = JSON.parse(fs.readFileSync(path.join(DATA_DIR, 'memberships.json'), 'utf8'));
+  const noDuplicateKeys = rawMemberships.every((ms: Record<string, unknown>) => !('is_active' in ms) && !('graduated_date' in ms));
+  assert(noDuplicateKeys, 'memberships.json has no is_active / graduated_date keys');
 
   // Test 6: Country format (clean text, no emojis)
   const allCompaniesCleanCountry = companies.every(c => c.country === 'Thailand');

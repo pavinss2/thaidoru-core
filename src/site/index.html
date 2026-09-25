@@ -2432,7 +2432,7 @@
           if (ms) {
             groupSelect.value = ms.group_id;
             document.getElementById('edit-mem-role').value = ms.role || 'member';
-            document.getElementById('edit-mem-status').value = ms.status || (ms.is_active ? 'active' : 'graduated');
+            document.getElementById('edit-mem-status').value = ms.status || 'active';
             document.getElementById('edit-mem-joined-date').value = ms.joined_date || '';
             document.getElementById('edit-mem-color-name').value = ms.color?.name || '';
             const cHex = ms.color?.hex || '#ec4899';
@@ -2590,11 +2590,9 @@
           ms.group_id = groupId;
           ms.role = role;
           ms.status = status;
-          ms.is_active = isActive;
           ms.color = { name: colorName, hex: colorHex };
           if (joinedDate) ms.joined_date = joinedDate;
-          if (!isActive && !ms.end_date) ms.end_date = ms.graduated_date || new Date().toISOString().slice(0, 10);
-          if (!isActive && !ms.graduated_date) ms.graduated_date = ms.end_date;
+          if (!isActive && !ms.end_date) ms.end_date = new Date().toISOString().slice(0, 10);
         } else {
           ms = {
             id: `ms_${id}_${groupId}`,
@@ -2602,10 +2600,8 @@
             group_id: groupId,
             role: role,
             status: status,
-            is_active: isActive,
             color: { name: colorName, hex: colorHex },
             joined_date: joinedDate || null,
-            graduated_date: isActive ? null : new Date().toISOString().slice(0, 10),
             end_date: isActive ? null : new Date().toISOString().slice(0, 10)
           };
           state.data.memberships.push(ms);
@@ -3196,8 +3192,8 @@
             const g = groupMap.get(ms.group_id);
             if (state.companyFilter !== 'all' && g?.company_id !== state.companyFilter) return false;
             if (state.groupFilter !== 'all' && ms.group_id !== state.groupFilter) return false;
-            if (state.statusFilter === 'active' && !ms.is_active) return false;
-            if (state.statusFilter === 'graduated' && ms.is_active) return false;
+            if (state.statusFilter === 'active' && !(ms.status === 'active')) return false;
+            if (state.statusFilter === 'graduated' && (ms.status === 'active')) return false;
             return true;
           });
 
@@ -3206,7 +3202,7 @@
 
         // Helper to determine primary sort group and active state
         function getMemberSortInfo(m) {
-          const activeMs = m.memberships.filter(ms => ms.is_active);
+          const activeMs = m.memberships.filter(ms => (ms.status === 'active'));
           let grpIds = [];
           let isActive = false;
           if (activeMs.length > 0) {
@@ -3231,10 +3227,10 @@
             const g = groupMap.get(ms.group_id);
             if (state.companyFilter !== 'all' && g?.company_id !== state.companyFilter) return false;
             if (state.groupFilter !== 'all' && ms.group_id !== state.groupFilter) return false;
-            if (state.statusFilter === 'active' && !ms.is_active) return false;
-            if (state.statusFilter === 'graduated' && ms.is_active) return false;
+            if (state.statusFilter === 'active' && !(ms.status === 'active')) return false;
+            if (state.statusFilter === 'graduated' && (ms.status === 'active')) return false;
             return true;
-          }) || m.memberships.find(ms => ms.is_active) || m.memberships[0];
+          }) || m.memberships.find(ms => (ms.status === 'active')) || m.memberships[0];
 
           const colorHex = matchingMs?.color?.hex || '#3b82f6';
           const avatarSrc = m.avatar_cached_path ? `./${m.avatar_cached_path}` : (m.sns.find(s => s.avatar_url)?.avatar_url || 'assets/avatars/default_avatar.webp');
@@ -3253,10 +3249,10 @@
             const gName = g ? g.name : ms.group_id;
             const cHex = ms.color?.hex || '#94a3b8';
             return `
-              <span class="group-chip" title="${ms.status} in ${gName}" style="border-color: ${ms.is_active ? cHex + '55' : 'rgba(255,255,255,0.08)'}">
+              <span class="group-chip" title="${ms.status} in ${gName}" style="border-color: ${(ms.status === 'active') ? cHex + '55' : 'rgba(255,255,255,0.08)'}">
                 <span class="color-swatch" style="background-color: ${cHex};"></span>
                 <span>${gName}</span>
-                ${!ms.is_active ? '<span style="color: var(--text-muted); font-size: 0.65rem;">(Grad)</span>' : ''}
+                ${!(ms.status === 'active') ? '<span style="color: var(--text-muted); font-size: 0.65rem;">(Grad)</span>' : ''}
               </span>
             `;
           }).join('');
@@ -3270,7 +3266,7 @@
             <article class="member-card" onclick="openMemberModal('${m.id}')" style="--accent-color: ${colorHex};">
               <div class="avatar-wrap">
                 <img src="${avatarSrc}" alt="${m.stage_name}" class="member-avatar" loading="lazy" onerror="this.onerror=null;this.src='assets/avatars/default_avatar.webp'">
-                <div class="status-dot ${matchingMs?.is_active ? '' : 'graduated'}" title="${matchingMs?.is_active ? 'Active' : 'Graduated / Former'}"></div>
+                <div class="status-dot ${(matchingMs?.status === 'active') ? '' : 'graduated'}" title="${(matchingMs?.status === 'active') ? 'Active' : 'Graduated / Former'}"></div>
               </div>
 
               <div class="member-name-row">
@@ -3446,7 +3442,7 @@
           
           // Get group members
           const grpMembers = state.data.members.filter(m => m.memberships.some(ms => ms.group_id === g.id));
-          const activeCount = grpMembers.filter(m => m.memberships.some(ms => ms.group_id === g.id && ms.is_active)).length;
+          const activeCount = grpMembers.filter(m => m.memberships.some(ms => ms.group_id === g.id && (ms.status === 'active'))).length;
 
           const avatarStack = grpMembers.slice(0, 5).map(m => {
             const mSrc = m.avatar_cached_path ? `./${m.avatar_cached_path}` : 'assets/avatars/default_avatar.webp';
@@ -3629,8 +3625,8 @@
               </div>
 
               <div>
-                <span class="group-chip" style="border-color: ${ms.is_active ? '#10b981' : '#64748b'}; color: ${ms.is_active ? '#10b981' : '#94a3b8'};">
-                  ${ms.is_active ? '● Active' : 'Graduated'}
+                <span class="group-chip" style="border-color: ${(ms.status === 'active') ? '#10b981' : '#64748b'}; color: ${(ms.status === 'active') ? '#10b981' : '#94a3b8'};">
+                  ${(ms.status === 'active') ? '● Active' : 'Graduated'}
                 </span>
               </div>
             </div>
@@ -3688,8 +3684,8 @@
 
         // Group members
         const groupMemberships = state.data.memberships.filter(ms => ms.group_id === g.id);
-        const activeMemberships = groupMemberships.filter(ms => ms.is_active);
-        const gradMemberships = groupMemberships.filter(ms => !ms.is_active);
+        const activeMemberships = groupMemberships.filter(ms => (ms.status === 'active'));
+        const gradMemberships = groupMemberships.filter(ms => !(ms.status === 'active'));
 
         function renderRosterCards(memberships) {
           return memberships.map(ms => {
@@ -3767,7 +3763,7 @@
         const groupsHtml = compGroups.map(g => {
           const themeHex = g.theme_color?.hex || '#3b82f6';
           const gAvatar = g.avatar_cached_path ? `./${g.avatar_cached_path}` : 'assets/avatars/default_avatar.webp';
-          const activeCount = state.data.memberships.filter(ms => ms.group_id === g.id && ms.is_active).length;
+          const activeCount = state.data.memberships.filter(ms => ms.group_id === g.id && (ms.status === 'active')).length;
           return `
             <div class="roster-card" onclick="openGroupModal('${g.id}')" style="cursor: pointer; border-left: 3px solid ${themeHex}; text-align: left; padding: 0.85rem 1rem;">
               <div style="display: flex; align-items: center; gap: 0.75rem;">

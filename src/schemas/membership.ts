@@ -16,12 +16,10 @@ export const GroupMembershipSchema = z.object({
   group_id: z.string().describe('Foreign key referencing Group.id'),
   member_id: z.string().describe('Foreign key referencing Member.id'),
   status: MembershipStatusEnum.default('active'),
-  is_active: z.boolean().describe('Boolean flag for fast active filtering'),
   role: MemberRoleEnum.default('member'),
   color: MemberColorSchema,
   joined_date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).nullable().optional(),
-  graduated_date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).nullable().optional(),
-  // end_date is the canonical membership end; graduated_date is a legacy alias kept for backward compatibility.
+  // Last day in the group; null while still a member. "Active" is status === 'active'.
   end_date: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).nullable().optional()
 });
 export type GroupMembership = z.infer<typeof GroupMembershipSchema>;

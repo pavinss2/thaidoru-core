@@ -95,7 +95,6 @@ const denormalizedGroups = groups.map(g => {
       member_id: mem.id,
       stage_name: mem.stage_name,
       status: ms.status,
-      is_active: ms.is_active,
       role: ms.role,
       color: ms.color,
       birthday: mem.birthday,
@@ -145,7 +144,7 @@ const dimGroups = groups.map(g => {
   };
 });
 
-const inactiveWithoutEndDate = memberships.filter(ms => !ms.is_active && !ms.end_date && !ms.graduated_date);
+const inactiveWithoutEndDate = memberships.filter(ms => ms.status !== 'active' && !ms.end_date);
 if (inactiveWithoutEndDate.length > 0) {
   console.warn(`⚠️  ${inactiveWithoutEndDate.length} inactive membership(s) have no end_date (exported as open-ended 9999-12-31):`);
   for (const ms of inactiveWithoutEndDate) console.warn(`   - ${ms.id}`);
@@ -170,9 +169,9 @@ const dimMembers = memberships.map(ms => {
     group: grp.name,
     country: grp.country,
     company: comp ? comp.name : 'Individual',
-    start_date: ms.joined_date || (ms.is_active ? '1001-01-01' : '1001-01-01'),
-    end_date: ms.end_date || ms.graduated_date || '9999-12-31',
-    is_active: ms.is_active,
+    start_date: ms.joined_date || '1001-01-01',
+    end_date: ms.end_date || '9999-12-31',
+    is_active: ms.status === 'active',
     x_profile: xProfileUrl,
     // Canonical ids for clean relational linking / matching in Cheki Tracker
     thaidoru_member_id: mem.id,

@@ -67,11 +67,10 @@ erDiagram
         string group_id FK
         string member_id FK
         string status "active | graduated | hiatus | trainee | withdrawn"
-        boolean is_active "true | false"
         json color "{ name: 'Red', hex: '#e74c3c' }"
         string role "member | leader | sub-leader | center"
         date joined_date
-        date graduated_date
+        date end_date "null while still a member"
     }
 
     SNS_CHANNEL {
@@ -118,11 +117,10 @@ Represents the human idol entity independent of group affiliations:
 * `group_id`: Foreign key referencing `Group.id`.
 * `member_id`: Foreign key referencing `Member.id`.
 * `status`: `active`, `graduated`, `hiatus`, `trainee`, or `withdrawn`.
-* `is_active`: Boolean flag for fast client filtering.
 * `role`: `member`, `leader`, `sub-leader`, `center`, `trainee`, or `guest`.
 * `color`: Contextual image color `{ name: string, hex: string }` (6-character hex code).
 * `joined_date`: `YYYY-MM-DD` (nullable).
-* `graduated_date`: `YYYY-MM-DD` (nullable).
+* `end_date`: `YYYY-MM-DD`, the last day in the group (nullable; null while still a member). There is no separate active flag — a membership is active when `status === 'active'`. `is_active` and `graduated_date` used to duplicate these and were removed (2026-09-25); the Cheki Tracker export still emits `is_active`/`end_date`, derived from them.
 * *Note on `graduated_reason`*: Intentionally omitted as unnecessary metadata (refined 2026-09-14).
 
 ---
