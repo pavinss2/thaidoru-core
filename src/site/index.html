@@ -2764,27 +2764,35 @@
 
       // Init Application
       async function init() {
+        let published = window.__THAIDORU_DATA__;
+        if (!published) {
+          try {
+            const res = await fetch('./v1/all.json');
+            published = await res.json();
+          } catch (e) {
+            console.error('Failed to load ./v1/all.json:', e);
+            document.getElementById('view-members').innerHTML = '<div class="empty-state"><div class="empty-icon">⚠️</div><p>Failed to load idol data bundle.</p></div>';
+            return;
+          }
+        }
+        state.data = published;
+
+        // Local edits are a full copy of the dataset, so they're only valid on
+        // top of the build they were made from. Once a newer build is
+        // published, drop them — otherwise this browser shows stale data forever.
         const cachedCustom = localStorage.getItem('thaidoru_custom_data');
         if (cachedCustom) {
           try {
-            state.data = JSON.parse(cachedCustom);
+            const cached = JSON.parse(cachedCustom);
+            if (cached.generated_at && cached.generated_at === published.generated_at) {
+              state.data = cached;
+            } else {
+              localStorage.removeItem('thaidoru_custom_data');
+              setTimeout(() => showToast('Newer data was published, so local edits were cleared.', 'info'), 500);
+            }
           } catch (e) {
             console.warn('Failed to parse cached custom data, falling back to bundle', e);
-          }
-        }
-
-        if (!state.data) {
-          if (window.__THAIDORU_DATA__) {
-            state.data = window.__THAIDORU_DATA__;
-          } else {
-            try {
-              const res = await fetch('./v1/all.json');
-              state.data = await res.json();
-            } catch (e) {
-              console.error('Failed to load ./v1/all.json:', e);
-              document.getElementById('view-members').innerHTML = '<div class="empty-state"><div class="empty-icon">⚠️</div><p>Failed to load idol data bundle.</p></div>';
-              return;
-            }
+            localStorage.removeItem('thaidoru_custom_data');
           }
         }
 
