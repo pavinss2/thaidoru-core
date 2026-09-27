@@ -1458,7 +1458,7 @@
     <div id="admin-toolbar" class="admin-toolbar admin-only" style="display: none;">
       <div class="admin-toolbar-info">
         <span class="admin-pulse"></span>
-        <span><b>Super Admin Mode</b> &bull; Signed in as <code id="admin-toolbar-email">pavin.ss2@gmail.com</code></span>
+        <span><b>Super Admin Mode</b> &bull; Signed in as <code id="admin-toolbar-email"></code></span>
       </div>
       <div class="admin-toolbar-actions">
         <button class="admin-action-btn primary" id="btn-add-new-idol">
@@ -1694,38 +1694,13 @@
         <div class="modal-subtitle">Sign in to edit idol profiles, groups, and agency datasets. Public browsing is always free and uninhibited.</div>
       </div>
       <div class="modal-body">
-        <div style="margin-bottom: 1.25rem;">
-          <button type="button" class="btn-primary-block" id="btn-quick-admin-login" onclick="quickAdminLogin()">
-            <span>✨</span> One-Click Sign In as pavin.ss2@gmail.com
-          </button>
-          <p style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 0.4rem;">
-            Designated Super Admin for ThaiDoru Core
-          </p>
-        </div>
-
-        <div style="display: flex; align-items: center; gap: 0.75rem; margin: 1.25rem 0;">
-          <div style="flex: 1; height: 1px; background: var(--border-subtle);"></div>
-          <span style="font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase;">or sign in with email</span>
-          <div style="flex: 1; height: 1px; background: var(--border-subtle);"></div>
-        </div>
-
-        <form id="form-login-email" onsubmit="event.preventDefault(); handleEmailSignIn();">
-          <div class="form-group" style="margin-bottom: 0.75rem;">
-            <label class="form-label" for="login-email-input">Administrator Email Address</label>
-            <input type="email" id="login-email-input" class="form-input" placeholder="pavin.ss2@gmail.com" required>
-          </div>
-          <button type="submit" class="btn-secondary-block" id="btn-submit-email-login">
-            Sign In with Email
-          </button>
-        </form>
-
-        <button type="button" class="btn-secondary-block" id="btn-google-login" onclick="triggerGoogleSignIn()" style="margin-top: 0.75rem; display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
+        <button type="button" class="btn-secondary-block" id="btn-google-login" onclick="triggerGoogleSignIn()" style="display: flex; align-items: center; justify-content: center; gap: 0.5rem;">
           <svg width="16" height="16" viewBox="0 0 24 24"><path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.26v3.15C3.27 21.36 7.35 24 12 24z"/><path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.26C.46 8.16 0 9.97 0 12s.46 3.84 1.26 5.42l4.02-3.15z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.35 0 3.27 2.64 1.26 6.58l4.02 3.15c.95-2.83 3.6-4.98 6.72-4.98z"/></svg>
           Sign in with Google
         </button>
 
         <div style="margin-top: 1.25rem; padding: 0.75rem; background: rgba(59, 130, 246, 0.08); border: 1px solid rgba(59, 130, 246, 0.2); border-radius: var(--radius-sm); font-size: 0.775rem; color: #93c5fd; line-height: 1.4;">
-          ℹ️ <b>Access Policy:</b> Only <code>pavin.ss2@gmail.com</code> is granted Super Admin editing capabilities. Other accounts will connect with read-only privileges.
+          ℹ️ <b>Access Policy:</b> Only the site owner's Google account can edit. Other accounts connect read-only.
         </div>
       </div>
     </div>
@@ -2130,9 +2105,7 @@
 
     window.signInWithGoogle = async function () {
       if (!auth || !googleProvider) {
-        if (typeof window.loginAdmin === 'function') {
-          window.loginAdmin('pavin.ss2@gmail.com', true);
-        }
+        alert('Sign-in is unavailable right now. Please try again later.');
         return;
       }
       try {
@@ -2145,7 +2118,7 @@
       } catch (err) {
         console.error("Firebase Google Sign-In error:", err);
         if (err.code === 'auth/unauthorized-domain') {
-          alert("Firebase Domain Notice: 'pavinss2.github.io' is not yet listed in Firebase Console's Authorized Domains for cheki-tracker-39407.\n\nTo allow Google OAuth here, add 'pavinss2.github.io' in Firebase Console under Authentication -> Settings -> Authorized Domains.\n\nYou can use the instant 'One-Click Sign In as pavin.ss2@gmail.com' button in the meantime!");
+          alert("Firebase Domain Notice: 'pavinss2.github.io' is not yet listed in Firebase Console's Authorized Domains for cheki-tracker-39407.\n\nTo allow Google OAuth here, add 'pavinss2.github.io' in Firebase Console under Authentication -> Settings -> Authorized Domains.");
         } else if (err.code === 'auth/popup-closed-by-user') {
           // User closed popup
         } else {
@@ -2192,30 +2165,36 @@
       const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
       // Super Admin and Auth State
-      const SUPER_ADMIN_EMAILS = ['pavin.ss2@gmail.com', 'pavin.ss2@gmail'];
+      // SHA-256 of the super admin's email, so the address itself isn't published.
+      // This only gates the editing UI: edits stay in the visitor's own
+      // localStorage, and the real data changes only through git commits.
+      const SUPER_ADMIN_EMAIL_SHA256 = 'ea2503f08c0778ad53421340a4e0845ec12936a927ca8b1bc6bc7c3517d8de1a';
       let currentUser = null;
       let currentOpenMemberId = null;
       let currentOpenGroupId = null;
       let currentOpenCompanyId = null;
 
       function isAdmin() {
-        if (!currentUser || !currentUser.email) return false;
-        const email = currentUser.email.toLowerCase().trim();
-        return SUPER_ADMIN_EMAILS.some(adm => email === adm || email === adm + '.com');
+        return !!(currentUser && currentUser.isAdmin);
+      }
+
+      async function sha256Hex(text) {
+        const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
+        return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, '0')).join('');
       }
 
       function initAuth() {
-        const savedUser = localStorage.getItem('thaidoru_admin_user');
-        if (savedUser) {
-          currentUser = { email: savedUser };
-        }
+        // Identity used to be trusted from localStorage, which anyone could set.
+        // Firebase restores a real session through onAuthStateChanged instead.
+        localStorage.removeItem('thaidoru_admin_user');
         updateAuthUI();
       }
 
-      function loginAdmin(email, showNotification = true) {
+      // Only ever called with an email Firebase has verified via Google sign-in.
+      async function loginAdmin(email, showNotification = true) {
         if (!email || !email.trim()) return;
-        currentUser = { email: email.trim() };
-        localStorage.setItem('thaidoru_admin_user', currentUser.email);
+        const hash = await sha256Hex(email.toLowerCase().trim());
+        currentUser = { email: email.trim(), isAdmin: hash === SUPER_ADMIN_EMAIL_SHA256 };
         updateAuthUI();
         const loginModal = document.getElementById('login-modal');
         if (loginModal) loginModal.classList.remove('open');
@@ -2223,7 +2202,7 @@
           if (isAdmin()) {
             showToast(`👋 Welcome Super Admin ${currentUser.email}!`, 'success');
           } else {
-            showToast(`Signed in as ${currentUser.email} (Read-Only: pavin.ss2@gmail.com required to edit)`, 'info');
+            showToast(`Signed in as ${currentUser.email} (read-only)`, 'info');
           }
         }
       }
@@ -2231,7 +2210,6 @@
 
       function logoutAdmin() {
         currentUser = null;
-        localStorage.removeItem('thaidoru_admin_user');
         if (typeof window.signOutWithGoogle === 'function') {
           window.signOutWithGoogle();
         }
@@ -2250,15 +2228,9 @@
         if (modal) modal.classList.remove('open');
       };
 
-      window.quickAdminLogin = function () {
-        loginAdmin('pavin.ss2@gmail.com', true);
-      };
-
       window.triggerGoogleSignIn = async function () {
         if (typeof window.signInWithGoogle === 'function') {
           await window.signInWithGoogle();
-        } else {
-          loginAdmin('pavin.ss2@gmail.com', true);
         }
       };
 
@@ -2459,7 +2431,7 @@
 
       function saveMemberEdit() {
         if (!isAdmin()) {
-          showToast('Unauthorized: pavin.ss2@gmail.com required.', 'error');
+          showToast('Unauthorized: admin sign-in required.', 'error');
           return;
         }
 
@@ -2659,7 +2631,7 @@
 
       function saveGroupEdit() {
         if (!isAdmin()) {
-          showToast('Unauthorized: pavin.ss2@gmail.com required.', 'error');
+          showToast('Unauthorized: admin sign-in required.', 'error');
           return;
         }
 
@@ -2740,7 +2712,7 @@
 
       function saveCompanyEdit() {
         if (!isAdmin()) {
-          showToast('Unauthorized: pavin.ss2@gmail.com required.', 'error');
+          showToast('Unauthorized: admin sign-in required.', 'error');
           return;
         }
 
@@ -2782,12 +2754,6 @@
         showToast(`✅ Saved agency ${name} successfully!`, 'success');
       }
 
-      window.handleEmailSignIn = function () {
-        const emailInput = document.getElementById('login-email-input');
-        if (emailInput && emailInput.value) {
-          loginAdmin(emailInput.value);
-        }
-      };
       window.saveMemberEdit = saveMemberEdit;
       window.saveGroupEdit = saveGroupEdit;
       window.saveCompanyEdit = saveCompanyEdit;
@@ -3002,14 +2968,6 @@
         });
         document.getElementById('btn-edit-current-company').addEventListener('click', () => {
           if (currentOpenCompanyId) openEditCompanyModal(currentOpenCompanyId);
-        });
-
-        // Login Modal buttons
-        document.getElementById('btn-quick-admin-login').addEventListener('click', () => {
-          quickAdminLogin();
-        });
-        document.getElementById('btn-google-login').addEventListener('click', () => {
-          triggerGoogleSignIn();
         });
 
         // Export Modal actions
