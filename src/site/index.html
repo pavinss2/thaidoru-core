@@ -87,6 +87,9 @@
       align-items: center;
       justify-content: space-between;
       gap: 1rem;
+      /* When the signed-in admin buttons don't fit, they wrap under the brand. */
+      flex-wrap: wrap;
+      row-gap: 0.5rem;
     }
 
     .brand {
@@ -126,6 +129,9 @@
       display: flex;
       align-items: center;
       gap: 0.75rem;
+      margin-left: auto;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
     .btn-api {
@@ -752,6 +758,8 @@
 
     .group-meta {
       flex: 1;
+      min-width: 0;
+      overflow-wrap: anywhere;
     }
 
     .group-name {
@@ -1117,6 +1125,23 @@
     }
 
     /* Responsive */
+    /* Phones: icon-only header buttons, tabs share the row, forms stack */
+    @media (max-width: 600px) {
+      .brand-badge, .btn-label, .user-email { display: none; }
+      .header-actions { gap: 0.4rem; }
+      .header-actions > * { flex-shrink: 0; }
+      .tab-nav { gap: 0.25rem; }
+      .tab-btn {
+        flex: 1 1 0;
+        min-width: 0;
+        flex-direction: column;
+        gap: 0.25rem;
+        padding: 0.6rem 0.25rem;
+        font-size: 0.8rem;
+        text-align: center;
+      }
+    }
+
     @media (max-width: 768px) {
       .header-inner {
         padding: 0.75rem 1rem;
@@ -1306,8 +1331,9 @@
       margin-bottom: 0.85rem;
     }
     .form-row.sns-row { grid-template-columns: 1.4fr 1fr 1fr; gap: 0.75rem; }
-    @media (max-width: 480px) {
-      .form-row.sns-row { grid-template-columns: 1fr; }
+    /* After the base rule so it wins: forms stack to one column on phones. */
+    @media (max-width: 600px) {
+      .form-row, .form-row.sns-row { grid-template-columns: minmax(0, 1fr); }
     }
     .form-group {
       display: flex;
@@ -1321,6 +1347,9 @@
       color: var(--text-secondary);
     }
     .form-input, .form-select {
+      width: 100%;
+      min-width: 0; /* inputs otherwise refuse to shrink below ~20 characters */
+      box-sizing: border-box;
       background: var(--bg-base);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-sm);
@@ -1482,16 +1511,16 @@
         <div id="auth-container">
           <button class="btn-auth" id="btn-open-login" onclick="openLoginModal()">
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            Admin Login
+            <span class="btn-label">Admin Login</span>
           </button>
         </div>
         <button class="btn-api" id="open-api-btn">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 17l6-6-6-6M12 19h8"/></svg>
-          API Endpoints
+          <span class="btn-label">API Endpoints</span>
         </button>
         <a href="https://github.com/pavinss2/thaidoru-core" target="_blank" rel="noopener noreferrer" class="btn-github">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-          GitHub
+          <span class="btn-label">GitHub</span>
         </a>
       </div>
     </div>
@@ -2342,7 +2371,7 @@
           authContainer.innerHTML = `
             <button class="btn-auth" id="btn-open-login" onclick="openLoginModal()">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-              Admin Login
+              <span class="btn-label">Admin Login</span>
             </button>
           `;
         }
