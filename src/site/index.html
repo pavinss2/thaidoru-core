@@ -1464,6 +1464,12 @@
         <button class="admin-action-btn primary" id="btn-add-new-idol">
           <span>➕</span> Add New Idol
         </button>
+        <button class="admin-action-btn primary" id="btn-save-github" title="Open one pull request with every edit made in this browser">
+          <span>⬆️</span> <span id="save-github-label">Save to GitHub</span>
+        </button>
+        <button class="admin-action-btn" id="btn-github-connect">
+          <span>🔗</span> <span id="github-connect-label">Connect GitHub</span>
+        </button>
         <button class="admin-action-btn" id="btn-open-export">
           <span>💾</span> Export / Sync Changes
         </button>
@@ -2300,6 +2306,191 @@
         } catch (e) {
           console.error('Failed to persist to localStorage:', e);
         }
+        updateGitHubLabels();
+      }
+
+      // --- Save edits to GitHub as one pull request --------------------------
+      // Edits collect in this browser. "Save to GitHub" puts all of them on the
+      // `web-editor` branch as a single commit on top of main and opens a pull
+      // request — or updates the one already open — so a session of edits is
+      // one PR to review and merge. Needs a fine-grained token for this repo
+      // with Contents + Pull requests: Read and write, kept in this browser.
+      const GH_REPO = 'pavinss2/thaidoru-core';
+      const GH_BASE = 'main';
+      const GH_EDIT_BRANCH = 'web-editor';
+      const GH_TOKEN_KEY = 'thaidoru_github_token';
+      const SOURCE_FILES = ['companies', 'groups', 'members', 'memberships'];
+      // Fields the published bundle adds on top of src/data/*.json.
+      const DERIVED_KEYS = { companies: [], groups: ['company', 'members'], members: ['memberships'], memberships: [] };
+      let publishedData = null; // the untouched build the edits were made on
+      let savingToGitHub = false;
+
+      function getGitHubToken() {
+        try { return localStorage.getItem(GH_TOKEN_KEY) || ''; } catch (e) { return ''; }
+      }
+
+      function sourceRecord(file, rec) {
+        const copy = { ...rec };
+        DERIVED_KEYS[file].forEach(k => delete copy[k]);
+        return copy;
+      }
+
+      /**
+       * The repo's file with the editor's changes applied. Only records that
+       * differ from the published build are rewritten (in the repo's key order);
+       * every other record keeps the repo's current version, so nothing gets
+       * reformatted and a change made on GitHub since the build isn't reverted.
+       */
+      function mergeIntoSource(file, remote, edited, base) {
+        const baseById = new Map(base.map(r => [r.id, JSON.stringify(sourceRecord(file, r))]));
+        const editedById = new Map(edited.map(r => [r.id, sourceRecord(file, r)]));
+        const out = [];
+        const changed = [];
+        for (const r of remote) {
+          const e = editedById.get(r.id);
+          if (!e) {
+            if (baseById.has(r.id)) changed.push('-' + r.id); // deleted in the editor
+            else out.push(r); // added on GitHub after this build
+            continue;
+          }
+          editedById.delete(r.id);
+          if (JSON.stringify(e) === baseById.get(r.id)) { out.push(r); continue; }
+          const ordered = {};
+          Object.keys(r).forEach(k => { if (k in e) ordered[k] = e[k]; });
+          Object.keys(e).forEach(k => { ordered[k] = e[k]; });
+          out.push(ordered);
+          changed.push(r.id);
+        }
+        for (const [id, e] of editedById) {
+          if (!baseById.has(id)) { out.push(e); changed.push('+' + id); } // new in the editor
+        }
+        return { out, changed };
+      }
+
+      /** Records edited in this browser, compared with the published build. */
+      function countLocalChanges() {
+        if (!publishedData || !state.data) return 0;
+        let n = 0;
+        for (const file of SOURCE_FILES) {
+          const base = new Map((publishedData[file] || []).map(r => [r.id, JSON.stringify(sourceRecord(file, r))]));
+          const edited = state.data[file] || [];
+          edited.forEach(r => { if (base.get(r.id) !== JSON.stringify(sourceRecord(file, r))) n++; });
+          const ids = new Set(edited.map(r => r.id));
+          base.forEach((_, id) => { if (!ids.has(id)) n++; });
+        }
+        return n;
+      }
+
+      function updateGitHubLabels() {
+        const connect = document.getElementById('github-connect-label');
+        if (connect) connect.textContent = getGitHubToken() ? 'GitHub: connected' : 'Connect GitHub';
+        const save = document.getElementById('save-github-label');
+        if (save) {
+          const n = countLocalChanges();
+          save.textContent = savingToGitHub ? 'Saving…' : n ? `Save to GitHub (${n})` : 'Save to GitHub';
+        }
+      }
+
+      async function gh(path, { method = 'GET', body, raw = false } = {}) {
+        const res = await fetch(`https://api.github.com/repos/${GH_REPO}${path}`, {
+          method,
+          headers: {
+            Authorization: `Bearer ${getGitHubToken()}`,
+            Accept: raw ? 'application/vnd.github.raw+json' : 'application/vnd.github+json',
+            ...(body ? { 'Content-Type': 'application/json' } : {}),
+          },
+          body: body ? JSON.stringify(body) : undefined,
+        });
+        if (!res.ok) {
+          const detail = await res.json().catch(() => ({}));
+          const err = new Error(`GitHub ${res.status}: ${detail.message || res.statusText}`);
+          err.status = res.status;
+          throw err;
+        }
+        return raw ? res.text() : res.json();
+      }
+
+      async function saveToGitHub() {
+        if (!isAdmin() || savingToGitHub) return;
+        if (!getGitHubToken()) { await connectGitHub(); if (!getGitHubToken()) return; }
+        if (!countLocalChanges()) { showToast('No edits to save.', 'info'); return; }
+
+        savingToGitHub = true;
+        updateGitHubLabels();
+        try {
+          const headSha = (await gh(`/git/ref/heads/${GH_BASE}`)).object.sha;
+          const headCommit = await gh(`/git/commits/${headSha}`);
+
+          const tree = [];
+          const summary = [];
+          for (const file of SOURCE_FILES) {
+            const path = `src/data/${file}.json`;
+            const text = await gh(`/contents/${path}?ref=${headSha}`, { raw: true });
+            const { out, changed } = mergeIntoSource(file, JSON.parse(text), state.data[file] || [], publishedData[file] || []);
+            if (!changed.length) continue;
+            tree.push({ path, mode: '100644', type: 'blob', content: JSON.stringify(out, null, 2) + (text.endsWith('\n') ? '\n' : '') });
+            summary.push(`- ${file}: ${changed.join(', ')}`);
+          }
+          if (!tree.length) { showToast('main already has these edits.', 'info'); return; }
+
+          const newTree = await gh('/git/trees', { method: 'POST', body: { base_tree: headCommit.tree.sha, tree } });
+          const body = `Edits from the web editor (+ added, - removed):\n\n${summary.join('\n')}`;
+          const commit = await gh('/git/commits', {
+            method: 'POST',
+            body: { message: `Update via web editor\n\n${summary.join('\n')}`, tree: newTree.sha, parents: [headSha] },
+          });
+
+          // The branch always holds one commit on top of main with every edit
+          // from this browser, so re-saving replaces it instead of stacking.
+          try {
+            await gh(`/git/refs/heads/${GH_EDIT_BRANCH}`, { method: 'PATCH', body: { sha: commit.sha, force: true } });
+          } catch (e) {
+            if (e.status !== 422 && e.status !== 404) throw e;
+            await gh('/git/refs', { method: 'POST', body: { ref: `refs/heads/${GH_EDIT_BRANCH}`, sha: commit.sha } });
+          }
+
+          const owner = GH_REPO.split('/')[0];
+          const open = await gh(`/pulls?state=open&head=${owner}:${GH_EDIT_BRANCH}&base=${GH_BASE}`);
+          const pr = open.length
+            ? await gh(`/pulls/${open[0].number}`, { method: 'PATCH', body: { body } })
+            : await gh('/pulls', { method: 'POST', body: { title: 'Update via web editor', head: GH_EDIT_BRANCH, base: GH_BASE, body } });
+
+          showToast(`✅ ${open.length ? 'Updated' : 'Opened'} <a href="${pr.html_url}" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline;">pull request #${pr.number}</a>. Merge it to publish.`, 'success');
+        } catch (e) {
+          console.error('Save to GitHub failed:', e);
+          showToast(`Save to GitHub failed (${e.message}). Edits are kept in this browser.`, 'error');
+        } finally {
+          savingToGitHub = false;
+          updateGitHubLabels();
+        }
+      }
+
+      async function connectGitHub() {
+        const current = getGitHubToken();
+        const input = prompt(
+          current
+            ? 'GitHub is connected. Paste a new token to replace it, or clear the field to disconnect.'
+            : `Paste a fine-grained GitHub token for ${GH_REPO} with "Contents" and "Pull requests" set to Read and write.\nIt is stored only in this browser.`,
+          ''
+        );
+        if (input === null) return;
+        const token = input.trim();
+        if (!token) {
+          localStorage.removeItem(GH_TOKEN_KEY);
+          updateGitHubLabels();
+          showToast('GitHub disconnected.', 'info');
+          return;
+        }
+        localStorage.setItem(GH_TOKEN_KEY, token);
+        try {
+          const repo = await gh('');
+          if (!repo.permissions || !repo.permissions.push) throw new Error('token cannot write to this repo');
+          showToast('✅ GitHub connected.', 'success');
+        } catch (e) {
+          localStorage.removeItem(GH_TOKEN_KEY);
+          showToast(`GitHub token rejected (${e.message}).`, 'error');
+        }
+        updateGitHubLabels();
       }
 
       function resetDefaultData() {
@@ -2313,6 +2504,7 @@
         buildIndexes();
         populateGroupDropdown();
         render();
+        updateGitHubLabels();
         showToast('🔄 Database reset to default bundle.', 'info');
       }
 
@@ -2775,7 +2967,8 @@
             return;
           }
         }
-        state.data = published;
+        publishedData = published;
+        state.data = JSON.parse(JSON.stringify(published));
 
         // Local edits are a full copy of the dataset, so they're only valid on
         // top of the build they were made from. Once a newer build is
@@ -2960,6 +3153,9 @@
         document.getElementById('btn-add-new-idol').addEventListener('click', () => {
           openEditMemberModal(null, true);
         });
+        document.getElementById('btn-save-github').addEventListener('click', saveToGitHub);
+        document.getElementById('btn-github-connect').addEventListener('click', connectGitHub);
+        updateGitHubLabels();
         document.getElementById('btn-open-export').addEventListener('click', () => {
           openExportModal();
         });
