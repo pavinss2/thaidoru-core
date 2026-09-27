@@ -302,14 +302,14 @@
     "id": "mirai-mirai_pear",
     "group_id": "mirai-mirai",
     "member_id": "pear",
-    "status": "active",
+    "status": "graduated",
     "role": "member",
     "color": {
       "name": "Orange",
       "hex": "#e67e22"
     },
     "joined_date": null,
-    "end_date": null
+    "end_date": "2026-09-20"
   },
   {
     "id": "mirai-mirai_pixels",
