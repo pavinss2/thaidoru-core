@@ -1030,38 +1030,39 @@
     "stage_name": "Jasmine",
     "real_name": {},
     "birthday": {
-      "month": 10,
       "day": 25,
+      "month": 10,
       "year": null
     },
     "sns": [
       {
         "platform": "x",
-        "profile_id": "2016905753240760320",
-        "current_handle": "jasmine_dream0n",
         "url": "https://x.com/jasmine_dream0n",
+        "current_handle": "jasmine_dream0n",
+        "profile_id": "2016905753240760320",
         "avatar_url": "https://pbs.twimg.com/profile_images/2039327210889510912/bmUBanrU_400x400.jpg"
       },
       {
-        "platform": "facebook",
-        "profile_id": "61587082478756",
+        "platform": "instagram",
+        "url": "https://www.instagram.com/jasmine.dream0n",
         "current_handle": "jasmine.dream0n",
-        "url": "https://www.facebook.com/jasmine.dream0n"
+        "profile_id": null
       },
       {
-        "platform": "instagram",
-        "profile_id": null,
+        "platform": "facebook",
+        "url": "https://www.facebook.com/jasmine.dream0n",
         "current_handle": "jasmine.dream0n",
-        "url": "https://www.instagram.com/jasmine.dream0n"
+        "profile_id": "61587082478756"
       },
       {
         "platform": "tiktok",
-        "profile_id": null,
+        "url": "https://www.tiktok.com/@jasmine.dream0n",
         "current_handle": "jasmine.dream0n",
-        "url": "https://www.tiktok.com/@jasmine.dream0n"
+        "profile_id": null
       }
     ],
-    "avatar_cached_path": "assets/avatars/jasmine.webp"
+    "avatar_cached_path": "assets/avatars/jasmine.webp",
+    "stage_name_th": "จัสมิน"
   },
   {
     "id": "jeenin",
