@@ -396,6 +396,91 @@
       border-color: var(--border-focus);
     }
 
+    /* Multi-select filter (search + select all / clear all + checkboxes) */
+    .msf-wrapper {
+      position: relative;
+      width: 190px; /* fixed, so the trigger doesn't resize as the summary changes */
+      max-width: 100%;
+    }
+    .msf-trigger {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      width: 100%;
+      background: var(--bg-base);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 0.4rem 0.8rem;
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      font-family: inherit;
+      cursor: pointer;
+      text-align: left;
+    }
+    .msf-trigger:focus { outline: none; }
+    .msf-trigger:focus, .msf-trigger.active { border-color: var(--border-focus); }
+    .msf-trigger.active { color: var(--text-primary); }
+    .msf-summary { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .msf-chevron { flex-shrink: 0; transition: transform 0.15s ease; }
+    .msf-wrapper.open .msf-chevron { transform: rotate(180deg); }
+    .msf-panel {
+      position: absolute;
+      top: calc(100% + 4px);
+      left: 0;
+      min-width: 100%;
+      width: max-content;
+      max-width: min(300px, calc(100vw - 32px));
+      z-index: 60;
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+      padding: 6px;
+      max-height: 320px;
+      overflow-y: auto;
+    }
+    .msf-panel[hidden] { display: none; }
+    .msf-search {
+      width: 100%;
+      background: var(--bg-base);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 0.4rem 0.6rem;
+      color: var(--text-primary);
+      font-size: 0.85rem;
+      font-family: inherit;
+      margin-bottom: 6px;
+    }
+    .msf-search:focus { outline: none; border-color: #f59e0b; }
+    .msf-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+    .msf-clear {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      font-family: inherit;
+      cursor: pointer;
+      padding: 4px 6px;
+      white-space: nowrap;
+    }
+    .msf-clear:hover { color: var(--text-primary); }
+    .msf-divider { height: 1px; background: var(--border-subtle); margin: 5px 0; }
+    .msf-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      color: var(--text-primary);
+      cursor: pointer;
+    }
+    .msf-row:hover { background: rgba(255, 255, 255, 0.06); }
+    .msf-row input { cursor: pointer; flex-shrink: 0; width: 16px; height: 16px; }
+    .msf-row span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .msf-empty { padding: 8px 6px; font-size: 0.8rem; color: var(--text-muted); }
+
     /* Results Header */
     .results-info {
       display: flex;
@@ -480,7 +565,7 @@
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-md);
-      padding: 1.25rem;
+      padding: 1rem;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -551,12 +636,6 @@
       color: var(--text-secondary);
     }
 
-    .member-real {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      margin-bottom: 0.75rem;
-      min-height: 1.2em;
-    }
 
     .member-memberships {
       display: flex;
@@ -950,14 +1029,6 @@
       color: #60a5fa;
     }
 
-    .profile-id-chip {
-      font-size: 0.7rem;
-      font-family: 'JetBrains Mono', monospace;
-      color: var(--text-muted);
-      background: rgba(255, 255, 255, 0.05);
-      padding: 0.1rem 0.4rem;
-      border-radius: 4px;
-    }
 
     /* Roster Member Mini Grid */
     .roster-grid {
@@ -1234,6 +1305,10 @@
       gap: 1rem;
       margin-bottom: 0.85rem;
     }
+    .form-row.sns-row { grid-template-columns: 1.4fr 1fr 1fr; gap: 0.75rem; }
+    @media (max-width: 480px) {
+      .form-row.sns-row { grid-template-columns: 1fr; }
+    }
     .form-group {
       display: flex;
       flex-direction: column;
@@ -1506,26 +1581,19 @@
       </div>
 
       <div class="filter-row">
-        <div class="filter-group" id="company-filters">
+        <div class="filter-group">
           <span class="filter-label">Agency:</span>
-          <button class="pill-btn active" data-company="all">All</button>
-          <button class="pill-btn" data-company="catsolute">Catsolute</button>
-          <button class="pill-btn" data-company="a-lot-of-tone">A lot of tone</button>
-          <button class="pill-btn" data-company="ic45">IC45</button>
+          <div id="company-filter"></div>
         </div>
 
-        <div class="filter-group" id="status-filters">
+        <div class="filter-group">
           <span class="filter-label">Status:</span>
-          <button class="pill-btn active" data-status="all">All</button>
-          <button class="pill-btn" data-status="active">Active</button>
-          <button class="pill-btn" data-status="graduated">Former / Graduated</button>
+          <div id="status-filter"></div>
         </div>
 
         <div class="filter-group">
           <span class="filter-label">Group:</span>
-          <select id="group-select" class="filter-select">
-            <option value="all">All 17 Groups</option>
-          </select>
+          <div id="group-filter"></div>
         </div>
 
         <div class="filter-group" style="margin-left: auto;">
@@ -1768,6 +1836,12 @@
               <input type="text" id="edit-mem-ln-th" class="form-input" placeholder="e.g. จินตวร">
             </div>
           </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="edit-mem-nickname">Nickname</label>
+              <input type="text" id="edit-mem-nickname" class="form-input" placeholder="e.g. Pim">
+            </div>
+          </div>
 
           <div class="form-section-heading">Birthday</div>
           <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.75rem; margin-bottom: 0.85rem;">
@@ -1795,7 +1869,14 @@
             </div>
             <div class="form-group">
               <label class="form-label" for="edit-mem-role">Role</label>
-              <input type="text" id="edit-mem-role" class="form-input" placeholder="e.g. member, center, leader">
+              <select id="edit-mem-role" class="form-select">
+                <option value="member">Member</option>
+                <option value="leader">Leader</option>
+                <option value="sub-leader">Sub-leader</option>
+                <option value="center">Center</option>
+                <option value="trainee">Trainee</option>
+                <option value="guest">Guest</option>
+              </select>
             </div>
           </div>
 
@@ -1806,11 +1887,23 @@
                 <option value="active">Active (Current Idol)</option>
                 <option value="graduated">Graduated / Former</option>
                 <option value="hiatus">Hiatus</option>
+                <option value="trainee">Trainee</option>
+                <option value="withdrawn">Withdrawn</option>
               </select>
             </div>
             <div class="form-group">
               <label class="form-label" for="edit-mem-joined-date">Joined Date</label>
               <input type="date" id="edit-mem-joined-date" class="form-input">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="edit-mem-end-date">End Date</label>
+              <input type="date" id="edit-mem-end-date" class="form-input">
+            </div>
+            <div class="form-group" style="justify-content: flex-end;">
+              <span style="font-size: 0.75rem; color: var(--text-muted); line-height: 1.4;">Last day in the group. Cleared for Active; defaults to today when leaving it empty on a non-active status.</span>
             </div>
           </div>
 
@@ -1829,38 +1922,8 @@
           </div>
 
           <div class="form-section-heading">Social Media Channels</div>
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label" for="edit-mem-x-url">X (Twitter) URL</label>
-              <input type="url" id="edit-mem-x-url" class="form-input" placeholder="https://x.com/handle">
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="edit-mem-x-handle">X Handle</label>
-              <input type="text" id="edit-mem-x-handle" class="form-input" placeholder="e.g. handle">
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label" for="edit-mem-ig-url">Instagram URL</label>
-              <input type="url" id="edit-mem-ig-url" class="form-input" placeholder="https://instagram.com/handle">
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="edit-mem-ig-handle">Instagram Handle</label>
-              <input type="text" id="edit-mem-ig-handle" class="form-input" placeholder="e.g. handle">
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label" for="edit-mem-fb-url">Facebook URL</label>
-              <input type="url" id="edit-mem-fb-url" class="form-input" placeholder="https://facebook.com/...">
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="edit-mem-tiktok-url">TikTok URL</label>
-              <input type="url" id="edit-mem-tiktok-url" class="form-input" placeholder="https://tiktok.com/@...">
-            </div>
-          </div>
+          <!-- One row per platform, built from SNS_PLATFORMS in openEditMemberModal -->
+          <div id="edit-mem-sns"></div>
 
           <div class="form-actions-row">
             <button type="button" class="btn-cancel" id="btn-cancel-edit-member">Cancel</button>
@@ -2151,9 +2214,10 @@
         data: null,
         activeTab: 'members', // 'members' | 'groups' | 'companies'
         searchQuery: '',
-        companyFilter: 'all',
-        statusFilter: 'all',
-        groupFilter: 'all',
+        // Multi-select filters: an empty array means "all".
+        companyFilter: [],
+        statusFilter: [], // 'active' | 'graduated' (anything not active)
+        groupFilter: [],
         sortBy: 'group'
       };
 
@@ -2502,7 +2566,7 @@
           state.data = JSON.parse(JSON.stringify(window.__THAIDORU_DATA__));
         }
         buildIndexes();
-        populateGroupDropdown();
+        refreshFilters();
         render();
         updateGitHubLabels();
         showToast('🔄 Database reset to default bundle.', 'info');
@@ -2528,6 +2592,71 @@
         document.getElementById('export-count-groups').textContent = state.data.groups.length;
         document.getElementById('export-count-companies').textContent = state.data.companies.length;
         document.getElementById('export-modal').classList.add('open');
+      }
+
+      // Every SNS field members.json carries, per platform.
+      const SNS_PLATFORMS = [
+        { key: 'x', label: 'X (Twitter)', base: 'https://x.com/', avatar: true },
+        { key: 'instagram', label: 'Instagram', base: 'https://www.instagram.com/' },
+        { key: 'facebook', label: 'Facebook' },
+        { key: 'tiktok', label: 'TikTok', base: 'https://www.tiktok.com/@' },
+      ];
+
+      function renderSnsFields(sns) {
+        const field = (id, label, value, type = 'text') => `
+          <div class="form-group">
+            <label class="form-label" for="${id}">${label}</label>
+            <input type="${type}" id="${id}" class="form-input" value="${escapeHtml(value || '')}">
+          </div>`;
+        document.getElementById('edit-mem-sns').innerHTML = SNS_PLATFORMS.map(p => {
+          const cur = (sns || []).find(x => x.platform === p.key) || {};
+          const id = `edit-mem-sns-${p.key}`;
+          return `
+            <div class="form-row sns-row">
+              ${field(`${id}-url`, `${p.label} URL`, cur.url, 'url')}
+              ${field(`${id}-handle`, 'Handle', cur.current_handle)}
+              ${field(`${id}-profile-id`, 'Profile ID', cur.profile_id)}
+            </div>
+            ${p.avatar ? `<div class="form-row">${field(`${id}-avatar-url`, `${p.label} Avatar URL`, cur.avatar_url, 'url')}</div>` : ''}`;
+        }).join('');
+      }
+
+      /** SNS list from the form, keeping the existing entries' order, keys and key order. */
+      function readSnsFields(existing) {
+        const val = (id) => (document.getElementById(id)?.value || '').trim();
+        const fromForm = (p, cur) => {
+          const id = `edit-mem-sns-${p.key}`;
+          const handle = val(`${id}-handle`).replace(/^@/, '');
+          const url = val(`${id}-url`) || (handle && p.base ? p.base + handle : '');
+          const profileId = val(`${id}-profile-id`);
+          if (!url && !handle && !profileId) {
+            // Cleared -> removed; an entry that was already empty stays as it was.
+            const wasEmpty = cur && ![cur.url, cur.current_handle, cur.profile_id, cur.avatar_url].some(Boolean);
+            return wasEmpty ? cur : null;
+          }
+          const entry = cur ? { ...cur } : { platform: p.key, profile_id: null, current_handle: null, url: null };
+          entry.url = url || null;
+          entry.current_handle = handle || null;
+          entry.profile_id = profileId || null;
+          if (p.avatar) {
+            const avatarUrl = val(`${id}-avatar-url`);
+            if (avatarUrl) entry.avatar_url = avatarUrl;
+            else delete entry.avatar_url;
+          }
+          return entry;
+        };
+        const list = existing || [];
+        // Existing entries in place (platforms the form doesn't know pass through)...
+        const out = list
+          .map(x => { const p = SNS_PLATFORMS.find(p => p.key === x.platform); return p ? fromForm(p, x) : x; })
+          .filter(Boolean);
+        // ...then any platform newly filled in.
+        for (const p of SNS_PLATFORMS) {
+          if (list.some(x => x.platform === p.key)) continue;
+          const entry = fromForm(p, null);
+          if (entry) out.push(entry);
+        }
+        return out;
       }
 
       function openEditMemberModal(memberId, isNew = false) {
@@ -2556,21 +2685,18 @@
           document.getElementById('edit-mem-ln-en').value = '';
           document.getElementById('edit-mem-fn-th').value = '';
           document.getElementById('edit-mem-ln-th').value = '';
+          document.getElementById('edit-mem-nickname').value = '';
           document.getElementById('edit-mem-bday-day').value = '';
           document.getElementById('edit-mem-bday-month').value = '';
           document.getElementById('edit-mem-bday-year').value = '';
           document.getElementById('edit-mem-role').value = 'member';
           document.getElementById('edit-mem-status').value = 'active';
           document.getElementById('edit-mem-joined-date').value = new Date().toISOString().slice(0, 10);
+          document.getElementById('edit-mem-end-date').value = '';
           document.getElementById('edit-mem-color-name').value = 'Theme Color';
           document.getElementById('edit-mem-color-hex').value = '#3b82f6';
           document.getElementById('edit-mem-color-picker').value = '#3b82f6';
-          document.getElementById('edit-mem-x-url').value = '';
-          document.getElementById('edit-mem-x-handle').value = '';
-          document.getElementById('edit-mem-ig-url').value = '';
-          document.getElementById('edit-mem-ig-handle').value = '';
-          document.getElementById('edit-mem-fb-url').value = '';
-          document.getElementById('edit-mem-tiktok-url').value = '';
+          renderSnsFields([]);
         } else {
           const m = memberMap.get(memberId);
           if (!m) return;
@@ -2587,6 +2713,7 @@
           document.getElementById('edit-mem-ln-en').value = m.real_name?.last_name_en || '';
           document.getElementById('edit-mem-fn-th').value = m.real_name?.first_name_th || '';
           document.getElementById('edit-mem-ln-th').value = m.real_name?.last_name_th || '';
+          document.getElementById('edit-mem-nickname').value = m.real_name?.nickname || '';
           document.getElementById('edit-mem-bday-day').value = m.birthday?.day || '';
           document.getElementById('edit-mem-bday-month').value = m.birthday?.month || '';
           document.getElementById('edit-mem-bday-year').value = m.birthday?.year || '';
@@ -2598,24 +2725,14 @@
             document.getElementById('edit-mem-role').value = ms.role || 'member';
             document.getElementById('edit-mem-status').value = ms.status || 'active';
             document.getElementById('edit-mem-joined-date').value = ms.joined_date || '';
+            document.getElementById('edit-mem-end-date').value = ms.end_date || '';
             document.getElementById('edit-mem-color-name').value = ms.color?.name || '';
             const cHex = ms.color?.hex || '#ec4899';
             document.getElementById('edit-mem-color-hex').value = cHex;
             document.getElementById('edit-mem-color-picker').value = cHex.startsWith('#') && cHex.length === 7 ? cHex : '#ec4899';
           }
 
-          // SNS
-          const xSns = (m.sns || []).find(s => s.platform === 'x');
-          const igSns = (m.sns || []).find(s => s.platform === 'instagram');
-          const fbSns = (m.sns || []).find(s => s.platform === 'facebook');
-          const tiktokSns = (m.sns || []).find(s => s.platform === 'tiktok');
-
-          document.getElementById('edit-mem-x-url').value = xSns?.url || '';
-          document.getElementById('edit-mem-x-handle').value = xSns?.current_handle || '';
-          document.getElementById('edit-mem-ig-url').value = igSns?.url || '';
-          document.getElementById('edit-mem-ig-handle').value = igSns?.current_handle || '';
-          document.getElementById('edit-mem-fb-url').value = fbSns?.url || '';
-          document.getElementById('edit-mem-tiktok-url').value = tiktokSns?.url || '';
+          renderSnsFields(m.sns);
         }
 
         document.getElementById('edit-member-modal').classList.add('open');
@@ -2637,24 +2754,19 @@
         const lnEn = document.getElementById('edit-mem-ln-en').value.trim();
         const fnTh = document.getElementById('edit-mem-fn-th').value.trim();
         const lnTh = document.getElementById('edit-mem-ln-th').value.trim();
+        const nickname = document.getElementById('edit-mem-nickname').value.trim();
 
         const bDay = document.getElementById('edit-mem-bday-day').value;
         const bMonth = document.getElementById('edit-mem-bday-month').value;
         const bYear = document.getElementById('edit-mem-bday-year').value;
 
         const groupId = document.getElementById('edit-mem-group').value;
-        const role = document.getElementById('edit-mem-role').value.trim() || 'member';
+        const role = document.getElementById('edit-mem-role').value || 'member';
         const status = document.getElementById('edit-mem-status').value;
         const joinedDate = document.getElementById('edit-mem-joined-date').value || null;
+        const endDateInput = document.getElementById('edit-mem-end-date').value || null;
         const colorName = document.getElementById('edit-mem-color-name').value.trim() || 'Theme Color';
         const colorHex = document.getElementById('edit-mem-color-hex').value.trim() || '#ec4899';
-
-        const xUrl = document.getElementById('edit-mem-x-url').value.trim();
-        const xHandle = document.getElementById('edit-mem-x-handle').value.trim();
-        const igUrl = document.getElementById('edit-mem-ig-url').value.trim();
-        const igHandle = document.getElementById('edit-mem-ig-handle').value.trim();
-        const fbUrl = document.getElementById('edit-mem-fb-url').value.trim();
-        const tiktokUrl = document.getElementById('edit-mem-tiktok-url').value.trim();
 
         if (!id || !stageName || !groupId) {
           showToast('Please fill in required fields (ID, Stage Name, Group).', 'error');
@@ -2678,71 +2790,26 @@
         }
 
         member.stage_name = stageName;
-        member.stage_name_th = stageNameTh || null;
+        if (stageNameTh) member.stage_name_th = stageNameTh;
+        else delete member.stage_name_th;
         member.avatar_cached_path = avatar || (member.avatar_cached_path || 'assets/avatars/default_avatar.webp');
 
-        const realName = {};
-        if (fnEn) realName.first_name_en = fnEn;
-        if (lnEn) realName.last_name_en = lnEn;
-        if (fnTh) realName.first_name_th = fnTh;
-        if (lnTh) realName.last_name_th = lnTh;
-        member.real_name = Object.keys(realName).length > 0 ? realName : {};
+        // Edit the existing object so untouched keys and their order survive.
+        const realName = { ...(member.real_name || {}) };
+        // Blank removes a name, but a key already stored as null is left alone.
+        const setName = (key, value) => { if (value) realName[key] = value; else if (realName[key]) delete realName[key]; };
+        setName('first_name_en', fnEn);
+        setName('last_name_en', lnEn);
+        setName('first_name_th', fnTh);
+        setName('last_name_th', lnTh);
+        setName('nickname', nickname);
+        member.real_name = realName;
 
-        if (bDay && bMonth) {
-          member.birthday = {
-            day: parseInt(bDay, 10),
-            month: parseInt(bMonth, 10),
-            year: bYear ? parseInt(bYear, 10) : null
-          };
-        } else {
-          member.birthday = null;
-        }
+        member.birthday = bDay && bMonth
+          ? { month: parseInt(bMonth, 10), day: parseInt(bDay, 10), year: bYear ? parseInt(bYear, 10) : null }
+          : {};
 
-        // SNS list
-        const updatedSns = [];
-        if (xUrl || xHandle) {
-          const existingX = (member.sns || []).find(s => s.platform === 'x');
-          updatedSns.push({
-            platform: 'x',
-            url: xUrl || (xHandle ? `https://x.com/${xHandle.replace('@', '')}` : null),
-            current_handle: xHandle ? xHandle.replace('@', '') : null,
-            profile_id: existingX?.profile_id || null,
-            avatar_url: existingX?.avatar_url || null
-          });
-        }
-        if (igUrl || igHandle) {
-          const existingIg = (member.sns || []).find(s => s.platform === 'instagram');
-          updatedSns.push({
-            platform: 'instagram',
-            url: igUrl || (igHandle ? `https://instagram.com/${igHandle.replace('@', '')}` : null),
-            current_handle: igHandle ? igHandle.replace('@', '') : null,
-            profile_id: existingIg?.profile_id || null
-          });
-        }
-        if (fbUrl) {
-          const existingFb = (member.sns || []).find(s => s.platform === 'facebook');
-          updatedSns.push({
-            platform: 'facebook',
-            url: fbUrl,
-            current_handle: existingFb?.current_handle || null,
-            profile_id: existingFb?.profile_id || null
-          });
-        }
-        if (tiktokUrl) {
-          const existingTiktok = (member.sns || []).find(s => s.platform === 'tiktok');
-          updatedSns.push({
-            platform: 'tiktok',
-            url: tiktokUrl,
-            current_handle: existingTiktok?.current_handle || null,
-            profile_id: existingTiktok?.profile_id || null
-          });
-        }
-        for (const oldSns of (member.sns || [])) {
-          if (!['x', 'instagram', 'facebook', 'tiktok'].includes(oldSns.platform)) {
-            updatedSns.push(oldSns);
-          }
-        }
-        member.sns = updatedSns;
+        member.sns = readSnsFields(member.sns);
 
         // Memberships
         let ms = state.data.memberships.find(m => m.member_id === id && m.group_id === groupId);
@@ -2750,23 +2817,24 @@
           ms = state.data.memberships.find(m => m.member_id === id);
         }
         const isActive = (status === 'active');
+        const endDate = isActive ? null : (endDateInput || new Date().toISOString().slice(0, 10));
         if (ms) {
           ms.group_id = groupId;
           ms.role = role;
           ms.status = status;
           ms.color = { name: colorName, hex: colorHex };
-          if (joinedDate) ms.joined_date = joinedDate;
-          if (!isActive && !ms.end_date) ms.end_date = new Date().toISOString().slice(0, 10);
+          ms.joined_date = joinedDate;
+          ms.end_date = endDate;
         } else {
           ms = {
-            id: `ms_${id}_${groupId}`,
-            member_id: id,
+            id: `${groupId}_${id}`,
             group_id: groupId,
-            role: role,
+            member_id: id,
             status: status,
+            role: role,
             color: { name: colorName, hex: colorHex },
-            joined_date: joinedDate || null,
-            end_date: isActive ? null : new Date().toISOString().slice(0, 10)
+            joined_date: joinedDate,
+            end_date: endDate
           };
           state.data.memberships.push(ms);
         }
@@ -2775,7 +2843,7 @@
 
         saveCustomData();
         buildIndexes();
-        populateGroupDropdown();
+        refreshFilters();
         render();
 
         document.getElementById('edit-member-modal').classList.remove('open');
@@ -2869,7 +2937,7 @@
 
         saveCustomData();
         buildIndexes();
-        populateGroupDropdown();
+        refreshFilters();
         render();
 
         document.getElementById('edit-group-modal').classList.remove('open');
@@ -2990,7 +3058,7 @@
         }
 
         buildIndexes();
-        populateGroupDropdown();
+        refreshFilters();
         bindEvents();
         initAuth();
         handleRoute();
@@ -3014,36 +3082,120 @@
         document.getElementById('count-tab-companies').textContent = state.data.companies.length;
       }
 
-      function populateGroupDropdown() {
-        const select = document.getElementById('group-select');
-        let availableGroups = [...state.data.groups];
+      const CHEVRON_SVG = '<svg class="msf-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>';
+      const escapeHtml = (t) => String(t).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
-        if (state.companyFilter && state.companyFilter !== 'all') {
-          availableGroups = availableGroups.filter(g => g.company_id === state.companyFilter);
+      /**
+       * Dropdown with a search box, Select all / Clear all and a checkbox per
+       * option. `label` is the plural noun ("Groups"); an empty selection is "All".
+       */
+      function createMultiSelect(el, { label, getOptions, getSelected, onChange }) {
+        el.classList.add('msf-wrapper');
+        el.innerHTML = `
+          <button type="button" class="msf-trigger"><span class="msf-summary"></span>${CHEVRON_SVG}</button>
+          <div class="msf-panel" hidden>
+            <input type="text" class="msf-search" placeholder="Search ${label.toLowerCase()}...">
+            <div class="msf-head">
+              <label class="msf-row"><input type="checkbox" class="msf-all"><span>Select all</span></label>
+              <button type="button" class="msf-clear">Clear all</button>
+            </div>
+            <div class="msf-divider"></div>
+            <div class="msf-options"></div>
+          </div>`;
+        const trigger = el.querySelector('.msf-trigger');
+        const panel = el.querySelector('.msf-panel');
+        const search = el.querySelector('.msf-search');
+        const all = el.querySelector('.msf-all');
+        const list = el.querySelector('.msf-options');
+
+        const visible = () => {
+          const q = search.value.trim().toLowerCase();
+          return getOptions().filter(o => !q || o.label.toLowerCase().includes(q));
+        };
+
+        function refresh() {
+          const options = getOptions();
+          const selected = getSelected();
+          const labelOf = v => (options.find(o => o.value === v) || {}).label || v;
+          const summary = selected.length === 0 ? `All ${label}` : selected.length === 1 ? labelOf(selected[0]) : `${selected.length} selected`;
+          trigger.querySelector('.msf-summary').textContent = summary;
+          trigger.title = summary;
+          trigger.classList.toggle('active', selected.length > 0);
+          search.style.display = options.length > 10 ? '' : 'none';
+
+          const shown = visible();
+          const allOn = shown.length > 0 && shown.every(o => selected.includes(o.value));
+          all.checked = allOn;
+          all.indeterminate = !allOn && shown.some(o => selected.includes(o.value));
+          list.innerHTML = shown.length
+            ? shown.map(o => `<label class="msf-row"><input type="checkbox" value="${escapeHtml(o.value)}" ${selected.includes(o.value) ? 'checked' : ''}><span>${escapeHtml(o.label)}</span></label>`).join('')
+            : '<div class="msf-empty">No options</div>';
         }
 
-        availableGroups.sort((a, b) => a.name.localeCompare(b.name));
+        const setOpen = (open) => {
+          panel.hidden = !open;
+          el.classList.toggle('open', open);
+          if (open) { search.value = ''; refresh(); if (search.style.display !== 'none') search.focus(); }
+        };
+        trigger.addEventListener('click', () => setOpen(panel.hidden));
+        search.addEventListener('input', refresh);
+        list.addEventListener('change', (e) => {
+          const v = e.target.value;
+          const sel = getSelected();
+          onChange(sel.includes(v) ? sel.filter(x => x !== v) : [...sel, v]);
+        });
+        // Select all / its tick act on the options the search currently shows.
+        all.addEventListener('change', () => {
+          const shown = visible().map(o => o.value);
+          const sel = getSelected();
+          onChange(shown.every(v => sel.includes(v)) ? sel.filter(v => !shown.includes(v)) : [...new Set([...sel, ...shown])]);
+        });
+        el.querySelector('.msf-clear').addEventListener('click', () => onChange([]));
+        document.addEventListener('mousedown', (e) => { if (!el.contains(e.target)) setOpen(false); });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setOpen(false); });
+        return { refresh };
+      }
 
-        const compName = companyMap.get(state.companyFilter)?.name;
-        const allLabel = state.companyFilter && state.companyFilter !== 'all'
-          ? `All ${availableGroups.length} Groups (${compName})`
-          : `All ${state.data.groups.length} Groups`;
+      const filterWidgets = [];
 
-        select.innerHTML = `<option value="all">${allLabel}</option>`;
-        for (const g of availableGroups) {
-          const opt = document.createElement('option');
-          opt.value = g.id;
-          opt.textContent = state.companyFilter === 'all'
-            ? `${g.name} (${companyMap.get(g.company_id)?.name || ''})`
-            : g.name;
-          select.appendChild(opt);
-        }
+      function refreshFilters() {
+        filterWidgets.forEach(w => w.refresh());
+      }
 
-        // If current groupFilter is not in availableGroups, reset to 'all'
-        if (state.groupFilter !== 'all' && !availableGroups.some(g => g.id === state.groupFilter)) {
-          state.groupFilter = 'all';
-        }
-        select.value = state.groupFilter;
+      /** One membership against the Agency / Group / Status filters. */
+      function membershipMatchesFilters(ms) {
+        const g = groupMap.get(ms.group_id);
+        if (state.companyFilter.length && !state.companyFilter.includes(g?.company_id)) return false;
+        if (state.groupFilter.length && !state.groupFilter.includes(ms.group_id)) return false;
+        if (state.statusFilter.length && !state.statusFilter.includes(ms.status === 'active' ? 'active' : 'graduated')) return false;
+        return true;
+      }
+
+      function initFilters() {
+        const byName = (a, b) => a.label.localeCompare(b.label);
+        filterWidgets.push(createMultiSelect(document.getElementById('company-filter'), {
+          label: 'Agencies',
+          getOptions: () => state.data.companies.map(c => ({ value: c.id, label: c.name })).sort(byName),
+          getSelected: () => state.companyFilter,
+          onChange: (next) => { state.companyFilter = next; refreshFilters(); render(); },
+        }));
+        filterWidgets.push(createMultiSelect(document.getElementById('status-filter'), {
+          label: 'Statuses',
+          getOptions: () => [{ value: 'active', label: 'Active' }, { value: 'graduated', label: 'Former / Graduated' }],
+          getSelected: () => state.statusFilter,
+          onChange: (next) => { state.statusFilter = next; refreshFilters(); render(); },
+        }));
+        // Groups narrow to the selected agencies. A group that's already ticked
+        // stays listed, so narrowing never hides (or silently drops) a selection.
+        filterWidgets.push(createMultiSelect(document.getElementById('group-filter'), {
+          label: 'Groups',
+          getOptions: () => state.data.groups
+            .filter(g => !state.companyFilter.length || state.companyFilter.includes(g.company_id) || state.groupFilter.includes(g.id))
+            .map(g => ({ value: g.id, label: g.name })).sort(byName),
+          getSelected: () => state.groupFilter,
+          onChange: (next) => { state.groupFilter = next; refreshFilters(); render(); },
+        }));
+        refreshFilters();
       }
 
       function bindEvents() {
@@ -3070,46 +3222,7 @@
           render();
         });
 
-        // Company filters (cascades to Group filter)
-        document.querySelectorAll('#company-filters .pill-btn').forEach(btn => {
-          btn.addEventListener('click', () => {
-            document.querySelectorAll('#company-filters .pill-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            state.companyFilter = btn.dataset.company;
-            if (state.companyFilter === 'all') {
-              state.groupFilter = 'all';
-            }
-            populateGroupDropdown();
-            render();
-          });
-        });
-
-        // Status filters
-        document.querySelectorAll('#status-filters .pill-btn').forEach(btn => {
-          btn.addEventListener('click', () => {
-            document.querySelectorAll('#status-filters .pill-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            state.statusFilter = btn.dataset.status;
-            render();
-          });
-        });
-
-        // Group filter (cascades back to Company filter if needed)
-        document.getElementById('group-select').addEventListener('change', (e) => {
-          state.groupFilter = e.target.value;
-          if (state.groupFilter !== 'all') {
-            const g = groupMap.get(state.groupFilter);
-            if (g && g.company_id && state.companyFilter !== g.company_id) {
-              state.companyFilter = g.company_id;
-              document.querySelectorAll('#company-filters .pill-btn').forEach(b => {
-                b.classList.toggle('active', b.dataset.company === g.company_id);
-              });
-              populateGroupDropdown();
-              document.getElementById('group-select').value = state.groupFilter;
-            }
-          }
-          render();
-        });
+        initFilters();
 
         // Sort select
         document.getElementById('sort-select').addEventListener('change', (e) => {
@@ -3350,14 +3463,7 @@
           }
 
           // Coordinated Company, Group, and Status matching
-          const hasMatchingMembership = m.memberships.some(ms => {
-            const g = groupMap.get(ms.group_id);
-            if (state.companyFilter !== 'all' && g?.company_id !== state.companyFilter) return false;
-            if (state.groupFilter !== 'all' && ms.group_id !== state.groupFilter) return false;
-            if (state.statusFilter === 'active' && !(ms.status === 'active')) return false;
-            if (state.statusFilter === 'graduated' && (ms.status === 'active')) return false;
-            return true;
-          });
+          const hasMatchingMembership = m.memberships.some(membershipMatchesFilters);
 
           return hasMatchingMembership;
         });
@@ -3385,26 +3491,12 @@
 
         // Helper to render a single member card
         function renderMemberCard(m) {
-          const matchingMs = m.memberships.find(ms => {
-            const g = groupMap.get(ms.group_id);
-            if (state.companyFilter !== 'all' && g?.company_id !== state.companyFilter) return false;
-            if (state.groupFilter !== 'all' && ms.group_id !== state.groupFilter) return false;
-            if (state.statusFilter === 'active' && !(ms.status === 'active')) return false;
-            if (state.statusFilter === 'graduated' && (ms.status === 'active')) return false;
-            return true;
-          }) || m.memberships.find(ms => (ms.status === 'active')) || m.memberships[0];
+          const matchingMs = m.memberships.find(membershipMatchesFilters) || m.memberships.find(ms => (ms.status === 'active')) || m.memberships[0];
 
           const colorHex = matchingMs?.color?.hex || '#3b82f6';
           const avatarSrc = m.avatar_cached_path ? `./${m.avatar_cached_path}` : (m.sns.find(s => s.avatar_url)?.avatar_url || 'assets/avatars/default_avatar.webp');
           
           const bdayStr = m.birthday?.day && m.birthday?.month ? `🎂 ${m.birthday.day} ${MONTHS[m.birthday.month - 1]}${m.birthday.year ? ', ' + m.birthday.year : ''}` : '';
-
-          const realEn = [m.real_name?.first_name_en, m.real_name?.last_name_en].filter(Boolean).join(' ');
-          const realTh = [m.real_name?.first_name_th, m.real_name?.last_name_th].filter(Boolean).join(' ');
-          let realDisplay = '';
-          if (realEn && realTh) realDisplay = `${realEn} (${realTh})`;
-          else if (realEn) realDisplay = realEn;
-          else if (realTh) realDisplay = realTh;
 
           const groupBadges = m.memberships.map(ms => {
             const g = groupMap.get(ms.group_id);
@@ -3435,8 +3527,6 @@
                 <h3 class="member-stage">${m.stage_name}</h3>
                 ${m.stage_name_th ? `<span class="member-stage-th">${m.stage_name_th}</span>` : ''}
               </div>
-
-              <div class="member-real">${realDisplay}</div>
 
               <div class="member-memberships">
                 ${groupBadges}
@@ -3580,8 +3670,8 @@
             const company = (companyMap.get(g.company_id)?.name || '').toLowerCase();
             if (!name.includes(query) && !native.includes(query) && !company.includes(query)) return false;
           }
-          if (state.companyFilter !== 'all' && g.company_id !== state.companyFilter) return false;
-          if (state.groupFilter !== 'all' && g.id !== state.groupFilter) return false;
+          if (state.companyFilter.length && !state.companyFilter.includes(g.company_id)) return false;
+          if (state.groupFilter.length && !state.groupFilter.includes(g.id)) return false;
           return true;
         });
 
@@ -3660,7 +3750,7 @@
             const country = (c.country || '').toLowerCase();
             if (!name.includes(query) && !country.includes(query)) return false;
           }
-          if (state.companyFilter !== 'all' && c.id !== state.companyFilter) return false;
+          if (state.companyFilter.length && !state.companyFilter.includes(c.id)) return false;
           return true;
         });
 
@@ -3811,7 +3901,6 @@
             <a href="${s.url}" target="_blank" rel="noopener noreferrer" class="social-btn">
               ${icon}
               <span>${s.platform.toUpperCase()}: @${s.current_handle || ''}</span>
-              ${s.profile_id ? `<span class="profile-id-chip" title="Immutable UID: ${s.profile_id}">UID ${s.profile_id.slice(-6)}</span>` : ''}
             </a>
           `;
         }).join('');
@@ -3972,12 +4061,9 @@
       // Filter by agency from agency card
       window.filterByCompany = function (companyId) {
         setTab('members');
-        document.querySelectorAll('#company-filters .pill-btn').forEach(btn => {
-          btn.classList.toggle('active', btn.dataset.company === companyId);
-        });
-        state.companyFilter = companyId;
-        state.groupFilter = 'all';
-        populateGroupDropdown();
+        state.companyFilter = [companyId];
+        state.groupFilter = [];
+        refreshFilters();
         render();
       };
 
@@ -3987,15 +4073,9 @@
         if (!g) return;
         closeModal();
         setTab('members');
-        if (g.company_id) {
-          state.companyFilter = g.company_id;
-          document.querySelectorAll('#company-filters .pill-btn').forEach(btn => {
-            btn.classList.toggle('active', btn.dataset.company === g.company_id);
-          });
-        }
-        state.groupFilter = groupId;
-        populateGroupDropdown();
-        document.getElementById('group-select').value = groupId;
+        state.companyFilter = [];
+        state.groupFilter = [groupId];
+        refreshFilters();
         render();
       };
 
