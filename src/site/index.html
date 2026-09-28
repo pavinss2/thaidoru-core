@@ -2239,6 +2239,12 @@
   <!-- Application Logic -->
   <script>
     (function () {
+      // Escape every data/user value interpolated into HTML strings.
+      const escapeHtml = (t) => String(t).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+      // Only http(s) links from data; anything else (javascript:, data:) becomes '#'.
+      const safeUrl = (u) => /^https?:\/\//i.test(String(u ?? '')) ? u : '#';
+      // A value as a quoted JS string literal, safe inside an onclick="..." attribute.
+      const jsArg = (v) => escapeHtml(JSON.stringify(String(v)));
       let state = {
         data: null,
         activeTab: 'members', // 'members' | 'groups' | 'companies'
@@ -2352,7 +2358,7 @@
             authContainer.innerHTML = `
               <div class="user-pill">
                 <span class="admin-badge">🛡️ Super Admin</span>
-                <span class="user-email" title="${currentUser.email}">${currentUser.email}</span>
+                <span class="user-email" title="${escapeHtml(currentUser.email)}">${escapeHtml(currentUser.email)}</span>
                 <button class="btn-logout" id="btn-logout" onclick="logoutAdmin()" title="Sign Out">Sign Out</button>
               </div>
             `;
@@ -2361,7 +2367,7 @@
             authContainer.innerHTML = `
               <div class="user-pill" style="border-color: rgba(255,255,255,0.2);">
                 <span class="admin-badge" style="background: #64748b; color: #fff;">Read-Only</span>
-                <span class="user-email" title="${currentUser.email}">${currentUser.email}</span>
+                <span class="user-email" title="${escapeHtml(currentUser.email)}">${escapeHtml(currentUser.email)}</span>
                 <button class="btn-logout" id="btn-logout" onclick="logoutAdmin()" title="Sign Out">Sign Out</button>
               </div>
             `;
@@ -2377,13 +2383,13 @@
         }
       }
 
-      function showToast(msg, type = 'info') {
+      function showToast(msg, type = 'info', isHtml = false) {
         const container = document.getElementById('toast-container');
         if (!container) return;
         const toast = document.createElement('div');
         toast.className = 'toast';
         const icon = type === 'success' ? '✅' : type === 'error' ? '⚠️' : 'ℹ️';
-        toast.innerHTML = `<span>${icon}</span><span>${msg}</span>`;
+        toast.innerHTML = `<span>${icon}</span><span>${isHtml ? msg : escapeHtml(msg)}</span>`;
         container.appendChild(toast);
         setTimeout(() => {
           toast.style.opacity = '0';
@@ -2548,7 +2554,7 @@
             ? await gh(`/pulls/${open[0].number}`, { method: 'PATCH', body: { body } })
             : await gh('/pulls', { method: 'POST', body: { title: 'Update via web editor', head: GH_EDIT_BRANCH, base: GH_BASE, body } });
 
-          showToast(`✅ ${open.length ? 'Updated' : 'Opened'} <a href="${pr.html_url}" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline;">pull request #${pr.number}</a>. Merge it to publish.`, 'success');
+          showToast(`✅ ${open.length ? 'Updated' : 'Opened'} <a href="${escapeHtml(safeUrl(pr.html_url))}" target="_blank" rel="noopener" style="color: inherit; text-decoration: underline;">pull request #${escapeHtml(pr.number)}</a>. Merge it to publish.`, 'success', true);
         } catch (e) {
           console.error('Save to GitHub failed:', e);
           showToast(`Save to GitHub failed (${e.message}). Edits are kept in this browser.`, 'error');
@@ -2698,7 +2704,7 @@
         document.getElementById('edit-mem-is-new').value = isNewFlag ? 'true' : 'false';
 
         const groupSelect = document.getElementById('edit-mem-group');
-        groupSelect.innerHTML = state.data.groups.map(g => `<option value="${g.id}">${g.name}</option>`).join('');
+        groupSelect.innerHTML = state.data.groups.map(g => `<option value="${escapeHtml(g.id)}">${escapeHtml(g.name)}</option>`).join('');
 
         if (isNewFlag) {
           document.getElementById('edit-member-title').textContent = 'Add New Idol';
@@ -2897,7 +2903,7 @@
 
         const compSelect = document.getElementById('edit-grp-company');
         compSelect.innerHTML = state.data.companies.map(c => `
-          <option value="${c.id}" ${c.id === g.company_id ? 'selected' : ''}>${c.name}</option>
+          <option value="${escapeHtml(c.id)}" ${c.id === g.company_id ? 'selected' : ''}>${escapeHtml(c.name)}</option>
         `).join('');
 
         document.getElementById('edit-grp-debut').value = g.debut_date || '';
@@ -3112,8 +3118,6 @@
       }
 
       const CHEVRON_SVG = '<svg class="msf-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>';
-      const escapeHtml = (t) => String(t).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-
       /**
        * Dropdown with a search box, Select all / Clear all and a checkbox per
        * option. `label` is the plural noun ("Groups"); an empty selection is "All".
@@ -3523,7 +3527,7 @@
           const matchingMs = m.memberships.find(membershipMatchesFilters) || m.memberships.find(ms => (ms.status === 'active')) || m.memberships[0];
 
           const colorHex = matchingMs?.color?.hex || '#3b82f6';
-          const avatarSrc = m.avatar_cached_path ? `./${m.avatar_cached_path}` : (m.sns.find(s => s.avatar_url)?.avatar_url || 'assets/avatars/default_avatar.webp');
+          const avatarSrc = m.avatar_cached_path ? `./${m.avatar_cached_path}` : (m.sns.find(s => s.avatar_url) ? safeUrl(m.sns.find(s => s.avatar_url).avatar_url) : 'assets/avatars/default_avatar.webp');
           
           const bdayStr = m.birthday?.day && m.birthday?.month ? `🎂 ${m.birthday.day} ${MONTHS[m.birthday.month - 1]}${m.birthday.year ? ', ' + m.birthday.year : ''}` : '';
 
@@ -3532,9 +3536,9 @@
             const gName = g ? g.name : ms.group_id;
             const cHex = ms.color?.hex || '#94a3b8';
             return `
-              <span class="group-chip" title="${ms.status} in ${gName}" style="border-color: ${(ms.status === 'active') ? cHex + '55' : 'rgba(255,255,255,0.08)'}">
-                <span class="color-swatch" style="background-color: ${cHex};"></span>
-                <span>${gName}</span>
+              <span class="group-chip" title="${escapeHtml(ms.status)} in ${escapeHtml(gName)}" style="border-color: ${(ms.status === 'active') ? escapeHtml(cHex + '55') : 'rgba(255,255,255,0.08)'}">
+                <span class="color-swatch" style="background-color: ${escapeHtml(cHex)};"></span>
+                <span>${escapeHtml(gName)}</span>
                 ${!(ms.status === 'active') ? '<span style="color: var(--text-muted); font-size: 0.65rem;">(Grad)</span>' : ''}
               </span>
             `;
@@ -3542,19 +3546,19 @@
 
           const snsIcons = m.sns.filter(s => s && s.url).map(s => {
             const iconSvg = ICONS[s.platform] || ICONS.link;
-            return `<a href="${s.url}" target="_blank" rel="noopener noreferrer" class="sns-link" title="${s.platform}: @${s.current_handle || ''}" onclick="event.stopPropagation();">${iconSvg}</a>`;
+            return `<a href="${escapeHtml(safeUrl(s.url))}" target="_blank" rel="noopener noreferrer" class="sns-link" title="${escapeHtml(s.platform)}: @${escapeHtml(s.current_handle || '')}" onclick="event.stopPropagation();">${iconSvg}</a>`;
           }).join('');
 
           return `
-            <article class="member-card" onclick="openMemberModal('${m.id}')" style="--accent-color: ${colorHex};">
+            <article class="member-card" onclick="openMemberModal(${jsArg(m.id)})" style="--accent-color: ${escapeHtml(colorHex)};">
               <div class="avatar-wrap">
-                <img src="${avatarSrc}" alt="${m.stage_name}" class="member-avatar" loading="lazy" onerror="this.onerror=null;this.src='assets/avatars/default_avatar.webp'">
+                <img src="${escapeHtml(avatarSrc)}" alt="${escapeHtml(m.stage_name)}" class="member-avatar" loading="lazy" onerror="this.onerror=null;this.src='assets/avatars/default_avatar.webp'">
                 <div class="status-dot ${(matchingMs?.status === 'active') ? '' : 'graduated'}" title="${(matchingMs?.status === 'active') ? 'Active' : 'Graduated / Former'}"></div>
               </div>
 
               <div class="member-name-row">
-                <h3 class="member-stage">${m.stage_name}</h3>
-                ${m.stage_name_th ? `<span class="member-stage-th">${m.stage_name_th}</span>` : ''}
+                <h3 class="member-stage">${escapeHtml(m.stage_name)}</h3>
+                ${m.stage_name_th ? `<span class="member-stage-th">${escapeHtml(m.stage_name_th)}</span>` : ''}
               </div>
 
               <div class="member-memberships">
@@ -3562,7 +3566,7 @@
               </div>
 
               <div class="member-footer">
-                <div class="member-bday">${bdayStr}</div>
+                <div class="member-bday">${escapeHtml(bdayStr)}</div>
                 <div class="sns-icons">${snsIcons}</div>
               </div>
             </article>
@@ -3618,7 +3622,7 @@
                 <div class="partition-header">
                   <span class="partition-title">
                     <span class="status-dot-inline active"></span>
-                    <span>${b.group.name} &bull; Active Members</span>
+                    <span>${escapeHtml(b.group.name)} &bull; Active Members</span>
                   </span>
                   <span class="partition-badge active">${b.active.length} active</span>
                 </div>
@@ -3632,7 +3636,7 @@
                 <div class="partition-header">
                   <span class="partition-title">
                     <span class="status-dot-inline graduated"></span>
-                    <span>${b.group.name} &bull; Former / Graduated Members</span>
+                    <span>${escapeHtml(b.group.name)} &bull; Former / Graduated Members</span>
                   </span>
                   <span class="partition-badge graduated">${b.graduated.length} graduated</span>
                 </div>
@@ -3727,30 +3731,30 @@
 
           const avatarStack = grpMembers.slice(0, 5).map(m => {
             const mSrc = m.avatar_cached_path ? `./${m.avatar_cached_path}` : 'assets/avatars/default_avatar.webp';
-            return `<img src="${mSrc}" alt="${m.stage_name}" class="mini-avatar" title="${m.stage_name}" onerror="this.onerror=null;this.src='assets/avatars/default_avatar.webp'">`;
+            return `<img src="${escapeHtml(mSrc)}" alt="${escapeHtml(m.stage_name)}" class="mini-avatar" title="${escapeHtml(m.stage_name)}" onerror="this.onerror=null;this.src='assets/avatars/default_avatar.webp'">`;
           }).join('');
 
           const moreCount = grpMembers.length > 5 ? `<div class="roster-more">+${grpMembers.length - 5}</div>` : '';
 
           const snsIcons = g.sns.map(s => {
             const iconSvg = ICONS[s.platform] || ICONS.link;
-            return `<a href="${s.url}" target="_blank" rel="noopener noreferrer" class="sns-link" title="${s.platform}" onclick="event.stopPropagation();">${iconSvg}</a>`;
+            return `<a href="${escapeHtml(safeUrl(s.url))}" target="_blank" rel="noopener noreferrer" class="sns-link" title="${escapeHtml(s.platform)}" onclick="event.stopPropagation();">${iconSvg}</a>`;
           }).join('');
 
           return `
-            <article class="group-card" onclick="openGroupModal('${g.id}')">
-              <div class="group-accent-bar" style="background-color: ${themeHex};"></div>
+            <article class="group-card" onclick="openGroupModal(${jsArg(g.id)})">
+              <div class="group-accent-bar" style="background-color: ${escapeHtml(themeHex)};"></div>
               
               <div class="group-header">
-                <img src="${avatarSrc}" alt="${g.name}" class="group-avatar" onerror="this.onerror=null;this.src='assets/avatars/default_avatar.webp'">
+                <img src="${escapeHtml(avatarSrc)}" alt="${escapeHtml(g.name)}" class="group-avatar" onerror="this.onerror=null;this.src='assets/avatars/default_avatar.webp'">
                 <div class="group-meta">
-                  <h3 class="group-name">${g.name}</h3>
-                  <span class="group-company-badge">${comp?.name || g.company_id}</span>
+                  <h3 class="group-name">${escapeHtml(g.name)}</h3>
+                  <span class="group-company-badge">${escapeHtml(comp?.name || g.company_id)}</span>
                 </div>
               </div>
 
               <div class="group-stats-row">
-                <span>Debut: <b>${g.debut_date || 'N/A'}</b></span>
+                <span>Debut: <b>${escapeHtml(g.debut_date || 'N/A')}</b></span>
                 <span><b>${activeCount}</b> active idol${activeCount === 1 ? '' : 's'}</span>
               </div>
 
@@ -3760,7 +3764,7 @@
               </div>
 
               <div class="member-footer">
-                <span style="font-size: 0.75rem; color: var(--text-muted);">Theme: <b style="color: ${themeHex};">${g.theme_color?.name || 'N/A'}</b></span>
+                <span style="font-size: 0.75rem; color: var(--text-muted);">Theme: <b style="color: ${escapeHtml(themeHex)};">${escapeHtml(g.theme_color?.name || 'N/A')}</b></span>
                 <div class="sns-icons">${snsIcons}</div>
               </div>
             </article>
@@ -3805,32 +3809,32 @@
           const avatarSrc = c.avatar_cached_path ? `./${c.avatar_cached_path}` : 'assets/avatars/default_avatar.webp';
 
           const groupChips = compGroups.map(g => {
-            return `<span class="group-chip" onclick="event.stopPropagation(); openGroupModal('${g.id}')">${g.name}</span>`;
+            return `<span class="group-chip" onclick="event.stopPropagation(); openGroupModal(${jsArg(g.id)})">${escapeHtml(g.name)}</span>`;
           }).join('');
 
           const snsIcons = (c.sns || []).map(s => {
             const iconSvg = ICONS[s.platform] || ICONS.link;
             return `
-              <a href="${s.url}" target="_blank" rel="noopener noreferrer" class="sns-icon" title="${s.platform}: @${s.current_handle}" onclick="event.stopPropagation();">
+              <a href="${escapeHtml(safeUrl(s.url))}" target="_blank" rel="noopener noreferrer" class="sns-icon" title="${escapeHtml(s.platform)}: @${escapeHtml(s.current_handle)}" onclick="event.stopPropagation();">
                 ${iconSvg}
               </a>
             `;
           }).join('');
 
           const websiteIcon = c.website_url ? `
-            <a href="${c.website_url}" target="_blank" rel="noopener noreferrer" class="sns-icon" title="Official Website" onclick="event.stopPropagation();">
+            <a href="${escapeHtml(safeUrl(c.website_url))}" target="_blank" rel="noopener noreferrer" class="sns-icon" title="Official Website" onclick="event.stopPropagation();">
               ${ICONS.link}
             </a>
           ` : '';
 
           return `
-            <article class="company-card" onclick="openCompanyModal('${c.id}')">
+            <article class="company-card" onclick="openCompanyModal(${jsArg(c.id)})">
               <div class="company-header">
                 <div style="display: flex; align-items: center; gap: 1rem;">
-                  <img class="company-avatar" src="${avatarSrc}" alt="${c.name}" onerror="this.onerror=null;this.src='assets/avatars/default_avatar.webp'">
+                  <img class="company-avatar" src="${escapeHtml(avatarSrc)}" alt="${escapeHtml(c.name)}" onerror="this.onerror=null;this.src='assets/avatars/default_avatar.webp'">
                   <div>
-                    <h2 class="company-title">${c.name}</h2>
-                    <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.2rem;">Location: ${c.country} • Status: Active</div>
+                    <h2 class="company-title">${escapeHtml(c.name)}</h2>
+                    <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.2rem;">Location: ${escapeHtml(c.country)} • Status: Active</div>
                   </div>
                 </div>
                 <span class="brand-badge" style="font-size: 0.8rem;">${compGroups.length} Groups</span>
@@ -3894,13 +3898,13 @@
           const g = groupMap.get(ms.group_id);
           const cHex = ms.color?.hex || '#94a3b8';
           return `
-            <div class="membership-history-card" onclick="openGroupModal('${ms.group_id}')">
+            <div class="membership-history-card" onclick="openGroupModal(${jsArg(ms.group_id)})">
               <div class="history-group-info">
-                <div class="history-color-circle" style="background-color: ${cHex};"></div>
+                <div class="history-color-circle" style="background-color: ${escapeHtml(cHex)};"></div>
                 <div>
-                  <div style="font-weight: 700; font-size: 1rem; color: var(--text-primary);">${g ? g.name : ms.group_id}</div>
+                  <div style="font-weight: 700; font-size: 1rem; color: var(--text-primary);">${escapeHtml(g ? g.name : ms.group_id)}</div>
                   <div style="font-size: 0.8rem; color: var(--text-muted);">
-                    Role: <b style="color: var(--text-secondary);">${ms.role || 'member'}</b> • Color: <span style="color: ${cHex};">${ms.color?.name || 'N/A'}</span>
+                    Role: <b style="color: var(--text-secondary);">${escapeHtml(ms.role || 'member')}</b> • Color: <span style="color: ${escapeHtml(cHex)};">${escapeHtml(ms.color?.name || 'N/A')}</span>
                   </div>
                 </div>
               </div>
@@ -3922,14 +3926,14 @@
             return `
               <div class="social-btn" style="opacity: 0.5; cursor: default;">
                 ${icon}
-                <span>${s.platform.toUpperCase()}: (Not available)</span>
+                <span>${escapeHtml(s.platform.toUpperCase())}: (Not available)</span>
               </div>
             `;
           }
           return `
-            <a href="${s.url}" target="_blank" rel="noopener noreferrer" class="social-btn">
+            <a href="${escapeHtml(safeUrl(s.url))}" target="_blank" rel="noopener noreferrer" class="social-btn">
               ${icon}
-              <span>${s.platform.toUpperCase()}: @${s.current_handle || ''}</span>
+              <span>${escapeHtml(s.platform.toUpperCase())}: @${escapeHtml(s.current_handle || '')}</span>
             </a>
           `;
         }).join('');
@@ -3960,7 +3964,7 @@
         document.getElementById('modal-group-title').textContent = g.name;
 
         const subText = `Agency: ${comp?.name || g.company_id} • Debut: ${g.debut_date || 'N/A'}`;
-        document.getElementById('modal-group-sub').innerHTML = `${subText} &bull; <a href="javascript:void(0)" onclick="filterByGroup('${g.id}')" style="color: #60a5fa; text-decoration: underline; font-weight: 600;">Filter idols by ${g.name} &rarr;</a>`;
+        document.getElementById('modal-group-sub').innerHTML = `${escapeHtml(subText)} &bull; <a href="javascript:void(0)" onclick="filterByGroup(${jsArg(g.id)})" style="color: #60a5fa; text-decoration: underline; font-weight: 600;">Filter idols by ${escapeHtml(g.name)} &rarr;</a>`;
 
         // Group members
         const groupMemberships = state.data.memberships.filter(ms => ms.group_id === g.id);
@@ -3973,10 +3977,10 @@
             if (!mem) return '';
             const mSrc = mem.avatar_cached_path ? `./${mem.avatar_cached_path}` : 'assets/avatars/default_avatar.webp';
             return `
-              <div class="roster-card" onclick="openMemberModal('${mem.id}')">
-                <img src="${mSrc}" alt="${mem.stage_name}" class="roster-thumb" onerror="this.onerror=null;this.src='assets/avatars/default_avatar.webp'">
-                <div class="roster-name">${mem.stage_name}</div>
-                <div class="roster-role" style="color: ${ms.color?.hex || 'var(--text-muted)'};">${ms.color?.name || ms.role}</div>
+              <div class="roster-card" onclick="openMemberModal(${jsArg(mem.id)})">
+                <img src="${escapeHtml(mSrc)}" alt="${escapeHtml(mem.stage_name)}" class="roster-thumb" onerror="this.onerror=null;this.src='assets/avatars/default_avatar.webp'">
+                <div class="roster-name">${escapeHtml(mem.stage_name)}</div>
+                <div class="roster-role" style="color: ${escapeHtml(ms.color?.hex || 'var(--text-muted)')};">${escapeHtml(ms.color?.name || ms.role)}</div>
               </div>
             `;
           }).join('');
@@ -3996,16 +4000,16 @@
         let linksHtml = g.sns.map(s => {
           const icon = ICONS[s.platform] || ICONS.link;
           return `
-            <a href="${s.url}" target="_blank" rel="noopener noreferrer" class="social-btn">
+            <a href="${escapeHtml(safeUrl(s.url))}" target="_blank" rel="noopener noreferrer" class="social-btn">
               ${icon}
-              <span>${s.platform.toUpperCase()}</span>
+              <span>${escapeHtml(s.platform.toUpperCase())}</span>
             </a>
           `;
         }).join('');
 
         if (g.music_links?.spotify) {
           linksHtml += `
-            <a href="${g.music_links.spotify}" target="_blank" rel="noopener noreferrer" class="social-btn">
+            <a href="${escapeHtml(safeUrl(g.music_links.spotify))}" target="_blank" rel="noopener noreferrer" class="social-btn">
               ${ICONS.link}
               <span>Spotify Artist</span>
             </a>
@@ -4045,12 +4049,12 @@
           const gAvatar = g.avatar_cached_path ? `./${g.avatar_cached_path}` : 'assets/avatars/default_avatar.webp';
           const activeCount = state.data.memberships.filter(ms => ms.group_id === g.id && (ms.status === 'active')).length;
           return `
-            <div class="roster-card" onclick="openGroupModal('${g.id}')" style="cursor: pointer; border-left: 3px solid ${themeHex}; text-align: left; padding: 0.85rem 1rem;">
+            <div class="roster-card" onclick="openGroupModal(${jsArg(g.id)})" style="cursor: pointer; border-left: 3px solid ${escapeHtml(themeHex)}; text-align: left; padding: 0.85rem 1rem;">
               <div style="display: flex; align-items: center; gap: 0.75rem;">
-                <img src="${gAvatar}" alt="${g.name}" class="roster-thumb" style="width: 44px; height: 44px; border-radius: var(--radius-sm);" onerror="this.onerror=null;this.src='assets/avatars/default_avatar.webp'">
+                <img src="${escapeHtml(gAvatar)}" alt="${escapeHtml(g.name)}" class="roster-thumb" style="width: 44px; height: 44px; border-radius: var(--radius-sm);" onerror="this.onerror=null;this.src='assets/avatars/default_avatar.webp'">
                 <div>
-                  <div class="roster-name" style="font-weight: 700; font-size: 0.95rem;">${g.name}</div>
-                  <div class="roster-role" style="font-size: 0.75rem; color: var(--text-muted);">${activeCount} active member${activeCount === 1 ? '' : 's'} &bull; Debut: ${g.debut_date || 'N/A'}</div>
+                  <div class="roster-name" style="font-weight: 700; font-size: 0.95rem;">${escapeHtml(g.name)}</div>
+                  <div class="roster-role" style="font-size: 0.75rem; color: var(--text-muted);">${activeCount} active member${activeCount === 1 ? '' : 's'} &bull; Debut: ${escapeHtml(g.debut_date || 'N/A')}</div>
                 </div>
               </div>
             </div>
@@ -4063,16 +4067,16 @@
         let linksHtml = (c.sns || []).map(s => {
           const icon = ICONS[s.platform] || ICONS.link;
           return `
-            <a href="${s.url}" target="_blank" rel="noopener noreferrer" class="social-btn">
+            <a href="${escapeHtml(safeUrl(s.url))}" target="_blank" rel="noopener noreferrer" class="social-btn">
               ${icon}
-              <span>${s.platform.charAt(0).toUpperCase() + s.platform.slice(1)}</span>
+              <span>${escapeHtml(s.platform.charAt(0).toUpperCase() + s.platform.slice(1))}</span>
             </a>
           `;
         }).join('');
 
         if (c.website_url) {
           linksHtml += `
-            <a href="${c.website_url}" target="_blank" rel="noopener noreferrer" class="social-btn">
+            <a href="${escapeHtml(safeUrl(c.website_url))}" target="_blank" rel="noopener noreferrer" class="social-btn">
               ${ICONS.link}
               <span>Official Website</span>
             </a>
