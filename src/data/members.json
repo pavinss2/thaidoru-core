@@ -2301,10 +2301,10 @@
     "stage_name": "Ni",
     "stage_name_th": "นิ",
     "real_name": {
-      "first_name_en": "Warissara",
-      "last_name_en": "Fuangthip",
       "first_name_th": "วริศรา",
-      "last_name_th": "เฟื่องทิพย์"
+      "last_name_th": "เฟื่องทิพย์",
+      "first_name_en": "Warissara",
+      "last_name_en": "Fuangthip"
     },
     "birthday": {
       "month": 3,
@@ -2314,7 +2314,7 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": "1437438343714004992",
+        "profile_id": "1607400899575705600",
         "current_handle": "nitgg170",
         "url": "https://x.com/nitgg170",
         "avatar_url": "https://pbs.twimg.com/profile_images/2059981733278404608/BXWHeBK2_400x400.jpg"
@@ -4899,5 +4899,37 @@
     },
     "avatar_cached_path": "assets/avatars/mizuki.webp",
     "sns": []
+  },
+  {
+    "id": "frenchfry",
+    "stage_name": "Frenchfry",
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": null,
+        "url": "https://x.com/French_Seishin",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2117239922818265088/wyys8ldV_400x400.jpg"
+      }
+    ],
+    "avatar_cached_path": "assets/avatars/default_avatar.webp",
+    "real_name": {},
+    "birthday": {}
+  },
+  {
+    "id": "gigi_seishin",
+    "stage_name": "Gigi",
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": null,
+        "url": "https://x.com/GiGi_Seishin",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2117235409529004032/9z0r36eG_400x400.jpg"
+      }
+    ],
+    "avatar_cached_path": "assets/avatars/default_avatar.webp",
+    "real_name": {},
+    "birthday": {}
   }
 ]
