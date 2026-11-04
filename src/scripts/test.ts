@@ -130,9 +130,14 @@ try {
   const allCompanyFilesExist = companies.every(c => c.avatar_cached_path && fs.existsSync(path.join(ROOT_DIR, c.avatar_cached_path)));
   assert(allCompanyFilesExist, 'All company WebP avatar files physically exist on disk');
 
-  // Test 10: Member birthday completeness
-  const allMembersHaveBirthday = members.every(m => m.birthday && typeof m.birthday.month === 'number' && typeof m.birthday.day === 'number');
-  assert(allMembersHaveBirthday, `All ${members.length} members have complete month and day birthdays`);
+  // Test 10: Member birthdays. A brand-new idol may not have a known birthday
+  // yet, so a missing one is only a warning; a half-filled one is an error.
+  const hasMonth = (m: any) => typeof m.birthday?.month === 'number';
+  const hasDay = (m: any) => typeof m.birthday?.day === 'number';
+  const halfBirthdays = members.filter(m => hasMonth(m) !== hasDay(m));
+  assert(halfBirthdays.length === 0, `No member has only a birthday month or only a day${halfBirthdays.length ? ` (found: ${halfBirthdays.map(m => m.id).join(', ')})` : ''}`);
+  const noBirthday = members.filter(m => !hasMonth(m) && !hasDay(m));
+  if (noBirthday.length) console.warn(`  WARN: ${noBirthday.length} member(s) have no birthday yet: ${noBirthday.map(m => m.id).join(', ')}`);
 
   // Test 11: Group SNS coverage (X and Instagram for all 17 groups)
   const allGroupsHaveXAndIG = groups.every(g => {

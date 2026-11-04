@@ -2111,7 +2111,7 @@
           <div class="form-row">
             <div class="form-group">
               <label class="form-label" for="edit-mem-id">Canonical ID *</label>
-              <input type="text" id="edit-mem-id" class="form-input" required placeholder="e.g. sora-sora_pim">
+              <input type="text" id="edit-mem-id" class="form-input" required placeholder="e.g. pim (lowercase letters, numbers, -)">
             </div>
             <div class="form-group">
               <label class="form-label" for="edit-mem-stage-name">Stage Name (EN) *</label>
@@ -2536,6 +2536,11 @@
   <script>
     (function () {
       // Escape every data/user value interpolated into HTML strings.
+      // Cached member avatars keep the same file name when they change, so add a
+      // version (number of archived avatars) to make browsers fetch the new one.
+      const memberAvatarSrc = (m) => m && m.avatar_cached_path
+        ? `./${m.avatar_cached_path}${m.avatar_history?.length ? `?v=${m.avatar_history.length}` : ''}`
+        : null;
       const escapeHtml = (t) => String(t).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
       // Only http(s) links from data; anything else (javascript:, data:) becomes '#'.
       const safeUrl = (u) => /^https?:\/\//i.test(String(u ?? '')) ? u : '#';
@@ -3166,6 +3171,11 @@
           return;
         }
 
+        if (!/^[a-z0-9-]+$/.test(id)) {
+          showToast('ID can only use lowercase letters, numbers and "-" (e.g. gigi-seishin).', 'error');
+          return;
+        }
+
         if (isNew && state.data.members.some(m => m.id === id)) {
           showToast(`Member ID "${id}" already exists.`, 'error');
           return;
@@ -3228,6 +3238,11 @@
         const isActive = (status === 'active');
         const endDate = isActive ? null : (endDateInput || new Date().toISOString().slice(0, 10));
         if (ms) {
+          // Keep the membership id in step with its group ("<group>_<member>").
+          const newMsId = `${groupId}_${id}`;
+          if (ms.group_id !== groupId && ms.id === `${ms.group_id}_${id}` && !state.data.memberships.some(m => m.id === newMsId)) {
+            ms.id = newMsId;
+          }
           ms.group_id = groupId;
           ms.role = role;
           ms.status = status;
@@ -3578,7 +3593,7 @@
         shown.sort((a, b) => a.m.stage_name.localeCompare(b.m.stage_name));
         list.innerHTML = shown.map(({ m, handle, problems }) => {
           const groups = m.memberships.filter(ms => ms.status === 'active').map(ms => groupMap.get(ms.group_id)?.name || ms.group_id).join(', ');
-          const avatar = m.avatar_cached_path ? `./${m.avatar_cached_path}` : 'assets/avatars/default_avatar.webp';
+          const avatar = m.avatar_cached_path ? memberAvatarSrc(m) : 'assets/avatars/default_avatar.webp';
           return `
             <div class="xlink-row">
               <img src="${escapeHtml(avatar)}" alt="" loading="lazy" onerror="this.onerror=null;this.src='assets/avatars/default_avatar.webp';">
@@ -4142,7 +4157,7 @@
           const matchingMs = m.memberships.find(membershipMatchesFilters) || m.memberships.find(ms => (ms.status === 'active')) || m.memberships[0];
 
           const colorHex = matchingMs?.color?.hex || '#3b82f6';
-          const avatarSrc = m.avatar_cached_path ? `./${m.avatar_cached_path}` : (m.sns.find(s => s.avatar_url) ? safeUrl(m.sns.find(s => s.avatar_url).avatar_url) : 'assets/avatars/default_avatar.webp');
+          const avatarSrc = m.avatar_cached_path ? memberAvatarSrc(m) : (m.sns.find(s => s.avatar_url) ? safeUrl(m.sns.find(s => s.avatar_url).avatar_url) : 'assets/avatars/default_avatar.webp');
           
           const bdayStr = m.birthday?.day && m.birthday?.month ? `🎂 ${m.birthday.day} ${MONTHS[m.birthday.month - 1]}${m.birthday.year ? ', ' + m.birthday.year : ''}` : '';
 
@@ -4345,7 +4360,7 @@
           const activeCount = grpMembers.filter(m => m.memberships.some(ms => ms.group_id === g.id && (ms.status === 'active'))).length;
 
           const avatarStack = grpMembers.map((m, i) => {
-            const mSrc = m.avatar_cached_path ? `./${m.avatar_cached_path}` : 'assets/avatars/default_avatar.webp';
+            const mSrc = m.avatar_cached_path ? memberAvatarSrc(m) : 'assets/avatars/default_avatar.webp';
             return `<img src="${escapeHtml(mSrc)}" alt="${escapeHtml(m.stage_name)}" class="mini-avatar${i >= 5 ? ' roster-extra' : ''}" loading="lazy" title="${escapeHtml(m.stage_name)}" onerror="this.onerror=null;this.src='assets/avatars/default_avatar.webp'">`;
           }).join('');
 
@@ -4523,7 +4538,7 @@
 
         if (updateHash) location.hash = `member/${m.id}`;
 
-        const avatarSrc = m.avatar_cached_path ? `./${m.avatar_cached_path}` : 'assets/avatars/default_avatar.webp';
+        const avatarSrc = m.avatar_cached_path ? memberAvatarSrc(m) : 'assets/avatars/default_avatar.webp';
         avatarSlides = [{ src: avatarSrc, label: 'Current' }].concat(
           (m.avatar_history || []).map(h => ({ src: `./${h.path}`, label: `Used until ${h.archived_at}` }))
         );
@@ -4628,7 +4643,7 @@
           return memberships.map(ms => {
             const mem = memberMap.get(ms.member_id);
             if (!mem) return '';
-            const mSrc = mem.avatar_cached_path ? `./${mem.avatar_cached_path}` : 'assets/avatars/default_avatar.webp';
+            const mSrc = mem.avatar_cached_path ? memberAvatarSrc(mem) : 'assets/avatars/default_avatar.webp';
             return `
               <div class="roster-card" onclick="openMemberModal(${jsArg(mem.id)})">
                 <img src="${escapeHtml(mSrc)}" alt="${escapeHtml(mem.stage_name)}" class="roster-thumb" onerror="this.onerror=null;this.src='assets/avatars/default_avatar.webp'">

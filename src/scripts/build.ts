@@ -92,7 +92,8 @@ const denormalizedGroups = groups.map(g => {
   const grpMemberships = memberships.filter(ms => ms.group_id === g.id);
   const activeMembers = grpMemberships.map(ms => {
     const mem = memberMap.get(ms.member_id)!;
-    const cachedUrl = mem.avatar_cached_path ? `${cdnBase}/${mem.avatar_cached_path}` : null;
+    // ?v= changes whenever the avatar changes (same file name), so caches refresh.
+    const cachedUrl = mem.avatar_cached_path ? `${cdnBase}/${mem.avatar_cached_path}${mem.avatar_history?.length ? `?v=${mem.avatar_history.length}` : ''}` : null;
     const xSns = mem.sns.find(s => s.platform === 'x');
     const fallbackUrl = xSns?.avatar_url || mem.sns.find(s => s.avatar_url)?.avatar_url || null;
 
@@ -162,7 +163,7 @@ const dimMembers = memberships.map(ms => {
   const mem = memberMap.get(ms.member_id)!;
 
   // Prefer permanently cached WebP avatar on CDN, fallback to scraped URL
-  const cachedUrl = mem.avatar_cached_path ? `${cdnBase}/${mem.avatar_cached_path}` : '';
+  const cachedUrl = mem.avatar_cached_path ? `${cdnBase}/${mem.avatar_cached_path}${mem.avatar_history?.length ? `?v=${mem.avatar_history.length}` : ''}` : '';
   const xSns = mem.sns.find(s => s.platform === 'x');
   const fallbackUrl = xSns?.avatar_url || mem.sns.find(s => s.avatar_url)?.avatar_url || '';
   const avatarUrl = cachedUrl || fallbackUrl;
