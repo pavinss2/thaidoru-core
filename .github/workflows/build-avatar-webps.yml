@@ -11,7 +11,7 @@ on:
         type: boolean
         default: false
       only:
-        description: 'Comma-separated member ids (blank = all members)'
+        description: 'Member ids, comma separated, spaces OK (blank = all members)'
         type: string
         default: ''
       dry_run:
@@ -47,8 +47,8 @@ jobs:
         env:
           FORCE: ${{ inputs.rebuild_all && '--force' || '' }}
           DRY_RUN: ${{ inputs.dry_run && '--dry-run' || '' }}
-          ONLY: ${{ inputs.only && format('--only={0}', inputs.only) || '' }}
-        run: npm run refresh:avatars -- --webp-only $FORCE $DRY_RUN $ONLY
+          ONLY_IDS: ${{ inputs.only }}
+        run: npm run refresh:avatars -- --webp-only $FORCE $DRY_RUN
 
       - name: Validate data
         run: npm test
