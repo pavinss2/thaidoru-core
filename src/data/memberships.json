@@ -1997,9 +1997,9 @@
       "name": "Green",
       "hex": "#148e57"
     },
-    "status": "active",
+    "status": "graduated",
     "joined_date": null,
-    "end_date": null
+    "end_date": "2026-10-31"
   },
   {
     "id": "zyn_ami",
@@ -2077,6 +2077,32 @@
       "hex": "#6bffe1"
     },
     "joined_date": "2026-11-04",
+    "end_date": null
+  },
+  {
+    "id": "seishin-kakumei_frenchfry",
+    "group_id": "seishin-kakumei",
+    "member_id": "frenchfry",
+    "status": "active",
+    "role": "member",
+    "color": {
+      "name": "Red",
+      "hex": "#ff0000"
+    },
+    "joined_date": "2026-11-08",
+    "end_date": null
+  },
+  {
+    "id": "sora-sora_gigi_seishin",
+    "group_id": "seishin-kakumei",
+    "member_id": "gigi_seishin",
+    "status": "active",
+    "role": "member",
+    "color": {
+      "name": "Blue",
+      "hex": "#1c6ef2"
+    },
+    "joined_date": "2026-11-08",
     "end_date": null
   }
 ]
