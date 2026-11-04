@@ -29,6 +29,7 @@ export const MemberSchema = z.object({
   real_name: MemberRealNameSchema.default({}),
   birthday: MemberBirthdaySchema.default({}),
   avatar_cached_path: z.string().nullable().optional(),
+  avatar_source_url: z.string().url().nullable().optional().describe('X avatar URL the current avatar_cached_path webp was built from. If the X avatar_url differs (e.g. edited by hand), the refresh job rebuilds the webp.'),
   avatar_history: z.array(AvatarHistoryEntrySchema).optional().describe('Older avatars, newest first. Filled by refresh-x-avatars.'),
   sns: z.array(SNSChannelSchema).default([])
 });
