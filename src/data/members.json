@@ -2899,7 +2899,15 @@
         "url": "https://x.com/mikoto_denshi",
         "avatar_url": "https://pbs.twimg.com/profile_images/2084975172944330752/ecV6kzsy_400x400.jpg"
       }
-    ]
+    ],
+    "avatar_history": [
+      {
+        "path": "assets/avatars/history/mikoto/2026-11-04.webp",
+        "source_url": null,
+        "archived_at": "2026-11-04"
+      }
+    ],
+    "avatar_source_url": "https://pbs.twimg.com/profile_images/2084975172944330752/ecV6kzsy_400x400.jpg"
   },
   {
     "id": "airi",
@@ -5157,7 +5165,9 @@
         "current_handle": "namfah.room",
         "url": "https://www.tiktok.com/@namfah.room"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/namfah.webp",
+    "avatar_source_url": "https://pbs.twimg.com/profile_images/2080265090088239104/r2jBDJOk_400x400.jpg"
   },
   {
     "id": "punch-sumomo",
@@ -5227,7 +5237,9 @@
         "current_handle": "erin.stellagrima",
         "url": "https://www.tiktok.com/@erin.stellagrima"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/erin.webp",
+    "avatar_source_url": "https://pbs.twimg.com/profile_images/2080262710965735424/GFMITVdW_400x400.jpg"
   },
   {
     "id": "yosei",
@@ -5265,7 +5277,9 @@
         "current_handle": "isfairy_yousei",
         "url": "https://www.tiktok.com/@isfairy_yousei"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/yosei.webp",
+    "avatar_source_url": "https://pbs.twimg.com/profile_images/2080263510194597888/kQHOtxVv_400x400.jpg"
   },
   {
     "id": "mata",
@@ -5303,7 +5317,9 @@
         "current_handle": "0_0marudesu",
         "url": "https://www.tiktok.com/@0_0marudesu"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/mata.webp",
+    "avatar_source_url": "https://pbs.twimg.com/profile_images/2080262052594216961/tNtDuN1B_400x400.jpg"
   },
   {
     "id": "christy",
@@ -5335,7 +5351,9 @@
         "current_handle": "christy.stellagrima",
         "url": "https://www.instagram.com/christy.stellagrima"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/christy.webp",
+    "avatar_source_url": "https://pbs.twimg.com/profile_images/2079541194116530176/mJtQnpey_400x400.jpg"
   },
   {
     "id": "mhaymhey",
@@ -5367,7 +5385,9 @@
         "current_handle": "mhaymhey.stellagrima",
         "url": "https://www.instagram.com/mhaymhey.stellagrima"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/mhaymhey.webp",
+    "avatar_source_url": "https://pbs.twimg.com/profile_images/2079539462439342080/uvN_Z1bJ_400x400.jpg"
   },
   {
     "id": "punchi",
@@ -5399,7 +5419,9 @@
         "current_handle": "punchi.stellagrima",
         "url": "https://www.instagram.com/punchi.stellagrima"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/punchi.webp",
+    "avatar_source_url": "https://pbs.twimg.com/profile_images/2079542932378685440/IXyplqIy_400x400.jpg"
   },
   {
     "id": "cinderella",
@@ -5431,7 +5453,9 @@
         "current_handle": "cinderella.stellagrima",
         "url": "https://www.instagram.com/cinderella.stellagrima"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/cinderella.webp",
+    "avatar_source_url": "https://pbs.twimg.com/profile_images/2079537739301863424/Wg4DWKBY_400x400.jpg"
   },
   {
     "id": "noojaa",
@@ -5463,7 +5487,9 @@
         "current_handle": "noojaa.stellagrima",
         "url": "https://www.instagram.com/noojaa.stellagrima"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/noojaa.webp",
+    "avatar_source_url": "https://pbs.twimg.com/profile_images/2079539181282557952/SVewQTUA_400x400.jpg"
   },
   {
     "id": "minnie-ikinari",
@@ -5495,7 +5521,9 @@
         "current_handle": "Minnie.ikinari",
         "url": "https://www.instagram.com/Minnie.ikinari"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/minnie-ikinari.webp",
+    "avatar_source_url": "https://pbs.twimg.com/profile_images/2102022600671318016/u45bA2ai_400x400.jpg"
   },
   {
     "id": "minah",
@@ -5527,7 +5555,9 @@
         "current_handle": "minah.ikinari",
         "url": "https://www.instagram.com/minah.ikinari"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/minah.webp",
+    "avatar_source_url": "https://pbs.twimg.com/profile_images/2102021962147229697/XABHNhsU_400x400.jpg"
   },
   {
     "id": "sana",
@@ -5559,7 +5589,9 @@
         "current_handle": "sana.ikinari",
         "url": "https://www.instagram.com/sana.ikinari"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/sana.webp",
+    "avatar_source_url": "https://pbs.twimg.com/profile_images/2102023335127527424/xQZdq8ZI_400x400.jpg"
   },
   {
     "id": "lune",
@@ -5597,7 +5629,9 @@
         "current_handle": "Lune.ikinari",
         "url": "https://www.tiktok.com/@Lune.ikinari"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/lune.webp",
+    "avatar_source_url": "https://pbs.twimg.com/profile_images/2102020048928079872/tIU-kf0Q_400x400.jpg"
   },
   {
     "id": "shion",
@@ -5635,7 +5669,9 @@
         "current_handle": "Shion.ikinari",
         "url": "https://www.tiktok.com/@Shion.ikinari"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/shion.webp",
+    "avatar_source_url": "https://pbs.twimg.com/profile_images/2102056024618516480/DblZu9yY_400x400.jpg"
   },
   {
     "id": "yuna",
@@ -5672,7 +5708,9 @@
         "current_handle": "Yuna.ikinari",
         "url": "https://www.tiktok.com/@Yuna.ikinari"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/yuna.webp",
+    "avatar_source_url": "https://pbs.twimg.com/profile_images/2102021035872915458/XL3xp-hW_400x400.jpg"
   },
   {
     "id": "hanita",
@@ -5710,7 +5748,9 @@
         "current_handle": "hanita_denshi",
         "url": "https://www.tiktok.com/@hanita_denshi"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/hanita.webp",
+    "avatar_source_url": "https://pbs.twimg.com/profile_images/2084972882778877952/fePcyB95_400x400.jpg"
   },
   {
     "id": "autumn",
@@ -5748,7 +5788,9 @@
         "current_handle": "autumn_denshi",
         "url": "https://www.tiktok.com/@autumn_denshi"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/autumn.webp",
+    "avatar_source_url": "https://pbs.twimg.com/profile_images/2084974423258615808/emT9o7A3_400x400.jpg"
   },
   {
     "id": "biigew",
@@ -5786,7 +5828,9 @@
         "current_handle": "biigew_denshi",
         "url": "https://www.tiktok.com/@biigew_denshi"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/biigew.webp",
+    "avatar_source_url": "https://pbs.twimg.com/profile_images/2084974015626756096/oxWftg5z_400x400.jpg"
   },
   {
     "id": "marina",
@@ -5824,7 +5868,9 @@
         "current_handle": "marina_denshi",
         "url": "https://www.tiktok.com/@marina_denshi"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/marina.webp",
+    "avatar_source_url": "https://pbs.twimg.com/profile_images/2084975570383945728/tCRizqaj_400x400.jpg"
   },
   {
     "id": "bambiboo",
@@ -5862,7 +5908,9 @@
         "current_handle": "bambiboo_denshi",
         "url": "https://www.tiktok.com/@bambiboo_denshi"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/bambiboo.webp",
+    "avatar_source_url": "https://pbs.twimg.com/profile_images/2084972901737086976/7u6rQ4Sm_400x400.jpg"
   },
   {
     "id": "munin",
@@ -5900,7 +5948,9 @@
         "current_handle": "munin.silverlining",
         "url": "https://www.tiktok.com/@munin.silverlining"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/munin.webp",
+    "avatar_source_url": "https://pbs.twimg.com/profile_images/2092568014558461952/tpxtM7SW_400x400.jpg"
   },
   {
     "id": "aii",
@@ -5938,7 +5988,9 @@
         "current_handle": "aii.silverlining",
         "url": "https://www.tiktok.com/@aii.silverlining"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/aii.webp",
+    "avatar_source_url": "https://pbs.twimg.com/profile_images/2092568668257579008/Juo0qGqW_400x400.jpg"
   },
   {
     "id": "imy",
@@ -5976,7 +6028,9 @@
         "current_handle": "imy.silverlining",
         "url": "https://www.tiktok.com/@imy.silverlining"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/imy.webp",
+    "avatar_source_url": "https://pbs.twimg.com/profile_images/2092572084337827840/1LUY1D00_400x400.jpg"
   },
   {
     "id": "mio",
@@ -6014,7 +6068,9 @@
         "current_handle": "mio.silverlining",
         "url": "https://www.tiktok.com/@mio.silverlining"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/mio.webp",
+    "avatar_source_url": "https://pbs.twimg.com/profile_images/2092567776384999424/CBSANcXc_400x400.jpg"
   },
   {
     "id": "meily",
@@ -6052,7 +6108,9 @@
         "current_handle": "meily.silverlining",
         "url": "https://www.tiktok.com/@meily.silverlining"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/meily.webp",
+    "avatar_source_url": "https://pbs.twimg.com/profile_images/2092568729024622592/TT2p40D0_400x400.jpg"
   },
   {
     "id": "botan",
@@ -6090,7 +6148,9 @@
         "current_handle": "botan.silverlining",
         "url": "https://www.tiktok.com/@botan.silverlining"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/botan.webp",
+    "avatar_source_url": "https://pbs.twimg.com/profile_images/2092585943773683712/lkFG2uLu_400x400.jpg"
   },
   {
     "id": "riri",
@@ -6124,7 +6184,9 @@
         "current_handle": "riri.silverlining",
         "url": "https://www.tiktok.com/@riri.silverlining"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/riri.webp",
+    "avatar_source_url": "https://pbs.twimg.com/profile_images/2092583047124418561/G5x8uHev_400x400.jpg"
   },
   {
     "id": "tormai",
@@ -6162,7 +6224,9 @@
         "current_handle": "tormai_youmaybeme",
         "url": "https://www.tiktok.com/@tormai_youmaybeme"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/tormai.webp",
+    "avatar_source_url": "https://pbs.twimg.com/profile_images/2111319114216267776/3nI4vlT4_400x400.jpg"
   },
   {
     "id": "noei-noey",
@@ -6200,7 +6264,9 @@
         "current_handle": "noeynoey.youmaybem",
         "url": "https://www.tiktok.com/@noeynoey.youmaybem"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/noei-noey.webp",
+    "avatar_source_url": "https://pbs.twimg.com/profile_images/2111307872420450304/46b-VQsK_400x400.jpg"
   },
   {
     "id": "monie",
@@ -6238,7 +6304,9 @@
         "current_handle": "monie_youmaybeme",
         "url": "https://www.tiktok.com/@monie_youmaybeme"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/monie.webp",
+    "avatar_source_url": "https://pbs.twimg.com/profile_images/2111306497477189632/IA8uBb8M_400x400.jpg"
   },
   {
     "id": "morfor",
@@ -6276,7 +6344,9 @@
         "current_handle": "morfor.youmaybeme",
         "url": "https://www.tiktok.com/@morfor.youmaybeme"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/morfor.webp",
+    "avatar_source_url": "https://pbs.twimg.com/profile_images/2111307415627153408/a3YzA9cr_400x400.jpg"
   },
   {
     "id": "mimii",
@@ -6314,7 +6384,9 @@
         "current_handle": "mimii.youmaybeme",
         "url": "https://www.tiktok.com/@mimii.youmaybeme"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/mimii.webp",
+    "avatar_source_url": "https://pbs.twimg.com/profile_images/2111311441706029057/mZUSDDnk_400x400.jpg"
   },
   {
     "id": "baiyok",
@@ -6352,6 +6424,8 @@
         "current_handle": "baiyok.youmaybeme",
         "url": "https://www.tiktok.com/@baiyok.youmaybeme"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/baiyok.webp",
+    "avatar_source_url": "https://pbs.twimg.com/profile_images/2111307993606426624/Vd1YwLL-_400x400.jpg"
   }
 ]
