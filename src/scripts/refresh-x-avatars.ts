@@ -3,12 +3,15 @@
  *
  * For every member with at least one *active* membership:
  *   1. Check their X avatar_url. If it still loads, leave them alone.
- *   2. If it is dead (4xx) or empty, look the account up again (by profile ID
- *      first, so a changed @handle is followed), then
+ *   2. If it is dead (4xx) or empty, look the account up again by @handle
+ *      (free FxTwitter API, result checked against the stored profile ID), then
  *   3. save the new avatar_url (and new handle if it changed), and
  *   4. regenerate assets/avatars/{id}.webp. The old webp is moved to
  *      assets/avatars/history/{id}/{date}.webp and listed in avatar_history,
  *      so the site can show older avatars.
+ *
+ * Members the bot can't fix (e.g. the idol changed their @handle) are listed in
+ * the file named by NEEDS_ATTENTION_FILE, which the workflow turns into an issue.
  *
  * Usage:
  *   npm run refresh:avatars                 # real run
@@ -76,9 +79,6 @@ async function main() {
 
   const targets = members.filter((m: any) => activeIds.has(m.id) && (!ONLY || ONLY.includes(m.id)));
   console.log(`Checking X avatars for ${targets.length} active members${DRY_RUN ? ' (dry run)' : ''}...`);
-  if (!process.env.X_BEARER_TOKEN) {
-    console.log('  Note: X_BEARER_TOKEN not set, so handle changes can only be followed via the stored handle.');
-  }
 
   for (const m of targets) {
     const x = m.sns?.find((s: any) => s.platform === 'x');
@@ -170,6 +170,22 @@ async function main() {
     ...(rows.length ? ['| Member | Result | Detail |', '|---|---|---|', ...rows.map(r => `| ${r.member} | ${r.result} | ${r.detail.replace(/\|/g, '\\|')} |`)] : [])
   ].join('\n');
   console.log('\n' + summary);
+  const failed = rows.filter(r => r.result === 'failed');
+  if (process.env.NEEDS_ATTENTION_FILE && failed.length && !DRY_RUN) {
+    const byId = new Map(members.map((m: any) => [m.id, m]));
+    fs.writeFileSync(process.env.NEEDS_ATTENTION_FILE, [
+      `The weekly avatar refresh (${TODAY}) couldn't update these idols automatically.`,
+      'Most likely they changed their X @handle. Find their new handle on X (the profile ID below never changes),',
+      'then update it on the site or in src/data/members.json. The next run will pick up the new avatar.',
+      '',
+      '| Member | Stored handle | Profile ID | Problem |',
+      '|---|---|---|---|',
+      ...failed.map(r => {
+        const x = (byId.get(r.member) as any)?.sns?.find((s: any) => s.platform === 'x') ?? {};
+        return `| ${r.member} | @${x.current_handle ?? '?'} | ${x.profile_id ?? '—'} | ${r.detail.replace(/\|/g, '\\|')} |`;
+      })
+    ].join('\n') + '\n');
+  }
   if (process.env.GITHUB_STEP_SUMMARY) fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY, summary + '\n');
 }
 

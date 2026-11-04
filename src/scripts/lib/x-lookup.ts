@@ -1,16 +1,11 @@
 /**
- * Look up an X (Twitter) account's current handle and avatar.
+ * Look up an X (Twitter) account's current handle and avatar, for free.
  *
- * Sources, tried in order:
- *
- *   1. Official X API v2 (needs the X_BEARER_TOKEN secret). Most reliable, and
- *      the only source that can look an account up by its profile ID, which is
- *      how we follow an idol who changed their @handle.
- *   2. FxTwitter public API (free, no secret, handle lookup only). Best effort:
- *      it is a third-party service and can be down or rate limited.
- *
- * Every result is checked against the stored profile ID when we have one, so a
- * recycled handle that now belongs to someone else is never accepted.
+ * Source: the FxTwitter public API (api.fxtwitter.com), which needs no key.
+ * It can only look accounts up by @handle, so if an idol changed their handle
+ * we can't find the new one automatically. When we know the account's
+ * profile ID, we check the result against it, so a recycled handle that now
+ * belongs to someone else is never accepted.
  */
 
 export interface XAccount {
@@ -45,50 +40,32 @@ async function getJson(url: string, headers: Record<string, string>): Promise<{ 
   return { status: res.status, body };
 }
 
-// ---------- 1. Official X API v2 ----------
-async function officialApi({ profileId, handle }: XLookupInput): Promise<XAccount | null> {
-  const token = process.env.X_BEARER_TOKEN;
-  if (!token) return null;
-  const path = profileId ? `users/${profileId}` : handle ? `users/by/username/${handle}` : null;
-  if (!path) return null;
-  const { status, body } = await getJson(
-    `https://api.x.com/2/${path}?user.fields=profile_image_url`,
-    { Authorization: `Bearer ${token}` }
-  );
-  if (status === 401 || status === 403) throw new Error(`X API rejected X_BEARER_TOKEN (HTTP ${status})`);
-  if (status === 402 || status === 429) throw new Error(`X API quota/credits problem (HTTP ${status})`);
-  const u = body?.data;
-  if (!u?.profile_image_url) return null;
-  return { id: u.id, handle: u.username, avatarUrl: toLargeAvatar(u.profile_image_url), source: 'x-api-v2' };
-}
-
-// ---------- 2. FxTwitter ----------
+// ---------- FxTwitter ----------
 async function fxTwitter({ handle }: XLookupInput): Promise<XAccount | null> {
   if (!handle) return null;
-  const { body } = await getJson(`https://api.fxtwitter.com/${handle}`, { 'User-Agent': 'thaidoru-core-avatar-bot' });
+  const { status, body } = await getJson(`https://api.fxtwitter.com/${handle}`, { 'User-Agent': 'thaidoru-core-avatar-bot' });
+  if (status === 404) throw new Error(`@${handle} not found (handle changed, suspended or deleted?)`);
+  if (status === 429 || status >= 500) throw new Error(`FxTwitter unavailable (HTTP ${status})`);
   const u = body?.user;
   if (!u?.avatar_url || !u?.screen_name) return null;
   return { id: u.id ? String(u.id) : null, handle: u.screen_name, avatarUrl: toLargeAvatar(u.avatar_url), source: 'fxtwitter' };
 }
 
-const PROVIDERS = [officialApi, fxTwitter];
+const PROVIDERS = [fxTwitter];
 
 export interface XLookupResult {
   account: XAccount | null;
   notes: string[];
 }
 
-/**
- * Find the account's current handle + avatar. Tries a profile-ID lookup first
- * (survives handle changes), then the stored handle.
- */
+/** Find the account's current handle + avatar from the stored handle. */
 export async function lookupXAccount(input: XLookupInput): Promise<XLookupResult> {
   const notes: string[] = [];
   const profileId = input.profileId || null;
   const handle = cleanHandle(input.handle);
-  const attempts: XLookupInput[] = [];
-  if (profileId) attempts.push({ profileId });
-  if (handle) attempts.push({ handle });
+  // Pass the profile ID along so a future ID-capable source can use it.
+  const attempts: XLookupInput[] = handle ? [{ profileId, handle }] : [];
+  if (!handle) notes.push('no X handle on record');
 
   for (const attempt of attempts) {
     for (const provider of PROVIDERS) {

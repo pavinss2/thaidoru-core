@@ -3,6 +3,7 @@ name: Weekly X Avatar Refresh
 # Checks every active (not graduated) member's X avatar URL. Dead or empty
 # ones get looked up again, saved, and re-cached as WebP. Old WebPs are kept
 # in assets/avatars/history/ so the site can swipe through them.
+# Fully free: uses the public FxTwitter API, no X API key or secret needed.
 on:
   schedule:
     - cron: '0 18 * * 0' # Every Monday 01:00 Bangkok time (Sunday 18:00 UTC)
@@ -20,6 +21,7 @@ on:
 permissions:
   contents: write # commit the updated members.json + webp files
   actions: write  # start the deploy workflow afterwards
+  issues: write   # open an issue listing idols the bot couldn't fix
 
 concurrency:
   group: x-avatar-refresh
@@ -43,7 +45,7 @@ jobs:
 
       - name: Refresh X avatars
         env:
-          X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
+          NEEDS_ATTENTION_FILE: ${{ runner.temp }}/needs-attention.md
           DRY_RUN: ${{ inputs.dry_run && '--dry-run' || '' }}
           ONLY: ${{ inputs.only && format('--only={0}', inputs.only) || '' }}
         run: npm run refresh:avatars -- $DRY_RUN $ONLY
@@ -80,3 +82,20 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: gh workflow run deploy.yml --ref main
+
+      # Idols the free lookup couldn't fix (usually a changed @handle) go into
+      # one open issue, so you can update their handle by hand.
+      - name: Report idols that need a manual fix
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          FILE: ${{ runner.temp }}/needs-attention.md
+        run: |
+          [ -f "$FILE" ] || { echo "Nothing needs a manual fix."; exit 0; }
+          TITLE="X avatars need a manual check"
+          NUM=$(gh issue list --state open --search "\"$TITLE\" in:title" --json number --jq '.[0].number')
+          if [ -n "$NUM" ]; then
+            gh issue comment "$NUM" --body-file "$FILE"
+          else
+            gh issue create --title "$TITLE" --body-file "$FILE"
+          fi
