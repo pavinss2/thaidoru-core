@@ -2093,9 +2093,9 @@
     "end_date": null
   },
   {
-    "id": "sora-sora_gigi_seishin",
+    "id": "seishin-kakumei_gigi-seishin",
     "group_id": "seishin-kakumei",
-    "member_id": "gigi_seishin",
+    "member_id": "gigi-seishin",
     "status": "active",
     "role": "member",
     "color": {

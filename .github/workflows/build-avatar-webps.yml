@@ -1,0 +1,83 @@
+name: Build Avatar WebPs from X URL
+
+# Manual job: makes assets/avatars/{id}.webp straight from each member's saved
+# X avatar URL. No X lookups. By default only members with no webp file yet;
+# tick "rebuild_all" to remake every webp (old ones are kept as history).
+on:
+  workflow_dispatch:
+    inputs:
+      rebuild_all:
+        description: 'Rebuild webps even for members that already have one'
+        type: boolean
+        default: false
+      only:
+        description: 'Comma-separated member ids (blank = all members)'
+        type: string
+        default: ''
+      dry_run:
+        description: 'Only report, do not change anything'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write # commit the new webp files + members.json
+  actions: write  # start the deploy workflow afterwards
+
+concurrency:
+  group: x-avatar-refresh # never run at the same time as the weekly refresh
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build webps from saved X avatar URLs
+        env:
+          FORCE: ${{ inputs.rebuild_all && '--force' || '' }}
+          DRY_RUN: ${{ inputs.dry_run && '--dry-run' || '' }}
+          ONLY: ${{ inputs.only && format('--only={0}', inputs.only) || '' }}
+        run: npm run refresh:avatars -- --webp-only $FORCE $DRY_RUN $ONLY
+
+      - name: Validate data
+        run: npm test
+
+      - name: Commit and push changes
+        id: commit
+        run: |
+          git add src/data/members.json assets/avatars
+          if git diff --cached --quiet; then
+            echo "No webp changes."
+            echo "pushed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Build avatar webps from X URLs: $(date -u +'%Y-%m-%d')"
+          for i in 1 2 3 4 5; do
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              echo "pushed=true" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+            sleep $((i * 5))
+          done
+          echo "Could not push after 5 tries" >&2
+          exit 1
+
+      # Pushes made with GITHUB_TOKEN don't trigger other workflows.
+      - name: Deploy site
+        if: steps.commit.outputs.pushed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml --ref main

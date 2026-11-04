@@ -30,20 +30,13 @@ export async function downloadAndOptimizeImage(url: string, outputPath: string):
   return true;
 }
 
-async function thumbprint(img: Buffer | string): Promise<Buffer> {
-  return sharp(img).resize(16, 16, { fit: 'fill' }).grayscale().raw().toBuffer();
-}
-
-/**
- * True when two images show the same picture, even if they were encoded
- * differently (re-compression changes bytes, not the picture).
- */
-export async function looksSame(a: Buffer | string, b: Buffer | string, tolerance = 6): Promise<boolean> {
+/** True only when both images are identical in every pixel (same size, same RGBA values). */
+export async function samePixels(a: Buffer | string, b: Buffer | string): Promise<boolean> {
   try {
-    const [ta, tb] = await Promise.all([thumbprint(a), thumbprint(b)]);
-    let diff = 0;
-    for (let i = 0; i < ta.length; i++) diff += Math.abs(ta[i] - tb[i]);
-    return diff / ta.length <= tolerance;
+    const [ra, rb] = await Promise.all(
+      [a, b].map(img => sharp(img).ensureAlpha().raw().toBuffer({ resolveWithObject: true }))
+    );
+    return ra.info.width === rb.info.width && ra.info.height === rb.info.height && ra.data.equals(rb.data);
   } catch {
     return false;
   }
