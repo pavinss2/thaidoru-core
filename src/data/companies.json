@@ -75,5 +75,70 @@
         "url": "https://www.instagram.com/ic45entertainment"
       }
     ]
+  },
+  {
+    "id": "siamdol",
+    "name": "Siamdol",
+    "country": "Thailand",
+    "status": "active",
+    "website_url": "https://www.siamdol.com",
+    "avatar_cached_path": "assets/avatars/company_siamdol.webp",
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": "783330189237379072",
+        "current_handle": "siamdol",
+        "url": "https://x.com/siamdol",
+        "avatar_url": "https://pbs.twimg.com/profile_images/1950549227660054529/gvF35aEp_400x400.jpg"
+      },
+      {
+        "platform": "facebook",
+        "profile_id": null,
+        "current_handle": "siamdol",
+        "url": "https://www.facebook.com/siamdol"
+      },
+      {
+        "platform": "youtube",
+        "profile_id": null,
+        "current_handle": "siamdol908",
+        "url": "https://www.youtube.com/@siamdol908"
+      }
+    ],
+    "description": "Bangkok idol agency (สยามดอล / サイアムドル), founded October 2016."
+  },
+  {
+    "id": "sonnetta",
+    "name": "SONNETTA",
+    "country": "Thailand",
+    "status": "active",
+    "avatar_cached_path": "assets/avatars/company_sonnetta.webp",
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": "1872332794267123712",
+        "current_handle": "SONNETTA_co",
+        "url": "https://x.com/SONNETTA_co",
+        "avatar_url": "https://pbs.twimg.com/profile_images/1872333007102885888/WqGlWkeN_400x400.jpg"
+      },
+      {
+        "platform": "facebook",
+        "profile_id": null,
+        "current_handle": "sonnetta.co",
+        "url": "https://www.facebook.com/sonnetta.co"
+      },
+      {
+        "platform": "instagram",
+        "profile_id": null,
+        "current_handle": "sonnetta.co",
+        "url": "https://www.instagram.com/sonnetta.co"
+      },
+      {
+        "platform": "youtube",
+        "profile_id": null,
+        "current_handle": "Sonnetta_co",
+        "url": "https://www.youtube.com/@Sonnetta_co"
+      }
+    ],
+    "description": "Thai idol agency founded in 2024."
   }
 ]

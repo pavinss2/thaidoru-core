@@ -715,5 +715,233 @@
       }
     ],
     "avatar_cached_path": "assets/avatars/group_zyn.webp"
+  },
+  {
+    "id": "sumomo",
+    "company_id": "siamdol",
+    "name": "SUMOMO",
+    "status": "active",
+    "country": "Thailand",
+    "debut_date": "2021-06-19",
+    "music_links": {},
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": "1199651343775846405",
+        "current_handle": "Officialsumomo",
+        "url": "https://x.com/Officialsumomo",
+        "avatar_url": "https://pbs.twimg.com/profile_images/1534823647533473792/fdjT53u5_400x400.jpg"
+      },
+      {
+        "platform": "facebook",
+        "profile_id": null,
+        "current_handle": "officialsumomo",
+        "url": "https://www.facebook.com/officialsumomo"
+      },
+      {
+        "platform": "instagram",
+        "profile_id": null,
+        "current_handle": "officialsumomo",
+        "url": "https://www.instagram.com/officialsumomo"
+      },
+      {
+        "platform": "tiktok",
+        "profile_id": null,
+        "current_handle": "sumomoofficial",
+        "url": "https://www.tiktok.com/@sumomoofficial"
+      },
+      {
+        "platform": "youtube",
+        "profile_id": null,
+        "current_handle": "sumomoofficial2288",
+        "url": "https://www.youtube.com/@sumomoofficial2288"
+      }
+    ],
+    "avatar_cached_path": "assets/avatars/group_sumomo.webp",
+    "native_name": "すもも"
+  },
+  {
+    "id": "stellagrima",
+    "company_id": "siamdol",
+    "name": "Stellagrima",
+    "status": "active",
+    "country": "Thailand",
+    "debut_date": "2024-11-23",
+    "music_links": {},
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": "1620886269248294913",
+        "current_handle": "stellagrimaTH",
+        "url": "https://x.com/stellagrimaTH",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2079529193789063168/zlt2rCgM_400x400.jpg"
+      },
+      {
+        "platform": "facebook",
+        "profile_id": "100089983987569",
+        "current_handle": "profile.php?id=100089983987569",
+        "url": "https://www.facebook.com/profile.php?id=100089983987569"
+      },
+      {
+        "platform": "instagram",
+        "profile_id": null,
+        "current_handle": "stellagrima_official",
+        "url": "https://www.instagram.com/stellagrima_official"
+      }
+    ],
+    "avatar_cached_path": "assets/avatars/group_stellagrima.webp",
+    "native_name": "ステラグリマ"
+  },
+  {
+    "id": "ikinari-tell-me",
+    "company_id": "siamdol",
+    "name": "IKINARI TELL ME",
+    "status": "active",
+    "country": "Thailand",
+    "debut_date": "2023-08-25",
+    "music_links": {
+      "spotify": "https://open.spotify.com/artist/6qdLDw1pUrCVNrmHtSzHQc"
+    },
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": "1663412254967209984",
+        "current_handle": "IKINARITELLME",
+        "url": "https://x.com/IKINARITELLME",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2102364617737740288/iZik_nb-_400x400.jpg"
+      },
+      {
+        "platform": "facebook",
+        "profile_id": null,
+        "current_handle": "Ikinaritellme",
+        "url": "https://www.facebook.com/Ikinaritellme"
+      },
+      {
+        "platform": "instagram",
+        "profile_id": null,
+        "current_handle": "ikinari_tellme",
+        "url": "https://www.instagram.com/ikinari_tellme"
+      }
+    ],
+    "avatar_cached_path": "assets/avatars/group_ikinari-tell-me.webp",
+    "native_name": "いきなりテルミー"
+  },
+  {
+    "id": "denshi220",
+    "company_id": "siamdol",
+    "name": "denshi220",
+    "status": "active",
+    "country": "Thailand",
+    "debut_date": null,
+    "music_links": {},
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": "2011381268790009856",
+        "current_handle": "denshi220",
+        "url": "https://x.com/denshi220",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2011381553906294784/joBqfNo6_400x400.jpg"
+      },
+      {
+        "platform": "facebook",
+        "profile_id": "61586455176222",
+        "current_handle": "profile.php?id=61586455176222",
+        "url": "https://www.facebook.com/profile.php?id=61586455176222"
+      },
+      {
+        "platform": "instagram",
+        "profile_id": null,
+        "current_handle": "denshi220",
+        "url": "https://www.instagram.com/denshi220"
+      },
+      {
+        "platform": "tiktok",
+        "profile_id": null,
+        "current_handle": "denshi220",
+        "url": "https://www.tiktok.com/@denshi220"
+      }
+    ],
+    "avatar_cached_path": "assets/avatars/group_denshi220.webp",
+    "native_name": "電子220"
+  },
+  {
+    "id": "silver-lining",
+    "company_id": "sonnetta",
+    "name": "SILVER LINING",
+    "status": "active",
+    "country": "Thailand",
+    "debut_date": "2025-04-18",
+    "music_links": {},
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": "1866055574481444864",
+        "current_handle": "SVLN_idol",
+        "url": "https://x.com/SVLN_idol",
+        "avatar_url": "https://pbs.twimg.com/profile_images/1992519185831010304/lS1d5IFv_400x400.jpg"
+      },
+      {
+        "platform": "facebook",
+        "profile_id": null,
+        "current_handle": "SILVERLINING.idol",
+        "url": "https://www.facebook.com/SILVERLINING.idol"
+      },
+      {
+        "platform": "instagram",
+        "profile_id": null,
+        "current_handle": "SILVERLINING.idol",
+        "url": "https://www.instagram.com/SILVERLINING.idol"
+      },
+      {
+        "platform": "tiktok",
+        "profile_id": null,
+        "current_handle": "SILVERLINING.idol",
+        "url": "https://www.tiktok.com/@SILVERLINING.idol"
+      },
+      {
+        "platform": "youtube",
+        "profile_id": null,
+        "current_handle": "silverlining_idol",
+        "url": "https://www.youtube.com/@silverlining_idol"
+      }
+    ],
+    "avatar_cached_path": "assets/avatars/group_silver-lining.webp"
+  },
+  {
+    "id": "you-maybe-me",
+    "company_id": "sonnetta",
+    "name": "you maybe me",
+    "status": "active",
+    "country": "Thailand",
+    "debut_date": "2026-10-17",
+    "music_links": {},
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": "2103591928562622464",
+        "current_handle": "ymbm_idol",
+        "url": "https://x.com/ymbm_idol",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2104602845257568256/FLK_z8Pb_400x400.jpg"
+      },
+      {
+        "platform": "facebook",
+        "profile_id": null,
+        "current_handle": "youmaybeme.idol",
+        "url": "https://www.facebook.com/youmaybeme.idol"
+      },
+      {
+        "platform": "instagram",
+        "profile_id": null,
+        "current_handle": "youmaybeme.idol",
+        "url": "https://www.instagram.com/youmaybeme.idol"
+      },
+      {
+        "platform": "tiktok",
+        "profile_id": null,
+        "current_handle": "youmaybeme.idol",
+        "url": "https://www.tiktok.com/@youmaybeme.idol"
+      }
+    ],
+    "avatar_cached_path": "assets/avatars/group_you-maybe-me.webp"
   }
 ]
