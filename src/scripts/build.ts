@@ -77,6 +77,12 @@ fs.writeFileSync(path.join(DIST_V1_DIR, 'groups.json'), JSON.stringify(groups, n
 fs.writeFileSync(path.join(DIST_V1_DIR, 'members.json'), JSON.stringify(members, null, 2));
 fs.writeFileSync(path.join(DIST_V1_DIR, 'memberships.json'), JSON.stringify(memberships, null, 2));
 
+// X link check result from the weekly bot (read by the site's admin panel).
+const X_LINK_STATUS = path.join(DATA_DIR, 'x-link-status.json');
+if (fs.existsSync(X_LINK_STATUS)) {
+  fs.copyFileSync(X_LINK_STATUS, path.join(DIST_V1_DIR, 'x-link-status.json'));
+}
+
 // 6. Build Denormalized "all.json" Bundle
 console.log(' Generating combined "all.json" bundle...');
 const cdnBase = process.env.CDN_BASE_URL || 'https://pavinss2.github.io/thaidoru-core';

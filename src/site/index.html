@@ -1552,6 +1552,152 @@
     body.is-admin #admin-toolbar.admin-only {
       display: flex;
     }
+    body.is-admin #x-link-panel.admin-only {
+      display: block;
+    }
+
+    /* Admin: X link check panel */
+    .xlink-panel {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    .xlink-panel.has-issues {
+      border-color: rgba(248, 113, 113, 0.45);
+    }
+    .xlink-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .xlink-title {
+      font-size: 1rem;
+      font-weight: 800;
+    }
+    .xlink-sub {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      margin-top: 0.15rem;
+    }
+    .xlink-sub a {
+      text-decoration: underline;
+    }
+    .xlink-actions {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .xlink-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.85rem;
+    }
+    .xlink-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--bg-surface-elevated);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-primary);
+      border-radius: var(--radius-full);
+      padding: 0.3rem 0.8rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .xlink-chip b {
+      font-variant-numeric: tabular-nums;
+    }
+    .xlink-chip.bad b {
+      color: #f87171;
+    }
+    .xlink-chip.active {
+      border-color: #60a5fa;
+      background: rgba(59, 130, 246, 0.15);
+    }
+    .xlink-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-top: 0.85rem;
+      max-height: 420px;
+      overflow-y: auto;
+    }
+    .xlink-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: var(--bg-surface-elevated);
+      border-radius: var(--radius-sm);
+      padding: 0.5rem 0.75rem;
+    }
+    .xlink-row img {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .xlink-row-main {
+      flex: 1;
+      min-width: 0;
+    }
+    .xlink-row-name {
+      font-weight: 700;
+      font-size: 0.875rem;
+    }
+    .xlink-row-name span {
+      color: var(--text-muted);
+      font-weight: 500;
+      font-size: 0.75rem;
+      margin-left: 0.35rem;
+    }
+    .xlink-problems {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.2rem;
+    }
+    .xlink-problem {
+      font-size: 0.72rem;
+      padding: 0.1rem 0.5rem;
+      border-radius: var(--radius-full);
+      background: rgba(248, 113, 113, 0.15);
+      color: #fca5a5;
+    }
+    .xlink-problem.avatar {
+      background: rgba(245, 158, 11, 0.15);
+      color: #fcd34d;
+    }
+    .xlink-problem.soft {
+      background: rgba(148, 163, 184, 0.12);
+      color: var(--text-secondary);
+    }
+    .xlink-row-actions {
+      display: flex;
+      gap: 0.4rem;
+      flex-shrink: 0;
+    }
+    .xlink-empty {
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      padding: 0.5rem 0;
+    }
+    @media (max-width: 600px) {
+      .xlink-row {
+        flex-wrap: wrap;
+      }
+      .xlink-row-actions {
+        width: 100%;
+        justify-content: flex-end;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1632,6 +1778,9 @@
         <button class="admin-action-btn" id="btn-github-connect">
           <span>🔗</span> <span id="github-connect-label">Connect GitHub</span>
         </button>
+        <button class="admin-action-btn" id="btn-xlink-jump" title="Idols with a missing or broken X link">
+          <span>🔗</span> <span id="xlink-toolbar-label">X links</span>
+        </button>
         <button class="admin-action-btn" id="btn-open-export">
           <span>💾</span> Export / Sync Changes
         </button>
@@ -1640,6 +1789,22 @@
         </button>
       </div>
     </div>
+
+    <!-- X Link Check (Super Admin Mode Only) -->
+    <section id="x-link-panel" class="xlink-panel admin-only" aria-labelledby="xlink-title">
+      <div class="xlink-head">
+        <div>
+          <div class="xlink-title" id="xlink-title">🔗 X link check</div>
+          <div class="xlink-sub" id="xlink-sub">Active idols only.</div>
+        </div>
+        <div class="xlink-actions">
+          <button class="admin-action-btn" id="btn-xlink-avatars" title="Load every active idol's X avatar in this browser to see which ones are broken">🖼️ Check avatars now</button>
+          <button class="admin-action-btn" id="btn-xlink-toggle" aria-expanded="false">Show list</button>
+        </div>
+      </div>
+      <div class="xlink-chips" id="xlink-chips"></div>
+      <div class="xlink-list" id="xlink-list" hidden></div>
+    </section>
 
     <!-- Navigation Tabs -->
     <nav class="tab-nav" role="tablist">
@@ -2410,6 +2575,7 @@
         const isSuperAdmin = isAdmin();
 
         document.body.classList.toggle('is-admin', isSuperAdmin);
+        if (isSuperAdmin) refreshXLinkPanel();
 
         if (!authContainer) return;
 
@@ -2471,6 +2637,7 @@
           console.error('Failed to persist to localStorage:', e);
         }
         updateGitHubLabels();
+        renderXLinkPanel();
       }
 
       // --- Save edits to GitHub as one pull request --------------------------
@@ -3146,6 +3313,228 @@
       window.openEditCompanyModal = openEditCompanyModal;
       window.openExportModal = openExportModal;
 
+      // --- Admin: X link check ------------------------------------------------
+      // "No X link" is worked out live from the data (so local edits count).
+      // Whether a profile still exists can't be checked from a browser (CORS),
+      // so that comes from v1/x-link-status.json, written by the weekly
+      // "Weekly X Link Check" GitHub Action. Avatars are images, which a
+      // browser *can* load, so "Check avatars now" tests them live.
+      const XLINK_WORKFLOW_URL = 'https://github.com/pavinss2/thaidoru-core/actions/workflows/check-x-links.yml';
+      const XLINK_FILTERS = [
+        { id: 'all', label: 'Needs a fix' },
+        { id: 'missing', label: 'No X link' },
+        { id: 'unreachable', label: "X profile can't be reached" },
+        { id: 'avatar', label: 'Avatar missing or broken' }
+      ];
+      const xLink = {
+        status: null,       // bot result, or null if it hasn't run yet
+        loaded: false,
+        liveAvatar: new Map(), // avatar_url -> 'ok' | 'broken'
+        checkingAvatars: false,
+        filter: 'all',
+        open: false,
+        notified: false
+      };
+
+      function xHandleOf(value) {
+        if (!value) return null;
+        const m = String(value).trim().match(/^(?:https?:\/\/(?:www\.|mobile\.)?(?:x|twitter)\.com\/)?@?([A-Za-z0-9_]{1,15})\/?(?:[?#].*)?$/);
+        return m ? m[1] : null;
+      }
+
+      function activeXMembers() {
+        return state.data.members.filter(m => (m.memberships || []).some(ms => ms.status === 'active'));
+      }
+
+      // One row per active idol that has at least one problem.
+      function computeXLinkIssues() {
+        const rows = [];
+        for (const m of activeXMembers()) {
+          const x = (m.sns || []).find(s => s.platform === 'x');
+          const raw = x?.current_handle || x?.url || '';
+          const handle = xHandleOf(x?.current_handle) ?? xHandleOf(x?.url);
+          const bot = xLink.status?.members?.[m.id];
+          const problems = [];
+
+          if (!raw) {
+            problems.push({ kind: 'missing', label: 'No X link' });
+          } else if (!handle) {
+            problems.push({ kind: 'missing', label: 'Invalid X link', detail: `"${raw}" is not an X profile link` });
+          } else {
+            // Only trust the bot if it checked the handle that's on record now.
+            if (bot && bot.handle === handle && bot.profile === 'not_found') {
+              problems.push({ kind: 'unreachable', label: 'X profile not found', detail: bot.profile_detail });
+            } else if (bot && bot.handle === handle && bot.profile === 'other_account') {
+              problems.push({ kind: 'unreachable', label: 'Handle now belongs to someone else', detail: bot.profile_detail });
+            }
+
+            const avatarUrl = x?.avatar_url || '';
+            const live = avatarUrl ? xLink.liveAvatar.get(avatarUrl) : undefined;
+            const botAvatar = bot && bot.avatar_url === avatarUrl ? bot.avatar : undefined;
+            if (!avatarUrl) {
+              // The weekly avatar bot fills these in by itself, so they don't count toward the alert.
+              problems.push({ kind: 'avatar', label: 'No X avatar URL', detail: 'the weekly avatar refresh fills this in', soft: true });
+            } else if (live === 'broken' || (live === undefined && botAvatar === 'broken')) {
+              problems.push({ kind: 'avatar', label: 'X avatar URL is broken', detail: live === 'broken' ? 'did not load in this browser' : bot.avatar_detail });
+            }
+          }
+
+          if (problems.length) rows.push({ m, x, handle, problems });
+        }
+        return rows;
+      }
+
+      const needsAdmin = row => row.problems.some(p => !p.soft);
+
+      async function refreshXLinkPanel() {
+        if (!xLink.loaded) {
+          xLink.loaded = true;
+          try {
+            const res = await fetch('./v1/x-link-status.json', { cache: 'no-cache' });
+            if (res.ok) xLink.status = await res.json();
+          } catch (e) {
+            console.warn('No X link status yet:', e);
+          }
+        }
+        renderXLinkPanel();
+        if (!xLink.notified && isAdmin()) {
+          xLink.notified = true;
+          const n = computeXLinkIssues().filter(needsAdmin).length;
+          if (n) showToast(`⚠️ ${n} active idol${n === 1 ? ' has' : 's have'} X link problems. See "X link check".`, 'error');
+        }
+      }
+
+      function renderXLinkPanel() {
+        const panel = document.getElementById('x-link-panel');
+        if (!panel || !state.data || !isAdmin()) return;
+
+        const rows = computeXLinkIssues();
+        const count = kind => rows.filter(r => r.problems.some(p => p.kind === kind)).length;
+        const toFix = rows.filter(needsAdmin).length;
+        const counts = { all: toFix, missing: count('missing'), unreachable: count('unreachable'), avatar: count('avatar') };
+        panel.classList.toggle('has-issues', toFix > 0);
+
+        const label = document.getElementById('xlink-toolbar-label');
+        if (label) label.textContent = toFix ? `X links: ${toFix} to fix` : 'X links OK';
+
+        const sub = document.getElementById('xlink-sub');
+        const total = activeXMembers().length;
+        if (xLink.status?.checked_at) {
+          const when = new Date(xLink.status.checked_at).toLocaleDateString(undefined, { day: 'numeric', month: 'short', year: 'numeric' });
+          sub.innerHTML = `${total} active idols. X profiles last checked by the weekly bot on <b>${escapeHtml(when)}</b> (<a href="${XLINK_WORKFLOW_URL}" target="_blank" rel="noopener">run it again</a>).`;
+        } else {
+          sub.innerHTML = `${total} active idols. The weekly bot hasn't checked X profiles yet, so only missing links and avatars show here. <a href="${XLINK_WORKFLOW_URL}" target="_blank" rel="noopener">Run it now</a>.`;
+        }
+
+        document.getElementById('xlink-chips').innerHTML = XLINK_FILTERS.map(f => `
+          <button class="xlink-chip ${counts[f.id] ? 'bad' : ''} ${xLink.filter === f.id && xLink.open ? 'active' : ''}" data-xlink-filter="${f.id}">
+            ${escapeHtml(f.label)} <b>${counts[f.id]}</b>
+          </button>`).join('');
+
+        const avatarBtn = document.getElementById('btn-xlink-avatars');
+        avatarBtn.disabled = xLink.checkingAvatars;
+        if (!xLink.checkingAvatars) avatarBtn.textContent = '🖼️ Check avatars now';
+
+        const toggle = document.getElementById('btn-xlink-toggle');
+        toggle.textContent = xLink.open ? 'Hide list' : 'Show list';
+        toggle.setAttribute('aria-expanded', String(xLink.open));
+
+        const list = document.getElementById('xlink-list');
+        list.hidden = !xLink.open;
+        if (!xLink.open) return;
+
+        const shown = xLink.filter === 'all' ? rows.filter(needsAdmin) : rows.filter(r => r.problems.some(p => p.kind === xLink.filter));
+        if (!shown.length) {
+          list.innerHTML = `<div class="xlink-empty">🎉 Nothing to fix here.</div>`;
+          return;
+        }
+        shown.sort((a, b) => a.m.stage_name.localeCompare(b.m.stage_name));
+        list.innerHTML = shown.map(({ m, handle, problems }) => {
+          const groups = m.memberships.filter(ms => ms.status === 'active').map(ms => groupMap.get(ms.group_id)?.name || ms.group_id).join(', ');
+          const avatar = m.avatar_cached_path ? `./${m.avatar_cached_path}` : 'assets/avatars/default_avatar.webp';
+          return `
+            <div class="xlink-row">
+              <img src="${escapeHtml(avatar)}" alt="" loading="lazy" onerror="this.onerror=null;this.src='assets/avatars/default_avatar.webp';">
+              <div class="xlink-row-main">
+                <div class="xlink-row-name">${escapeHtml(m.stage_name)}<span>${escapeHtml(groups)}${handle ? ' · @' + escapeHtml(handle) : ''}</span></div>
+                <div class="xlink-problems">
+                  ${problems.map(p => `<span class="xlink-problem ${p.kind === 'avatar' ? 'avatar' : ''} ${p.soft ? 'soft' : ''}" title="${escapeHtml(p.detail || '')}">${escapeHtml(p.label)}</span>`).join('')}
+                </div>
+              </div>
+              <div class="xlink-row-actions">
+                ${handle ? `<a class="admin-action-btn" href="https://x.com/${encodeURIComponent(handle)}" target="_blank" rel="noopener noreferrer">Open X</a>` : ''}
+                <button class="admin-action-btn primary" data-xlink-edit="${escapeHtml(m.id)}">✏️ Fix</button>
+              </div>
+            </div>`;
+        }).join('');
+      }
+
+      function probeImage(url) {
+        return new Promise(resolve => {
+          const img = new Image();
+          const timer = setTimeout(() => { img.src = ''; resolve(null); }, 15000);
+          img.onload = () => { clearTimeout(timer); resolve('ok'); };
+          img.onerror = () => { clearTimeout(timer); resolve('broken'); };
+          img.referrerPolicy = 'no-referrer';
+          img.src = url;
+        });
+      }
+
+      async function checkXAvatarsLive() {
+        if (xLink.checkingAvatars) return;
+        const urls = [...new Set(activeXMembers()
+          .map(m => (m.sns || []).find(s => s.platform === 'x')?.avatar_url)
+          .filter(u => u && /^https?:\/\//i.test(u)))];
+        if (!urls.length) {
+          showToast('No X avatar URLs to check.', 'info');
+          return;
+        }
+        xLink.checkingAvatars = true;
+        const btn = document.getElementById('btn-xlink-avatars');
+        let done = 0;
+        btn.disabled = true;
+        const queue = [...urls];
+        const worker = async () => {
+          while (queue.length) {
+            const url = queue.shift();
+            const result = await probeImage(url);
+            if (result) xLink.liveAvatar.set(url, result);
+            btn.textContent = `Checking ${++done}/${urls.length}...`;
+          }
+        };
+        await Promise.all(Array.from({ length: 6 }, worker));
+        xLink.checkingAvatars = false;
+        renderXLinkPanel();
+        const broken = urls.filter(u => xLink.liveAvatar.get(u) === 'broken').length;
+        showToast(broken ? `${broken} X avatar URL${broken === 1 ? ' is' : 's are'} broken.` : 'All X avatar URLs load fine.', broken ? 'error' : 'success');
+      }
+
+      function bindXLinkEvents() {
+        const panel = document.getElementById('x-link-panel');
+        if (!panel) return;
+        document.getElementById('btn-xlink-toggle').addEventListener('click', () => {
+          xLink.open = !xLink.open;
+          renderXLinkPanel();
+        });
+        document.getElementById('btn-xlink-avatars').addEventListener('click', checkXAvatarsLive);
+        document.getElementById('btn-xlink-jump').addEventListener('click', () => {
+          xLink.open = true;
+          renderXLinkPanel();
+          panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+        panel.addEventListener('click', e => {
+          const chip = e.target.closest('[data-xlink-filter]');
+          if (chip) {
+            xLink.filter = chip.dataset.xlinkFilter;
+            xLink.open = true;
+            renderXLinkPanel();
+            return;
+          }
+          const edit = e.target.closest('[data-xlink-edit]');
+          if (edit) openEditMemberModal(edit.dataset.xlinkEdit);
+        });
+      }
+
       // Init Application
       async function init() {
         let published = window.__THAIDORU_DATA__;
@@ -3184,6 +3573,7 @@
         buildIndexes();
         refreshFilters();
         bindEvents();
+        bindXLinkEvents();
         initAuth();
         handleRoute();
       }
