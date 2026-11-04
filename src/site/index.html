@@ -1658,7 +1658,7 @@
         <div class="modal-subtitle" id="modal-member-sub"></div>
         <div style="margin-top: 0.75rem;">
           <button class="btn-edit admin-only" id="btn-edit-current-member">✏️ Edit Idol Data</button>
-          <button class="btn-edit admin-only" id="btn-duplicate-current-member" title="Start a new idol record pre-filled with this one's data (e.g. after moving to another group)">📄 Duplicate</button>
+          <button class="btn-edit admin-only" id="btn-duplicate-current-member" title="Add this idol to another group, pre-filled from their current membership. Same idol ID, so all their groups show together.">📄 Duplicate to Another Group</button>
         </div>
       </div>
       <div class="modal-body">
@@ -1821,6 +1821,9 @@
       <div class="modal-body">
         <form id="form-edit-member" onsubmit="event.preventDefault(); saveMemberEdit();">
           <input type="hidden" id="edit-mem-is-new" value="false">
+          <!-- Membership being edited; empty when the save adds a new membership -->
+          <input type="hidden" id="edit-mem-ms-id" value="">
+          <input type="hidden" id="edit-mem-add-group" value="false">
           
           <div class="form-section-heading">Basic Identification</div>
           <div class="form-row">
@@ -1889,7 +1892,17 @@
             </div>
           </div>
 
-          <div class="form-section-heading">Primary Group & Membership</div>
+          <div class="form-section-heading" id="edit-mem-ms-heading">Primary Group & Membership</div>
+          <div class="form-row" id="edit-mem-ms-select-row" style="display: none;">
+            <div class="form-group">
+              <label class="form-label" for="edit-mem-ms-select">Editing membership in</label>
+              <select id="edit-mem-ms-select" class="form-select"></select>
+            </div>
+          </div>
+          <label id="edit-mem-graduate-row" class="form-label" style="display: none; gap: 0.5rem; align-items: center; margin-bottom: 0.85rem; cursor: pointer;">
+            <input type="checkbox" id="edit-mem-graduate-old">
+            <span id="edit-mem-graduate-label"></span>
+          </label>
           <div class="form-row">
             <div class="form-group">
               <label class="form-label" for="edit-mem-group">Group *</label>
@@ -2695,35 +2708,37 @@
         return out;
       }
 
-      /** A free member ID based on `base`: base-2, base-3, ... */
-      function suggestDuplicateId(base) {
-        const taken = new Set(state.data.members.map(m => m.id));
-        const stem = base.replace(/-\d+$/, '');
-        let n = 2;
-        while (taken.has(`${stem}-${n}`)) n++;
-        return `${stem}-${n}`;
-      }
-
       /**
-       * Open the edit form. Modes: edit `memberId`, add a blank idol (isNew),
-       * or add a new idol pre-filled from `copyFromId` (duplicate). A duplicate
-       * saves as a separate record with its own ID; the source is not touched.
+       * Open the idol form.
+       * - isNew: blank form for a new idol.
+       * - otherwise edits `memberId` and one of their memberships: `opts.membershipId`,
+       *   or their first one.
+       * - opts.addGroup: "Duplicate to Another Group". Same idol (same ID), and the
+       *   membership fields are pre-filled from the current one but save as a NEW
+       *   membership. The existing membership is left alone unless the
+       *   "graduate" box is ticked.
        */
-      function openEditMemberModal(memberId, isNew = false, copyFromId = null) {
+      function openEditMemberModal(memberId, isNew = false, opts = {}) {
         if (!isAdmin()) {
           showToast('Admin login required to edit data.', 'error');
           return;
         }
 
-        const copyFrom = copyFromId ? memberMap.get(copyFromId) : null;
-        if (copyFromId && !copyFrom) return;
-        const isNewFlag = isNew || !memberId || !!copyFrom;
+        const isNewFlag = isNew || !memberId;
+        const addGroup = !isNewFlag && !!opts.addGroup;
         document.getElementById('edit-mem-is-new').value = isNewFlag ? 'true' : 'false';
+        document.getElementById('edit-mem-ms-id').value = '';
+        document.getElementById('edit-mem-graduate-row').style.display = 'none';
+        document.getElementById('edit-mem-graduate-old').checked = false;
+        document.getElementById('edit-mem-ms-heading').textContent = 'Primary Group & Membership';
+        const msSelect = document.getElementById('edit-mem-ms-select');
+        const msSelectRow = document.getElementById('edit-mem-ms-select-row');
+        msSelectRow.style.display = 'none';
 
         const groupSelect = document.getElementById('edit-mem-group');
         groupSelect.innerHTML = state.data.groups.map(g => `<option value="${escapeHtml(g.id)}">${escapeHtml(g.name)}</option>`).join('');
 
-        if (isNewFlag && !copyFrom) {
+        if (isNewFlag) {
           document.getElementById('edit-member-title').textContent = 'Add New Idol';
           document.getElementById('edit-member-subtitle').textContent = 'Register a new idol profile into ThaiDoru Core';
           const idInput = document.getElementById('edit-mem-id');
@@ -2748,23 +2763,21 @@
           document.getElementById('edit-mem-color-name').value = 'Theme Color';
           document.getElementById('edit-mem-color-hex').value = '#3b82f6';
           document.getElementById('edit-mem-color-picker').value = '#3b82f6';
+          document.getElementById('edit-mem-add-group').value = 'false';
           renderSnsFields([]);
         } else {
-          const m = copyFrom || memberMap.get(memberId);
+          const m = memberMap.get(memberId);
           if (!m) return;
           const idInput = document.getElementById('edit-mem-id');
-          if (copyFrom) {
-            document.getElementById('edit-member-title').textContent = `Duplicate Idol: ${m.stage_name}`;
-            document.getElementById('edit-member-subtitle').textContent = `New record pre-filled from ${m.stage_name} (${m.id}). Change what's different, like the group, then save. The original stays as it is.`;
-            idInput.value = suggestDuplicateId(m.id);
-            idInput.readOnly = false;
-            idInput.disabled = false;
+          idInput.value = m.id;
+          idInput.readOnly = true;
+          idInput.disabled = true;
+          if (addGroup) {
+            document.getElementById('edit-member-title').textContent = `Duplicate ${m.stage_name} to Another Group`;
+            document.getElementById('edit-member-subtitle').textContent = `Same idol (${m.id}), new group membership pre-filled from the current one. Pick the new group, then save.`;
           } else {
             document.getElementById('edit-member-title').textContent = `Edit Idol: ${m.stage_name}`;
             document.getElementById('edit-member-subtitle').textContent = `Update canonical details and membership for ${m.stage_name}`;
-            idInput.value = m.id;
-            idInput.readOnly = true;
-            idInput.disabled = true;
           }
           document.getElementById('edit-mem-stage-name').value = m.stage_name || '';
           document.getElementById('edit-mem-stage-name-th').value = m.stage_name_th || '';
@@ -2778,24 +2791,60 @@
           document.getElementById('edit-mem-bday-month').value = m.birthday?.month || '';
           document.getElementById('edit-mem-bday-year').value = m.birthday?.year || '';
 
-          // Primary membership
-          const ms = (m.memberships && m.memberships[0]) || state.data.memberships.find(item => item.member_id === m.id);
-          if (ms) {
-            groupSelect.value = ms.group_id;
-            document.getElementById('edit-mem-role').value = ms.role || 'member';
-            document.getElementById('edit-mem-status').value = ms.status || 'active';
-            document.getElementById('edit-mem-joined-date').value = ms.joined_date || '';
-            document.getElementById('edit-mem-end-date').value = ms.end_date || '';
-            document.getElementById('edit-mem-color-name').value = ms.color?.name || '';
-            const cHex = ms.color?.hex || '#ec4899';
-            document.getElementById('edit-mem-color-hex').value = cHex;
-            document.getElementById('edit-mem-color-picker').value = cHex.startsWith('#') && cHex.length === 7 ? cHex : '#ec4899';
+          const own = state.data.memberships.filter(item => item.member_id === m.id);
+          const ms = (opts.membershipId && own.find(item => item.id === opts.membershipId))
+            || own.find(item => item.status === 'active') || own[0];
+          if (ms && !addGroup) {
+            document.getElementById('edit-mem-ms-id').value = ms.id;
+            if (own.length > 1) {
+              // Several groups: let the admin pick which membership this form edits.
+              document.getElementById('edit-mem-ms-heading').textContent = 'Group Memberships';
+              msSelect.innerHTML = own.map(item => {
+                const g = groupMap.get(item.group_id);
+                const st = item.status || 'active';
+                const label = `${g ? g.name : item.group_id} (${st[0].toUpperCase() + st.slice(1)})`;
+                return `<option value="${escapeHtml(item.id)}">${escapeHtml(label)}</option>`;
+              }).join('');
+              msSelect.value = ms.id;
+              msSelectRow.style.display = '';
+            }
           }
+          if (ms) fillMembershipFields(ms);
+
+          if (addGroup) {
+            // New stint: first group they're not in yet, active from today.
+            document.getElementById('edit-mem-ms-heading').textContent = 'New Group Membership';
+            const taken = new Set(own.map(item => item.group_id));
+            const free = state.data.groups.find(g => !taken.has(g.id));
+            if (free) groupSelect.value = free.id;
+            document.getElementById('edit-mem-status').value = 'active';
+            document.getElementById('edit-mem-joined-date').value = new Date().toISOString().slice(0, 10);
+            document.getElementById('edit-mem-end-date').value = '';
+            const oldActive = own.filter(item => item.status === 'active');
+            if (oldActive.length) {
+              const names = oldActive.map(item => groupMap.get(item.group_id)?.name || item.group_id).join(', ');
+              document.getElementById('edit-mem-graduate-label').textContent = `Also mark ${m.stage_name} as graduated from ${names} (end date = new joined date)`;
+              document.getElementById('edit-mem-graduate-row').style.display = 'flex';
+            }
+          }
+          document.getElementById('edit-mem-add-group').value = addGroup ? 'true' : 'false';
 
           renderSnsFields(m.sns);
         }
 
         document.getElementById('edit-member-modal').classList.add('open');
+      }
+
+      function fillMembershipFields(ms) {
+        document.getElementById('edit-mem-group').value = ms.group_id;
+        document.getElementById('edit-mem-role').value = ms.role || 'member';
+        document.getElementById('edit-mem-status').value = ms.status || 'active';
+        document.getElementById('edit-mem-joined-date').value = ms.joined_date || '';
+        document.getElementById('edit-mem-end-date').value = ms.end_date || '';
+        document.getElementById('edit-mem-color-name').value = ms.color?.name || '';
+        const cHex = ms.color?.hex || '#ec4899';
+        document.getElementById('edit-mem-color-hex').value = cHex;
+        document.getElementById('edit-mem-color-picker').value = cHex.startsWith('#') && cHex.length === 7 ? cHex : '#ec4899';
       }
 
       function saveMemberEdit() {
@@ -2838,6 +2887,21 @@
           return;
         }
 
+        {
+          const addGroupMode = document.getElementById('edit-mem-add-group').value === 'true';
+          const editingMsId = addGroupMode ? '' : document.getElementById('edit-mem-ms-id').value;
+          const clash = state.data.memberships.find(m => m.member_id === id && m.group_id === groupId && m.id !== editingMsId);
+          if (clash && (addGroupMode || editingMsId)) {
+            const g = groupMap.get(groupId);
+            showToast(`${stageName} is already in ${g ? g.name : groupId}. Pick another group.`, 'error');
+            return;
+          }
+          if (addGroupMode && state.data.memberships.some(m => m.id === `${groupId}_${id}`)) {
+            showToast(`Membership "${groupId}_${id}" already exists.`, 'error');
+            return;
+          }
+        }
+
         let member = state.data.members.find(m => m.id === id);
         if (isNew) {
           member = {
@@ -2871,11 +2935,12 @@
 
         member.sns = readSnsFields(member.sns);
 
-        // Memberships
-        let ms = state.data.memberships.find(m => m.member_id === id && m.group_id === groupId);
-        if (!ms) {
-          ms = state.data.memberships.find(m => m.member_id === id);
-        }
+        // Memberships: update the one the form was opened on, or add a new one
+        // (new idol, or "Duplicate to Another Group").
+        const addGroup = document.getElementById('edit-mem-add-group').value === 'true';
+        const msId = document.getElementById('edit-mem-ms-id').value;
+        let ms = (!addGroup && msId) ? state.data.memberships.find(m => m.id === msId) : null;
+        if (!ms && !addGroup && !isNew) ms = state.data.memberships.find(m => m.member_id === id);
         const isActive = (status === 'active');
         const endDate = isActive ? null : (endDateInput || new Date().toISOString().slice(0, 10));
         if (ms) {
@@ -2897,6 +2962,15 @@
             end_date: endDate
           };
           state.data.memberships.push(ms);
+          if (addGroup && document.getElementById('edit-mem-graduate-old').checked) {
+            const leftOn = joinedDate || new Date().toISOString().slice(0, 10);
+            for (const old of state.data.memberships) {
+              if (old !== ms && old.member_id === id && old.status === 'active') {
+                old.status = 'graduated';
+                old.end_date = leftOn;
+              }
+            }
+          }
         }
 
         member.memberships = state.data.memberships.filter(m => m.member_id === id);
@@ -3338,8 +3412,14 @@
         document.getElementById('btn-edit-current-member').addEventListener('click', () => {
           if (currentOpenMemberId) openEditMemberModal(currentOpenMemberId, false);
         });
+        document.getElementById('edit-mem-ms-select').addEventListener('change', (e) => {
+          const ms = state.data.memberships.find(item => item.id === e.target.value);
+          if (!ms) return;
+          document.getElementById('edit-mem-ms-id').value = ms.id;
+          fillMembershipFields(ms);
+        });
         document.getElementById('btn-duplicate-current-member').addEventListener('click', () => {
-          if (currentOpenMemberId) openEditMemberModal(null, true, currentOpenMemberId);
+          if (currentOpenMemberId) openEditMemberModal(currentOpenMemberId, false, { addGroup: true });
         });
         document.getElementById('btn-edit-current-group').addEventListener('click', () => {
           if (currentOpenGroupId) openEditGroupModal(currentOpenGroupId);
@@ -3937,10 +4017,11 @@
                 </div>
               </div>
 
-              <div>
+              <div style="display: flex; gap: 0.5rem; align-items: center;">
                 <span class="group-chip" style="border-color: ${(ms.status === 'active') ? '#10b981' : '#64748b'}; color: ${(ms.status === 'active') ? '#10b981' : '#94a3b8'};">
                   ${(ms.status === 'active') ? '● Active' : 'Graduated'}
                 </span>
+                <button type="button" class="btn-edit admin-only" title="Edit this membership" onclick="event.stopPropagation(); openEditMemberModal(${jsArg(m.id)}, false, { membershipId: ${jsArg(ms.id)} })">✏️</button>
               </div>
             </div>
           `;
