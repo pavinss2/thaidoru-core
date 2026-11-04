@@ -118,7 +118,7 @@ Represents the human idol entity independent of group affiliations:
 * `member_id`: Foreign key referencing `Member.id`.
 * `status`: `active`, `graduated`, `hiatus`, `trainee`, or `withdrawn`.
 * `role`: `member`, `leader`, `sub-leader`, `center`, `trainee`, or `guest`.
-* `color`: Contextual image color `{ name: string, hex: string }` (6-character hex code).
+* `color`: Contextual image color `{ name: string, hex: string, shade: string | null }` (6-character hex code). `name` is the official, often fancy name ("Matcha Latte Green"); `shade` is the standard main shade it rolls up to, one of `Red`, `Orange`, `Yellow`, `Green`, `Blue`, `Purple`, `Pink`, `Brown`, `White`, `Gray`, `Black`, or `null` when the color is unknown ("N/A"). Added 2026-11-04 so Cheki Tracker can group by color.
 * `joined_date`: `YYYY-MM-DD` (nullable).
 * `end_date`: `YYYY-MM-DD`, the last day in the group (nullable; null while still a member). There is no separate active flag — a membership is active when `status === 'active'`. `is_active` and `graduated_date` used to duplicate these and were removed (2026-09-25); the Cheki Tracker export still emits `is_active`/`end_date`, derived from them.
 * *Note on `graduated_reason`*: Intentionally omitted as unnecessary metadata (refined 2026-09-14).
@@ -224,6 +224,7 @@ The endpoint `/v1/export/cheki-tracker.json` directly implements the schema cont
       "member_name": "Yiwha",
       "member_image": "https://pbs.twimg.com/profile_images/2064332598273548289/igts58sl_400x400.jpg",
       "color": "White",
+      "color_name": "White",
       "group": "Nox:0ff",
       "country": "🇹🇭 TH",
       "company": "Catsolute",
@@ -236,6 +237,7 @@ The endpoint `/v1/export/cheki-tracker.json` directly implements the schema cont
         "canonical_group_id": "nox-0ff",
         "canonical_membership_id": "nox-0ff_yiwha",
         "color_hex": "#ffffff",
+        "color_shade_hex": "#ffffff",
         "role": "member",
         "status": "active"
       }

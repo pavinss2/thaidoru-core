@@ -5,7 +5,8 @@ import {
   CompaniesSchema,
   GroupsSchema,
   MembersSchema,
-  GroupMembershipsSchema
+  GroupMembershipsSchema,
+  guessShade
 } from '../schemas/index.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -83,6 +84,18 @@ try {
     if (!hexRegex.test(ms.color.hex)) allHexValid = false;
   }
   assert(allHexValid, 'All membership colors have valid 6-char hex codes');
+
+  // Test 5a: Every known color has a main shade (fancy names roll up to a
+  // fixed palette for Cheki Tracker). Fix with `npm run fill:shades`.
+  const missingShade = memberships.filter(ms => ms.color.shade === null && guessShade(ms.color.name) !== null);
+  assert(missingShade.length === 0, `Every named member color has a main shade${missingShade.length ? ` (missing: ${missingShade.map(ms => ms.id).join(', ')})` : ''}`);
+  const shadeCases: [string, string | null][] = [
+    ['Cream', 'Yellow'], ['Sky Blue', 'Blue'], ['SkyBlue', 'Blue'], ['Blue Cream Soda', 'Blue'],
+    ['Matcha Latte Green', 'Green'], ['Bloody Cherry Red', 'Red'], ['Serene White', 'White'],
+    ['Midnight Violet', 'Purple'], ['Sakura Warabi', 'Pink'], ['N/A', null]
+  ];
+  const badGuesses = shadeCases.filter(([name, want]) => guessShade(name) !== want);
+  assert(badGuesses.length === 0, `Shade guesses map fancy names to main shades${badGuesses.length ? ` (wrong: ${badGuesses.map(([n]) => n).join(', ')})` : ''}`);
 
   // Test 5b: status + end_date are the only membership state (is_active and
   // graduated_date were duplicates and were removed)
