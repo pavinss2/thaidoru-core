@@ -796,8 +796,23 @@
 
     .roster-avatars {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
+      row-gap: 0.35rem;
       margin-bottom: 1rem;
+    }
+
+    /* Desktop shows every member; phones keep the first 5 plus "+N". */
+    .roster-avatars .roster-more {
+      display: none;
+    }
+    @media (max-width: 768px) {
+      .roster-avatars .mini-avatar.roster-extra {
+        display: none;
+      }
+      .roster-avatars .roster-more {
+        display: flex;
+      }
     }
 
     .mini-avatar {
@@ -849,13 +864,48 @@
 
     .company-header {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      gap: 0.85rem;
+    }
+
+    .company-meta {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.4rem;
     }
 
     .company-title {
-      font-size: 1.5rem;
+      font-size: 1.35rem;
       font-weight: 800;
+      line-height: 1.2;
+      overflow-wrap: break-word;
+    }
+
+    .company-groups-badge {
+      white-space: nowrap;
+      font-size: 0.75rem;
+      padding: 0.2rem 0.6rem;
+    }
+
+    @media (max-width: 600px) {
+      .company-card {
+        padding: 1rem;
+      }
+      .company-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.6rem;
+      }
+      .company-title {
+        font-size: 1.1rem;
+      }
+      /* The header's mobile rule hides .brand-badge; keep this one. */
+      .company-card .company-groups-badge {
+        display: inline-block;
+      }
     }
 
     .company-avatar {
@@ -1620,6 +1670,9 @@
     .xlink-chip.active {
       border-color: #60a5fa;
       background: rgba(59, 130, 246, 0.15);
+    }
+    .xlink-list[hidden] {
+      display: none;
     }
     .xlink-list {
       display: flex;
@@ -4291,9 +4344,9 @@
           const grpMembers = state.data.members.filter(m => m.memberships.some(ms => ms.group_id === g.id));
           const activeCount = grpMembers.filter(m => m.memberships.some(ms => ms.group_id === g.id && (ms.status === 'active'))).length;
 
-          const avatarStack = grpMembers.slice(0, 5).map(m => {
+          const avatarStack = grpMembers.map((m, i) => {
             const mSrc = m.avatar_cached_path ? `./${m.avatar_cached_path}` : 'assets/avatars/default_avatar.webp';
-            return `<img src="${escapeHtml(mSrc)}" alt="${escapeHtml(m.stage_name)}" class="mini-avatar" title="${escapeHtml(m.stage_name)}" onerror="this.onerror=null;this.src='assets/avatars/default_avatar.webp'">`;
+            return `<img src="${escapeHtml(mSrc)}" alt="${escapeHtml(m.stage_name)}" class="mini-avatar${i >= 5 ? ' roster-extra' : ''}" loading="lazy" title="${escapeHtml(m.stage_name)}" onerror="this.onerror=null;this.src='assets/avatars/default_avatar.webp'">`;
           }).join('');
 
           const moreCount = grpMembers.length > 5 ? `<div class="roster-more">+${grpMembers.length - 5}</div>` : '';
@@ -4326,8 +4379,7 @@
               </div>
 
               <div class="member-footer">
-                <span style="font-size: 0.75rem; color: var(--text-muted);">Theme: <b style="color: ${escapeHtml(themeHex)};">${escapeHtml(g.theme_color?.name || 'N/A')}</b></span>
-                <div class="sns-icons">${snsIcons}</div>
+                <div class="sns-icons" style="margin-left: auto;">${snsIcons}</div>
               </div>
             </article>
           `;
@@ -4392,14 +4444,11 @@
           return `
             <article class="company-card" onclick="openCompanyModal(${jsArg(c.id)})">
               <div class="company-header">
-                <div style="display: flex; align-items: center; gap: 1rem;">
-                  <img class="company-avatar" src="${escapeHtml(avatarSrc)}" alt="${escapeHtml(c.name)}" onerror="this.onerror=null;this.src='assets/avatars/default_avatar.webp'">
-                  <div>
-                    <h2 class="company-title">${escapeHtml(c.name)}</h2>
-                    <div style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.2rem;">Location: ${escapeHtml(c.country)} • Status: Active</div>
-                  </div>
+                <img class="company-avatar" src="${escapeHtml(avatarSrc)}" alt="${escapeHtml(c.name)}" onerror="this.onerror=null;this.src='assets/avatars/default_avatar.webp'">
+                <div class="company-meta">
+                  <h2 class="company-title">${escapeHtml(c.name)}</h2>
+                  <span class="brand-badge company-groups-badge">${compGroups.length} Group${compGroups.length === 1 ? '' : 's'}</span>
                 </div>
-                <span class="brand-badge" style="font-size: 0.8rem;">${compGroups.length} Groups</span>
               </div>
 
               <div class="card-sns" style="margin-top: 0.25rem;">
@@ -4409,7 +4458,6 @@
 
               <div class="group-stats-row" style="margin: 0;">
                 <span>Total Idols: <b style="color: #60a5fa;">${compMembers.length}</b></span>
-                <span>Click to view agency profile ↗</span>
               </div>
 
               <div>
