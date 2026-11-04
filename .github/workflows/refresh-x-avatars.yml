@@ -14,7 +14,7 @@ on:
         type: boolean
         default: false
       only:
-        description: 'Comma-separated member ids to check (blank = all active members)'
+        description: 'Member ids to check, comma separated, spaces OK (blank = all active members)'
         type: string
         default: ''
 
@@ -47,8 +47,8 @@ jobs:
         env:
           NEEDS_ATTENTION_FILE: ${{ runner.temp }}/needs-attention.md
           DRY_RUN: ${{ inputs.dry_run && '--dry-run' || '' }}
-          ONLY: ${{ inputs.only && format('--only={0}', inputs.only) || '' }}
-        run: npm run refresh:avatars -- $DRY_RUN $ONLY
+          ONLY_IDS: ${{ inputs.only }}
+        run: npm run refresh:avatars -- $DRY_RUN
 
       - name: Validate data
         run: npm test

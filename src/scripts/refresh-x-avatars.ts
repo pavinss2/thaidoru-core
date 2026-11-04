@@ -41,7 +41,11 @@ const args = process.argv.slice(2);
 const DRY_RUN = args.includes('--dry-run');
 const WEBP_ONLY = args.includes('--webp-only');
 const FORCE = args.includes('--force');
-const ONLY = args.find(a => a.startsWith('--only='))?.slice('--only='.length).split(',').filter(Boolean);
+// Member ids from --only=a,b or the ONLY_IDS env var (the workflows use that).
+// Spaces are fine: "pin, nene" and "pin nene" both work.
+const ONLY_RAW = args.find(a => a.startsWith('--only='))?.slice('--only='.length) ?? process.env.ONLY_IDS ?? '';
+const ONLY_LIST = ONLY_RAW.split(/[\s,]+/).map(id => id.trim().toLowerCase()).filter(Boolean);
+const ONLY = ONLY_LIST.length ? ONLY_LIST : undefined;
 const TODAY = new Date().toISOString().slice(0, 10);
 
 type UrlState = 'alive' | 'dead' | 'unknown';
@@ -85,6 +89,8 @@ async function main() {
   const rows: Row[] = [];
   let changed = false;
 
+  const unknownIds = (ONLY ?? []).filter(id => !members.some((m: any) => m.id === id));
+  if (unknownIds.length) console.warn(`  Warning: no member with id ${unknownIds.join(', ')}`);
   const targets = members.filter((m: any) => (WEBP_ONLY || activeIds.has(m.id)) && (!ONLY || ONLY.includes(m.id)));
   console.log(WEBP_ONLY
     ? `Building ${FORCE ? 'all' : 'missing'} webps from saved X avatar URLs for ${targets.length} members${DRY_RUN ? ' (dry run)' : ''}...`
