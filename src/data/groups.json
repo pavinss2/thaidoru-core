@@ -943,5 +943,43 @@
       }
     ],
     "avatar_cached_path": "assets/avatars/group_you-maybe-me.webp"
+  },
+  {
+    "id": "euphonie",
+    "company_id": "arcjewel-thailand",
+    "name": "Euphonie",
+    "native_name": "ยูโฟนี่",
+    "status": "active",
+    "country": "Thailand",
+    "debut_date": "2021-03-01",
+    "music_links": {},
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": "1311704473333501952",
+        "current_handle": "euphonie_staff",
+        "url": "https://x.com/euphonie_staff",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2068650086947799041/8DSpEZ9c_400x400.jpg"
+      },
+      {
+        "platform": "facebook",
+        "profile_id": null,
+        "current_handle": "euphonie.official",
+        "url": "https://www.facebook.com/euphonie.official"
+      },
+      {
+        "platform": "instagram",
+        "profile_id": null,
+        "current_handle": "euphonie.official",
+        "url": "https://www.instagram.com/euphonie.official"
+      },
+      {
+        "platform": "tiktok",
+        "profile_id": null,
+        "current_handle": "euphonie.official",
+        "url": "https://www.tiktok.com/@euphonie.official"
+      }
+    ],
+    "avatar_cached_path": "assets/avatars/group_euphonie.webp"
   }
 ]

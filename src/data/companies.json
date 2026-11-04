@@ -140,5 +140,23 @@
       }
     ],
     "description": "Thai idol agency founded in 2024."
+  },
+  {
+    "id": "arcjewel-thailand",
+    "name": "ArcJewel Thailand",
+    "country": "Thailand",
+    "status": "active",
+    "website_url": "https://thailand.arcjewel.com/",
+    "avatar_cached_path": "assets/avatars/company_arcjewel-thailand.webp",
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": "1223128257555382273",
+        "current_handle": "aj_thailand",
+        "url": "https://x.com/aj_thailand",
+        "avatar_url": "https://pbs.twimg.com/profile_images/1223825922169556992/iYWPQ_wr_400x400.jpg"
+      }
+    ],
+    "description": "Thai label of the Japanese idol agency ArcJewel, founded 2020. Distributed by Siamdol."
   }
 ]

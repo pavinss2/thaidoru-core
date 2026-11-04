@@ -6427,5 +6427,204 @@
     ],
     "avatar_cached_path": "assets/avatars/baiyok.webp",
     "avatar_source_url": "https://pbs.twimg.com/profile_images/2111307993606426624/Vd1YwLL-_400x400.jpg"
+  },
+  {
+    "id": "porpor",
+    "stage_name": "Porpor",
+    "stage_name_th": "ปอปอ",
+    "real_name": {},
+    "birthday": {
+      "month": 7,
+      "day": 12
+    },
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": "1317194686004559872",
+        "current_handle": "Porpor_Euphonie",
+        "url": "https://x.com/Porpor_Euphonie",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2067143022052261888/-m99755D_400x400.jpg"
+      },
+      {
+        "platform": "facebook",
+        "profile_id": null,
+        "current_handle": "Porpor.Euphonie",
+        "url": "https://www.facebook.com/Porpor.Euphonie"
+      },
+      {
+        "platform": "instagram",
+        "profile_id": null,
+        "current_handle": "porpor.euphonie",
+        "url": "https://www.instagram.com/porpor.euphonie"
+      },
+      {
+        "platform": "tiktok",
+        "profile_id": null,
+        "current_handle": "porpor.euphonie",
+        "url": "https://www.tiktok.com/@porpor.euphonie"
+      }
+    ],
+    "avatar_cached_path": "assets/avatars/porpor.webp",
+    "avatar_source_url": "https://pbs.twimg.com/profile_images/2067143022052261888/-m99755D_400x400.jpg"
+  },
+  {
+    "id": "elffy",
+    "stage_name": "Elffy",
+    "stage_name_th": "เอลฟ์ฟี่",
+    "real_name": {},
+    "birthday": {
+      "month": 2,
+      "day": 14,
+      "year": 1998
+    },
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": "1317196261838106624",
+        "current_handle": "Elffy_Euphonie",
+        "url": "https://x.com/Elffy_Euphonie",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2067142978569945088/kvw3tINF_400x400.jpg"
+      },
+      {
+        "platform": "facebook",
+        "profile_id": null,
+        "current_handle": "Elffy.Euphonie",
+        "url": "https://www.facebook.com/Elffy.Euphonie"
+      },
+      {
+        "platform": "instagram",
+        "profile_id": null,
+        "current_handle": "elffy.euphonie",
+        "url": "https://www.instagram.com/elffy.euphonie"
+      },
+      {
+        "platform": "tiktok",
+        "profile_id": null,
+        "current_handle": "elffy.euphonie",
+        "url": "https://www.tiktok.com/@elffy.euphonie"
+      }
+    ],
+    "avatar_cached_path": "assets/avatars/elffy.webp",
+    "avatar_source_url": "https://pbs.twimg.com/profile_images/2067142978569945088/kvw3tINF_400x400.jpg"
+  },
+  {
+    "id": "petpet",
+    "stage_name": "PetPet",
+    "stage_name_th": "เพดเพด",
+    "real_name": {},
+    "birthday": {
+      "month": 9,
+      "day": 16,
+      "year": 1998
+    },
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": "1572203165751320576",
+        "current_handle": "petpet_euphonie",
+        "url": "https://x.com/petpet_euphonie",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2067144776789688320/XZ0rNorC_400x400.jpg"
+      },
+      {
+        "platform": "facebook",
+        "profile_id": null,
+        "current_handle": "petpet.euphonie",
+        "url": "https://www.facebook.com/petpet.euphonie"
+      },
+      {
+        "platform": "instagram",
+        "profile_id": null,
+        "current_handle": "petpet.euphonie",
+        "url": "https://www.instagram.com/petpet.euphonie"
+      },
+      {
+        "platform": "tiktok",
+        "profile_id": null,
+        "current_handle": "petpet.euphonie",
+        "url": "https://www.tiktok.com/@petpet.euphonie"
+      }
+    ],
+    "avatar_cached_path": "assets/avatars/petpet.webp",
+    "avatar_source_url": "https://pbs.twimg.com/profile_images/2067144776789688320/XZ0rNorC_400x400.jpg"
+  },
+  {
+    "id": "donut-euphonie",
+    "stage_name": "Donut",
+    "stage_name_th": "โดนัท",
+    "real_name": {},
+    "birthday": {
+      "month": 9,
+      "day": 8,
+      "year": 2003
+    },
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": "1803748563123605504",
+        "current_handle": "donut_euphonie",
+        "url": "https://x.com/donut_euphonie",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2067144074923290624/E5jgnh2m_400x400.jpg"
+      },
+      {
+        "platform": "facebook",
+        "profile_id": "61561340125512",
+        "current_handle": "profile.php?id=61561340125512",
+        "url": "https://www.facebook.com/profile.php?id=61561340125512"
+      },
+      {
+        "platform": "instagram",
+        "profile_id": null,
+        "current_handle": "donut.euphonie",
+        "url": "https://www.instagram.com/donut.euphonie"
+      },
+      {
+        "platform": "tiktok",
+        "profile_id": null,
+        "current_handle": "donut.euphonie",
+        "url": "https://www.tiktok.com/@donut.euphonie"
+      }
+    ],
+    "avatar_cached_path": "assets/avatars/donut-euphonie.webp",
+    "avatar_source_url": "https://pbs.twimg.com/profile_images/2067144074923290624/E5jgnh2m_400x400.jpg"
+  },
+  {
+    "id": "pammy",
+    "stage_name": "Pammy",
+    "stage_name_th": "แพมมี่",
+    "real_name": {},
+    "birthday": {
+      "month": 10,
+      "day": 1,
+      "year": 2003
+    },
+    "sns": [
+      {
+        "platform": "x",
+        "profile_id": "2066612684972503040",
+        "current_handle": "Pammy_Euphonie",
+        "url": "https://x.com/Pammy_Euphonie",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2067144249758613504/iJGqVrQd_400x400.jpg"
+      },
+      {
+        "platform": "facebook",
+        "profile_id": "61590788552871",
+        "current_handle": "profile.php?id=61590788552871",
+        "url": "https://www.facebook.com/profile.php?id=61590788552871"
+      },
+      {
+        "platform": "instagram",
+        "profile_id": null,
+        "current_handle": "pammy.euphonie",
+        "url": "https://www.instagram.com/pammy.euphonie"
+      },
+      {
+        "platform": "tiktok",
+        "profile_id": null,
+        "current_handle": "pammy.euphonie",
+        "url": "https://www.tiktok.com/@pammy.euphonie"
+      }
+    ],
+    "avatar_cached_path": "assets/avatars/pammy.webp",
+    "avatar_source_url": "https://pbs.twimg.com/profile_images/2067144249758613504/iJGqVrQd_400x400.jpg"
   }
 ]
