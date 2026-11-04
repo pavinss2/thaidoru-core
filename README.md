@@ -91,6 +91,12 @@ npm run build
    ```
    GitHub Actions will automatically validate, compile, and publish to the live CDN!
 
+### 🔗 X link check (admin)
+
+Signed in as admin, the site shows an **X link check** panel listing active idols whose X link is missing, whose X profile can't be reached (changed handle, suspended, or the handle now belongs to someone else), or whose X avatar URL is missing or broken. Each row has a **Fix** button that opens the edit form.
+
+Browsers can't check x.com links themselves, so the **Weekly X Link Check** workflow (`.github/workflows/check-x-links.yml`, every Monday 02:00 Bangkok time) runs `npm run check:x-links`. It looks each handle up on the free FxTwitter API (no key needed), saves the result to `src/data/x-link-status.json`, and redeploys the site. Run it by hand from the Actions tab any time. The panel's **Check avatars now** button tests avatar URLs live in your browser.
+
 ---
 
 ## 🔌 API Endpoints (Edge CDN)
