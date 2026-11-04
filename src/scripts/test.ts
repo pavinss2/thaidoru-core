@@ -119,6 +119,10 @@ try {
   const allGroupFilesExist = groups.every(g => g.avatar_cached_path && fs.existsSync(path.join(ROOT_DIR, g.avatar_cached_path)));
   assert(allGroupFilesExist, 'All group WebP avatar files physically exist on disk');
 
+  const historyEntries = members.flatMap(m => m.avatar_history ?? []);
+  const allHistoryFilesExist = historyEntries.every(h => fs.existsSync(path.join(ROOT_DIR, h.path)));
+  assert(allHistoryFilesExist, `All ${historyEntries.length} archived avatar history WebP files physically exist on disk`);
+
   // Test 9: Company avatar cache completeness
   const allCompaniesHaveAvatar = companies.every(c => Boolean(c.avatar_cached_path));
   assert(allCompaniesHaveAvatar, `All ${companies.length} companies have avatar_cached_path populated`);

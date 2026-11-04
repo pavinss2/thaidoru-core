@@ -15,6 +15,13 @@ export const MemberBirthdaySchema = z.object({
   year: z.number().int().nullable().optional()
 }).default({});
 
+export const AvatarHistoryEntrySchema = z.object({
+  path: z.string().describe('Relative path to an archived WebP, e.g. assets/avatars/history/ame/2026-11-09.webp'),
+  source_url: z.string().url().nullable().optional().describe('X avatar URL this image was cached from, when known'),
+  archived_at: z.string().describe('ISO date (YYYY-MM-DD) the image stopped being the current avatar')
+});
+export type AvatarHistoryEntry = z.infer<typeof AvatarHistoryEntrySchema>;
+
 export const MemberSchema = z.object({
   id: z.string().regex(/^[a-z0-9-]+$/).describe('Canonical unique identifier, e.g. ame, yiwha, nadear'),
   stage_name: z.string().min(1),
@@ -22,6 +29,7 @@ export const MemberSchema = z.object({
   real_name: MemberRealNameSchema.default({}),
   birthday: MemberBirthdaySchema.default({}),
   avatar_cached_path: z.string().nullable().optional(),
+  avatar_history: z.array(AvatarHistoryEntrySchema).optional().describe('Older avatars, newest first. Filled by refresh-x-avatars.'),
   sns: z.array(SNSChannelSchema).default([])
 });
 export type Member = z.infer<typeof MemberSchema>;

@@ -1,0 +1,82 @@
+name: Weekly X Avatar Refresh
+
+# Checks every active (not graduated) member's X avatar URL. Dead or empty
+# ones get looked up again, saved, and re-cached as WebP. Old WebPs are kept
+# in assets/avatars/history/ so the site can swipe through them.
+on:
+  schedule:
+    - cron: '0 18 * * 0' # Every Monday 01:00 Bangkok time (Sunday 18:00 UTC)
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Only report, do not change anything'
+        type: boolean
+        default: false
+      only:
+        description: 'Comma-separated member ids to check (blank = all active members)'
+        type: string
+        default: ''
+
+permissions:
+  contents: write # commit the updated members.json + webp files
+  actions: write  # start the deploy workflow afterwards
+
+concurrency:
+  group: x-avatar-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Refresh X avatars
+        env:
+          X_BEARER_TOKEN: ${{ secrets.X_BEARER_TOKEN }}
+          DRY_RUN: ${{ inputs.dry_run && '--dry-run' || '' }}
+          ONLY: ${{ inputs.only && format('--only={0}', inputs.only) || '' }}
+        run: npm run refresh:avatars -- $DRY_RUN $ONLY
+
+      - name: Validate data
+        run: npm test
+
+      - name: Commit and push changes
+        id: commit
+        run: |
+          git add src/data/members.json assets/avatars
+          if git diff --cached --quiet; then
+            echo "No avatar changes this week."
+            echo "pushed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Refresh X avatars: $(date -u +'%Y-%m-%d')"
+          for i in 1 2 3 4 5; do
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              echo "pushed=true" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+            sleep $((i * 5))
+          done
+          echo "Could not push after 5 tries" >&2
+          exit 1
+
+      # Pushes made with GITHUB_TOKEN don't trigger other workflows, so start
+      # the deploy ourselves to publish the new avatars.
+      - name: Deploy site
+        if: steps.commit.outputs.pushed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml --ref main
