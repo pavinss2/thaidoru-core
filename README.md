@@ -85,10 +85,13 @@ npm run build
 
 It's fully free: no X API key or secret needed.
 
+**Build webps only (no X lookups):** the manual workflow **"Build Avatar WebPs from X URL"** makes `assets/avatars/{id}.webp` straight from each member's saved X avatar URL, for members with no webp yet. Tick `rebuild_all` to remake every webp (old ones go to history).
+
 Run locally:
 ```bash
 npm run refresh:avatars -- --dry-run          # report only
 npm run refresh:avatars -- --only=ame,yiwha   # just these members
+npm run refresh:avatars -- --webp-only        # only build missing webps from saved URLs
 ```
 
 ---
