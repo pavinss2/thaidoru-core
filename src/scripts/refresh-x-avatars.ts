@@ -27,7 +27,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { BROWSER_UA, fetchAsWebp, looksSame } from './lib/avatar-image.js';
+import { BROWSER_UA, fetchAsWebp, samePixels } from './lib/avatar-image.js';
 import { lookupXAccount } from './lib/x-lookup.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -104,6 +104,7 @@ async function main() {
     if (WEBP_ONLY && hasCachedFile && !FORCE) continue; // already has a webp
 
     // Step 1-2: is the current URL fine? (skipped in webp-only mode)
+    let useSavedUrl = WEBP_ONLY;
     if (WEBP_ONLY) {
       // use the saved URL as-is
     } else if (x.avatar_url) {
@@ -113,13 +114,15 @@ async function main() {
         rows.push({ member: m.id, result: 'unsure', detail: `could not check avatar URL (${check.detail}), will retry next week` });
         continue;
       }
+      // URL still works but the webp is missing: build it from that URL, no lookup.
+      if (check.state === 'alive') useSavedUrl = true;
       console.log(`  ${m.id}: avatar URL ${check.state === 'dead' ? 'is dead' : 'is fine but webp is missing'} (${check.detail})`);
     } else {
       console.log(`  ${m.id}: avatar URL is empty`);
     }
 
     // Step 3: find the current avatar (webp-only mode just uses the saved URL)
-    const { account, notes } = WEBP_ONLY
+    const { account, notes } = useSavedUrl
       ? { account: { id: x.profile_id ?? null, handle: x.current_handle, avatarUrl: x.avatar_url, source: 'saved avatar URL' }, notes: [] as string[] }
       : await lookupXAccount({ profileId: x.profile_id, handle: x.current_handle });
     if (!account) {
@@ -130,7 +133,7 @@ async function main() {
     const webp = await fetchAsWebp(account.avatarUrl);
     if (!webp) {
       // Leave the record untouched so next week's run tries again.
-      rows.push({ member: m.id, result: 'failed', detail: `${WEBP_ONLY ? 'saved URL' : 'found'} ${account.avatarUrl} but could not download it` });
+      rows.push({ member: m.id, result: 'failed', detail: `${useSavedUrl ? 'saved URL' : 'found'} ${account.avatarUrl} but could not download it` });
       continue;
     }
 
@@ -145,7 +148,7 @@ async function main() {
     const finalRel = cachedRel ?? `assets/avatars/${m.id}.webp`;
     const finalAbs = path.join(ROOT_DIR, finalRel);
     let archivedRel: string | null = null;
-    const sameAsCached = hasCachedFile && (await looksSame(webp, cachedAbs!));
+    const sameAsCached = hasCachedFile && (await samePixels(webp, cachedAbs!)); // identical in every pixel → keep the old file
     if (hasCachedFile && !sameAsCached) archivedRel = historyPathFor(m.id);
     if (!sameAsCached) changes.push(archivedRel ? `new avatar (old one kept in ${archivedRel})` : 'new avatar');
     else changes.push('URL refreshed, picture unchanged');
