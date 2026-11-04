@@ -101,7 +101,10 @@ async function main() {
     const cachedRel: string | null = m.avatar_cached_path && m.avatar_cached_path !== DEFAULT_AVATAR ? m.avatar_cached_path : null;
     const cachedAbs = cachedRel ? path.join(ROOT_DIR, cachedRel) : null;
     const hasCachedFile = Boolean(cachedAbs && fs.existsSync(cachedAbs));
-    if (WEBP_ONLY && hasCachedFile && !FORCE) continue; // already has a webp
+    // The webp was built from a different URL than the one saved now (e.g. the
+    // URL was edited by hand), so it may show an old picture.
+    const builtFromOtherUrl = Boolean(x.avatar_url) && m.avatar_source_url !== x.avatar_url;
+    if (WEBP_ONLY && hasCachedFile && !FORCE && !builtFromOtherUrl) continue; // webp is up to date
 
     // Step 1-2: is the current URL fine? (skipped in webp-only mode)
     let useSavedUrl = WEBP_ONLY;
@@ -109,14 +112,16 @@ async function main() {
       // use the saved URL as-is
     } else if (x.avatar_url) {
       const check = await checkAvatarUrl(x.avatar_url);
-      if (check.state === 'alive' && hasCachedFile) continue; // all good, ignore this record
+      if (check.state === 'alive' && hasCachedFile && !builtFromOtherUrl) continue; // all good, ignore this record
       if (check.state === 'unknown') {
         rows.push({ member: m.id, result: 'unsure', detail: `could not check avatar URL (${check.detail}), will retry next week` });
         continue;
       }
-      // URL still works but the webp is missing: build it from that URL, no lookup.
+      // URL still works but the webp is missing or was built from another URL:
+      // build it from that URL, no lookup.
       if (check.state === 'alive') useSavedUrl = true;
-      console.log(`  ${m.id}: avatar URL ${check.state === 'dead' ? 'is dead' : 'is fine but webp is missing'} (${check.detail})`);
+      const why = check.state === 'dead' ? 'is dead' : !hasCachedFile ? 'is fine but webp is missing' : 'changed since the webp was built';
+      console.log(`  ${m.id}: avatar URL ${why} (${check.detail})`);
     } else {
       console.log(`  ${m.id}: avatar URL is empty`);
     }
@@ -158,12 +163,13 @@ async function main() {
         fs.mkdirSync(path.dirname(path.join(ROOT_DIR, archivedRel)), { recursive: true });
         fs.renameSync(cachedAbs!, path.join(ROOT_DIR, archivedRel));
         m.avatar_history = [
-          { path: archivedRel, source_url: x.avatar_url ?? null, archived_at: TODAY },
+          { path: archivedRel, source_url: m.avatar_source_url ?? (useSavedUrl ? null : x.avatar_url) ?? null, archived_at: TODAY },
           ...(m.avatar_history ?? [])
         ];
       }
       if (!sameAsCached) fs.writeFileSync(finalAbs, webp);
       m.avatar_cached_path = finalRel;
+      m.avatar_source_url = account.avatarUrl;
       x.avatar_url = account.avatarUrl;
       if (account.handle) {
         x.current_handle = account.handle;

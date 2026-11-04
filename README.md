@@ -77,7 +77,7 @@ npm run build
 `.github/workflows/refresh-x-avatars.yml` runs every Monday 01:00 Bangkok time (or by hand from the Actions tab).
 
 1. For each member with an **active** membership, it checks their X `avatar_url`.
-2. If the URL still loads, the member is skipped.
+2. If the URL still loads **and** the webp was built from that exact URL (`avatar_source_url`), the member is skipped. A URL you typed in by hand doesn't match, so its webp gets rebuilt from it (no X lookup).
 3. If it is dead or empty, the account is looked up again by `current_handle` using the free FxTwitter API. The result must match the stored X `profile_id`, so a recycled handle is never accepted.
 4. The new `avatar_url` is saved, and `assets/avatars/{id}.webp` is regenerated.
 5. The old WebP is moved to `assets/avatars/history/{id}/{date}.webp` and listed in the member's `avatar_history`. The site lets you swipe through these.
