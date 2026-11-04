@@ -1841,9 +1841,9 @@
       "name": "Pink",
       "hex": "#ff69b4"
     },
-    "status": "active",
+    "status": "graduated",
     "joined_date": null,
-    "end_date": null
+    "end_date": "2026-10-23"
   },
   {
     "id": "starry-nite_beep",
@@ -1919,9 +1919,9 @@
       "name": "Pink",
       "hex": "#ff80ab"
     },
-    "status": "active",
+    "status": "graduated",
     "joined_date": null,
-    "end_date": null
+    "end_date": "2026-10-23"
   },
   {
     "id": "starry-nite_jajah",
