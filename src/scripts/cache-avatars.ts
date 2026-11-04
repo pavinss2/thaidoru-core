@@ -1,43 +1,13 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import sharp from 'sharp';
+import { downloadAndOptimizeImage } from './lib/avatar-image.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const ROOT_DIR = path.resolve(__dirname, '../..');
 const DATA_DIR = path.join(ROOT_DIR, 'src/data');
 const ASSETS_DIR = path.join(ROOT_DIR, 'assets/avatars');
-
-async function downloadAndOptimizeImage(url: string, outputPath: string): Promise<boolean> {
-  try {
-    const res = await fetch(url, {
-      headers: {
-        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
-      }
-    });
-    if (!res.ok) {
-      console.warn(`    Failed to fetch ${url} (HTTP ${res.status})`);
-      return false;
-    }
-
-    const arrayBuf = await res.arrayBuffer();
-    const buffer = Buffer.from(arrayBuf);
-
-    await sharp(buffer)
-      .resize(400, 400, {
-        fit: 'cover',
-        position: 'center'
-      })
-      .webp({ quality: 85 })
-      .toFile(outputPath);
-
-    return true;
-  } catch (err: any) {
-    console.warn(`    Sharp/Download error for ${url}:`, err.message);
-    return false;
-  }
-}
 
 async function main() {
   console.log('--- Starting Permanent Avatar Caching Pipeline ---');

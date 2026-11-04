@@ -952,6 +952,64 @@
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
     }
 
+    /* Swipeable avatar history (current avatar first, then older ones) */
+    .avatar-carousel {
+      position: relative;
+      width: 160px;
+      margin: 0 auto 1.25rem;
+      touch-action: pan-y;
+    }
+
+    .avatar-carousel .modal-avatar-lg {
+      margin: 0;
+      display: block;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+
+    .avatar-nav {
+      position: absolute;
+      top: 80px;
+      transform: translateY(-50%);
+      width: 32px;
+      height: 32px;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-glass);
+      color: var(--text-primary);
+      font-size: 1.1rem;
+      line-height: 1;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .avatar-nav:hover:not(:disabled) { border-color: var(--border-focus); }
+    .avatar-nav:disabled { opacity: 0.3; cursor: default; }
+    .avatar-nav.prev { left: -44px; }
+    .avatar-nav.next { right: -44px; }
+
+    .avatar-caption {
+      margin-top: 0.5rem;
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+    }
+
+    .avatar-dots {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 0.35rem;
+    }
+
+    .avatar-dots span {
+      width: 6px;
+      height: 6px;
+      border-radius: var(--radius-full);
+      background: var(--text-muted);
+    }
+
+    .avatar-dots span.active { background: var(--accent-pink); }
+
     .modal-title {
       font-size: 2rem;
       font-weight: 800;
@@ -1818,7 +1876,13 @@
     <div class="modal-content">
       <button class="modal-close" id="member-modal-close" aria-label="Close">✕</button>
       <div class="modal-hero">
-        <img src="" alt="" class="modal-avatar-lg" id="modal-member-avatar">
+        <div class="avatar-carousel" id="modal-member-avatar-carousel">
+          <button type="button" class="avatar-nav prev" id="modal-avatar-prev" aria-label="Newer avatar" hidden>‹</button>
+          <img src="" alt="" class="modal-avatar-lg" id="modal-member-avatar" draggable="false">
+          <button type="button" class="avatar-nav next" id="modal-avatar-next" aria-label="Older avatar" hidden>›</button>
+          <div class="avatar-caption" id="modal-avatar-caption" hidden></div>
+          <div class="avatar-dots" id="modal-avatar-dots" hidden></div>
+        </div>
         <h2 class="modal-title" id="modal-member-title"></h2>
         <div class="modal-subtitle" id="modal-member-sub"></div>
         <div style="margin-top: 0.75rem;">
@@ -4279,6 +4343,50 @@
         }).join('');
       }
 
+      // Member avatar history carousel: swipe or tap the arrows to see older avatars.
+      let avatarSlides = [];
+      let avatarSlideIndex = 0;
+
+      function showAvatarSlide(i) {
+        if (!avatarSlides.length) return;
+        avatarSlideIndex = Math.max(0, Math.min(i, avatarSlides.length - 1));
+        const slide = avatarSlides[avatarSlideIndex];
+        const img = document.getElementById('modal-member-avatar');
+        img.onerror = function () {
+          this.onerror = null;
+          this.src = 'assets/avatars/default_avatar.webp';
+        };
+        img.src = slide.src;
+
+        const many = avatarSlides.length > 1;
+        const prev = document.getElementById('modal-avatar-prev');
+        const next = document.getElementById('modal-avatar-next');
+        const caption = document.getElementById('modal-avatar-caption');
+        const dots = document.getElementById('modal-avatar-dots');
+        prev.hidden = next.hidden = caption.hidden = dots.hidden = !many;
+        if (!many) return;
+        prev.disabled = avatarSlideIndex === 0;
+        next.disabled = avatarSlideIndex === avatarSlides.length - 1;
+        caption.textContent = `${slide.label} · ${avatarSlideIndex + 1}/${avatarSlides.length}`;
+        dots.innerHTML = avatarSlides.map((_, j) => `<span class="${j === avatarSlideIndex ? 'active' : ''}"></span>`).join('');
+      }
+
+      document.getElementById('modal-avatar-prev').addEventListener('click', () => showAvatarSlide(avatarSlideIndex - 1));
+      document.getElementById('modal-avatar-next').addEventListener('click', () => showAvatarSlide(avatarSlideIndex + 1));
+      (() => {
+        const el = document.getElementById('modal-member-avatar-carousel');
+        let startX = null;
+        el.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+        el.addEventListener('touchend', e => {
+          if (startX === null) return;
+          const dx = e.changedTouches[0].clientX - startX;
+          startX = null;
+          if (Math.abs(dx) < 40) return;
+          // Swipe left = older avatar, swipe right = newer avatar.
+          showAvatarSlide(avatarSlideIndex + (dx < 0 ? 1 : -1));
+        });
+      })();
+
       // Open Member Modal
       window.openMemberModal = function (memberId, updateHash = true) {
         const m = memberMap.get(memberId);
@@ -4288,12 +4396,10 @@
         if (updateHash) location.hash = `member/${m.id}`;
 
         const avatarSrc = m.avatar_cached_path ? `./${m.avatar_cached_path}` : 'assets/avatars/default_avatar.webp';
-        const modalAvatar = document.getElementById('modal-member-avatar');
-        modalAvatar.src = avatarSrc;
-        modalAvatar.onerror = function() {
-          this.onerror = null;
-          this.src = 'assets/avatars/default_avatar.webp';
-        };
+        avatarSlides = [{ src: avatarSrc, label: 'Current' }].concat(
+          (m.avatar_history || []).map(h => ({ src: `./${h.path}`, label: `Used until ${h.archived_at}` }))
+        );
+        showAvatarSlide(0);
         document.getElementById('modal-member-title').textContent = m.stage_name;
         
         const subParts = [];

@@ -72,6 +72,27 @@ npm run build
 
 ---
 
+## 🖼️ Weekly X Avatar Refresh
+
+`.github/workflows/refresh-x-avatars.yml` runs every Monday 01:00 Bangkok time (or by hand from the Actions tab).
+
+1. For each member with an **active** membership, it checks their X `avatar_url`.
+2. If the URL still loads, the member is skipped.
+3. If it is dead or empty, the account is looked up again by `current_handle` using the free FxTwitter API. The result must match the stored X `profile_id`, so a recycled handle is never accepted.
+4. The new `avatar_url` is saved, and `assets/avatars/{id}.webp` is regenerated.
+5. The old WebP is moved to `assets/avatars/history/{id}/{date}.webp` and listed in the member's `avatar_history`. The site lets you swipe through these.
+6. Idols it can't fix (usually because they changed their @handle) are listed in an open issue, **"X avatars need a manual check"**. Update their handle and the next run picks up the new avatar.
+
+It's fully free: no X API key or secret needed.
+
+Run locally:
+```bash
+npm run refresh:avatars -- --dry-run          # report only
+npm run refresh:avatars -- --only=ame,yiwha   # just these members
+```
+
+---
+
 ## ✏️ Manual Editing Workflow (Phase 1)
 
 1. **Add or Edit a Member**:
