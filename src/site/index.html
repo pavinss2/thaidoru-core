@@ -796,8 +796,23 @@
 
     .roster-avatars {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
+      row-gap: 0.35rem;
       margin-bottom: 1rem;
+    }
+
+    /* Desktop shows every member; phones keep the first 5 plus "+N". */
+    .roster-avatars .roster-more {
+      display: none;
+    }
+    @media (max-width: 768px) {
+      .roster-avatars .mini-avatar.roster-extra {
+        display: none;
+      }
+      .roster-avatars .roster-more {
+        display: flex;
+      }
     }
 
     .mini-avatar {
@@ -1620,6 +1635,9 @@
     .xlink-chip.active {
       border-color: #60a5fa;
       background: rgba(59, 130, 246, 0.15);
+    }
+    .xlink-list[hidden] {
+      display: none;
     }
     .xlink-list {
       display: flex;
@@ -4291,9 +4309,9 @@
           const grpMembers = state.data.members.filter(m => m.memberships.some(ms => ms.group_id === g.id));
           const activeCount = grpMembers.filter(m => m.memberships.some(ms => ms.group_id === g.id && (ms.status === 'active'))).length;
 
-          const avatarStack = grpMembers.slice(0, 5).map(m => {
+          const avatarStack = grpMembers.map((m, i) => {
             const mSrc = m.avatar_cached_path ? `./${m.avatar_cached_path}` : 'assets/avatars/default_avatar.webp';
-            return `<img src="${escapeHtml(mSrc)}" alt="${escapeHtml(m.stage_name)}" class="mini-avatar" title="${escapeHtml(m.stage_name)}" onerror="this.onerror=null;this.src='assets/avatars/default_avatar.webp'">`;
+            return `<img src="${escapeHtml(mSrc)}" alt="${escapeHtml(m.stage_name)}" class="mini-avatar${i >= 5 ? ' roster-extra' : ''}" loading="lazy" title="${escapeHtml(m.stage_name)}" onerror="this.onerror=null;this.src='assets/avatars/default_avatar.webp'">`;
           }).join('');
 
           const moreCount = grpMembers.length > 5 ? `<div class="roster-more">+${grpMembers.length - 5}</div>` : '';
@@ -4326,8 +4344,7 @@
               </div>
 
               <div class="member-footer">
-                <span style="font-size: 0.75rem; color: var(--text-muted);">Theme: <b style="color: ${escapeHtml(themeHex)};">${escapeHtml(g.theme_color?.name || 'N/A')}</b></span>
-                <div class="sns-icons">${snsIcons}</div>
+                <div class="sns-icons" style="margin-left: auto;">${snsIcons}</div>
               </div>
             </article>
           `;
