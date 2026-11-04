@@ -1658,6 +1658,7 @@
         <div class="modal-subtitle" id="modal-member-sub"></div>
         <div style="margin-top: 0.75rem;">
           <button class="btn-edit admin-only" id="btn-edit-current-member">✏️ Edit Idol Data</button>
+          <button class="btn-edit admin-only" id="btn-duplicate-current-member" title="Start a new idol record pre-filled with this one's data (e.g. after moving to another group)">📄 Duplicate</button>
         </div>
       </div>
       <div class="modal-body">
@@ -2694,19 +2695,35 @@
         return out;
       }
 
-      function openEditMemberModal(memberId, isNew = false) {
+      /** A free member ID based on `base`: base-2, base-3, ... */
+      function suggestDuplicateId(base) {
+        const taken = new Set(state.data.members.map(m => m.id));
+        const stem = base.replace(/-\d+$/, '');
+        let n = 2;
+        while (taken.has(`${stem}-${n}`)) n++;
+        return `${stem}-${n}`;
+      }
+
+      /**
+       * Open the edit form. Modes: edit `memberId`, add a blank idol (isNew),
+       * or add a new idol pre-filled from `copyFromId` (duplicate). A duplicate
+       * saves as a separate record with its own ID; the source is not touched.
+       */
+      function openEditMemberModal(memberId, isNew = false, copyFromId = null) {
         if (!isAdmin()) {
           showToast('Admin login required to edit data.', 'error');
           return;
         }
 
-        const isNewFlag = isNew || !memberId;
+        const copyFrom = copyFromId ? memberMap.get(copyFromId) : null;
+        if (copyFromId && !copyFrom) return;
+        const isNewFlag = isNew || !memberId || !!copyFrom;
         document.getElementById('edit-mem-is-new').value = isNewFlag ? 'true' : 'false';
 
         const groupSelect = document.getElementById('edit-mem-group');
         groupSelect.innerHTML = state.data.groups.map(g => `<option value="${escapeHtml(g.id)}">${escapeHtml(g.name)}</option>`).join('');
 
-        if (isNewFlag) {
+        if (isNewFlag && !copyFrom) {
           document.getElementById('edit-member-title').textContent = 'Add New Idol';
           document.getElementById('edit-member-subtitle').textContent = 'Register a new idol profile into ThaiDoru Core';
           const idInput = document.getElementById('edit-mem-id');
@@ -2733,14 +2750,22 @@
           document.getElementById('edit-mem-color-picker').value = '#3b82f6';
           renderSnsFields([]);
         } else {
-          const m = memberMap.get(memberId);
+          const m = copyFrom || memberMap.get(memberId);
           if (!m) return;
-          document.getElementById('edit-member-title').textContent = `Edit Idol: ${m.stage_name}`;
-          document.getElementById('edit-member-subtitle').textContent = `Update canonical details and membership for ${m.stage_name}`;
           const idInput = document.getElementById('edit-mem-id');
-          idInput.value = m.id;
-          idInput.readOnly = true;
-          idInput.disabled = true;
+          if (copyFrom) {
+            document.getElementById('edit-member-title').textContent = `Duplicate Idol: ${m.stage_name}`;
+            document.getElementById('edit-member-subtitle').textContent = `New record pre-filled from ${m.stage_name} (${m.id}). Change what's different, like the group, then save. The original stays as it is.`;
+            idInput.value = suggestDuplicateId(m.id);
+            idInput.readOnly = false;
+            idInput.disabled = false;
+          } else {
+            document.getElementById('edit-member-title').textContent = `Edit Idol: ${m.stage_name}`;
+            document.getElementById('edit-member-subtitle').textContent = `Update canonical details and membership for ${m.stage_name}`;
+            idInput.value = m.id;
+            idInput.readOnly = true;
+            idInput.disabled = true;
+          }
           document.getElementById('edit-mem-stage-name').value = m.stage_name || '';
           document.getElementById('edit-mem-stage-name-th').value = m.stage_name_th || '';
           document.getElementById('edit-mem-avatar').value = m.avatar_cached_path || '';
@@ -3312,6 +3337,9 @@
         // Edit buttons in detail modals
         document.getElementById('btn-edit-current-member').addEventListener('click', () => {
           if (currentOpenMemberId) openEditMemberModal(currentOpenMemberId, false);
+        });
+        document.getElementById('btn-duplicate-current-member').addEventListener('click', () => {
+          if (currentOpenMemberId) openEditMemberModal(null, true, currentOpenMemberId);
         });
         document.getElementById('btn-edit-current-group').addEventListener('click', () => {
           if (currentOpenGroupId) openEditGroupModal(currentOpenGroupId);
