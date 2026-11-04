@@ -5188,7 +5188,8 @@
         "current_handle": "punch_sumomo",
         "url": "https://www.tiktok.com/@punch_sumomo"
       }
-    ]
+    ],
+    "avatar_cached_path": "assets/avatars/punch-sumomo.webp"
   },
   {
     "id": "erin",
@@ -6058,7 +6059,11 @@
     "stage_name": "Botan",
     "stage_name_th": "โบตั๋น",
     "real_name": {},
-    "birthday": {},
+    "birthday": {
+      "month": 5,
+      "day": 4,
+      "year": null
+    },
     "sns": [
       {
         "platform": "x",
