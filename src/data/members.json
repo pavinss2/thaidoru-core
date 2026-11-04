@@ -744,10 +744,10 @@
     "sns": [
       {
         "platform": "x",
-        "profile_id": "1753018642546184192",
-        "current_handle": "Gracenae_mirai",
-        "url": "https://x.com/Gracenae_mirai",
-        "avatar_url": "https://pbs.twimg.com/profile_images/2070379567597101056/Tr-TuxgA_400x400.jpg"
+        "profile_id": null,
+        "current_handle": "Gracenae_CMJ",
+        "url": "https://x.com/Gracenae_CMJ",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2115429199418920961/NXBB6vv2_400x400.jpg"
       },
       {
         "platform": "facebook",
@@ -758,14 +758,14 @@
       {
         "platform": "instagram",
         "profile_id": null,
-        "current_handle": "Gracenae.mirai",
-        "url": "https://www.instagram.com/Gracenae.mirai"
+        "current_handle": null,
+        "url": "https://www.instagram.com/gracenae.cmj/"
       },
       {
         "platform": "tiktok",
         "profile_id": null,
-        "current_handle": "gracenae.miraimirai",
-        "url": "https://www.tiktok.com/@gracenae.miraimirai"
+        "current_handle": null,
+        "url": "https://www.tiktok.com/@gracenae.cmj"
       }
     ],
     "avatar_cached_path": "assets/avatars/gracenae.webp"

@@ -237,14 +237,14 @@
     "id": "mirai-mirai_gracenae",
     "group_id": "mirai-mirai",
     "member_id": "gracenae",
-    "status": "active",
+    "status": "graduated",
     "role": "member",
     "color": {
       "name": "Pink",
       "hex": "#ff69b4"
     },
     "joined_date": null,
-    "end_date": null
+    "end_date": "2026-10-31"
   },
   {
     "id": "mirai-mirai_kartun",
@@ -2065,5 +2065,18 @@
     "status": "graduated",
     "joined_date": null,
     "end_date": "2026-05-03"
+  },
+  {
+    "id": "castella_gracenae",
+    "group_id": "castella",
+    "member_id": "gracenae",
+    "status": "active",
+    "role": "member",
+    "color": {
+      "name": "Green",
+      "hex": "#6bffe1"
+    },
+    "joined_date": "2026-11-04",
+    "end_date": null
   }
 ]
