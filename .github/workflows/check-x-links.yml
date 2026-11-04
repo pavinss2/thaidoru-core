@@ -1,0 +1,66 @@
+name: Weekly X Link Check
+
+# Checks every active member's X profile link and avatar URL, and saves the
+# result to src/data/x-link-status.json. The site's admin "X link check" panel
+# reads it (browsers can't check x.com links themselves because of CORS).
+# Fully free: uses the public FxTwitter API, no X API key or secret needed.
+on:
+  schedule:
+    - cron: '0 19 * * 0' # Every Monday 02:00 Bangkok time, an hour after the avatar refresh
+  workflow_dispatch:
+
+permissions:
+  contents: write # commit x-link-status.json
+  actions: write  # start the deploy workflow afterwards
+
+concurrency:
+  group: x-link-check
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Check X links
+        run: npm run check:x-links
+
+      - name: Commit and push changes
+        id: commit
+        run: |
+          git add src/data/x-link-status.json
+          if git diff --cached --quiet; then
+            echo "pushed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "X link check: $(date -u +'%Y-%m-%d')"
+          for i in 1 2 3 4 5; do
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              echo "pushed=true" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+            sleep $((i * 5))
+          done
+          echo "Could not push after 5 tries" >&2
+          exit 1
+
+      # Pushes made with GITHUB_TOKEN don't trigger other workflows, so start
+      # the deploy ourselves to publish the new status file.
+      - name: Deploy site
+        if: steps.commit.outputs.pushed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run deploy.yml --ref main

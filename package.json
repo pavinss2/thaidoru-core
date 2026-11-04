@@ -8,7 +8,8 @@
     "test": "tsx src/scripts/test.ts",
     "validate": "tsx src/scripts/test.ts",
     "resolve:profiles": "tsx src/scripts/resolve-profile-ids.ts",
-    "cache:avatars": "tsx src/scripts/cache-avatars.ts"
+    "cache:avatars": "tsx src/scripts/cache-avatars.ts",
+    "check:x-links": "tsx src/scripts/check-x-links.ts"
   },
   "keywords": [
     "thaidoru",
