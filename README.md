@@ -101,7 +101,7 @@ npm run refresh:avatars -- --webp-only        # only build missing webps from sa
 1. **Add or Edit a Member**:
    - Open `src/data/members.json` and add/edit the member profile.
 2. **Assign Member to a Group with Color**:
-   - Open `src/data/memberships.json` and create the junction record linking `group_id` and `member_id` with their `color` and `status`.
+   - Open `src/data/memberships.json` and create the junction record linking `group_id` and `member_id` with their `color` and `status`. Leave `color.shade` out and run `npm run fill:shades` to fill the main shade (e.g. "Cream" -> Yellow), then fix any wrong guess by hand.
 3. **Verify and Build**:
    ```bash
    npm test

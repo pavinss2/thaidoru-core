@@ -51,7 +51,12 @@ it if its bio or name clearly matches; otherwise leave the X entry out and repor
   says leader. Colors need `name` + 6-char hex: convert CSS names
   (LightBlue `#add8e6`, Pink `#ffc0cb`, Red `#ff0000`, White `#ffffff`,
   Purple `#800080`, Yellow `#ffff00`, Blue `#0000ff`). No color on the wiki:
-  use `{"name": "N/A", "hex": "#7f8c8d"}`.
+  use `{"name": "N/A", "hex": "#7f8c8d", "shade": null}`.
+- **Main shade**: every color also needs `shade`, one of Red, Orange, Yellow,
+  Green, Blue, Purple, Pink, Brown, White, Gray, Black (keep the wiki's fancy
+  name in `name`). Easiest: leave `shade` out, run `npm run fill:shades`, and
+  check its guesses (e.g. "Cream" -> Yellow, "Luce Sky Blue" -> Blue). List any
+  guess you were unsure of in the PR.
 - **Dates** must be `YYYY-MM-DD`. Year-only or month-only dates become `null`;
   list them in the PR as unverified.
 - **Former members**: status `graduated` with `end_date` (or `withdrawn` when
@@ -81,7 +86,7 @@ conflicts between the group page and member pages (they happen often).
 
 ## 5. Test
 
-`npm ci` once, then `npm test`. It must end with `0 failed`. Missing avatar files
+`npm ci` once, then `npm run fill:shades` and `npm test`. It must end with `0 failed`. Missing avatar files
 for new groups/companies fail the test until step 6 runs.
 
 ## 6. Avatars
