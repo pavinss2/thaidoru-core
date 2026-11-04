@@ -2096,13 +2096,11 @@
     "stage_name": "Pam",
     "stage_name_th": "แพม",
     "real_name": {
-      "th": "นลินทิพย์ ปรังประโคน",
-      "en": "Nalinthip Prangprakhon",
-      "nickname": "Pam",
+      "first_name_th": "นลินทิพย์",
+      "last_name_th": "ปรังประโคน",
       "first_name_en": "Nalinthip",
       "last_name_en": "Prangprakhon",
-      "first_name_th": "นลินทิพย์",
-      "last_name_th": "ปรังประโคน"
+      "nickname": "Pam"
     },
     "birthday": {
       "month": 1,
@@ -2123,6 +2121,13 @@
         "current_handle": "pam.theglassgirls",
         "url": "https://www.instagram.com/pam.theglassgirls",
         "avatar_url": null
+      },
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": null,
+        "url": "https://x.com/PammTGG",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2115777274842898433/XgRewr2S_400x400.jpg"
       }
     ],
     "avatar_cached_path": "assets/avatars/pam.webp"
@@ -2132,13 +2137,11 @@
     "stage_name": "Maple",
     "stage_name_th": "เมเปิ้ล",
     "real_name": {
-      "th": "รังสิมา ดลลักขณา",
-      "en": "Rangsima Dollakha",
-      "nickname": "Maple",
+      "first_name_th": "รังสิมา",
+      "last_name_th": "ดลเลขา",
       "first_name_en": "Rangsima",
       "last_name_en": "Dollakha",
-      "first_name_th": "รังสิมา",
-      "last_name_th": "ดลเลขา"
+      "nickname": "Maple"
     },
     "birthday": {
       "month": 10,
@@ -2159,6 +2162,13 @@
         "current_handle": "maple.theglassgirls",
         "url": "https://www.instagram.com/maple.theglassgirls",
         "avatar_url": null
+      },
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": null,
+        "url": "https://x.com/MapleTGG",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2115777423744864256/K_62SB5h_400x400.jpg"
       }
     ],
     "avatar_cached_path": "assets/avatars/maple.webp"
@@ -2168,13 +2178,11 @@
     "stage_name": "Front",
     "stage_name_th": "ฟร้อนท์",
     "real_name": {
-      "th": "กรกช กาญจนสูตร",
-      "en": "Korakoch Karnasuta",
-      "nickname": "Front",
+      "first_name_th": "กรกช",
+      "last_name_th": "กรรณสูต",
       "first_name_en": "Korakoch",
       "last_name_en": "Karnasuta",
-      "first_name_th": "กรกช",
-      "last_name_th": "กรรณสูต"
+      "nickname": "Front"
     },
     "birthday": {
       "month": 3,
@@ -2195,6 +2203,13 @@
         "current_handle": "front.theglassgirls",
         "url": "https://www.instagram.com/front.theglassgirls",
         "avatar_url": null
+      },
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": null,
+        "url": "https://x.com/FrontTGG",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2115779037029376000/5BCZeiyk_400x400.jpg"
       }
     ],
     "avatar_cached_path": "assets/avatars/front.webp"
@@ -2204,13 +2219,11 @@
     "stage_name": "Asia",
     "stage_name_th": "เอเชียร์",
     "real_name": {
-      "th": "ภัสสุดา อดทน",
-      "en": "Phatsuda Odthon",
-      "nickname": "Asia",
+      "first_name_th": "พัฐสุดา",
+      "last_name_th": "อดทน",
       "first_name_en": "Phatsuda",
       "last_name_en": "Odthon",
-      "first_name_th": "พัฐสุดา",
-      "last_name_th": "อดทน"
+      "nickname": "Asia"
     },
     "birthday": {
       "month": 1,
@@ -2231,6 +2244,13 @@
         "current_handle": "asia.theglassgirls",
         "url": "https://www.instagram.com/asia.theglassgirls",
         "avatar_url": null
+      },
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": null,
+        "url": "https://x.com/AsiaTGG",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2115778251138469888/sRBgP-Q1_400x400.jpg"
       }
     ],
     "avatar_cached_path": "assets/avatars/asia-tgg.webp"
@@ -2240,13 +2260,11 @@
     "stage_name": "Preammy",
     "stage_name_th": "พรีมมี่",
     "real_name": {
-      "th": "รัญญ์หทัย ศักดิ์แพทย์",
-      "en": "Runhathai Sakpaet",
-      "nickname": "Preammy",
+      "first_name_th": "รัญชน์หทัย",
+      "last_name_th": "ศักดิ์แพทย์",
       "first_name_en": "Runhathai",
       "last_name_en": "Sakpaet",
-      "first_name_th": "รัญชน์หทัย",
-      "last_name_th": "ศักดิ์แพทย์"
+      "nickname": "Preammy"
     },
     "birthday": {
       "month": 12,
@@ -2267,6 +2285,13 @@
         "current_handle": "preammy.theglassgirls",
         "url": "https://www.instagram.com/preammy.theglassgirls",
         "avatar_url": null
+      },
+      {
+        "platform": "x",
+        "profile_id": null,
+        "current_handle": null,
+        "url": "https://x.com/preammyTGG",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2115782888897847296/a5Ug1i7k_400x400.jpg"
       }
     ],
     "avatar_cached_path": "assets/avatars/preammy.webp"
