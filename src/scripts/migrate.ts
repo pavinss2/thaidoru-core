@@ -10,7 +10,8 @@ import {
   Group,
   Member,
   GroupMembership,
-  SNSChannel
+  SNSChannel,
+  guessShade
 } from '../schemas/index.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -406,7 +407,8 @@ for (const rm of rawMembers) {
     role: 'member',
     color: {
       name: colorName,
-      hex: colorHex
+      hex: colorHex,
+      shade: guessShade(colorName, colorHex)
     },
     joined_date: null,
     graduated_date: null,
@@ -424,7 +426,8 @@ memberships.push({
   role: 'member',
   color: {
     name: 'Black',
-    hex: COLOR_HEX_MAP['Black']
+    hex: COLOR_HEX_MAP['Black'],
+    shade: 'Black'
   },
   joined_date: '2021-11-23',
   graduated_date: '2026-01-10',
@@ -475,7 +478,8 @@ function registerMember(
     role,
     color: {
       name: colorName,
-      hex: colorHex
+      hex: colorHex,
+      shade: guessShade(colorName, colorHex)
     },
     joined_date: null,
     graduated_date: gradDate,
