@@ -810,7 +810,7 @@
         "profile_id": "1753015031929896960",
         "current_handle": "kartun_mirai",
         "url": "https://x.com/kartun_mirai",
-        "avatar_url": "https://pbs.twimg.com/profile_images/2070380314929815552/CEXTBsRq_400x400.jpg"
+        "avatar_url": "https://pbs.twimg.com/profile_images/2118299936911708161/rsKNtmZR_400x400.jpg"
       },
       {
         "platform": "facebook",
@@ -832,7 +832,14 @@
       }
     ],
     "avatar_cached_path": "assets/avatars/kartun.webp",
-    "avatar_source_url": "https://pbs.twimg.com/profile_images/2070380314929815552/CEXTBsRq_400x400.jpg"
+    "avatar_source_url": "https://pbs.twimg.com/profile_images/2118299936911708161/rsKNtmZR_400x400.jpg",
+    "avatar_history": [
+      {
+        "path": "assets/avatars/history/kartun/2026-11-08.webp",
+        "source_url": "https://pbs.twimg.com/profile_images/2070380314929815552/CEXTBsRq_400x400.jpg",
+        "archived_at": "2026-11-08"
+      }
+    ]
   },
   {
     "id": "kris",
@@ -926,7 +933,7 @@
         "profile_id": "1752989946712121344",
         "current_handle": "Nisa_miraimirai",
         "url": "https://x.com/Nisa_miraimirai",
-        "avatar_url": "https://pbs.twimg.com/profile_images/2070391236733865984/SPscDjWS_400x400.jpg"
+        "avatar_url": "https://pbs.twimg.com/profile_images/2118298546562842624/ud3IEFnT_400x400.jpg"
       },
       {
         "platform": "facebook",
@@ -948,7 +955,14 @@
       }
     ],
     "avatar_cached_path": "assets/avatars/nisa.webp",
-    "avatar_source_url": "https://pbs.twimg.com/profile_images/2070391236733865984/SPscDjWS_400x400.jpg"
+    "avatar_source_url": "https://pbs.twimg.com/profile_images/2118298546562842624/ud3IEFnT_400x400.jpg",
+    "avatar_history": [
+      {
+        "path": "assets/avatars/history/nisa/2026-11-08.webp",
+        "source_url": "https://pbs.twimg.com/profile_images/2070391236733865984/SPscDjWS_400x400.jpg",
+        "archived_at": "2026-11-08"
+      }
+    ]
   },
   {
     "id": "pear",
