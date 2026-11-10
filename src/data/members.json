@@ -725,7 +725,7 @@
         "profile_id": "1752425701813428224",
         "current_handle": "alicemiraimirai",
         "url": "https://x.com/alicemiraimirai",
-        "avatar_url": "https://pbs.twimg.com/profile_images/2070379757766873088/6TIUnVJl_400x400.jpg"
+        "avatar_url": "https://pbs.twimg.com/profile_images/2118298223177822208/YcMMmPfW_400x400.jpg"
       },
       {
         "platform": "facebook",
@@ -747,7 +747,14 @@
       }
     ],
     "avatar_cached_path": "assets/avatars/alice.webp",
-    "avatar_source_url": "https://pbs.twimg.com/profile_images/2070379757766873088/6TIUnVJl_400x400.jpg"
+    "avatar_source_url": "https://pbs.twimg.com/profile_images/2118298223177822208/YcMMmPfW_400x400.jpg",
+    "avatar_history": [
+      {
+        "path": "assets/avatars/history/alice/2026-11-10.webp",
+        "source_url": "https://pbs.twimg.com/profile_images/2070379757766873088/6TIUnVJl_400x400.jpg",
+        "archived_at": "2026-11-10"
+      }
+    ]
   },
   {
     "id": "gracenae",
@@ -894,7 +901,7 @@
         "profile_id": "1753028996407902208",
         "current_handle": "mickey_mrmr",
         "url": "https://x.com/mickey_mrmr",
-        "avatar_url": "https://pbs.twimg.com/profile_images/2070383153957789696/Z-UQgxgr_400x400.jpg"
+        "avatar_url": "https://pbs.twimg.com/profile_images/2118300836749283328/w71qEtnI_400x400.jpg"
       },
       {
         "platform": "facebook",
@@ -916,7 +923,14 @@
       }
     ],
     "avatar_cached_path": "assets/avatars/mickey.webp",
-    "avatar_source_url": "https://pbs.twimg.com/profile_images/2070383153957789696/Z-UQgxgr_400x400.jpg"
+    "avatar_source_url": "https://pbs.twimg.com/profile_images/2118300836749283328/w71qEtnI_400x400.jpg",
+    "avatar_history": [
+      {
+        "path": "assets/avatars/history/mickey/2026-11-10.webp",
+        "source_url": "https://pbs.twimg.com/profile_images/2070383153957789696/Z-UQgxgr_400x400.jpg",
+        "archived_at": "2026-11-10"
+      }
+    ]
   },
   {
     "id": "nisa",
@@ -1017,7 +1031,7 @@
         "profile_id": "1753013886935265280",
         "current_handle": "pixels_mirai",
         "url": "https://x.com/pixels_mirai",
-        "avatar_url": "https://pbs.twimg.com/profile_images/2070380226207784960/iFCzN2ZB_400x400.jpg"
+        "avatar_url": "https://pbs.twimg.com/profile_images/2118300023813443584/VKWXcnyK_400x400.jpg"
       },
       {
         "platform": "facebook",
@@ -1039,7 +1053,14 @@
       }
     ],
     "avatar_cached_path": "assets/avatars/pixels.webp",
-    "avatar_source_url": "https://pbs.twimg.com/profile_images/2070380226207784960/iFCzN2ZB_400x400.jpg"
+    "avatar_source_url": "https://pbs.twimg.com/profile_images/2118300023813443584/VKWXcnyK_400x400.jpg",
+    "avatar_history": [
+      {
+        "path": "assets/avatars/history/pixels/2026-11-10.webp",
+        "source_url": "https://pbs.twimg.com/profile_images/2070380226207784960/iFCzN2ZB_400x400.jpg",
+        "archived_at": "2026-11-10"
+      }
+    ]
   },
   {
     "id": "sai",
@@ -1054,9 +1075,9 @@
       {
         "platform": "x",
         "profile_id": "1753016598691246080",
-        "current_handle": "Sai_miraimirai",
-        "url": "https://x.com/Sai_miraimirai",
-        "avatar_url": "https://pbs.twimg.com/profile_images/2070383112828354560/wWAO5LmC_400x400.jpg"
+        "current_handle": "sai_miraimirai",
+        "url": "https://x.com/sai_miraimirai",
+        "avatar_url": "https://pbs.twimg.com/profile_images/2118297887193063424/gvi6NHUO_400x400.jpg"
       },
       {
         "platform": "facebook",
@@ -1078,7 +1099,14 @@
       }
     ],
     "avatar_cached_path": "assets/avatars/sai.webp",
-    "avatar_source_url": "https://pbs.twimg.com/profile_images/2070383112828354560/wWAO5LmC_400x400.jpg"
+    "avatar_source_url": "https://pbs.twimg.com/profile_images/2118297887193063424/gvi6NHUO_400x400.jpg",
+    "avatar_history": [
+      {
+        "path": "assets/avatars/history/sai/2026-11-10.webp",
+        "source_url": "https://pbs.twimg.com/profile_images/2070383112828354560/wWAO5LmC_400x400.jpg",
+        "archived_at": "2026-11-10"
+      }
+    ]
   },
   {
     "id": "farm",
