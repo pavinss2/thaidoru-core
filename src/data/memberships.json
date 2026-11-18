@@ -2123,9 +2123,9 @@
       "hex": "#1455fb",
       "shade": "Blue"
     },
-    "status": "active",
+    "status": "graduated",
     "joined_date": null,
-    "end_date": null
+    "end_date": "2026-11-08"
   },
   {
     "id": "zyn_guschan",
