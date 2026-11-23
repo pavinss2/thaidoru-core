@@ -1,24 +1,27 @@
 {
-  "checked_at": "2026-11-15T23:20:38.645Z",
+  "checked_at": "2026-11-23T00:00:49.382Z",
   "source": "fxtwitter",
   "members": {
     "aii": {
       "handle": "aii_SVLN",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2092568668257579008/Juo0qGqW_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2092568668257579008/Juo0qGqW_400x400.jpg",
+      "profile_detail": "@aii_SVLN not found (changed handle, suspended or deleted?)"
     },
     "airi": {
       "handle": "airihatobito",
       "profile": "ok",
-      "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2071882082830217217/IivpvzmP_400x400.jpg"
+      "avatar": "broken",
+      "avatar_url": "https://pbs.twimg.com/profile_images/2071882082830217217/IivpvzmP_400x400.jpg",
+      "avatar_detail": "HTTP 404"
     },
     "airin": {
       "handle": "Airin_CMJ",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2115480626933719040/J1cBsBIh_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2115480626933719040/J1cBsBIh_400x400.jpg",
+      "profile_detail": "@Airin_CMJ not found (changed handle, suspended or deleted?)"
     },
     "alice": {
       "handle": "alicemiraimirai",
@@ -34,9 +37,10 @@
     },
     "ami": {
       "handle": "AMI_ZYN",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2103026787743907840/EVfSuH0x_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2103026787743907840/EVfSuH0x_400x400.jpg",
+      "profile_detail": "@AMI_ZYN not found (changed handle, suspended or deleted?)"
     },
     "ao": {
       "handle": "ao_viinx",
@@ -52,15 +56,17 @@
     },
     "asia-tgg": {
       "handle": "AsiaTGG",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2115778251138469888/sRBgP-Q1_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2115778251138469888/sRBgP-Q1_400x400.jpg",
+      "profile_detail": "@AsiaTGG not found (changed handle, suspended or deleted?)"
     },
     "autumn": {
       "handle": "autumn_denshi",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2084974423258615808/emT9o7A3_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2084974423258615808/emT9o7A3_400x400.jpg",
+      "profile_detail": "@autumn_denshi not found (changed handle, suspended or deleted?)"
     },
     "baiyok": {
       "handle": "Baiyok_ymbm",
@@ -76,15 +82,17 @@
     },
     "beam": {
       "handle": "Beamhatobito",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2071882885938679809/COr55Yww_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2123734975078105088/Z2INhpyb_400x400.jpg",
+      "profile_detail": "@Beamhatobito not found (changed handle, suspended or deleted?)"
     },
     "bebam": {
       "handle": "Bebam_Angevil",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2067253860222312448/GUga09iJ_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2067253860222312448/GUga09iJ_400x400.jpg",
+      "profile_detail": "@Bebam_Angevil not found (changed handle, suspended or deleted?)"
     },
     "beep": {
       "handle": "Beepstarrynite",
@@ -94,9 +102,10 @@
     },
     "best": {
       "handle": "Best_SoraSora",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2115068766958792704/7nENO0wM_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2115068766958792704/7nENO0wM_400x400.jpg",
+      "profile_detail": "@Best_SoraSora not found (changed handle, suspended or deleted?)"
     },
     "bew": {
       "handle": "Bew_Angevil",
@@ -124,16 +133,16 @@
     },
     "charmew": {
       "handle": "Charmew_CMJ",
-      "profile": "not_found",
+      "profile": "ok",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2115438093306327040/VOFdD_ya_400x400.jpg",
-      "profile_detail": "@Charmew_CMJ not found (changed handle, suspended or deleted?)"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2115438093306327040/VOFdD_ya_400x400.jpg"
     },
     "chelsea": {
       "handle": "chelseahatobito",
       "profile": "ok",
-      "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2071882538079916032/DCjzLB3C_400x400.jpg"
+      "avatar": "broken",
+      "avatar_url": "https://pbs.twimg.com/profile_images/2071882538079916032/DCjzLB3C_400x400.jpg",
+      "avatar_detail": "HTTP 404"
     },
     "cherrie": {
       "handle": "Cherrie_Seishin",
@@ -143,15 +152,17 @@
     },
     "chicha": {
       "handle": "ChichaLUMINUS",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2090414911256248320/kOxVle_D_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2090414911256248320/kOxVle_D_400x400.jpg",
+      "profile_detail": "@ChichaLUMINUS not found (changed handle, suspended or deleted?)"
     },
     "christy": {
       "handle": "cchristy_stella",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2079541194116530176/mJtQnpey_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2079541194116530176/mJtQnpey_400x400.jpg",
+      "profile_detail": "@cchristy_stella not found (changed handle, suspended or deleted?)"
     },
     "cinderella": {
       "handle": "cinn_stella",
@@ -167,42 +178,37 @@
     },
     "claire": {
       "handle": "Claire_Angevil",
-      "profile": "not_found",
+      "profile": "ok",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2067243193436147712/Q_TJFh3R_400x400.jpg",
-      "profile_detail": "@Claire_Angevil not found (changed handle, suspended or deleted?)"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2067243193436147712/Q_TJFh3R_400x400.jpg"
     },
     "donut": {
       "handle": "donuthatobito",
-      "profile": "not_found",
-      "avatar": "ok",
+      "profile": "ok",
+      "avatar": "broken",
       "avatar_url": "https://pbs.twimg.com/profile_images/2071881499985530880/Nq4D3vOj_400x400.jpg",
-      "profile_detail": "@donuthatobito not found (changed handle, suspended or deleted?)"
+      "avatar_detail": "HTTP 404"
     },
     "donut-euphonie": {
       "handle": "donut_euphonie",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2067144074923290624/E5jgnh2m_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2067144074923290624/E5jgnh2m_400x400.jpg",
+      "profile_detail": "@donut_euphonie not found (changed handle, suspended or deleted?)"
     },
     "elffy": {
       "handle": "Elffy_Euphonie",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2067142978569945088/kvw3tINF_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2067142978569945088/kvw3tINF_400x400.jpg",
+      "profile_detail": "@Elffy_Euphonie not found (changed handle, suspended or deleted?)"
     },
     "elleelle": {
       "handle": "ellehatobito",
-      "profile": "ok",
-      "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2071882250866642944/KDwLTtxi_400x400.jpg"
-    },
-    "ena": {
-      "handle": "ENA_ZYN",
       "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2102749084750897152/b8IxL6dw_400x400.jpg",
-      "profile_detail": "@ENA_ZYN not found (changed handle, suspended or deleted?)"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2123733761875750912/rftEnO3s_400x400.jpg",
+      "profile_detail": "@ellehatobito not found (changed handle, suspended or deleted?)"
     },
     "eri": {
       "handle": "eri_yamiyami",
@@ -224,9 +230,10 @@
     },
     "fahmini": {
       "handle": "FahminiLuminus",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2105232980570775552/-kJWRmGJ_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2105232980570775552/-kJWRmGJ_400x400.jpg",
+      "profile_detail": "@FahminiLuminus not found (changed handle, suspended or deleted?)"
     },
     "farm": {
       "handle": "farm_dream0n",
@@ -243,9 +250,10 @@
     },
     "foremost": {
       "handle": "ForemostLUMINUS",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2105222798562271232/1c4jR7QG_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2105222798562271232/1c4jR7QG_400x400.jpg",
+      "profile_detail": "@ForemostLUMINUS not found (changed handle, suspended or deleted?)"
     },
     "frenchfry": {
       "handle": "French_Seishin",
@@ -255,9 +263,10 @@
     },
     "friend": {
       "handle": "FriendCMJ",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2115438971119689728/1dfJ9lQG_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2115438971119689728/1dfJ9lQG_400x400.jpg",
+      "profile_detail": "@FriendCMJ not found (changed handle, suspended or deleted?)"
     },
     "front": {
       "handle": "FrontTGG",
@@ -273,16 +282,16 @@
     },
     "give": {
       "handle": "Give_CMJ",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/1988549058642980864/bxb85VS3_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/1988549058642980864/bxb85VS3_400x400.jpg",
+      "profile_detail": "@Give_CMJ not found (changed handle, suspended or deleted?)"
     },
     "gorya": {
       "handle": "goryahatobito",
-      "profile": "not_found",
+      "profile": "ok",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2071881700863258627/otSaIgpE_400x400.jpg",
-      "profile_detail": "@goryahatobito not found (changed handle, suspended or deleted?)"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2123733360946335744/FAIH_JrZ_400x400.jpg"
     },
     "gracenae": {
       "handle": "Gracenae_CMJ",
@@ -316,15 +325,17 @@
     },
     "highway": {
       "handle": "Highway_Seishin",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2117236383236653056/u8VIynbB_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2117236383236653056/u8VIynbB_400x400.jpg",
+      "profile_detail": "@Highway_Seishin not found (changed handle, suspended or deleted?)"
     },
     "icewa": {
       "handle": "Icewastarrynite",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2097670901571665920/pxPdXoye_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2097670901571665920/pxPdXoye_400x400.jpg",
+      "profile_detail": "@Icewastarrynite not found (changed handle, suspended or deleted?)"
     },
     "icezu": {
       "handle": "icezu_angevil",
@@ -340,10 +351,9 @@
     },
     "iya": {
       "handle": "iya_nikko",
-      "profile": "not_found",
+      "profile": "ok",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2113310917182279681/CCtcTN-L_400x400.jpg",
-      "profile_detail": "@iya_nikko not found (changed handle, suspended or deleted?)"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2113310917182279681/CCtcTN-L_400x400.jpg"
     },
     "ize": {
       "handle": "ize_nikko",
@@ -359,15 +369,17 @@
     },
     "jan": {
       "handle": "janyamiyami",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2087911011944947713/ej934WiG_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2087911011944947713/ej934WiG_400x400.jpg",
+      "profile_detail": "@janyamiyami not found (changed handle, suspended or deleted?)"
     },
     "jasmine": {
       "handle": "jasmine_dream0n",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2100208313673928705/Z9aMlkwX_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2100208313673928705/Z9aMlkwX_400x400.jpg",
+      "profile_detail": "@jasmine_dream0n not found (changed handle, suspended or deleted?)"
     },
     "jay": {
       "handle": "Jay__KOMA",
@@ -390,27 +402,30 @@
     },
     "jk": {
       "handle": "jk_dream0n",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2100208639730683904/d4HRujHg_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2100208639730683904/d4HRujHg_400x400.jpg",
+      "profile_detail": "@jk_dream0n not found (changed handle, suspended or deleted?)"
     },
     "kaimook": {
       "handle": "kaimooktgg",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2115779164011913216/luqQKQcD_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2115779164011913216/luqQKQcD_400x400.jpg",
+      "profile_detail": "@kaimooktgg not found (changed handle, suspended or deleted?)"
     },
     "kamii": {
       "handle": "Kamii_viinx",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2073634427029377024/H-LKJsen_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2073634427029377024/H-LKJsen_400x400.jpg",
+      "profile_detail": "@Kamii_viinx not found (changed handle, suspended or deleted?)"
     },
     "kana": {
       "handle": "kanahatobito",
       "profile": "ok",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2071883086254444544/7NqfJnl3_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2123734226910728192/hPw6wTPw_400x400.jpg"
     },
     "kaori": {
       "handle": "Kaori_viinx",
@@ -426,9 +441,10 @@
     },
     "khongkwan": {
       "handle": "Khongkwan_CMJ",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2115441704811773952/53qzrHbs_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2115441704811773952/53qzrHbs_400x400.jpg",
+      "profile_detail": "@Khongkwan_CMJ not found (changed handle, suspended or deleted?)"
     },
     "killua": {
       "handle": "Killua__KOMA",
@@ -444,34 +460,37 @@
     },
     "kurara": {
       "handle": "Kurara_cmj",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2039557299245871105/BdlgzOWf_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2039557299245871105/BdlgzOWf_400x400.jpg",
+      "profile_detail": "@Kurara_cmj not found (changed handle, suspended or deleted?)"
     },
     "kwang": {
       "handle": "kwang_yamiyami",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2087888955043946496/LPN9BfgR_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2087888955043946496/LPN9BfgR_400x400.jpg",
+      "profile_detail": "@kwang_yamiyami not found (changed handle, suspended or deleted?)"
     },
     "kwankaw": {
       "handle": "Kwankaw_viinx",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2073633824903503872/YvlsK5Yr_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2073633824903503872/YvlsK5Yr_400x400.jpg",
+      "profile_detail": "@Kwankaw_viinx not found (changed handle, suspended or deleted?)"
     },
     "lilin": {
       "handle": "Lilin_SoraSora",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2115069237895327745/CTBsEtIw_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2115069237895327745/CTBsEtIw_400x400.jpg",
+      "profile_detail": "@Lilin_SoraSora not found (changed handle, suspended or deleted?)"
     },
     "love": {
       "handle": "Love_viinx",
-      "profile": "not_found",
+      "profile": "ok",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2073634680604344320/q4VO7faJ_400x400.jpg",
-      "profile_detail": "@Love_viinx not found (changed handle, suspended or deleted?)"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2073634680604344320/q4VO7faJ_400x400.jpg"
     },
     "lune": {
       "handle": "Lune_IKINARI",
@@ -487,15 +506,17 @@
     },
     "maple": {
       "handle": "MapleTGG",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2115777423744864256/K_62SB5h_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2115777423744864256/K_62SB5h_400x400.jpg",
+      "profile_detail": "@MapleTGG not found (changed handle, suspended or deleted?)"
     },
     "marina": {
       "handle": "marina_denshi",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2084975570383945728/tCRizqaj_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2084975570383945728/tCRizqaj_400x400.jpg",
+      "profile_detail": "@marina_denshi not found (changed handle, suspended or deleted?)"
     },
     "mata": {
       "handle": "Sumomo_Mata",
@@ -523,15 +544,17 @@
     },
     "meily": {
       "handle": "meily_SVLN",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2092568729024622592/TT2p40D0_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2092568729024622592/TT2p40D0_400x400.jpg",
+      "profile_detail": "@meily_SVLN not found (changed handle, suspended or deleted?)"
     },
     "mewyu": {
       "handle": "mewyu_nikko",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2113242251166203904/YzwexTFQ_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2113242251166203904/YzwexTFQ_400x400.jpg",
+      "profile_detail": "@mewyu_nikko not found (changed handle, suspended or deleted?)"
     },
     "mhaymhey": {
       "handle": "MhayMhey_Stella",
@@ -559,27 +582,31 @@
     },
     "mikimiki": {
       "handle": "MikiMiki_CMJ",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2039005752678060032/bUQlWTNU_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2039005752678060032/bUQlWTNU_400x400.jpg",
+      "profile_detail": "@MikiMiki_CMJ not found (changed handle, suspended or deleted?)"
     },
     "mikoto": {
       "handle": "mikoto_denshi",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2084975172944330752/ecV6kzsy_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2084975172944330752/ecV6kzsy_400x400.jpg",
+      "profile_detail": "@mikoto_denshi not found (changed handle, suspended or deleted?)"
     },
     "milin": {
       "handle": "Milinhatobito",
       "profile": "ok",
-      "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2071884331279065088/MjTO1JhA_400x400.jpg"
+      "avatar": "broken",
+      "avatar_url": "https://pbs.twimg.com/profile_images/2071884331279065088/MjTO1JhA_400x400.jpg",
+      "avatar_detail": "HTTP 404"
     },
     "milk": {
       "handle": "MilkLUMINUS",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2105238930262269952/s-H-qHqc_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2105238930262269952/s-H-qHqc_400x400.jpg",
+      "profile_detail": "@MilkLUMINUS not found (changed handle, suspended or deleted?)"
     },
     "mimii": {
       "handle": "mimii_ymbm",
@@ -595,9 +622,10 @@
     },
     "minmin": {
       "handle": "Minmin_SoraSora",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2115069130412097536/7JRHpUqQ_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2115069130412097536/7JRHpUqQ_400x400.jpg",
+      "profile_detail": "@Minmin_SoraSora not found (changed handle, suspended or deleted?)"
     },
     "minnie": {
       "handle": "MinnieLUMINUS",
@@ -613,15 +641,17 @@
     },
     "mint": {
       "handle": "MintTGG",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2115777839975084032/01XBSFdf_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2115777839975084032/01XBSFdf_400x400.jpg",
+      "profile_detail": "@MintTGG not found (changed handle, suspended or deleted?)"
     },
     "mio": {
       "handle": "mio_SVLN",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2092567776384999424/CBSANcXc_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2092567776384999424/CBSANcXc_400x400.jpg",
+      "profile_detail": "@mio_SVLN not found (changed handle, suspended or deleted?)"
     },
     "miu": {
       "handle": "MiuLUMINUS",
@@ -637,15 +667,17 @@
     },
     "miyu": {
       "handle": "Miyu_Nox0ff",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2100210964767588352/3PKWZBkD_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2100210964767588352/3PKWZBkD_400x400.jpg",
+      "profile_detail": "@Miyu_Nox0ff not found (changed handle, suspended or deleted?)"
     },
     "mobile": {
       "handle": "mobilehatobito",
       "profile": "ok",
-      "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2071881999627739136/J1hSyBV6_400x400.jpg"
+      "avatar": "broken",
+      "avatar_url": "https://pbs.twimg.com/profile_images/2071881999627739136/J1hSyBV6_400x400.jpg",
+      "avatar_detail": "HTTP 404"
     },
     "moji": {
       "handle": "MojiLUMINUS",
@@ -655,9 +687,10 @@
     },
     "momo": {
       "handle": "Momo_Angevil",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2067235416659685376/QIlvOhP1_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2067235416659685376/QIlvOhP1_400x400.jpg",
+      "profile_detail": "@Momo_Angevil not found (changed handle, suspended or deleted?)"
     },
     "monie": {
       "handle": "Monie_ymbm",
@@ -686,14 +719,16 @@
     "music": {
       "handle": "musichatobito",
       "profile": "ok",
-      "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2101029486565433344/Y8ltMZ2b_400x400.jpg"
+      "avatar": "broken",
+      "avatar_url": "https://pbs.twimg.com/profile_images/2101029486565433344/Y8ltMZ2b_400x400.jpg",
+      "avatar_detail": "HTTP 404"
     },
     "nadear": {
       "handle": "Nadear_CMJ",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2115439105299595264/eTE4m0jx_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2115439105299595264/eTE4m0jx_400x400.jpg",
+      "profile_detail": "@Nadear_CMJ not found (changed handle, suspended or deleted?)"
     },
     "namfah": {
       "handle": "Sumomo_namfah",
@@ -703,9 +738,10 @@
     },
     "nata": {
       "handle": "natahatobito",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2071882036650881024/CZmAT0MP_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2123733631856467968/LvCXTRyP_400x400.jpg",
+      "profile_detail": "@natahatobito not found (changed handle, suspended or deleted?)"
     },
     "nene": {
       "handle": "NeneLUMINUS",
@@ -727,9 +763,10 @@
     },
     "noei-noey": {
       "handle": "Noeinoey_ymbm",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2111307872420450304/46b-VQsK_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2111307872420450304/46b-VQsK_400x400.jpg",
+      "profile_detail": "@Noeinoey_ymbm not found (changed handle, suspended or deleted?)"
     },
     "noojaa": {
       "handle": "noojaa_stella",
@@ -751,15 +788,17 @@
     },
     "oum": {
       "handle": "Oum_SoraSora",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2115066685095055360/r1Opx56Q_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2115066685095055360/r1Opx56Q_400x400.jpg",
+      "profile_detail": "@Oum_SoraSora not found (changed handle, suspended or deleted?)"
     },
     "pam": {
       "handle": "PammTGG",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2115777274842898433/XgRewr2S_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2115777274842898433/XgRewr2S_400x400.jpg",
+      "profile_detail": "@PammTGG not found (changed handle, suspended or deleted?)"
     },
     "pammy": {
       "handle": "Pammy_Euphonie",
@@ -769,15 +808,17 @@
     },
     "pchi": {
       "handle": "pchi__KOMA",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2032766901521362948/X8nPx7NI_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2032766901521362948/X8nPx7NI_400x400.jpg",
+      "profile_detail": "@pchi__KOMA not found (changed handle, suspended or deleted?)"
     },
     "petpet": {
       "handle": "petpet_euphonie",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2067144776789688320/XZ0rNorC_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2067144776789688320/XZ0rNorC_400x400.jpg",
+      "profile_detail": "@petpet_euphonie not found (changed handle, suspended or deleted?)"
     },
     "pin": {
       "handle": "Pin_SoraSora",
@@ -788,14 +829,16 @@
     "pixels": {
       "handle": "pixels_mirai",
       "profile": "ok",
-      "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2118300023813443584/VKWXcnyK_400x400.jpg"
+      "avatar": "broken",
+      "avatar_url": "https://pbs.twimg.com/profile_images/2118300023813443584/VKWXcnyK_400x400.jpg",
+      "avatar_detail": "HTTP 404"
     },
     "ploy": {
       "handle": "Ploy_dream0n",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2100209649899511809/DZ6h6wrC_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2100209649899511809/DZ6h6wrC_400x400.jpg",
+      "profile_detail": "@Ploy_dream0n not found (changed handle, suspended or deleted?)"
     },
     "porpor": {
       "handle": "Porpor_Euphonie",
@@ -811,10 +854,9 @@
     },
     "praeploy": {
       "handle": "Praeploy_CMJ",
-      "profile": "not_found",
+      "profile": "ok",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2115438291193561088/QOQlZyot_400x400.jpg",
-      "profile_detail": "@Praeploy_CMJ not found (changed handle, suspended or deleted?)"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2115438291193561088/QOQlZyot_400x400.jpg"
     },
     "praew": {
       "handle": "praew_yamiyami",
@@ -824,16 +866,16 @@
     },
     "pream": {
       "handle": "preamstarrynite",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2097671152324009984/xfj56cih_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2097671152324009984/xfj56cih_400x400.jpg",
+      "profile_detail": "@preamstarrynite not found (changed handle, suspended or deleted?)"
     },
     "preammy": {
       "handle": "preammyTGG",
-      "profile": "not_found",
+      "profile": "ok",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2115782888897847296/a5Ug1i7k_400x400.jpg",
-      "profile_detail": "@preammyTGG not found (changed handle, suspended or deleted?)"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2115782888897847296/a5Ug1i7k_400x400.jpg"
     },
     "puifaii": {
       "handle": "Puifaii_CMJ",
@@ -849,15 +891,16 @@
     },
     "punchi": {
       "handle": "punchi_stella",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2079542932378685440/IXyplqIy_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2079542932378685440/IXyplqIy_400x400.jpg",
+      "profile_detail": "@punchi_stella not found (changed handle, suspended or deleted?)"
     },
     "punnhyaz": {
       "handle": "punnhyahatobito",
       "profile": "ok",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2071881445249847296/GKvcfbjK_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2123733106536640512/HSHA8UVH_400x400.jpg"
     },
     "queen": {
       "handle": "Queen_viinx",
@@ -867,16 +910,16 @@
     },
     "riko": {
       "handle": "Riko_Seishin",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2117235678283194368/aj78uJsh_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2117235678283194368/aj78uJsh_400x400.jpg",
+      "profile_detail": "@Riko_Seishin not found (changed handle, suspended or deleted?)"
     },
     "rinmine": {
       "handle": "rinminepr",
-      "profile": "not_found",
+      "profile": "ok",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2039303339297648640/9gaSuT6s_400x400.jpg",
-      "profile_detail": "@rinminepr not found (changed handle, suspended or deleted?)"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2039303339297648640/9gaSuT6s_400x400.jpg"
     },
     "riri": {
       "handle": "riri_SVLN",
@@ -886,9 +929,10 @@
     },
     "ruby": {
       "handle": "Ruby__CMJ",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2039281560600633344/hS98rW_J_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2039281560600633344/hS98rW_J_400x400.jpg",
+      "profile_detail": "@Ruby__CMJ not found (changed handle, suspended or deleted?)"
     },
     "sai": {
       "handle": "sai_miraimirai",
@@ -898,9 +942,10 @@
     },
     "sana": {
       "handle": "Sana_IKINARI",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2102023335127527424/xQZdq8ZI_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2102023335127527424/xQZdq8ZI_400x400.jpg",
+      "profile_detail": "@Sana_IKINARI not found (changed handle, suspended or deleted?)"
     },
     "satchan": {
       "handle": "SatchanHanami",
@@ -922,9 +967,10 @@
     },
     "smild": {
       "handle": "SmildLUMINUS",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2105224216912310272/kGcFzqnp_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2105224216912310272/kGcFzqnp_400x400.jpg",
+      "profile_detail": "@SmildLUMINUS not found (changed handle, suspended or deleted?)"
     },
     "snowy": {
       "handle": "snowy_dream0n",
@@ -941,8 +987,9 @@
     "summer": {
       "handle": "summerhatobito",
       "profile": "ok",
-      "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2071884566684418048/JISIf5b8_400x400.jpg"
+      "avatar": "broken",
+      "avatar_url": "https://pbs.twimg.com/profile_images/2071884566684418048/JISIf5b8_400x400.jpg",
+      "avatar_detail": "HTTP 404"
     },
     "sunny": {
       "handle": "Sunny_Seishin",
@@ -958,27 +1005,31 @@
     },
     "tanoon": {
       "handle": "tanoon_viinx",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2073633744918102016/z84h6f8G_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2073633744918102016/z84h6f8G_400x400.jpg",
+      "profile_detail": "@tanoon_viinx not found (changed handle, suspended or deleted?)"
     },
     "tengja": {
       "handle": "Tengja__KOMA",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2032426529817530368/7j7puqFu_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2032426529817530368/7j7puqFu_400x400.jpg",
+      "profile_detail": "@Tengja__KOMA not found (changed handle, suspended or deleted?)"
     },
     "time": {
       "handle": "Time_Nox0ff",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2100209158603862016/7FJoI-6w_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2100209158603862016/7FJoI-6w_400x400.jpg",
+      "profile_detail": "@Time_Nox0ff not found (changed handle, suspended or deleted?)"
     },
     "tintin": {
       "handle": "Tintin_Seishin",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2117235252137762816/9-E6Es9F_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2117235252137762816/9-E6Es9F_400x400.jpg",
+      "profile_detail": "@Tintin_Seishin not found (changed handle, suspended or deleted?)"
     },
     "tonliw": {
       "handle": "tonliw_yamiyami",
@@ -988,21 +1039,25 @@
     },
     "tormai": {
       "handle": "Tormai_ymbm",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2111319114216267776/3nI4vlT4_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2111319114216267776/3nI4vlT4_400x400.jpg",
+      "profile_detail": "@Tormai_ymbm not found (changed handle, suspended or deleted?)"
     },
     "vasa": {
       "handle": "Vasa_CMJ",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2069788985556074496/1tvLjT-V_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2069788985556074496/1tvLjT-V_400x400.jpg",
+      "profile_detail": "@Vasa_CMJ not found (changed handle, suspended or deleted?)"
     },
     "view": {
       "handle": "View_Hatobito",
-      "profile": "ok",
-      "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2071886170481426432/3GNSajdA_400x400.jpg"
+      "profile": "not_found",
+      "avatar": "broken",
+      "avatar_url": "https://pbs.twimg.com/profile_images/2071886170481426432/3GNSajdA_400x400.jpg",
+      "profile_detail": "@View_Hatobito not found (changed handle, suspended or deleted?)",
+      "avatar_detail": "HTTP 404"
     },
     "xiu-zhen": {
       "handle": "xiuzhen_yami",
@@ -1012,21 +1067,24 @@
     },
     "yaya": {
       "handle": "YAYA_ZYN",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2102899871158288384/dgd6zZY1_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2102899871158288384/dgd6zZY1_400x400.jpg",
+      "profile_detail": "@YAYA_ZYN not found (changed handle, suspended or deleted?)"
     },
     "yiwha": {
       "handle": "Yiwha_Nox0ff",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2100221465077620737/ylFQt9hU_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2100221465077620737/ylFQt9hU_400x400.jpg",
+      "profile_detail": "@Yiwha_Nox0ff not found (changed handle, suspended or deleted?)"
     },
     "yogurt": {
       "handle": "Yogurt_Angevil",
-      "profile": "ok",
+      "profile": "not_found",
       "avatar": "ok",
-      "avatar_url": "https://pbs.twimg.com/profile_images/2067246534614478848/r0QC6XJ-_400x400.jpg"
+      "avatar_url": "https://pbs.twimg.com/profile_images/2067246534614478848/r0QC6XJ-_400x400.jpg",
+      "profile_detail": "@Yogurt_Angevil not found (changed handle, suspended or deleted?)"
     },
     "yosei": {
       "handle": "Sumomo_Yosei",
