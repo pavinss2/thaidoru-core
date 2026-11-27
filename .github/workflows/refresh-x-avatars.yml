@@ -1,4 +1,4 @@
-name: Weekly X Avatar Refresh
+name: Weekday X Avatar Refresh
 
 # Checks every active (not graduated) member's X avatar URL. Dead or empty
 # ones get looked up again, saved, and re-cached as WebP. Old WebPs are kept
@@ -6,7 +6,7 @@ name: Weekly X Avatar Refresh
 # Fully free: uses the public FxTwitter API, no X API key or secret needed.
 on:
   schedule:
-    - cron: '0 18 * * 0' # Every Monday 01:00 Bangkok time (Sunday 18:00 UTC)
+    - cron: '0 18 * * 1-5' # Every Monday 01:00 Bangkok time (Sunday 18:00 UTC)
   workflow_dispatch:
     inputs:
       dry_run:
