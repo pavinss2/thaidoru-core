@@ -1,4 +1,4 @@
-name: Weekly X Link Check
+name: Weekday X Link Check
 
 # Checks every active member's X profile link and avatar URL, and saves the
 # result to src/data/x-link-status.json. The site's admin "X link check" panel
@@ -6,7 +6,7 @@ name: Weekly X Link Check
 # Fully free: uses the public FxTwitter API, no X API key or secret needed.
 on:
   schedule:
-    - cron: '0 19 * * 0' # Every Monday 02:00 Bangkok time, an hour after the avatar refresh
+    - cron: '0 19 * * 1-5' # At 19:00 on every day-of-week from Monday through Friday
   workflow_dispatch:
 
 permissions:
