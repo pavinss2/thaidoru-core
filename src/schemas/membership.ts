@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { ColorShadeEnum } from './color-shade.js';
 
 export const MembershipStatusEnum = z.enum(['active', 'graduated', 'hiatus', 'trainee', 'withdrawn']);
 export type MembershipStatus = z.infer<typeof MembershipStatusEnum>;
@@ -8,7 +9,10 @@ export type MemberRole = z.infer<typeof MemberRoleEnum>;
 
 export const MemberColorSchema = z.object({
   name: z.string(),
-  hex: z.string().regex(/^#[0-9a-fA-F]{6}$/)
+  hex: z.string().regex(/^#[0-9a-fA-F]{6}$/),
+  // Standard main shade for grouping/filtering (e.g. "Cream" -> Yellow).
+  // null only when the color is unknown (name "N/A").
+  shade: ColorShadeEnum.nullable()
 });
 
 export const GroupMembershipSchema = z.object({

@@ -2246,6 +2246,21 @@
             </div>
           </div>
 
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="edit-mem-color-shade">Main Shade</label>
+              <select id="edit-mem-color-shade" class="form-select">
+                <option value="">Unknown (N/A)</option>
+                <option>Red</option><option>Orange</option><option>Yellow</option><option>Green</option>
+                <option>Blue</option><option>Purple</option><option>Pink</option><option>Brown</option>
+                <option>White</option><option>Gray</option><option>Black</option>
+              </select>
+            </div>
+            <div class="form-group" style="justify-content: flex-end;">
+              <span style="font-size: 0.75rem; color: var(--text-muted); line-height: 1.4;">Standard color used by Cheki Tracker (e.g. Cream is Yellow, Sky Blue is Blue). Picked from the color name; change it if the guess is wrong.</span>
+            </div>
+          </div>
+
           <div class="form-section-heading">Social Media Channels</div>
           <!-- One row per platform, built from SNS_PLATFORMS in openEditMemberModal -->
           <div id="edit-mem-sns"></div>
@@ -3052,6 +3067,7 @@
           document.getElementById('edit-mem-color-name').value = 'Theme Color';
           document.getElementById('edit-mem-color-hex').value = '#3b82f6';
           document.getElementById('edit-mem-color-picker').value = '#3b82f6';
+          setShadeField(null);
           document.getElementById('edit-mem-add-group').value = 'false';
           renderSnsFields([]);
         } else {
@@ -3134,6 +3150,38 @@
         const cHex = ms.color?.hex || '#ec4899';
         document.getElementById('edit-mem-color-hex').value = cHex;
         document.getElementById('edit-mem-color-picker').value = cHex.startsWith('#') && cHex.length === 7 ? cHex : '#ec4899';
+        setShadeField(ms.color?.shade !== undefined ? ms.color.shade : guessShade(ms.color?.name));
+      }
+
+      // Main shade guess from a fancy color name. Keep the word lists in step
+      // with src/schemas/color-shade.ts (the build and tests use that one).
+      const SHADE_WORDS = {
+        red: 'Red', orange: 'Orange', yellow: 'Yellow', green: 'Green', blue: 'Blue', purple: 'Purple', violet: 'Purple',
+        pink: 'Pink', brown: 'Brown', white: 'White', gray: 'Gray', grey: 'Gray', silver: 'Gray', black: 'Black'
+      };
+      const SHADE_ALIASES = {
+        cream: 'Yellow', lemon: 'Yellow', vanilla: 'Yellow', gold: 'Yellow', golden: 'Yellow', banana: 'Yellow', mustard: 'Yellow',
+        mint: 'Green', teal: 'Green', emerald: 'Green', kiwi: 'Green', matcha: 'Green', lime: 'Green', olive: 'Green', jade: 'Green',
+        sky: 'Blue', skyblue: 'Blue', navy: 'Blue', cyan: 'Blue', aqua: 'Blue', turquoise: 'Blue', sapphire: 'Blue', azure: 'Blue',
+        lavender: 'Purple', lilac: 'Purple', grape: 'Purple', magenta: 'Purple', plum: 'Purple', amethyst: 'Purple',
+        rose: 'Pink', sakura: 'Pink', salmon: 'Pink', peach: 'Orange', fuchsia: 'Pink', strawberry: 'Pink',
+        cherry: 'Red', crimson: 'Red', scarlet: 'Red', ruby: 'Red', wine: 'Red', burgundy: 'Red', coral: 'Red',
+        tangerine: 'Orange', apricot: 'Orange', amber: 'Orange',
+        chocolate: 'Brown', coffee: 'Brown', mocha: 'Brown', caramel: 'Brown', beige: 'Brown',
+        snow: 'White', ivory: 'White', pearl: 'White', milk: 'White',
+        charcoal: 'Black', ebony: 'Black', onyx: 'Black'
+      };
+      function guessShade(name) {
+        const words = String(name || '').toLowerCase().split(/[^a-z]+/).filter(Boolean);
+        for (const table of [SHADE_WORDS, SHADE_ALIASES]) {
+          for (let i = words.length - 1; i >= 0; i--) if (table[words[i]]) return table[words[i]];
+        }
+        return null;
+      }
+      function setShadeField(shade) {
+        const el = document.getElementById('edit-mem-color-shade');
+        el.value = shade || '';
+        el.dataset.touched = '';
       }
 
       function saveMemberEdit() {
@@ -3165,6 +3213,7 @@
         const endDateInput = document.getElementById('edit-mem-end-date').value || null;
         const colorName = document.getElementById('edit-mem-color-name').value.trim() || 'Theme Color';
         const colorHex = document.getElementById('edit-mem-color-hex').value.trim() || '#ec4899';
+        const colorShade = document.getElementById('edit-mem-color-shade').value || null;
 
         if (!id || !stageName || !groupId) {
           showToast('Please fill in required fields (ID, Stage Name, Group).', 'error');
@@ -3246,7 +3295,7 @@
           ms.group_id = groupId;
           ms.role = role;
           ms.status = status;
-          ms.color = { name: colorName, hex: colorHex };
+          ms.color = { name: colorName, hex: colorHex, shade: colorShade };
           ms.joined_date = joinedDate;
           ms.end_date = endDate;
         } else {
@@ -3256,7 +3305,7 @@
             member_id: id,
             status: status,
             role: role,
-            color: { name: colorName, hex: colorHex },
+            color: { name: colorName, hex: colorHex, shade: colorShade },
             joined_date: joinedDate,
             end_date: endDate
           };
@@ -3975,6 +4024,16 @@
           navigator.clipboard.writeText(JSON.stringify(state.data, null, 2));
           showToast('📋 Copied all.json to clipboard!', 'success');
         });
+
+        // Main shade follows the color name until it is picked by hand.
+        const memColorName = document.getElementById('edit-mem-color-name');
+        const memColorShade = document.getElementById('edit-mem-color-shade');
+        if (memColorName && memColorShade) {
+          memColorShade.addEventListener('change', () => { memColorShade.dataset.touched = '1'; });
+          memColorName.addEventListener('input', () => {
+            if (!memColorShade.dataset.touched) memColorShade.value = guessShade(memColorName.value) || '';
+          });
+        }
 
         // Color pickers sync
         const memColorPicker = document.getElementById('edit-mem-color-picker');

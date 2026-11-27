@@ -9,6 +9,7 @@ export * from './company.js';
 export * from './group.js';
 export * from './member.js';
 export * from './membership.js';
+export * from './color-shade.js';
 
 export const CompaniesSchema = z.array(CompanySchema);
 export const GroupsSchema = z.array(GroupSchema);

@@ -9,7 +9,8 @@ import {
   Company,
   Group,
   Member,
-  GroupMembership
+  GroupMembership,
+  SHADE_HEX
 } from '../schemas/index.js';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -172,7 +173,10 @@ const dimMembers = memberships.map(ms => {
   return {
     member_name: mem.stage_name,
     member_image: avatarUrl,
-    color: ms.color.name,
+    // Standard main shade (e.g. "Cream" -> "Yellow") so Cheki Tracker can
+    // group by color; the original name is kept in color_name.
+    color: ms.color.shade ?? 'N/A',
+    color_name: ms.color.name,
     group: grp.name,
     country: grp.country,
     company: comp ? comp.name : 'Individual',
@@ -189,6 +193,7 @@ const dimMembers = memberships.map(ms => {
       canonical_group_id: grp.id,
       canonical_membership_id: ms.id,
       color_hex: ms.color.hex,
+      color_shade_hex: ms.color.shade ? SHADE_HEX[ms.color.shade] : null,
       role: ms.role,
       status: ms.status,
       cached_avatar_url: cachedUrl || null,

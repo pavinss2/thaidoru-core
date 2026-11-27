@@ -10,7 +10,8 @@
     "resolve:profiles": "tsx src/scripts/resolve-profile-ids.ts",
     "cache:avatars": "tsx src/scripts/cache-avatars.ts",
     "refresh:avatars": "tsx src/scripts/refresh-x-avatars.ts",
-    "check:x-links": "tsx src/scripts/check-x-links.ts"
+    "check:x-links": "tsx src/scripts/check-x-links.ts",
+    "fill:shades": "tsx src/scripts/fill-color-shades.ts"
   },
   "keywords": [
     "thaidoru",
